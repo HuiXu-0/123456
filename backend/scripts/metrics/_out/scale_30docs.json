@@ -1,0 +1,277 @@
+{
+  "label": "30docs",
+  "measuredAt": "2026-06-12T09:32:51.790457+00:00",
+  "provider": "deepseek",
+  "threshold": 0.6,
+  "docCount": 30,
+  "chunkCount": 153,
+  "sampleSize": 18,
+  "rates": {
+    "hallucinationRate": 0.0428,
+    "adaptationRate": 1.0,
+    "coverageRate": 1.0
+  },
+  "hallucinationDetails": [
+    {
+      "kpId": "cnn",
+      "difficulty": "入门",
+      "rate": 0.2,
+      "totalSentences": 55,
+      "ungrounded": [
+        "它的核心思想来自对人类视觉系统的模仿：我们看一张图片时，并不是一次看清所有像素，而是先关注局部特征，再组合成整体理解",
+        "局部连接：每个神经元只连接输入的一小块区域",
+        "想象你拿着一块放大镜，上面画着某种图案（比如竖线），在整张照片上慢慢移动",
+        "每到一个位置，你就看看放大镜下的局部区域和你的图案有多像",
+        "步长：每次移动的像素数（步长为1就是逐像素移动）",
+        "填充：在图像边缘补一圈0，让扫描不遗漏边界信息",
+        "这就像给信号加了一个“门槛”，只有足够强的信号才能通过",
+        "打个比方：你有一张高清照片，但只需要知道大致轮廓",
+        "你可以把照片分成很多小块，每块只保留最亮的一个像素，这样图片变小了，但主要特征还在",
+        "浅层神经元的感受野很小，只能看到局部细节（比如一条边）",
+        "深层神经元的感受野很大，可以看到更大的图案（比如一只眼睛）"
+      ]
+    },
+    {
+      "kpId": "cnn",
+      "difficulty": "初级",
+      "rate": 0.0,
+      "totalSentences": 37,
+      "ungrounded": []
+    },
+    {
+      "kpId": "cnn",
+      "difficulty": "高级",
+      "rate": 0.1316,
+      "totalSentences": 38,
+      "ungrounded": [
+        "平均池化（Average Pooling）取局部均值",
+        "感受野（Receptive Field）指输出特征图上某个神经元在原始输入图像上映射的区域大小",
+        "其中 \\( R1 = k1 \\)",
+        "数学形式为滑动窗口内积",
+        "感受野，随层数累积扩大，浅层捕捉局部纹理，深层理解全局语义"
+      ]
+    },
+    {
+      "kpId": "dl",
+      "difficulty": "入门",
+      "rate": 0.0,
+      "totalSentences": 44,
+      "ungrounded": []
+    },
+    {
+      "kpId": "dl",
+      "difficulty": "初级",
+      "rate": 0.0,
+      "totalSentences": 38,
+      "ungrounded": []
+    },
+    {
+      "kpId": "dl",
+      "difficulty": "高级",
+      "rate": 0.0323,
+      "totalSentences": 31,
+      "ungrounded": [
+        "Dropout：随机丢弃防止过拟合"
+      ]
+    },
+    {
+      "kpId": "finetune",
+      "difficulty": "入门",
+      "rate": 0.0,
+      "totalSentences": 21,
+      "ungrounded": []
+    },
+    {
+      "kpId": "finetune",
+      "difficulty": "初级",
+      "rate": 0.0,
+      "totalSentences": 30,
+      "ungrounded": []
+    },
+    {
+      "kpId": "finetune",
+      "difficulty": "高级",
+      "rate": 0.0,
+      "totalSentences": 25,
+      "ungrounded": []
+    },
+    {
+      "kpId": "ml",
+      "difficulty": "入门",
+      "rate": 0.0345,
+      "totalSentences": 29,
+      "ungrounded": [
+        "正则：防止过拟合的技术"
+      ]
+    },
+    {
+      "kpId": "ml",
+      "difficulty": "初级",
+      "rate": 0.0,
+      "totalSentences": 26,
+      "ungrounded": []
+    },
+    {
+      "kpId": "ml",
+      "difficulty": "高级",
+      "rate": 0.0455,
+      "totalSentences": 44,
+      "ungrounded": [
+        "过拟合与正则化：过拟合是泛化能力差",
+        "L1/L2 正则化通过约束参数防止过拟合"
+      ]
+    },
+    {
+      "kpId": "nn",
+      "difficulty": "入门",
+      "rate": 0.0,
+      "totalSentences": 41,
+      "ungrounded": []
+    },
+    {
+      "kpId": "nn",
+      "difficulty": "初级",
+      "rate": 0.0,
+      "totalSentences": 44,
+      "ungrounded": []
+    },
+    {
+      "kpId": "nn",
+      "difficulty": "高级",
+      "rate": 0.0,
+      "totalSentences": 30,
+      "ungrounded": []
+    },
+    {
+      "kpId": "transformer",
+      "difficulty": "入门",
+      "rate": 0.1556,
+      "totalSentences": 45,
+      "ungrounded": [
+        "想象你在读一句话：“那只猫因为太胖，跳不上桌子",
+        "当模型处理“胖”这个词时，自注意力机制会让它同时注意到“猫”这个词，因为“胖”是在描述“猫”",
+        "它还会注意到“跳”这个词，因为“胖”和“跳不上”有关系",
+        "一个专家关注语法关系（主语、谓语、宾语）",
+        "一个专家关注语义关联（同义词、反义词）",
+        "一个专家关注情感色彩（正面、负面）",
+        "如果没有位置编码，模型看到“猫追老鼠”和“老鼠追猫”会认为是一样的"
+      ]
+    },
+    {
+      "kpId": "transformer",
+      "difficulty": "初级",
+      "rate": 0.1707,
+      "totalSentences": 41,
+      "ungrounded": [
+        "例如，在句子“那只猫因为太胖，它跳不上桌子”中，模型要理解“它”指代的是“猫”",
+        "并行计算：所有位置的计算可以同时进行",
+        "它的直观理解是：让模型从多个不同的角度同时观察序列",
+        "最后把所有头的观察结果合并起来，得到更丰富的表示",
+        "就像一群人同时说话，如果不加标记，你分不清谁先谁后",
+        "自注意力让每个词看到所有词：“I”看到“I”、“love”、“you”，发现“love”与它关系密切",
+        "自注意力，每个位置直接观察所有位置，一群人同时互相看，而不是只看旁边的人"
+      ]
+    },
+    {
+      "kpId": "transformer",
+      "difficulty": "高级",
+      "rate": 0.0,
+      "totalSentences": 30,
+      "ungrounded": []
+    }
+  ],
+  "adaptationDetails": [
+    {
+      "kpId": "cnn",
+      "scores": {
+        "入门": 6.65,
+        "初级": 19.5,
+        "高级": 110.21
+      },
+      "badPairs": []
+    },
+    {
+      "kpId": "dl",
+      "scores": {
+        "入门": 68.01,
+        "初级": 79.44,
+        "高级": 227.92
+      },
+      "badPairs": []
+    },
+    {
+      "kpId": "finetune",
+      "scores": {
+        "入门": 9.08,
+        "初级": 11.23,
+        "高级": 57.27
+      },
+      "badPairs": []
+    },
+    {
+      "kpId": "ml",
+      "scores": {
+        "入门": 6.49,
+        "初级": 13.5,
+        "高级": 71.49
+      },
+      "badPairs": []
+    },
+    {
+      "kpId": "nn",
+      "scores": {
+        "入门": 27.46,
+        "初级": 42.22,
+        "高级": 246.76
+      },
+      "badPairs": []
+    },
+    {
+      "kpId": "transformer",
+      "scores": {
+        "入门": -12.05,
+        "初级": -1.86,
+        "高级": 79.0
+      },
+      "badPairs": []
+    }
+  ],
+  "coverageDetails": [
+    {
+      "kpId": "ml",
+      "hit": 6,
+      "total": 6,
+      "misses": []
+    },
+    {
+      "kpId": "nn",
+      "hit": 6,
+      "total": 6,
+      "misses": []
+    },
+    {
+      "kpId": "dl",
+      "hit": 6,
+      "total": 6,
+      "misses": []
+    },
+    {
+      "kpId": "cnn",
+      "hit": 6,
+      "total": 6,
+      "misses": []
+    },
+    {
+      "kpId": "transformer",
+      "hit": 6,
+      "total": 6,
+      "misses": []
+    },
+    {
+      "kpId": "finetune",
+      "hit": 6,
+      "total": 6,
+      "misses": []
+    }
+  ]
+}

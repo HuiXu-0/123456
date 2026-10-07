@@ -1,0 +1,270 @@
+{
+  "label": "4docs",
+  "measuredAt": "2026-06-12T09:25:19.428999+00:00",
+  "provider": "deepseek",
+  "threshold": 0.6,
+  "docCount": 4,
+  "chunkCount": 23,
+  "sampleSize": 18,
+  "rates": {
+    "hallucinationRate": 0.026,
+    "adaptationRate": 0.9444,
+    "coverageRate": 1.0
+  },
+  "hallucinationDetails": [
+    {
+      "kpId": "cnn",
+      "difficulty": "入门",
+      "rate": 0.193,
+      "totalSentences": 57,
+      "ungrounded": [
+        "它的设计灵感来源于生物视觉系统——我们的大脑并不是一次性看到整张图片，而是先关注局部特征，再逐步组合成整体认知",
+        "想象你有一张巨大的照片，你想知道照片里有没有猫",
+        "传统方法可能是让一个“全知全能的观察者”同时看整张照片，这需要处理海量信息",
+        "这意味着无论猫出现在图像的哪个位置，检测猫耳朵的卷积核都能认出它",
+        "最常见的池化方式是最大池化（Max Pooling），它在一个小区域内只保留最大值，丢弃其他值",
+        "减少计算量：图像尺寸变小了，后续层的计算负担就减轻了",
+        "浅层神经元只能看到很小的局部（比如一条边），而深层神经元可以看到更大的区域（比如整个猫脸）",
+        "直观理解：就像你在看一幅画，一开始你只盯着画中的一根线条（小感受野），然后你退后一步，看到了整只猫（中等感受野），再退后一步，看到了整幅画（大感受野）",
+        "inchannels：输入图像的通道数（比如 RGB 图像是 3）",
+        "感受野，神经元看到的原始图像区域大小",
+        "浅层看局部，深层看全局"
+      ]
+    },
+    {
+      "kpId": "cnn",
+      "difficulty": "初级",
+      "rate": 0.0652,
+      "totalSentences": 46,
+      "ungrounded": [
+        "这模仿了生物视觉皮层中神经元只响应局部刺激的特性",
+        "stride：步长，控制卷积核滑动的间隔",
+        "感受野越大，网络能捕捉到更大范围的上下文信息"
+      ]
+    },
+    {
+      "kpId": "cnn",
+      "difficulty": "高级",
+      "rate": 0.0455,
+      "totalSentences": 44,
+      "ungrounded": [
+        "这使模型能够检测图像中不同位置出现的相同特征",
+        "最大池化（Max Pooling）在局部区域内取最大值，平均池化（Average Pooling）取平均值"
+      ]
+    },
+    {
+      "kpId": "dl",
+      "difficulty": "入门",
+      "rate": 0.0,
+      "totalSentences": 45,
+      "ungrounded": []
+    },
+    {
+      "kpId": "dl",
+      "difficulty": "初级",
+      "rate": 0.0,
+      "totalSentences": 44,
+      "ungrounded": []
+    },
+    {
+      "kpId": "dl",
+      "difficulty": "高级",
+      "rate": 0.0169,
+      "totalSentences": 59,
+      "ungrounded": [
+        "缩放和平移：y = γ · x̂ + β"
+      ]
+    },
+    {
+      "kpId": "finetune",
+      "difficulty": "入门",
+      "rate": 0.0,
+      "totalSentences": 26,
+      "ungrounded": []
+    },
+    {
+      "kpId": "finetune",
+      "difficulty": "初级",
+      "rate": 0.0,
+      "totalSentences": 28,
+      "ungrounded": []
+    },
+    {
+      "kpId": "finetune",
+      "difficulty": "高级",
+      "rate": 0.0,
+      "totalSentences": 37,
+      "ungrounded": []
+    },
+    {
+      "kpId": "ml",
+      "difficulty": "入门",
+      "rate": 0.0,
+      "totalSentences": 56,
+      "ungrounded": []
+    },
+    {
+      "kpId": "ml",
+      "difficulty": "初级",
+      "rate": 0.0263,
+      "totalSentences": 38,
+      "ungrounded": [
+        "想象一下，我们不是给计算机写死“如果温度高于30度就开空调”这样的规则，而是给它很多“温度-是否开空调”的例子，让它自己学会这个规律"
+      ]
+    },
+    {
+      "kpId": "ml",
+      "difficulty": "高级",
+      "rate": 0.0312,
+      "totalSentences": 64,
+      "ungrounded": [
+        "L1 正则化倾向于产生稀疏权重",
+        "过拟合与正则化：过拟合是模型复杂度过高导致泛化差"
+      ]
+    },
+    {
+      "kpId": "nn",
+      "difficulty": "入门",
+      "rate": 0.0,
+      "totalSentences": 38,
+      "ungrounded": []
+    },
+    {
+      "kpId": "nn",
+      "difficulty": "初级",
+      "rate": 0.0,
+      "totalSentences": 39,
+      "ungrounded": []
+    },
+    {
+      "kpId": "nn",
+      "difficulty": "高级",
+      "rate": 0.0,
+      "totalSentences": 63,
+      "ungrounded": []
+    },
+    {
+      "kpId": "transformer",
+      "difficulty": "入门",
+      "rate": 0.0,
+      "totalSentences": 31,
+      "ungrounded": []
+    },
+    {
+      "kpId": "transformer",
+      "difficulty": "初级",
+      "rate": 0.0893,
+      "totalSentences": 56,
+      "ungrounded": [
+        "例如，当你输入“我喜欢猫”，编码器会分析这句话的含义",
+        "例如，将英文“I like cats”翻译成中文时，解码器会一个词一个词地生成",
+        "它发现“追”和“老鼠”都提供了重要线索，于是给它们分配不同的注意力权重",
+        "例如，“猫”想知道谁在追谁",
+        "例如，一个头关注语法关系（主语-谓语），另一个头关注语义关系（动作-对象）"
+      ]
+    },
+    {
+      "kpId": "transformer",
+      "difficulty": "高级",
+      "rate": 0.0,
+      "totalSentences": 30,
+      "ungrounded": []
+    }
+  ],
+  "adaptationDetails": [
+    {
+      "kpId": "cnn",
+      "scores": {
+        "入门": 10.56,
+        "初级": 18.02,
+        "高级": 79.08
+      },
+      "badPairs": []
+    },
+    {
+      "kpId": "dl",
+      "scores": {
+        "入门": 36.61,
+        "初级": 57.55,
+        "高级": 114.02
+      },
+      "badPairs": []
+    },
+    {
+      "kpId": "finetune",
+      "scores": {
+        "入门": 8.64,
+        "初级": 12.66,
+        "高级": 72.37
+      },
+      "badPairs": []
+    },
+    {
+      "kpId": "ml",
+      "scores": {
+        "入门": 39.06,
+        "初级": 11.25,
+        "高级": 129.45
+      },
+      "badPairs": [
+        "入门<初级"
+      ]
+    },
+    {
+      "kpId": "nn",
+      "scores": {
+        "入门": 33.97,
+        "初级": 44.5,
+        "高级": 196.74
+      },
+      "badPairs": []
+    },
+    {
+      "kpId": "transformer",
+      "scores": {
+        "入门": -3.11,
+        "初级": 8.82,
+        "高级": 76.32
+      },
+      "badPairs": []
+    }
+  ],
+  "coverageDetails": [
+    {
+      "kpId": "ml",
+      "hit": 6,
+      "total": 6,
+      "misses": []
+    },
+    {
+      "kpId": "nn",
+      "hit": 6,
+      "total": 6,
+      "misses": []
+    },
+    {
+      "kpId": "dl",
+      "hit": 6,
+      "total": 6,
+      "misses": []
+    },
+    {
+      "kpId": "cnn",
+      "hit": 6,
+      "total": 6,
+      "misses": []
+    },
+    {
+      "kpId": "transformer",
+      "hit": 6,
+      "total": 6,
+      "misses": []
+    },
+    {
+      "kpId": "finetune",
+      "hit": 6,
+      "total": 6,
+      "misses": []
+    }
+  ]
+}

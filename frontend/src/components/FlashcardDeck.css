@@ -1,0 +1,264 @@
+.flashcard-deck {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-lg);
+  width: 100%;
+}
+
+/* ---- 顶栏：计数 + 进度 + 下载 ---- */
+.flashcard-deck__bar {
+  display: flex;
+  align-items: center;
+  gap: var(--space-md);
+}
+.flashcard-deck__counter {
+  font-family: var(--font-mono);
+  font-size: var(--text-sm);
+  color: var(--ink-soft);
+  white-space: nowrap;
+}
+.flashcard-deck__counter-cur {
+  font-size: var(--text-lg);
+  font-weight: 700;
+  color: var(--primary);
+}
+.flashcard-deck__counter-sep {
+  margin: 0 4px;
+  opacity: 0.5;
+}
+.flashcard-deck__progress {
+  flex: 1;
+  height: 6px;
+  border-radius: var(--radius-full);
+  background: var(--surface-2);
+  overflow: hidden;
+}
+.flashcard-deck__progress-fill {
+  display: block;
+  height: 100%;
+  border-radius: var(--radius-full);
+  background: linear-gradient(90deg, var(--primary), var(--accent));
+  transition: width var(--transition-normal);
+}
+.flashcard-deck__dl {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 7px 14px;
+  border: 1px solid var(--line);
+  border-radius: var(--radius-full);
+  background: var(--surface);
+  color: var(--ink-soft);
+  font-size: var(--text-sm);
+  font-weight: 600;
+  cursor: pointer;
+  transition: all var(--transition-fast);
+  white-space: nowrap;
+}
+.flashcard-deck__dl:hover {
+  color: var(--primary);
+  border-color: var(--primary);
+  box-shadow: var(--shadow-soft);
+}
+
+/* ---- 舞台：左右翻页箭头 + 卡片视口 ---- */
+.flashcard-deck__stage {
+  display: flex;
+  align-items: center;
+  gap: var(--space-md);
+}
+.flashcard-deck__nav {
+  flex: 0 0 auto;
+  width: 44px;
+  height: 44px;
+  border-radius: var(--radius-full);
+  border: 1px solid var(--line);
+  background: var(--surface);
+  color: var(--ink-soft);
+  font-size: 26px;
+  line-height: 1;
+  cursor: pointer;
+  display: grid;
+  place-items: center;
+  transition: all var(--transition-fast);
+  box-shadow: var(--shadow-soft);
+}
+.flashcard-deck__nav:hover {
+  color: var(--primary);
+  border-color: var(--primary);
+  transform: scale(1.06);
+  box-shadow: var(--shadow-raised);
+}
+.flashcard-deck__nav:active {
+  transform: scale(0.96);
+}
+
+.flashcard-deck__viewport {
+  flex: 1;
+  min-width: 0;
+  perspective: 1600px;
+}
+
+/* ---- 翻卡本体：3D rotateY 翻面 ---- */
+.flashcard-card {
+  position: relative;
+  display: block;
+  width: 100%;
+  min-height: 300px;
+  padding: 0;
+  border: none;
+  background: transparent;
+  cursor: pointer;
+  font-family: inherit;
+  text-align: left;
+}
+.flashcard-card__inner {
+  position: relative;
+  display: block;
+  width: 100%;
+  min-height: 300px;
+  transform-style: preserve-3d;
+  transition: transform 0.6s var(--ease-emphasized);
+}
+.flashcard-card--flipped .flashcard-card__inner {
+  transform: rotateY(180deg);
+}
+
+.flashcard-card__face {
+  position: absolute;
+  inset: 0;
+  -webkit-backface-visibility: hidden;
+  backface-visibility: hidden;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: var(--space-lg);
+  padding: var(--space-2xl) var(--space-xl);
+  border-radius: var(--radius-lg);
+  border: 1px solid var(--line);
+  background: var(--surface);
+  box-shadow: var(--shadow-raised);
+}
+.flashcard-card__face--front {
+  background:
+    radial-gradient(120% 90% at 0% 0%, rgba(var(--primary-rgb), 0.08), transparent 60%),
+    var(--surface);
+}
+.flashcard-card__face--back {
+  transform: rotateY(180deg);
+  background:
+    radial-gradient(120% 90% at 100% 0%, rgba(var(--accent-rgb), 0.1), transparent 60%),
+    var(--surface);
+}
+
+.flashcard-card__tag {
+  display: inline-grid;
+  place-items: center;
+  width: 40px;
+  height: 40px;
+  border-radius: var(--radius-full);
+  font-size: var(--text-lg);
+  font-weight: 800;
+  color: #fff;
+  background: linear-gradient(135deg, var(--primary), var(--primary-d));
+  box-shadow: var(--shadow-glow-blue);
+}
+.flashcard-card__tag--back {
+  background: linear-gradient(135deg, var(--accent), #a86f2e);
+  box-shadow: var(--shadow-glow-purple);
+}
+.flashcard-card__text {
+  font-size: var(--text-xl);
+  line-height: 1.6;
+  color: var(--ink);
+  text-align: center;
+  font-weight: 600;
+  max-width: 46ch;
+}
+.flashcard-card__face--back .flashcard-card__text {
+  font-size: var(--text-lg);
+  font-weight: 500;
+}
+.flashcard-card__hint {
+  position: absolute;
+  bottom: var(--space-md);
+  font-size: var(--text-xs);
+  color: var(--ink-soft);
+  opacity: 0.6;
+  letter-spacing: 0.02em;
+}
+
+/* ---- 底部控制条 ---- */
+.flashcard-deck__controls {
+  display: flex;
+  justify-content: center;
+  gap: var(--space-sm);
+  flex-wrap: wrap;
+}
+.flashcard-deck__btn {
+  padding: 9px 20px;
+  border-radius: var(--radius-full);
+  border: 1px solid var(--line);
+  background: var(--surface);
+  color: var(--ink-soft);
+  font-size: var(--text-sm);
+  font-weight: 600;
+  cursor: pointer;
+  transition: all var(--transition-fast);
+}
+.flashcard-deck__btn:hover {
+  color: var(--primary);
+  border-color: var(--primary);
+}
+.flashcard-deck__btn--flip {
+  color: #fff;
+  background: linear-gradient(135deg, var(--primary), var(--primary-d));
+  border-color: transparent;
+  box-shadow: var(--shadow-soft);
+}
+.flashcard-deck__btn--flip:hover {
+  color: #fff;
+  filter: brightness(1.05);
+  box-shadow: var(--shadow-raised);
+}
+
+/* ---- 圆点跳转 ---- */
+.flashcard-deck__dots {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 8px;
+}
+.flashcard-deck__dot {
+  width: 9px;
+  height: 9px;
+  padding: 0;
+  border: none;
+  border-radius: var(--radius-full);
+  background: var(--surface-2);
+  cursor: pointer;
+  transition: all var(--transition-fast);
+}
+.flashcard-deck__dot:hover {
+  background: var(--primary-200);
+}
+.flashcard-deck__dot--active {
+  background: var(--primary);
+  width: 22px;
+}
+
+@media (max-width: 640px) {
+  .flashcard-deck__nav {
+    width: 36px;
+    height: 36px;
+    font-size: 20px;
+  }
+  .flashcard-card,
+  .flashcard-card__inner {
+    min-height: 260px;
+  }
+  .flashcard-card__text {
+    font-size: var(--text-lg);
+  }
+}

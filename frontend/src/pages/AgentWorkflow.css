@@ -1,0 +1,807 @@
+/* Agent Workflow Page Styles */
+
+.workflow-page {
+  padding: var(--space-lg);
+  max-width: 1400px;
+  margin: 0 auto;
+}
+
+/* Header */
+.workflow-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: var(--space-xl);
+  margin-bottom: var(--space-lg);
+}
+
+.workflow-header__title h1,
+.workflow-header__title .title-blur {
+  font-size: 1.5rem;
+  font-weight: 600;
+  color: var(--gray-800);
+  margin-bottom: var(--space-xs);
+}
+
+.workflow-header__title p {
+  font-size: 0.875rem;
+  color: var(--gray-500);
+}
+
+.workflow-header__controls {
+  display: flex;
+  gap: var(--space-sm);
+}
+
+.workflow-btn {
+  padding: 10px 20px;
+  border-radius: var(--radius-md);
+  font-size: 0.8125rem;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all var(--transition-fast);
+}
+
+.workflow-btn--primary {
+  background: linear-gradient(135deg, var(--primary-500), var(--purple-500));
+  color: white;
+  border: none;
+  box-shadow: 0 4px 16px rgba(37, 99, 235, 0.3);
+}
+
+.workflow-btn--primary:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 24px rgba(37, 99, 235, 0.4), 0 0 20px rgba(37, 99, 235, 0.2);
+}
+
+.workflow-btn--secondary {
+  background: transparent;
+  color: var(--gray-600);
+  border: 1px solid var(--gray-200);
+}
+
+.workflow-btn--secondary:hover {
+  background: var(--gray-50);
+  border-color: var(--gray-300);
+}
+
+.workflow-btn--disabled {
+  background: var(--gray-300);
+  color: var(--gray-500);
+  border: none;
+  cursor: not-allowed;
+}
+
+/* Phase Indicator */
+.workflow-phase {
+  background: var(--bg-glass);
+  backdrop-filter: blur(20px);
+  border-radius: var(--radius-lg);
+  border: 1px solid rgba(255, 255, 255, 0.5);
+  padding: var(--space-md) var(--space-lg);
+  margin-bottom: var(--space-lg);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.workflow-phase__steps {
+  display: flex;
+  gap: var(--space-xl);
+}
+
+.workflow-step {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: var(--space-xs);
+}
+
+.workflow-step__marker {
+  width: 32px;
+  height: 32px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: var(--gray-100);
+  border: 2px solid var(--gray-200);
+  border-radius: var(--radius-full);
+  font-size: 0.8125rem;
+  font-weight: 600;
+  color: var(--gray-400);
+  transition: all var(--transition-normal);
+}
+
+.workflow-step__marker svg {
+  width: 16px;
+  height: 16px;
+  color: white;
+}
+
+.workflow-step--active .workflow-step__marker {
+  background: linear-gradient(135deg, var(--primary-500), var(--purple-500));
+  border-color: transparent;
+  color: white;
+  box-shadow: 0 0 16px rgba(37, 99, 235, 0.45);
+}
+
+.workflow-step--completed .workflow-step__marker {
+  background: var(--success-400);
+  border-color: var(--success-400);
+}
+
+.workflow-step__label {
+  font-size: 0.75rem;
+  font-weight: 500;
+  color: var(--gray-500);
+}
+
+.workflow-step--active .workflow-step__label {
+  color: var(--primary-600);
+}
+
+.workflow-step--completed .workflow-step__label {
+  color: var(--success-500);
+}
+
+.workflow-phase__current {
+  font-size: 0.875rem;
+  font-weight: 500;
+  color: var(--gray-800);
+}
+
+/* Content Layout */
+.workflow-content {
+  display: grid;
+  grid-template-columns: 1fr 320px;
+  gap: var(--space-lg);
+  min-height: 600px;
+}
+
+/* Visualization */
+.workflow-visualization {
+  background: var(--bg-glass);
+  backdrop-filter: blur(20px);
+  border-radius: var(--radius-lg);
+  border: 1px solid rgba(255, 255, 255, 0.5);
+  padding: var(--space-xl);
+  position: relative;
+  overflow: hidden;
+}
+
+.agent-network {
+  position: relative;
+  height: 100%;
+  min-height: 500px;
+}
+
+/* Agent Nodes */
+.agent-node {
+  position: absolute;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: var(--space-xs);
+  padding: var(--space-md);
+  background: rgba(255, 255, 255, 0.72);
+  backdrop-filter: blur(20px) saturate(1.2);
+  -webkit-backdrop-filter: blur(20px) saturate(1.2);
+  border-radius: var(--radius-lg);
+  border: 1px solid rgba(255, 255, 255, 0.5);
+  box-shadow: var(--shadow-glass);
+  transition: all var(--transition-fast);
+}
+
+.agent-node:hover {
+  transform: translateY(-2px);
+  box-shadow: var(--shadow-glass-hover);
+}
+
+.agent-node--orchestrator {
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background: linear-gradient(135deg, var(--primary-50), white);
+  border-color: var(--primary-200);
+  z-index: 10;
+}
+
+.agent-node--orchestrator:hover {
+  transform: translate(-50%, -50%) translateY(-2px);
+}
+
+.agent-node--diagnosis {
+  top: 15%;
+  left: 15%;
+}
+
+.agent-node--generation {
+  top: 15%;
+  right: 15%;
+}
+
+.agent-node--critic {
+  bottom: 10%;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+.agent-node--critic:hover {
+  transform: translateX(-50%) translateY(-2px);
+}
+
+.agent-node--rag {
+  right: 10%;
+  top: 50%;
+  transform: translateY(-50%);
+  background: linear-gradient(135deg, var(--purple-50), rgba(255, 255, 255, 0.8));
+  border-color: var(--purple-200);
+}
+
+.agent-node--rag:hover {
+  transform: translateY(-50%) translateY(-2px);
+}
+
+/* Node Status States */
+.agent-node--running {
+  border-color: var(--primary-400);
+  box-shadow: 0 0 24px rgba(37, 99, 235, 0.22);
+}
+
+/* 运行态 - 外圈 ping 波纹 */
+.agent-node--running::after {
+  content: '';
+  position: absolute;
+  inset: -3px;
+  border-radius: var(--radius-lg);
+  border: 1.5px solid var(--primary-400);
+  opacity: 0;
+  animation: node-ping 1.8s cubic-bezier(0, 0, 0.2, 1) infinite;
+  pointer-events: none;
+}
+
+@keyframes node-ping {
+  0% { transform: scale(1); opacity: 0.7; }
+  100% { transform: scale(1.12); opacity: 0; }
+}
+
+.agent-node--success {
+  border-color: var(--success-400);
+  box-shadow: 0 0 18px rgba(16, 185, 129, 0.15);
+}
+
+.agent-node--error {
+  border-color: #f87171;
+}
+
+/* Node Inner Elements */
+.agent-node__icon {
+  width: 40px;
+  height: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: var(--gray-100);
+  border-radius: var(--radius-md);
+  color: var(--gray-600);
+}
+
+.agent-node--orchestrator .agent-node__icon {
+  background: var(--primary-100);
+  color: var(--primary-600);
+}
+
+.agent-node--rag .agent-node__icon {
+  background: var(--purple-100);
+  color: var(--purple-600);
+}
+
+.agent-node__icon svg {
+  width: 22px;
+  height: 22px;
+}
+
+.agent-node__label {
+  font-size: 0.8125rem;
+  font-weight: 600;
+  color: var(--gray-800);
+  white-space: nowrap;
+}
+
+.agent-node__header {
+  display: flex;
+  align-items: center;
+  gap: var(--space-sm);
+}
+
+.agent-node__emoji {
+  font-size: 1.25rem;
+}
+
+.agent-node__name {
+  font-size: 0.75rem;
+  font-weight: 600;
+  color: var(--gray-800);
+  text-align: center;
+}
+
+.agent-node__action {
+  font-size: 0.6875rem;
+  color: var(--gray-500);
+  text-align: center;
+  max-width: 120px;
+}
+
+/* Status Dot */
+.status-dot {
+  width: 10px;
+  height: 10px;
+  border-radius: var(--radius-full);
+}
+
+.status-dot--idle {
+  background: var(--gray-400);
+}
+
+.status-dot--running {
+  background: var(--primary-500);
+  animation: pulse 1.5s infinite;
+}
+
+.status-dot--success {
+  background: var(--success-400);
+}
+
+.status-dot--error {
+  background: #f87171;
+}
+
+@keyframes pulse {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0.5; }
+}
+
+/* Network Lines */
+.network-lines {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  pointer-events: none;
+}
+
+.network-svg {
+  width: 100%;
+  height: 100%;
+  overflow: visible;
+}
+
+/* 连接线 - 蓝紫渐变曲线 + 发光（坐标由真实节点测量）*/
+.network-line {
+  stroke: url(#flow-grad);
+  stroke-width: 2;
+  stroke-linecap: round;
+  fill: none;
+  opacity: 0.4;
+  filter: url(#line-glow);
+  transition: opacity var(--transition-normal);
+}
+
+/* 运行态 - 连线提亮，由 GSAP MotionPath 粒子承载流动感 */
+.network-svg--active .network-line {
+  opacity: 0.85;
+}
+
+/* GSAP MotionPath 消息粒子 */
+.msg-dot {
+  fill: #ffffff;
+  opacity: 0;
+  filter: drop-shadow(0 0 5px #60a5fa) drop-shadow(0 0 9px #818cf8);
+}
+
+/* Message Particle Animation */
+.message-particle {
+  position: absolute;
+  width: 8px;
+  height: 8px;
+  background: var(--primary-500);
+  border-radius: var(--radius-full);
+  box-shadow: 0 0 10px var(--primary-400);
+}
+
+.message-particle--rag {
+  background: var(--purple-500);
+  box-shadow: 0 0 10px var(--purple-400);
+}
+
+/* Sidebar */
+.workflow-sidebar {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-md);
+}
+
+.sidebar-section {
+  background: var(--bg-glass);
+  backdrop-filter: blur(20px);
+  border-radius: var(--radius-lg);
+  border: 1px solid rgba(255, 255, 255, 0.5);
+  padding: var(--space-md);
+}
+
+/* 学习过程评估 Agent 区块（大屏内独立参与方，非编排节点） */
+.workflow-eval {
+  margin-top: var(--space-lg, 24px);
+  background: var(--bg-glass);
+  backdrop-filter: blur(20px);
+  border-radius: var(--radius-lg);
+  border: 1px solid rgba(255, 255, 255, 0.5);
+  padding: var(--space-md);
+}
+.workflow-eval__intro {
+  display: flex;
+  align-items: flex-start;
+  gap: 12px;
+  margin-bottom: var(--space-md, 16px);
+}
+.workflow-eval__icon {
+  flex-shrink: 0;
+  width: 40px;
+  height: 40px;
+  display: grid;
+  place-items: center;
+  font-size: 1.2rem;
+  border-radius: 12px;
+  background: linear-gradient(135deg, var(--primary-50), var(--purple-50));
+  border: 1px solid rgba(255, 255, 255, 0.6);
+}
+.workflow-eval__intro-text { min-width: 0; }
+.workflow-eval__title {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  flex-wrap: wrap;
+  font-size: 0.95rem;
+  font-weight: 700;
+  color: var(--gray-800);
+}
+.workflow-eval__tag {
+  font-size: 0.68rem;
+  font-weight: 700;
+  padding: 2px 9px;
+  border-radius: 999px;
+  color: var(--purple-600, #7c3aed);
+  background: var(--purple-50, #f5f3ff);
+  border: 1px solid var(--purple-100, #ede9fe);
+}
+.workflow-eval__desc {
+  margin-top: 4px;
+  font-size: 0.8rem;
+  line-height: 1.6;
+  color: var(--gray-500, #64748b);
+}
+.workflow-eval__desc strong { color: var(--primary-600, #4f46e5); }
+
+.sidebar-section h3 {
+  font-size: 0.8125rem;
+  font-weight: 600;
+  color: var(--gray-800);
+  margin-bottom: var(--space-sm);
+}
+
+.agent-status-list {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-sm);
+}
+
+/* Message Log */
+.message-log {
+  max-height: 200px;
+  overflow-y: auto;
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-sm);
+}
+
+.message-log-empty {
+  text-align: center;
+  padding: var(--space-md);
+  color: var(--gray-400);
+  font-size: 0.8125rem;
+}
+
+.message-item {
+  padding: var(--space-sm);
+  border-radius: var(--radius-sm);
+  background: var(--gray-50);
+  font-size: 0.75rem;
+}
+
+.message-item--request {
+  border-left: 2px solid var(--primary-400);
+}
+
+.message-item--response {
+  border-left: 2px solid var(--success-400);
+}
+
+.message-item--error {
+  border-left: 2px solid #f87171;
+}
+
+.message-item__header {
+  display: flex;
+  align-items: center;
+  gap: var(--space-xs);
+  margin-bottom: 2px;
+}
+
+.message-item__from,
+.message-item__to {
+  font-weight: 600;
+  color: var(--gray-700);
+}
+
+.message-item__arrow {
+  width: 12px;
+  height: 12px;
+  color: var(--gray-400);
+}
+
+.message-item__content {
+  color: var(--gray-600);
+}
+
+/* Workflow Stats */
+.workflow-stats {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: var(--space-sm);
+}
+
+.workflow-stat {
+  text-align: center;
+  padding: var(--space-sm);
+  background: var(--gray-50);
+  border-radius: var(--radius-md);
+}
+
+.workflow-stat__value {
+  display: block;
+  font-family: var(--font-mono);
+  font-size: 1.25rem;
+  font-weight: 700;
+  font-variant-numeric: tabular-nums;
+  background: linear-gradient(135deg, var(--primary-600), var(--purple-500));
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.workflow-stat__label {
+  display: block;
+  font-size: 0.625rem;
+  color: var(--gray-500);
+  margin-top: 2px;
+}
+/* ============ B10：实时模式目标选择 + 回放/完成提示 ============ */
+.workflow-live-bar {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: var(--space-md);
+  margin-bottom: var(--space-md);
+  padding: 10px 16px;
+  border: 1px solid var(--gray-200);
+  border-radius: var(--radius-lg);
+  background: var(--gray-50);
+}
+.workflow-live-bar__target {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  flex-wrap: wrap;
+}
+.workflow-live-bar__label { font-size: 0.78rem; font-weight: 600; color: var(--gray-600); }
+.workflow-live-bar__select {
+  padding: 6px 12px;
+  border: 1px solid var(--gray-300);
+  border-radius: var(--radius-md);
+  background: #fff;
+  font-size: 0.8rem;
+  color: var(--gray-700);
+  cursor: pointer;
+}
+.workflow-live-bar__select:disabled { cursor: not-allowed; opacity: 0.6; }
+.workflow-live-bar__replay {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 0.8rem;
+  font-weight: 600;
+  color: var(--purple-600);
+}
+.workflow-live-bar__dot {
+  width: 9px;
+  height: 9px;
+  border-radius: 50%;
+  background: var(--purple-500);
+  animation: regen-orb-pulse 1.3s ease-in-out infinite;
+}
+@keyframes regen-orb-pulse {
+  0%, 100% { box-shadow: 0 0 0 0 rgba(124, 58, 237, 0.45); transform: scale(1); }
+  50% { box-shadow: 0 0 0 7px rgba(124, 58, 237, 0); transform: scale(1.15); }
+}
+.workflow-live-bar__toast {
+  display: inline-flex;
+  align-items: center;
+  gap: 12px;
+  margin-left: auto;
+  padding: 7px 14px;
+  border-radius: var(--radius-full);
+  background: linear-gradient(135deg, rgba(16, 185, 129, 0.12), rgba(37, 99, 235, 0.12));
+  border: 1px solid var(--success-200, rgba(16, 185, 129, 0.35));
+}
+.workflow-live-bar__toast-text { font-size: 0.8rem; font-weight: 600; color: var(--success-700, #047857); }
+.workflow-live-bar__toast-btn {
+  border: none;
+  background: none;
+  padding: 2px 4px;
+  font-size: 0.8rem;
+  font-weight: 700;
+  color: var(--primary-600);
+  cursor: pointer;
+}
+.workflow-live-bar__toast-btn:hover { text-decoration: underline; }
+
+/* ============================================
+   工作流完成弹窗（done 事件触发，列出产物 + 跳转资源页）
+   ============================================ */
+.wf-result-mask {
+  position: fixed;
+  inset: 0;
+  z-index: 1000;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: var(--space-lg);
+  background: rgba(15, 23, 42, 0.42);
+  backdrop-filter: blur(6px);
+  -webkit-backdrop-filter: blur(6px);
+}
+
+.wf-result {
+  position: relative;
+  width: min(520px, 100%);
+  max-height: calc(100vh - 2 * var(--space-lg));
+  overflow-y: auto;
+  padding: var(--space-xl);
+  border-radius: var(--radius-xl, 20px);
+  background: var(--bg-card, rgba(255, 255, 255, 0.92));
+  backdrop-filter: blur(28px) saturate(1.3);
+  -webkit-backdrop-filter: blur(28px) saturate(1.3);
+  border: 1px solid rgba(255, 255, 255, 0.6);
+  box-shadow: 0 24px 64px rgba(15, 23, 42, 0.28);
+}
+
+.wf-result__close {
+  position: absolute;
+  top: 14px;
+  right: 16px;
+  width: 30px;
+  height: 30px;
+  border: none;
+  border-radius: 50%;
+  background: var(--gray-100);
+  color: var(--gray-500);
+  font-size: 1.2rem;
+  line-height: 1;
+  cursor: pointer;
+  transition: all var(--transition-fast);
+}
+.wf-result__close:hover { background: var(--gray-200); color: var(--gray-700); }
+
+.wf-result__head {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  margin-bottom: var(--space-lg);
+}
+.wf-result__badge {
+  width: 46px;
+  height: 46px;
+  flex-shrink: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.4rem;
+  font-weight: 700;
+  color: #fff;
+  border-radius: 14px;
+  background: linear-gradient(135deg, var(--success-500, #10b981), var(--primary-500));
+  box-shadow: 0 6px 18px rgba(16, 185, 129, 0.35);
+}
+/* 降级终态：橙色警示徽标（issue#4） */
+.wf-result__badge--warn {
+  background: linear-gradient(135deg, #f59e0b, #d97706);
+  box-shadow: 0 6px 18px rgba(245, 158, 11, 0.35);
+}
+.wf-result__title { font-size: 1.1rem; font-weight: 700; color: var(--gray-900); }
+.wf-result__sub { font-size: 0.8rem; color: var(--gray-500); margin-top: 3px; }
+
+/* 降级提示横幅：明确标注「审核未完全通过 / 已降级生成」（issue#4） */
+.wf-result__notice {
+  margin-bottom: var(--space-lg);
+  padding: 10px 14px;
+  border-radius: 12px;
+  font-size: 0.8rem;
+  line-height: 1.6;
+  color: #92400e;
+  background: rgba(245, 158, 11, 0.1);
+  border: 1px solid rgba(245, 158, 11, 0.28);
+}
+
+.wf-result__list {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+.wf-result__item {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  width: 100%;
+  padding: 12px 14px;
+  text-align: left;
+  border-radius: var(--radius-lg, 14px);
+  border: 1px solid var(--gray-200);
+  background: rgba(255, 255, 255, 0.6);
+  cursor: pointer;
+  transition: all var(--transition-fast);
+}
+.wf-result__item:hover {
+  border-color: rgba(var(--sb-accent, 37, 99, 235), 0.35);
+  background: var(--primary-50);
+  transform: translateX(2px);
+}
+.wf-result__item-emoji { display: inline-flex; align-items: center; flex-shrink: 0; }
+.wf-result__item-text { display: flex; flex-direction: column; gap: 2px; flex: 1; min-width: 0; }
+.wf-result__item-label { font-size: 0.9rem; font-weight: 600; color: var(--gray-800); }
+.wf-result__item-desc { font-size: 0.74rem; color: var(--gray-500); }
+.wf-result__item-arrow {
+  flex-shrink: 0;
+  font-size: 1rem;
+  font-weight: 700;
+  color: var(--gray-300);
+  transition: color var(--transition-fast);
+}
+.wf-result__item:hover .wf-result__item-arrow { color: var(--primary-600); }
+
+.wf-result__actions {
+  display: flex;
+  justify-content: flex-end;
+  gap: 10px;
+  margin-top: var(--space-lg);
+}
+.wf-result__btn {
+  padding: 10px 20px;
+  border-radius: var(--radius-md, 10px);
+  font-size: 0.85rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all var(--transition-fast);
+}
+.wf-result__btn--ghost {
+  border: 1px solid var(--gray-200);
+  background: transparent;
+  color: var(--gray-600);
+}
+.wf-result__btn--ghost:hover { background: var(--gray-100); color: var(--gray-800); }
+.wf-result__btn--primary {
+  border: none;
+  background: linear-gradient(135deg, var(--primary-500), var(--purple-500));
+  color: #fff;
+}
+.wf-result__btn--primary:hover { transform: translateY(-1px); box-shadow: 0 6px 18px rgba(37, 99, 235, 0.3); }

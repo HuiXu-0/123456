@@ -1,0 +1,414 @@
+/* ============================================
+   智学中枢 · 知识图谱可视化页
+   ============================================ */
+
+.kg-page {
+  max-width: 1200px;
+  margin: 0 auto;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+}
+
+.kg-page__header {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: var(--space-lg);
+  flex-wrap: wrap;
+  margin-bottom: var(--space-lg);
+}
+
+.kg-page__title {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: var(--gray-900);
+}
+
+.kg-page__beta {
+  font-size: 0.6rem;
+  font-weight: 700;
+  letter-spacing: 0.05em;
+  padding: 2px 8px;
+  border-radius: var(--radius-full);
+  background: linear-gradient(135deg, var(--primary-500), var(--purple-500));
+  color: #fff;
+}
+
+.kg-page__subtitle {
+  font-size: 0.875rem;
+  color: var(--gray-500);
+  margin-top: var(--space-xs);
+}
+
+/* 状态统计 */
+.kg-stats {
+  display: flex;
+  gap: var(--space-sm);
+  flex-wrap: wrap;
+}
+
+.kg-stat {
+  display: flex;
+  align-items: center;
+  gap: 7px;
+  padding: 8px 14px;
+  background: var(--bg-card);
+  backdrop-filter: blur(20px);
+  border: 1px solid rgba(255, 255, 255, 0.5);
+  border-radius: var(--radius-md);
+  box-shadow: var(--shadow-soft);
+}
+
+.kg-stat__dot {
+  width: 9px;
+  height: 9px;
+  border-radius: 50%;
+}
+
+.kg-stat__count {
+  font-family: var(--font-mono);
+  font-weight: 700;
+  color: var(--gray-900);
+}
+
+.kg-stat__label {
+  font-size: 0.75rem;
+  color: var(--gray-500);
+}
+
+/* 图卡片 */
+.kg-card {
+  flex: 1;
+  min-height: 560px;
+  display: flex;
+  flex-direction: column;
+  background: var(--bg-card);
+  backdrop-filter: blur(24px) saturate(1.2);
+  -webkit-backdrop-filter: blur(24px) saturate(1.2);
+  border: 1px solid rgba(255, 255, 255, 0.5);
+  border-radius: var(--radius-xl);
+  box-shadow: var(--shadow-glass);
+  padding: var(--space-md) var(--space-lg) var(--space-sm);
+  position: relative;
+  overflow: hidden;
+}
+
+.kg-graph {
+  flex: 1;
+  min-height: 480px;
+  width: 100%;
+}
+
+.kg-hint {
+  text-align: center;
+  font-size: 0.72rem;
+  color: var(--gray-400);
+  padding: var(--space-xs) 0;
+}
+
+/* ============ 分层视图：面包屑 / 视图切换条 ============ */
+.kg-bar {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  flex-wrap: wrap;
+  min-height: 30px;
+  margin-bottom: 2px;
+  font-size: 0.8rem;
+}
+
+.kg-back {
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  padding: 4px 12px;
+  border-radius: var(--radius-full);
+  border: 1px solid var(--line);
+  background: var(--bg-card);
+  color: var(--gray-700);
+  font-size: 0.78rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.18s ease;
+}
+.kg-back:hover {
+  border-color: rgba(var(--primary-rgb), 0.5);
+  color: var(--primary);
+  background: rgba(var(--primary-rgb), 0.06);
+}
+
+.kg-bar__sep {
+  color: var(--gray-400);
+}
+.kg-bar__crumb {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  font-weight: 700;
+}
+.kg-bar__crumb--here {
+  color: var(--gray-900);
+}
+.kg-bar__dot {
+  width: 9px;
+  height: 9px;
+  border-radius: 50%;
+}
+.kg-bar__hint {
+  color: var(--gray-400);
+  font-size: 0.74rem;
+}
+.kg-bar__cov {
+  font-family: var(--font-mono);
+  font-size: 0.72rem;
+  font-weight: 700;
+  color: var(--primary);
+  padding: 2px 8px;
+  border-radius: var(--radius-full);
+  background: rgba(var(--primary-rgb), 0.1);
+}
+
+.kg-legend {
+  display: inline-flex;
+  align-items: center;
+  gap: 12px;
+  margin-left: auto;
+}
+.kg-legend__item {
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+  font-size: 0.72rem;
+  color: var(--gray-500);
+}
+.kg-legend__dot {
+  width: 11px;
+  height: 11px;
+  border-radius: 3px;
+}
+
+/* ============ 板块快选条（第一层，名称常驻）============ */
+.kg-chips {
+  display: flex;
+  gap: 8px;
+  flex-wrap: wrap;
+  padding: 4px 0 2px;
+}
+.kg-chip {
+  display: inline-flex;
+  align-items: center;
+  gap: 7px;
+  padding: 6px 12px;
+  border-radius: var(--radius-full);
+  border: 1px solid var(--line);
+  background: var(--bg-card);
+  cursor: pointer;
+  font-size: 0.78rem;
+  color: var(--gray-700);
+  transition: all 0.18s ease;
+}
+.kg-chip:hover {
+  transform: translateY(-2px);
+  box-shadow: var(--shadow-soft);
+  border-color: rgba(var(--primary-rgb), 0.4);
+}
+.kg-chip__dot {
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+}
+.kg-chip__name {
+  font-weight: 600;
+}
+.kg-chip__count {
+  font-family: var(--font-mono);
+  font-weight: 700;
+  color: var(--gray-900);
+}
+.kg-chip__cov {
+  font-family: var(--font-mono);
+  font-size: 0.68rem;
+  font-weight: 700;
+  color: var(--primary);
+  padding: 1px 6px;
+  border-radius: var(--radius-full);
+  background: rgba(var(--primary-rgb), 0.1);
+}
+
+/* ============ 第三层：知识点详情面板 ============ */
+.kg-detail {
+  position: absolute;
+  top: 14px;
+  right: 14px;
+  bottom: 14px;
+  width: 320px;
+  max-width: calc(100% - 28px);
+  padding: 20px;
+  border-radius: var(--radius-lg);
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  overflow-y: auto;
+  z-index: 6;
+  box-shadow: var(--shadow-float);
+}
+
+.kg-detail__close {
+  position: absolute;
+  top: 10px;
+  right: 12px;
+  width: 26px;
+  height: 26px;
+  border: none;
+  border-radius: 50%;
+  background: rgba(var(--ink-rgb), 0.06);
+  color: var(--gray-600);
+  font-size: 1.1rem;
+  line-height: 1;
+  cursor: pointer;
+  transition: all 0.15s ease;
+}
+.kg-detail__close:hover {
+  background: rgba(var(--ink-rgb), 0.12);
+  color: var(--gray-900);
+}
+
+.kg-detail__tags {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  flex-wrap: wrap;
+  padding-right: 28px;
+}
+.kg-detail__code {
+  font-family: var(--font-mono);
+  font-size: 0.68rem;
+  font-weight: 700;
+  padding: 2px 8px;
+  border-radius: var(--radius-full);
+}
+.kg-detail__lv {
+  font-size: 0.68rem;
+  font-weight: 600;
+  color: var(--gray-600);
+  padding: 2px 8px;
+  border-radius: var(--radius-full);
+  background: rgba(var(--ink-rgb), 0.06);
+}
+.kg-detail__core {
+  font-size: 0.68rem;
+  font-weight: 700;
+  color: var(--accent);
+  padding: 2px 8px;
+  border-radius: var(--radius-full);
+  background: rgba(var(--accent-rgb), 0.12);
+}
+.kg-detail__done {
+  font-size: 0.68rem;
+  font-weight: 700;
+  color: #fff;
+  padding: 2px 8px;
+  border-radius: var(--radius-full);
+  background: var(--primary);
+}
+
+.kg-detail__name {
+  font-size: 1.2rem;
+  font-weight: 800;
+  color: var(--gray-900);
+  margin: 2px 0 0;
+  line-height: 1.25;
+}
+.kg-detail__board {
+  font-size: 0.78rem;
+  font-weight: 600;
+  margin: 0;
+}
+.kg-detail__desc {
+  font-size: 0.85rem;
+  line-height: 1.6;
+  color: var(--gray-600);
+  margin: 4px 0;
+}
+
+.kg-detail__block {
+  display: flex;
+  flex-direction: column;
+  gap: 7px;
+  margin-top: 2px;
+}
+.kg-detail__label {
+  font-size: 0.72rem;
+  font-weight: 700;
+  color: var(--gray-500);
+  letter-spacing: 0.02em;
+}
+.kg-detail__pres {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+}
+.kg-detail__pre {
+  font-size: 0.75rem;
+  font-weight: 600;
+  padding: 4px 10px;
+  border-radius: var(--radius-full);
+  border: 1px solid;
+  background: transparent;
+  cursor: pointer;
+  transition: all 0.15s ease;
+}
+.kg-detail__pre:hover {
+  transform: translateY(-1px);
+  filter: brightness(0.95);
+}
+.kg-detail__none {
+  font-size: 0.78rem;
+  color: var(--gray-400);
+}
+
+/* 非核心目录点：按需生成提示（置于 CTA 上方，解释点击后会发生什么） */
+.kg-detail__gen-hint {
+  margin: auto 0 0;
+  padding: 8px 10px;
+  font-size: 0.76rem;
+  line-height: 1.55;
+  color: var(--gray-600);
+  background: color-mix(in srgb, var(--primary-500) 8%, transparent);
+  border: 1px dashed rgba(var(--primary-rgb), 0.35);
+  border-radius: var(--radius-md);
+}
+.kg-detail__gen-hint strong {
+  color: var(--primary-600);
+}
+.kg-detail__gen-hint + .kg-detail__learn {
+  margin-top: 10px;
+}
+
+.kg-detail__learn {
+  margin-top: auto;
+  padding: 11px 16px;
+  border: none;
+  border-radius: var(--radius-md);
+  background: linear-gradient(135deg, var(--primary-500), var(--primary-600));
+  color: #fff;
+  font-size: 0.88rem;
+  font-weight: 700;
+  cursor: pointer;
+  box-shadow: 0 6px 18px rgba(var(--primary-rgb), 0.28);
+  transition: all 0.18s ease;
+}
+.kg-detail__learn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 10px 26px rgba(var(--primary-rgb), 0.36);
+}
+
+@media (max-width: 720px) {
+  .kg-detail {
+    width: calc(100% - 28px);
+  }
+}

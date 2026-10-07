@@ -1,0 +1,2808 @@
+{
+  "schema_version": "trusted-rag-shadow-evaluation-v2",
+  "environment": "local-offline-shadow-measurement",
+  "evaluation_window": "2026-07-22T09:46:30Z",
+  "performance_verified": false,
+  "samples": [
+    {
+      "request_id": "shadow_f82a829486c05f0e96bc7bab",
+      "query_type": "concept_explanation",
+      "latency_metrics": {
+        "total_ms": 92.1566,
+        "rag_ms": 92.1566,
+        "tool_ms": 0.0
+      },
+      "quality_metrics": {
+        "evidence_overlap": 0.142857,
+        "source_coverage": 0.75,
+        "confidence": 0.1309
+      },
+      "reliability_metrics": {
+        "timed_out": false,
+        "error_type": null,
+        "timeout_reason": null,
+        "cancellation_requested": false,
+        "worker_isolated": false,
+        "legacy_preserved": true
+      },
+      "gate_features": {
+        "quality_metrics_complete": true,
+        "latency_metrics_complete": true,
+        "reliability_metrics_complete": true,
+        "target_environment_sample": false
+      }
+    },
+    {
+      "request_id": "shadow_1ac31d6f8585ba7de3391270",
+      "query_type": "concept_explanation",
+      "latency_metrics": {
+        "total_ms": 47.0643,
+        "rag_ms": 47.0643,
+        "tool_ms": 0.0
+      },
+      "quality_metrics": {
+        "evidence_overlap": 0.0,
+        "source_coverage": 1.0,
+        "confidence": 0.1785
+      },
+      "reliability_metrics": {
+        "timed_out": false,
+        "error_type": null,
+        "timeout_reason": null,
+        "cancellation_requested": false,
+        "worker_isolated": false,
+        "legacy_preserved": true
+      },
+      "gate_features": {
+        "quality_metrics_complete": true,
+        "latency_metrics_complete": true,
+        "reliability_metrics_complete": true,
+        "target_environment_sample": false
+      }
+    },
+    {
+      "request_id": "shadow_5a49ee464f4be251982561d0",
+      "query_type": "concept_explanation",
+      "latency_metrics": {
+        "total_ms": 45.0979,
+        "rag_ms": 45.0979,
+        "tool_ms": 0.0
+      },
+      "quality_metrics": {
+        "evidence_overlap": 0.4,
+        "source_coverage": 0.6666666666666666,
+        "confidence": 0.9816
+      },
+      "reliability_metrics": {
+        "timed_out": false,
+        "error_type": null,
+        "timeout_reason": null,
+        "cancellation_requested": false,
+        "worker_isolated": false,
+        "legacy_preserved": true
+      },
+      "gate_features": {
+        "quality_metrics_complete": true,
+        "latency_metrics_complete": true,
+        "reliability_metrics_complete": true,
+        "target_environment_sample": false
+      }
+    },
+    {
+      "request_id": "shadow_8910034593a266a39e05ea9c",
+      "query_type": "concept_explanation",
+      "latency_metrics": {
+        "total_ms": 46.2216,
+        "rag_ms": 46.2216,
+        "tool_ms": 0.0
+      },
+      "quality_metrics": {
+        "evidence_overlap": 0.166667,
+        "source_coverage": 1.0,
+        "confidence": 0.9791
+      },
+      "reliability_metrics": {
+        "timed_out": false,
+        "error_type": null,
+        "timeout_reason": null,
+        "cancellation_requested": false,
+        "worker_isolated": false,
+        "legacy_preserved": true
+      },
+      "gate_features": {
+        "quality_metrics_complete": true,
+        "latency_metrics_complete": true,
+        "reliability_metrics_complete": true,
+        "target_environment_sample": false
+      }
+    },
+    {
+      "request_id": "shadow_174f0d2b34009b455b503f6c",
+      "query_type": "concept_explanation",
+      "latency_metrics": {
+        "total_ms": 43.9138,
+        "rag_ms": 43.9138,
+        "tool_ms": 0.0
+      },
+      "quality_metrics": {
+        "evidence_overlap": 0.0,
+        "source_coverage": 1.0,
+        "confidence": 0.1291
+      },
+      "reliability_metrics": {
+        "timed_out": false,
+        "error_type": null,
+        "timeout_reason": null,
+        "cancellation_requested": false,
+        "worker_isolated": false,
+        "legacy_preserved": true
+      },
+      "gate_features": {
+        "quality_metrics_complete": true,
+        "latency_metrics_complete": true,
+        "reliability_metrics_complete": true,
+        "target_environment_sample": false
+      }
+    },
+    {
+      "request_id": "shadow_09f007c1f92f106c28c36346",
+      "query_type": "concept_explanation",
+      "latency_metrics": {
+        "total_ms": 41.8972,
+        "rag_ms": 41.8972,
+        "tool_ms": 0.0
+      },
+      "quality_metrics": {
+        "evidence_overlap": 0.0,
+        "source_coverage": 1.0,
+        "confidence": 0.8956
+      },
+      "reliability_metrics": {
+        "timed_out": false,
+        "error_type": null,
+        "timeout_reason": null,
+        "cancellation_requested": false,
+        "worker_isolated": false,
+        "legacy_preserved": true
+      },
+      "gate_features": {
+        "quality_metrics_complete": true,
+        "latency_metrics_complete": true,
+        "reliability_metrics_complete": true,
+        "target_environment_sample": false
+      }
+    },
+    {
+      "request_id": "shadow_a9b83f22eb0856e00f9b100e",
+      "query_type": "concept_explanation",
+      "latency_metrics": {
+        "total_ms": 42.4265,
+        "rag_ms": 42.4265,
+        "tool_ms": 0.0
+      },
+      "quality_metrics": {
+        "evidence_overlap": 0.0,
+        "source_coverage": 1.0,
+        "confidence": 0.1133
+      },
+      "reliability_metrics": {
+        "timed_out": false,
+        "error_type": null,
+        "timeout_reason": null,
+        "cancellation_requested": false,
+        "worker_isolated": false,
+        "legacy_preserved": true
+      },
+      "gate_features": {
+        "quality_metrics_complete": true,
+        "latency_metrics_complete": true,
+        "reliability_metrics_complete": true,
+        "target_environment_sample": false
+      }
+    },
+    {
+      "request_id": "shadow_4e7d959a323c3416379e525a",
+      "query_type": "concept_explanation",
+      "latency_metrics": {
+        "total_ms": 48.4885,
+        "rag_ms": 48.4885,
+        "tool_ms": 0.0
+      },
+      "quality_metrics": {
+        "evidence_overlap": 0.0,
+        "source_coverage": 1.0,
+        "confidence": 0.1583
+      },
+      "reliability_metrics": {
+        "timed_out": false,
+        "error_type": null,
+        "timeout_reason": null,
+        "cancellation_requested": false,
+        "worker_isolated": false,
+        "legacy_preserved": true
+      },
+      "gate_features": {
+        "quality_metrics_complete": true,
+        "latency_metrics_complete": true,
+        "reliability_metrics_complete": true,
+        "target_environment_sample": false
+      }
+    },
+    {
+      "request_id": "shadow_db07394668ca9a47d3644c88",
+      "query_type": "concept_explanation",
+      "latency_metrics": {
+        "total_ms": 35.6548,
+        "rag_ms": 35.6548,
+        "tool_ms": 0.0
+      },
+      "quality_metrics": {
+        "evidence_overlap": 0.285714,
+        "source_coverage": 0.8,
+        "confidence": 0.9537
+      },
+      "reliability_metrics": {
+        "timed_out": false,
+        "error_type": null,
+        "timeout_reason": null,
+        "cancellation_requested": false,
+        "worker_isolated": false,
+        "legacy_preserved": true
+      },
+      "gate_features": {
+        "quality_metrics_complete": true,
+        "latency_metrics_complete": true,
+        "reliability_metrics_complete": true,
+        "target_environment_sample": false
+      }
+    },
+    {
+      "request_id": "shadow_06558b1ee9259180e538ee72",
+      "query_type": "concept_explanation",
+      "latency_metrics": {
+        "total_ms": 35.3217,
+        "rag_ms": 35.3217,
+        "tool_ms": 0.0
+      },
+      "quality_metrics": {
+        "evidence_overlap": 0.0,
+        "source_coverage": 1.0,
+        "confidence": 0.857
+      },
+      "reliability_metrics": {
+        "timed_out": false,
+        "error_type": null,
+        "timeout_reason": null,
+        "cancellation_requested": false,
+        "worker_isolated": false,
+        "legacy_preserved": true
+      },
+      "gate_features": {
+        "quality_metrics_complete": true,
+        "latency_metrics_complete": true,
+        "reliability_metrics_complete": true,
+        "target_environment_sample": false
+      }
+    },
+    {
+      "request_id": "shadow_3634e42cb78f83da9a90aafb",
+      "query_type": "concept_explanation",
+      "latency_metrics": {
+        "total_ms": 34.708,
+        "rag_ms": 34.708,
+        "tool_ms": 0.0
+      },
+      "quality_metrics": {
+        "evidence_overlap": 0.0,
+        "source_coverage": 0.5,
+        "confidence": 0.1352
+      },
+      "reliability_metrics": {
+        "timed_out": false,
+        "error_type": null,
+        "timeout_reason": null,
+        "cancellation_requested": false,
+        "worker_isolated": false,
+        "legacy_preserved": true
+      },
+      "gate_features": {
+        "quality_metrics_complete": true,
+        "latency_metrics_complete": true,
+        "reliability_metrics_complete": true,
+        "target_environment_sample": false
+      }
+    },
+    {
+      "request_id": "shadow_764a3416be296be82d2b29be",
+      "query_type": "concept_explanation",
+      "latency_metrics": {
+        "total_ms": 38.8245,
+        "rag_ms": 38.8245,
+        "tool_ms": 0.0
+      },
+      "quality_metrics": {
+        "evidence_overlap": 0.0,
+        "source_coverage": 1.0,
+        "confidence": 0.1481
+      },
+      "reliability_metrics": {
+        "timed_out": false,
+        "error_type": null,
+        "timeout_reason": null,
+        "cancellation_requested": false,
+        "worker_isolated": false,
+        "legacy_preserved": true
+      },
+      "gate_features": {
+        "quality_metrics_complete": true,
+        "latency_metrics_complete": true,
+        "reliability_metrics_complete": true,
+        "target_environment_sample": false
+      }
+    },
+    {
+      "request_id": "shadow_b6e20696045d0e950514dc29",
+      "query_type": "concept_explanation",
+      "latency_metrics": {
+        "total_ms": 38.0124,
+        "rag_ms": 38.0124,
+        "tool_ms": 0.0
+      },
+      "quality_metrics": {
+        "evidence_overlap": 0.4,
+        "source_coverage": 0.75,
+        "confidence": 0.8513
+      },
+      "reliability_metrics": {
+        "timed_out": false,
+        "error_type": null,
+        "timeout_reason": null,
+        "cancellation_requested": false,
+        "worker_isolated": false,
+        "legacy_preserved": true
+      },
+      "gate_features": {
+        "quality_metrics_complete": true,
+        "latency_metrics_complete": true,
+        "reliability_metrics_complete": true,
+        "target_environment_sample": false
+      }
+    },
+    {
+      "request_id": "shadow_462239f088dc593a9e1e44a4",
+      "query_type": "concept_explanation",
+      "latency_metrics": {
+        "total_ms": 39.1838,
+        "rag_ms": 39.1838,
+        "tool_ms": 0.0
+      },
+      "quality_metrics": {
+        "evidence_overlap": 0.0,
+        "source_coverage": 0.5,
+        "confidence": 0.8275
+      },
+      "reliability_metrics": {
+        "timed_out": false,
+        "error_type": null,
+        "timeout_reason": null,
+        "cancellation_requested": false,
+        "worker_isolated": false,
+        "legacy_preserved": true
+      },
+      "gate_features": {
+        "quality_metrics_complete": true,
+        "latency_metrics_complete": true,
+        "reliability_metrics_complete": true,
+        "target_environment_sample": false
+      }
+    },
+    {
+      "request_id": "shadow_5460232d60715153b5776c18",
+      "query_type": "concept_explanation",
+      "latency_metrics": {
+        "total_ms": 37.5698,
+        "rag_ms": 37.5698,
+        "tool_ms": 0.0
+      },
+      "quality_metrics": {
+        "evidence_overlap": 0.0,
+        "source_coverage": 1.0,
+        "confidence": 0.1487
+      },
+      "reliability_metrics": {
+        "timed_out": false,
+        "error_type": null,
+        "timeout_reason": null,
+        "cancellation_requested": false,
+        "worker_isolated": false,
+        "legacy_preserved": true
+      },
+      "gate_features": {
+        "quality_metrics_complete": true,
+        "latency_metrics_complete": true,
+        "reliability_metrics_complete": true,
+        "target_environment_sample": false
+      }
+    },
+    {
+      "request_id": "shadow_6ce27703bed62972c885e5d6",
+      "query_type": "concept_explanation",
+      "latency_metrics": {
+        "total_ms": 35.6565,
+        "rag_ms": 35.6565,
+        "tool_ms": 0.0
+      },
+      "quality_metrics": {
+        "evidence_overlap": 0.0,
+        "source_coverage": 0.0,
+        "confidence": 0.0
+      },
+      "reliability_metrics": {
+        "timed_out": false,
+        "error_type": null,
+        "timeout_reason": null,
+        "cancellation_requested": false,
+        "worker_isolated": false,
+        "legacy_preserved": true
+      },
+      "gate_features": {
+        "quality_metrics_complete": true,
+        "latency_metrics_complete": true,
+        "reliability_metrics_complete": true,
+        "target_environment_sample": false
+      }
+    },
+    {
+      "request_id": "shadow_3b1e02ea1a23fd8ebabb058e",
+      "query_type": "concept_explanation",
+      "latency_metrics": {
+        "total_ms": 35.3099,
+        "rag_ms": 35.3099,
+        "tool_ms": 0.0
+      },
+      "quality_metrics": {
+        "evidence_overlap": 0.0,
+        "source_coverage": 0.0,
+        "confidence": 0.0
+      },
+      "reliability_metrics": {
+        "timed_out": false,
+        "error_type": null,
+        "timeout_reason": null,
+        "cancellation_requested": false,
+        "worker_isolated": false,
+        "legacy_preserved": true
+      },
+      "gate_features": {
+        "quality_metrics_complete": true,
+        "latency_metrics_complete": true,
+        "reliability_metrics_complete": true,
+        "target_environment_sample": false
+      }
+    },
+    {
+      "request_id": "shadow_e2ed41d5de5316de39d6546a",
+      "query_type": "concept_explanation",
+      "latency_metrics": {
+        "total_ms": 35.2824,
+        "rag_ms": 35.2824,
+        "tool_ms": 0.0
+      },
+      "quality_metrics": {
+        "evidence_overlap": 0.166667,
+        "source_coverage": 0.75,
+        "confidence": 0.9423
+      },
+      "reliability_metrics": {
+        "timed_out": false,
+        "error_type": null,
+        "timeout_reason": null,
+        "cancellation_requested": false,
+        "worker_isolated": false,
+        "legacy_preserved": true
+      },
+      "gate_features": {
+        "quality_metrics_complete": true,
+        "latency_metrics_complete": true,
+        "reliability_metrics_complete": true,
+        "target_environment_sample": false
+      }
+    },
+    {
+      "request_id": "shadow_8510b34977d56f3ee1053157",
+      "query_type": "concept_explanation",
+      "latency_metrics": {
+        "total_ms": 36.3254,
+        "rag_ms": 36.3254,
+        "tool_ms": 0.0
+      },
+      "quality_metrics": {
+        "evidence_overlap": 0.0,
+        "source_coverage": 1.0,
+        "confidence": 0.1049
+      },
+      "reliability_metrics": {
+        "timed_out": false,
+        "error_type": null,
+        "timeout_reason": null,
+        "cancellation_requested": false,
+        "worker_isolated": false,
+        "legacy_preserved": true
+      },
+      "gate_features": {
+        "quality_metrics_complete": true,
+        "latency_metrics_complete": true,
+        "reliability_metrics_complete": true,
+        "target_environment_sample": false
+      }
+    },
+    {
+      "request_id": "shadow_d42046f7eb1a5ee87ae96a81",
+      "query_type": "concept_explanation",
+      "latency_metrics": {
+        "total_ms": 38.1217,
+        "rag_ms": 38.1217,
+        "tool_ms": 0.0
+      },
+      "quality_metrics": {
+        "evidence_overlap": 0.125,
+        "source_coverage": 0.8,
+        "confidence": 0.1469
+      },
+      "reliability_metrics": {
+        "timed_out": false,
+        "error_type": null,
+        "timeout_reason": null,
+        "cancellation_requested": false,
+        "worker_isolated": false,
+        "legacy_preserved": true
+      },
+      "gate_features": {
+        "quality_metrics_complete": true,
+        "latency_metrics_complete": true,
+        "reliability_metrics_complete": true,
+        "target_environment_sample": false
+      }
+    },
+    {
+      "request_id": "shadow_b41a3392167c881c6a5463dc",
+      "query_type": "operation_steps",
+      "latency_metrics": {
+        "total_ms": 38.8936,
+        "rag_ms": 38.8936,
+        "tool_ms": 0.0
+      },
+      "quality_metrics": {
+        "evidence_overlap": 0.0,
+        "source_coverage": 0.0,
+        "confidence": 0.0
+      },
+      "reliability_metrics": {
+        "timed_out": false,
+        "error_type": null,
+        "timeout_reason": null,
+        "cancellation_requested": false,
+        "worker_isolated": false,
+        "legacy_preserved": true
+      },
+      "gate_features": {
+        "quality_metrics_complete": true,
+        "latency_metrics_complete": true,
+        "reliability_metrics_complete": true,
+        "target_environment_sample": false
+      }
+    },
+    {
+      "request_id": "shadow_067de1c5a3c1048006175ff7",
+      "query_type": "operation_steps",
+      "latency_metrics": {
+        "total_ms": 37.2854,
+        "rag_ms": 37.2854,
+        "tool_ms": 0.0
+      },
+      "quality_metrics": {
+        "evidence_overlap": 0.0,
+        "source_coverage": 0.0,
+        "confidence": 0.0
+      },
+      "reliability_metrics": {
+        "timed_out": false,
+        "error_type": null,
+        "timeout_reason": null,
+        "cancellation_requested": false,
+        "worker_isolated": false,
+        "legacy_preserved": true
+      },
+      "gate_features": {
+        "quality_metrics_complete": true,
+        "latency_metrics_complete": true,
+        "reliability_metrics_complete": true,
+        "target_environment_sample": false
+      }
+    },
+    {
+      "request_id": "shadow_e09ed47a9d087fe248cc4db0",
+      "query_type": "operation_steps",
+      "latency_metrics": {
+        "total_ms": 38.2342,
+        "rag_ms": 38.2342,
+        "tool_ms": 0.0
+      },
+      "quality_metrics": {
+        "evidence_overlap": 0.166667,
+        "source_coverage": 0.6666666666666666,
+        "confidence": 0.9482
+      },
+      "reliability_metrics": {
+        "timed_out": false,
+        "error_type": null,
+        "timeout_reason": null,
+        "cancellation_requested": false,
+        "worker_isolated": false,
+        "legacy_preserved": true
+      },
+      "gate_features": {
+        "quality_metrics_complete": true,
+        "latency_metrics_complete": true,
+        "reliability_metrics_complete": true,
+        "target_environment_sample": false
+      }
+    },
+    {
+      "request_id": "shadow_a7e8431dd7f3137c432d3995",
+      "query_type": "operation_steps",
+      "latency_metrics": {
+        "total_ms": 38.6241,
+        "rag_ms": 38.6241,
+        "tool_ms": 0.0
+      },
+      "quality_metrics": {
+        "evidence_overlap": 0.0,
+        "source_coverage": 0.5,
+        "confidence": 0.1249
+      },
+      "reliability_metrics": {
+        "timed_out": false,
+        "error_type": null,
+        "timeout_reason": null,
+        "cancellation_requested": false,
+        "worker_isolated": false,
+        "legacy_preserved": true
+      },
+      "gate_features": {
+        "quality_metrics_complete": true,
+        "latency_metrics_complete": true,
+        "reliability_metrics_complete": true,
+        "target_environment_sample": false
+      }
+    },
+    {
+      "request_id": "shadow_08bb6b7c80638cfcb9e09d0e",
+      "query_type": "operation_steps",
+      "latency_metrics": {
+        "total_ms": 39.7282,
+        "rag_ms": 39.7282,
+        "tool_ms": 0.0
+      },
+      "quality_metrics": {
+        "evidence_overlap": 0.0,
+        "source_coverage": 0.0,
+        "confidence": 0.0
+      },
+      "reliability_metrics": {
+        "timed_out": false,
+        "error_type": null,
+        "timeout_reason": null,
+        "cancellation_requested": false,
+        "worker_isolated": false,
+        "legacy_preserved": true
+      },
+      "gate_features": {
+        "quality_metrics_complete": true,
+        "latency_metrics_complete": true,
+        "reliability_metrics_complete": true,
+        "target_environment_sample": false
+      }
+    },
+    {
+      "request_id": "shadow_d295c763aae0405c5266697b",
+      "query_type": "operation_steps",
+      "latency_metrics": {
+        "total_ms": 39.2874,
+        "rag_ms": 39.2874,
+        "tool_ms": 0.0
+      },
+      "quality_metrics": {
+        "evidence_overlap": 0.0,
+        "source_coverage": 0.5,
+        "confidence": 0.1035
+      },
+      "reliability_metrics": {
+        "timed_out": false,
+        "error_type": null,
+        "timeout_reason": null,
+        "cancellation_requested": false,
+        "worker_isolated": false,
+        "legacy_preserved": true
+      },
+      "gate_features": {
+        "quality_metrics_complete": true,
+        "latency_metrics_complete": true,
+        "reliability_metrics_complete": true,
+        "target_environment_sample": false
+      }
+    },
+    {
+      "request_id": "shadow_60179b1bc0f4f6c40d47fe26",
+      "query_type": "operation_steps",
+      "latency_metrics": {
+        "total_ms": 38.4153,
+        "rag_ms": 38.4153,
+        "tool_ms": 0.0
+      },
+      "quality_metrics": {
+        "evidence_overlap": 0.0,
+        "source_coverage": 0.6,
+        "confidence": 0.8346
+      },
+      "reliability_metrics": {
+        "timed_out": false,
+        "error_type": null,
+        "timeout_reason": null,
+        "cancellation_requested": false,
+        "worker_isolated": false,
+        "legacy_preserved": true
+      },
+      "gate_features": {
+        "quality_metrics_complete": true,
+        "latency_metrics_complete": true,
+        "reliability_metrics_complete": true,
+        "target_environment_sample": false
+      }
+    },
+    {
+      "request_id": "shadow_2c44cfcc4d934af064f982b7",
+      "query_type": "operation_steps",
+      "latency_metrics": {
+        "total_ms": 40.2156,
+        "rag_ms": 40.2156,
+        "tool_ms": 0.0
+      },
+      "quality_metrics": {
+        "evidence_overlap": 0.0,
+        "source_coverage": 1.0,
+        "confidence": 0.1471
+      },
+      "reliability_metrics": {
+        "timed_out": false,
+        "error_type": null,
+        "timeout_reason": null,
+        "cancellation_requested": false,
+        "worker_isolated": false,
+        "legacy_preserved": true
+      },
+      "gate_features": {
+        "quality_metrics_complete": true,
+        "latency_metrics_complete": true,
+        "reliability_metrics_complete": true,
+        "target_environment_sample": false
+      }
+    },
+    {
+      "request_id": "shadow_ef933a2ff2eb2b509a65ecec",
+      "query_type": "operation_steps",
+      "latency_metrics": {
+        "total_ms": 37.5316,
+        "rag_ms": 37.5316,
+        "tool_ms": 0.0
+      },
+      "quality_metrics": {
+        "evidence_overlap": 0.0,
+        "source_coverage": 1.0,
+        "confidence": 0.1269
+      },
+      "reliability_metrics": {
+        "timed_out": false,
+        "error_type": null,
+        "timeout_reason": null,
+        "cancellation_requested": false,
+        "worker_isolated": false,
+        "legacy_preserved": true
+      },
+      "gate_features": {
+        "quality_metrics_complete": true,
+        "latency_metrics_complete": true,
+        "reliability_metrics_complete": true,
+        "target_environment_sample": false
+      }
+    },
+    {
+      "request_id": "shadow_649371b355528cb6a67a25b4",
+      "query_type": "operation_steps",
+      "latency_metrics": {
+        "total_ms": 38.7402,
+        "rag_ms": 38.7402,
+        "tool_ms": 0.0
+      },
+      "quality_metrics": {
+        "evidence_overlap": 0.2,
+        "source_coverage": 1.0,
+        "confidence": 0.101
+      },
+      "reliability_metrics": {
+        "timed_out": false,
+        "error_type": null,
+        "timeout_reason": null,
+        "cancellation_requested": false,
+        "worker_isolated": false,
+        "legacy_preserved": true
+      },
+      "gate_features": {
+        "quality_metrics_complete": true,
+        "latency_metrics_complete": true,
+        "reliability_metrics_complete": true,
+        "target_environment_sample": false
+      }
+    },
+    {
+      "request_id": "shadow_5cb934e8b9a8c4fc88ab0973",
+      "query_type": "operation_steps",
+      "latency_metrics": {
+        "total_ms": 39.8644,
+        "rag_ms": 39.8644,
+        "tool_ms": 0.0
+      },
+      "quality_metrics": {
+        "evidence_overlap": 0.0,
+        "source_coverage": 1.0,
+        "confidence": 0.1189
+      },
+      "reliability_metrics": {
+        "timed_out": false,
+        "error_type": null,
+        "timeout_reason": null,
+        "cancellation_requested": false,
+        "worker_isolated": false,
+        "legacy_preserved": true
+      },
+      "gate_features": {
+        "quality_metrics_complete": true,
+        "latency_metrics_complete": true,
+        "reliability_metrics_complete": true,
+        "target_environment_sample": false
+      }
+    },
+    {
+      "request_id": "shadow_bb33e479ca9a686591a90e37",
+      "query_type": "operation_steps",
+      "latency_metrics": {
+        "total_ms": 39.5942,
+        "rag_ms": 39.5942,
+        "tool_ms": 0.0
+      },
+      "quality_metrics": {
+        "evidence_overlap": 0.0,
+        "source_coverage": 0.0,
+        "confidence": 0.0
+      },
+      "reliability_metrics": {
+        "timed_out": false,
+        "error_type": null,
+        "timeout_reason": null,
+        "cancellation_requested": false,
+        "worker_isolated": false,
+        "legacy_preserved": true
+      },
+      "gate_features": {
+        "quality_metrics_complete": true,
+        "latency_metrics_complete": true,
+        "reliability_metrics_complete": true,
+        "target_environment_sample": false
+      }
+    },
+    {
+      "request_id": "shadow_f12277ab43f62c9337b335a6",
+      "query_type": "operation_steps",
+      "latency_metrics": {
+        "total_ms": 36.934,
+        "rag_ms": 36.934,
+        "tool_ms": 0.0
+      },
+      "quality_metrics": {
+        "evidence_overlap": 0.5,
+        "source_coverage": 1.0,
+        "confidence": 0.1437
+      },
+      "reliability_metrics": {
+        "timed_out": false,
+        "error_type": null,
+        "timeout_reason": null,
+        "cancellation_requested": false,
+        "worker_isolated": false,
+        "legacy_preserved": true
+      },
+      "gate_features": {
+        "quality_metrics_complete": true,
+        "latency_metrics_complete": true,
+        "reliability_metrics_complete": true,
+        "target_environment_sample": false
+      }
+    },
+    {
+      "request_id": "shadow_0f941ebdefa16f8acc39ed90",
+      "query_type": "operation_steps",
+      "latency_metrics": {
+        "total_ms": 40.0429,
+        "rag_ms": 40.0429,
+        "tool_ms": 0.0
+      },
+      "quality_metrics": {
+        "evidence_overlap": 0.0,
+        "source_coverage": 0.6666666666666666,
+        "confidence": 0.1376
+      },
+      "reliability_metrics": {
+        "timed_out": false,
+        "error_type": null,
+        "timeout_reason": null,
+        "cancellation_requested": false,
+        "worker_isolated": false,
+        "legacy_preserved": true
+      },
+      "gate_features": {
+        "quality_metrics_complete": true,
+        "latency_metrics_complete": true,
+        "reliability_metrics_complete": true,
+        "target_environment_sample": false
+      }
+    },
+    {
+      "request_id": "shadow_9d632b04825ee5c0156fda65",
+      "query_type": "operation_steps",
+      "latency_metrics": {
+        "total_ms": 40.5491,
+        "rag_ms": 40.5491,
+        "tool_ms": 0.0
+      },
+      "quality_metrics": {
+        "evidence_overlap": 0.0,
+        "source_coverage": 0.5,
+        "confidence": 0.1693
+      },
+      "reliability_metrics": {
+        "timed_out": false,
+        "error_type": null,
+        "timeout_reason": null,
+        "cancellation_requested": false,
+        "worker_isolated": false,
+        "legacy_preserved": true
+      },
+      "gate_features": {
+        "quality_metrics_complete": true,
+        "latency_metrics_complete": true,
+        "reliability_metrics_complete": true,
+        "target_environment_sample": false
+      }
+    },
+    {
+      "request_id": "shadow_96e28a1927f1c1e7144554c3",
+      "query_type": "operation_steps",
+      "latency_metrics": {
+        "total_ms": 36.1278,
+        "rag_ms": 36.1278,
+        "tool_ms": 0.0
+      },
+      "quality_metrics": {
+        "evidence_overlap": 0.0,
+        "source_coverage": 1.0,
+        "confidence": 0.1489
+      },
+      "reliability_metrics": {
+        "timed_out": false,
+        "error_type": null,
+        "timeout_reason": null,
+        "cancellation_requested": false,
+        "worker_isolated": false,
+        "legacy_preserved": true
+      },
+      "gate_features": {
+        "quality_metrics_complete": true,
+        "latency_metrics_complete": true,
+        "reliability_metrics_complete": true,
+        "target_environment_sample": false
+      }
+    },
+    {
+      "request_id": "shadow_6165f3c1be0965f742944fc0",
+      "query_type": "operation_steps",
+      "latency_metrics": {
+        "total_ms": 39.824,
+        "rag_ms": 39.824,
+        "tool_ms": 0.0
+      },
+      "quality_metrics": {
+        "evidence_overlap": 0.142857,
+        "source_coverage": 0.75,
+        "confidence": 0.9394
+      },
+      "reliability_metrics": {
+        "timed_out": false,
+        "error_type": null,
+        "timeout_reason": null,
+        "cancellation_requested": false,
+        "worker_isolated": false,
+        "legacy_preserved": true
+      },
+      "gate_features": {
+        "quality_metrics_complete": true,
+        "latency_metrics_complete": true,
+        "reliability_metrics_complete": true,
+        "target_environment_sample": false
+      }
+    },
+    {
+      "request_id": "shadow_fa6dd051b40008d1ef431027",
+      "query_type": "operation_steps",
+      "latency_metrics": {
+        "total_ms": 36.5872,
+        "rag_ms": 36.5872,
+        "tool_ms": 0.0
+      },
+      "quality_metrics": {
+        "evidence_overlap": 0.25,
+        "source_coverage": 1.0,
+        "confidence": 0.9981
+      },
+      "reliability_metrics": {
+        "timed_out": false,
+        "error_type": null,
+        "timeout_reason": null,
+        "cancellation_requested": false,
+        "worker_isolated": false,
+        "legacy_preserved": true
+      },
+      "gate_features": {
+        "quality_metrics_complete": true,
+        "latency_metrics_complete": true,
+        "reliability_metrics_complete": true,
+        "target_environment_sample": false
+      }
+    },
+    {
+      "request_id": "shadow_783b4e3643a5ebf7f040b52b",
+      "query_type": "operation_steps",
+      "latency_metrics": {
+        "total_ms": 36.6037,
+        "rag_ms": 36.6037,
+        "tool_ms": 0.0
+      },
+      "quality_metrics": {
+        "evidence_overlap": 0.333333,
+        "source_coverage": 1.0,
+        "confidence": 0.991
+      },
+      "reliability_metrics": {
+        "timed_out": false,
+        "error_type": null,
+        "timeout_reason": null,
+        "cancellation_requested": false,
+        "worker_isolated": false,
+        "legacy_preserved": true
+      },
+      "gate_features": {
+        "quality_metrics_complete": true,
+        "latency_metrics_complete": true,
+        "reliability_metrics_complete": true,
+        "target_environment_sample": false
+      }
+    },
+    {
+      "request_id": "shadow_f4545ba9abed97431f104f43",
+      "query_type": "operation_steps",
+      "latency_metrics": {
+        "total_ms": 35.941,
+        "rag_ms": 35.941,
+        "tool_ms": 0.0
+      },
+      "quality_metrics": {
+        "evidence_overlap": 0.0,
+        "source_coverage": 0.6,
+        "confidence": 0.1333
+      },
+      "reliability_metrics": {
+        "timed_out": false,
+        "error_type": null,
+        "timeout_reason": null,
+        "cancellation_requested": false,
+        "worker_isolated": false,
+        "legacy_preserved": true
+      },
+      "gate_features": {
+        "quality_metrics_complete": true,
+        "latency_metrics_complete": true,
+        "reliability_metrics_complete": true,
+        "target_environment_sample": false
+      }
+    },
+    {
+      "request_id": "shadow_be48064f737b1148d83d59e7",
+      "query_type": "programming_practice",
+      "latency_metrics": {
+        "total_ms": 36.4348,
+        "rag_ms": 36.4348,
+        "tool_ms": 0.0
+      },
+      "quality_metrics": {
+        "evidence_overlap": 0.0,
+        "source_coverage": 0.6666666666666666,
+        "confidence": 0.1785
+      },
+      "reliability_metrics": {
+        "timed_out": false,
+        "error_type": null,
+        "timeout_reason": null,
+        "cancellation_requested": false,
+        "worker_isolated": false,
+        "legacy_preserved": true
+      },
+      "gate_features": {
+        "quality_metrics_complete": true,
+        "latency_metrics_complete": true,
+        "reliability_metrics_complete": true,
+        "target_environment_sample": false
+      }
+    },
+    {
+      "request_id": "shadow_768588df6d24d842a705e2d0",
+      "query_type": "programming_practice",
+      "latency_metrics": {
+        "total_ms": 36.6826,
+        "rag_ms": 36.6826,
+        "tool_ms": 0.0
+      },
+      "quality_metrics": {
+        "evidence_overlap": 0.0,
+        "source_coverage": 1.0,
+        "confidence": 0.1033
+      },
+      "reliability_metrics": {
+        "timed_out": false,
+        "error_type": null,
+        "timeout_reason": null,
+        "cancellation_requested": false,
+        "worker_isolated": false,
+        "legacy_preserved": true
+      },
+      "gate_features": {
+        "quality_metrics_complete": true,
+        "latency_metrics_complete": true,
+        "reliability_metrics_complete": true,
+        "target_environment_sample": false
+      }
+    },
+    {
+      "request_id": "shadow_42c998aa81c2fca5db1853d3",
+      "query_type": "programming_practice",
+      "latency_metrics": {
+        "total_ms": 38.8658,
+        "rag_ms": 38.8658,
+        "tool_ms": 0.0
+      },
+      "quality_metrics": {
+        "evidence_overlap": 0.0,
+        "source_coverage": 0.0,
+        "confidence": 0.0
+      },
+      "reliability_metrics": {
+        "timed_out": false,
+        "error_type": null,
+        "timeout_reason": null,
+        "cancellation_requested": false,
+        "worker_isolated": false,
+        "legacy_preserved": true
+      },
+      "gate_features": {
+        "quality_metrics_complete": true,
+        "latency_metrics_complete": true,
+        "reliability_metrics_complete": true,
+        "target_environment_sample": false
+      }
+    },
+    {
+      "request_id": "shadow_4aed7c1eb739eb9aef68edd7",
+      "query_type": "programming_practice",
+      "latency_metrics": {
+        "total_ms": 37.1687,
+        "rag_ms": 37.1687,
+        "tool_ms": 0.0
+      },
+      "quality_metrics": {
+        "evidence_overlap": 0.0,
+        "source_coverage": 0.0,
+        "confidence": 0.0
+      },
+      "reliability_metrics": {
+        "timed_out": false,
+        "error_type": null,
+        "timeout_reason": null,
+        "cancellation_requested": false,
+        "worker_isolated": false,
+        "legacy_preserved": true
+      },
+      "gate_features": {
+        "quality_metrics_complete": true,
+        "latency_metrics_complete": true,
+        "reliability_metrics_complete": true,
+        "target_environment_sample": false
+      }
+    },
+    {
+      "request_id": "shadow_a9414c1f784dce9d706f7c17",
+      "query_type": "programming_practice",
+      "latency_metrics": {
+        "total_ms": 37.9169,
+        "rag_ms": 37.9169,
+        "tool_ms": 0.0
+      },
+      "quality_metrics": {
+        "evidence_overlap": 0.0,
+        "source_coverage": 1.0,
+        "confidence": 0.0577
+      },
+      "reliability_metrics": {
+        "timed_out": false,
+        "error_type": null,
+        "timeout_reason": null,
+        "cancellation_requested": false,
+        "worker_isolated": false,
+        "legacy_preserved": true
+      },
+      "gate_features": {
+        "quality_metrics_complete": true,
+        "latency_metrics_complete": true,
+        "reliability_metrics_complete": true,
+        "target_environment_sample": false
+      }
+    },
+    {
+      "request_id": "shadow_9734e91ee362d9b83462170c",
+      "query_type": "programming_practice",
+      "latency_metrics": {
+        "total_ms": 38.3897,
+        "rag_ms": 38.3897,
+        "tool_ms": 0.0
+      },
+      "quality_metrics": {
+        "evidence_overlap": 0.0,
+        "source_coverage": 1.0,
+        "confidence": 0.1314
+      },
+      "reliability_metrics": {
+        "timed_out": false,
+        "error_type": null,
+        "timeout_reason": null,
+        "cancellation_requested": false,
+        "worker_isolated": false,
+        "legacy_preserved": true
+      },
+      "gate_features": {
+        "quality_metrics_complete": true,
+        "latency_metrics_complete": true,
+        "reliability_metrics_complete": true,
+        "target_environment_sample": false
+      }
+    },
+    {
+      "request_id": "shadow_91e15cb8d7883d70fb31c8f1",
+      "query_type": "programming_practice",
+      "latency_metrics": {
+        "total_ms": 35.2598,
+        "rag_ms": 35.2598,
+        "tool_ms": 0.0
+      },
+      "quality_metrics": {
+        "evidence_overlap": 0.2,
+        "source_coverage": 0.5,
+        "confidence": 0.9003
+      },
+      "reliability_metrics": {
+        "timed_out": false,
+        "error_type": null,
+        "timeout_reason": null,
+        "cancellation_requested": false,
+        "worker_isolated": false,
+        "legacy_preserved": true
+      },
+      "gate_features": {
+        "quality_metrics_complete": true,
+        "latency_metrics_complete": true,
+        "reliability_metrics_complete": true,
+        "target_environment_sample": false
+      }
+    },
+    {
+      "request_id": "shadow_cbcbb02315ff41807b6d64af",
+      "query_type": "programming_practice",
+      "latency_metrics": {
+        "total_ms": 37.8172,
+        "rag_ms": 37.8172,
+        "tool_ms": 0.0
+      },
+      "quality_metrics": {
+        "evidence_overlap": 0.142857,
+        "source_coverage": 1.0,
+        "confidence": 0.1376
+      },
+      "reliability_metrics": {
+        "timed_out": false,
+        "error_type": null,
+        "timeout_reason": null,
+        "cancellation_requested": false,
+        "worker_isolated": false,
+        "legacy_preserved": true
+      },
+      "gate_features": {
+        "quality_metrics_complete": true,
+        "latency_metrics_complete": true,
+        "reliability_metrics_complete": true,
+        "target_environment_sample": false
+      }
+    },
+    {
+      "request_id": "shadow_594c13fa398a9fa9963aeb44",
+      "query_type": "programming_practice",
+      "latency_metrics": {
+        "total_ms": 36.7588,
+        "rag_ms": 36.7588,
+        "tool_ms": 0.0
+      },
+      "quality_metrics": {
+        "evidence_overlap": 0.0,
+        "source_coverage": 1.0,
+        "confidence": 0.0903
+      },
+      "reliability_metrics": {
+        "timed_out": false,
+        "error_type": null,
+        "timeout_reason": null,
+        "cancellation_requested": false,
+        "worker_isolated": false,
+        "legacy_preserved": true
+      },
+      "gate_features": {
+        "quality_metrics_complete": true,
+        "latency_metrics_complete": true,
+        "reliability_metrics_complete": true,
+        "target_environment_sample": false
+      }
+    },
+    {
+      "request_id": "shadow_a2244e70d2cc38dd17a2b6b9",
+      "query_type": "programming_practice",
+      "latency_metrics": {
+        "total_ms": 38.1711,
+        "rag_ms": 38.1711,
+        "tool_ms": 0.0
+      },
+      "quality_metrics": {
+        "evidence_overlap": 0.0,
+        "source_coverage": 0.0,
+        "confidence": 0.0
+      },
+      "reliability_metrics": {
+        "timed_out": false,
+        "error_type": null,
+        "timeout_reason": null,
+        "cancellation_requested": false,
+        "worker_isolated": false,
+        "legacy_preserved": true
+      },
+      "gate_features": {
+        "quality_metrics_complete": true,
+        "latency_metrics_complete": true,
+        "reliability_metrics_complete": true,
+        "target_environment_sample": false
+      }
+    },
+    {
+      "request_id": "shadow_48206b88ffc1aeb1208d39cf",
+      "query_type": "programming_practice",
+      "latency_metrics": {
+        "total_ms": 38.4918,
+        "rag_ms": 38.4918,
+        "tool_ms": 0.0
+      },
+      "quality_metrics": {
+        "evidence_overlap": 0.0,
+        "source_coverage": 0.0,
+        "confidence": 0.0
+      },
+      "reliability_metrics": {
+        "timed_out": false,
+        "error_type": null,
+        "timeout_reason": null,
+        "cancellation_requested": false,
+        "worker_isolated": false,
+        "legacy_preserved": true
+      },
+      "gate_features": {
+        "quality_metrics_complete": true,
+        "latency_metrics_complete": true,
+        "reliability_metrics_complete": true,
+        "target_environment_sample": false
+      }
+    },
+    {
+      "request_id": "shadow_d88952c0e55f47d3e6715e5b",
+      "query_type": "programming_practice",
+      "latency_metrics": {
+        "total_ms": 41.5029,
+        "rag_ms": 41.5029,
+        "tool_ms": 0.0
+      },
+      "quality_metrics": {
+        "evidence_overlap": 0.0,
+        "source_coverage": 1.0,
+        "confidence": 0.1261
+      },
+      "reliability_metrics": {
+        "timed_out": false,
+        "error_type": null,
+        "timeout_reason": null,
+        "cancellation_requested": false,
+        "worker_isolated": false,
+        "legacy_preserved": true
+      },
+      "gate_features": {
+        "quality_metrics_complete": true,
+        "latency_metrics_complete": true,
+        "reliability_metrics_complete": true,
+        "target_environment_sample": false
+      }
+    },
+    {
+      "request_id": "shadow_70ac19530a2e55179f0461e7",
+      "query_type": "programming_practice",
+      "latency_metrics": {
+        "total_ms": 36.2653,
+        "rag_ms": 36.2653,
+        "tool_ms": 0.0
+      },
+      "quality_metrics": {
+        "evidence_overlap": 0.0,
+        "source_coverage": 1.0,
+        "confidence": 0.9093
+      },
+      "reliability_metrics": {
+        "timed_out": false,
+        "error_type": null,
+        "timeout_reason": null,
+        "cancellation_requested": false,
+        "worker_isolated": false,
+        "legacy_preserved": true
+      },
+      "gate_features": {
+        "quality_metrics_complete": true,
+        "latency_metrics_complete": true,
+        "reliability_metrics_complete": true,
+        "target_environment_sample": false
+      }
+    },
+    {
+      "request_id": "shadow_3644557b00df69710b1de8eb",
+      "query_type": "programming_practice",
+      "latency_metrics": {
+        "total_ms": 37.768,
+        "rag_ms": 37.768,
+        "tool_ms": 0.0
+      },
+      "quality_metrics": {
+        "evidence_overlap": 0.0,
+        "source_coverage": 0.0,
+        "confidence": 0.0
+      },
+      "reliability_metrics": {
+        "timed_out": false,
+        "error_type": null,
+        "timeout_reason": null,
+        "cancellation_requested": false,
+        "worker_isolated": false,
+        "legacy_preserved": true
+      },
+      "gate_features": {
+        "quality_metrics_complete": true,
+        "latency_metrics_complete": true,
+        "reliability_metrics_complete": true,
+        "target_environment_sample": false
+      }
+    },
+    {
+      "request_id": "shadow_cc6657161e98bad8426debbe",
+      "query_type": "programming_practice",
+      "latency_metrics": {
+        "total_ms": 37.8073,
+        "rag_ms": 37.8073,
+        "tool_ms": 0.0
+      },
+      "quality_metrics": {
+        "evidence_overlap": 0.0,
+        "source_coverage": 1.0,
+        "confidence": 0.1471
+      },
+      "reliability_metrics": {
+        "timed_out": false,
+        "error_type": null,
+        "timeout_reason": null,
+        "cancellation_requested": false,
+        "worker_isolated": false,
+        "legacy_preserved": true
+      },
+      "gate_features": {
+        "quality_metrics_complete": true,
+        "latency_metrics_complete": true,
+        "reliability_metrics_complete": true,
+        "target_environment_sample": false
+      }
+    },
+    {
+      "request_id": "shadow_5d2fcc26ec357b792e25fe34",
+      "query_type": "programming_practice",
+      "latency_metrics": {
+        "total_ms": 39.4156,
+        "rag_ms": 39.4156,
+        "tool_ms": 0.0
+      },
+      "quality_metrics": {
+        "evidence_overlap": 0.0,
+        "source_coverage": 1.0,
+        "confidence": 0.1022
+      },
+      "reliability_metrics": {
+        "timed_out": false,
+        "error_type": null,
+        "timeout_reason": null,
+        "cancellation_requested": false,
+        "worker_isolated": false,
+        "legacy_preserved": true
+      },
+      "gate_features": {
+        "quality_metrics_complete": true,
+        "latency_metrics_complete": true,
+        "reliability_metrics_complete": true,
+        "target_environment_sample": false
+      }
+    },
+    {
+      "request_id": "shadow_ad575025b763518dbc6f6f10",
+      "query_type": "programming_practice",
+      "latency_metrics": {
+        "total_ms": 39.4224,
+        "rag_ms": 39.4224,
+        "tool_ms": 0.0
+      },
+      "quality_metrics": {
+        "evidence_overlap": 0.0,
+        "source_coverage": 1.0,
+        "confidence": 0.1417
+      },
+      "reliability_metrics": {
+        "timed_out": false,
+        "error_type": null,
+        "timeout_reason": null,
+        "cancellation_requested": false,
+        "worker_isolated": false,
+        "legacy_preserved": true
+      },
+      "gate_features": {
+        "quality_metrics_complete": true,
+        "latency_metrics_complete": true,
+        "reliability_metrics_complete": true,
+        "target_environment_sample": false
+      }
+    },
+    {
+      "request_id": "shadow_51f50886536f468497818820",
+      "query_type": "programming_practice",
+      "latency_metrics": {
+        "total_ms": 38.1177,
+        "rag_ms": 38.1177,
+        "tool_ms": 0.0
+      },
+      "quality_metrics": {
+        "evidence_overlap": 0.0,
+        "source_coverage": 1.0,
+        "confidence": 0.122
+      },
+      "reliability_metrics": {
+        "timed_out": false,
+        "error_type": null,
+        "timeout_reason": null,
+        "cancellation_requested": false,
+        "worker_isolated": false,
+        "legacy_preserved": true
+      },
+      "gate_features": {
+        "quality_metrics_complete": true,
+        "latency_metrics_complete": true,
+        "reliability_metrics_complete": true,
+        "target_environment_sample": false
+      }
+    },
+    {
+      "request_id": "shadow_a81e92a029ed0335e720f704",
+      "query_type": "programming_practice",
+      "latency_metrics": {
+        "total_ms": 39.9477,
+        "rag_ms": 39.9477,
+        "tool_ms": 0.0
+      },
+      "quality_metrics": {
+        "evidence_overlap": 0.4,
+        "source_coverage": 0.6666666666666666,
+        "confidence": 0.9457
+      },
+      "reliability_metrics": {
+        "timed_out": false,
+        "error_type": null,
+        "timeout_reason": null,
+        "cancellation_requested": false,
+        "worker_isolated": false,
+        "legacy_preserved": true
+      },
+      "gate_features": {
+        "quality_metrics_complete": true,
+        "latency_metrics_complete": true,
+        "reliability_metrics_complete": true,
+        "target_environment_sample": false
+      }
+    },
+    {
+      "request_id": "shadow_e5472843815fe15efa215945",
+      "query_type": "programming_practice",
+      "latency_metrics": {
+        "total_ms": 37.465,
+        "rag_ms": 37.465,
+        "tool_ms": 0.0
+      },
+      "quality_metrics": {
+        "evidence_overlap": 0.0,
+        "source_coverage": 0.0,
+        "confidence": 0.0
+      },
+      "reliability_metrics": {
+        "timed_out": false,
+        "error_type": null,
+        "timeout_reason": null,
+        "cancellation_requested": false,
+        "worker_isolated": false,
+        "legacy_preserved": true
+      },
+      "gate_features": {
+        "quality_metrics_complete": true,
+        "latency_metrics_complete": true,
+        "reliability_metrics_complete": true,
+        "target_environment_sample": false
+      }
+    },
+    {
+      "request_id": "shadow_5b9bebc4b8bc76aca5f34bb7",
+      "query_type": "comprehensive_question",
+      "latency_metrics": {
+        "total_ms": 38.4072,
+        "rag_ms": 38.4072,
+        "tool_ms": 0.0
+      },
+      "quality_metrics": {
+        "evidence_overlap": 0.0,
+        "source_coverage": 1.0,
+        "confidence": 0.8117
+      },
+      "reliability_metrics": {
+        "timed_out": false,
+        "error_type": null,
+        "timeout_reason": null,
+        "cancellation_requested": false,
+        "worker_isolated": false,
+        "legacy_preserved": true
+      },
+      "gate_features": {
+        "quality_metrics_complete": true,
+        "latency_metrics_complete": true,
+        "reliability_metrics_complete": true,
+        "target_environment_sample": false
+      }
+    },
+    {
+      "request_id": "shadow_cb2808aaaeb45d138ffa27b9",
+      "query_type": "comprehensive_question",
+      "latency_metrics": {
+        "total_ms": 39.2095,
+        "rag_ms": 39.2095,
+        "tool_ms": 0.0
+      },
+      "quality_metrics": {
+        "evidence_overlap": 0.2,
+        "source_coverage": 0.5,
+        "confidence": 0.1132
+      },
+      "reliability_metrics": {
+        "timed_out": false,
+        "error_type": null,
+        "timeout_reason": null,
+        "cancellation_requested": false,
+        "worker_isolated": false,
+        "legacy_preserved": true
+      },
+      "gate_features": {
+        "quality_metrics_complete": true,
+        "latency_metrics_complete": true,
+        "reliability_metrics_complete": true,
+        "target_environment_sample": false
+      }
+    },
+    {
+      "request_id": "shadow_5910e8ff8ba88fb0d64a6504",
+      "query_type": "comprehensive_question",
+      "latency_metrics": {
+        "total_ms": 38.3223,
+        "rag_ms": 38.3223,
+        "tool_ms": 0.0
+      },
+      "quality_metrics": {
+        "evidence_overlap": 0.0,
+        "source_coverage": 0.5,
+        "confidence": 0.1097
+      },
+      "reliability_metrics": {
+        "timed_out": false,
+        "error_type": null,
+        "timeout_reason": null,
+        "cancellation_requested": false,
+        "worker_isolated": false,
+        "legacy_preserved": true
+      },
+      "gate_features": {
+        "quality_metrics_complete": true,
+        "latency_metrics_complete": true,
+        "reliability_metrics_complete": true,
+        "target_environment_sample": false
+      }
+    },
+    {
+      "request_id": "shadow_a31bcd6892bc18de7c094499",
+      "query_type": "comprehensive_question",
+      "latency_metrics": {
+        "total_ms": 36.3734,
+        "rag_ms": 36.3734,
+        "tool_ms": 0.0
+      },
+      "quality_metrics": {
+        "evidence_overlap": 0.166667,
+        "source_coverage": 1.0,
+        "confidence": 0.1785
+      },
+      "reliability_metrics": {
+        "timed_out": false,
+        "error_type": null,
+        "timeout_reason": null,
+        "cancellation_requested": false,
+        "worker_isolated": false,
+        "legacy_preserved": true
+      },
+      "gate_features": {
+        "quality_metrics_complete": true,
+        "latency_metrics_complete": true,
+        "reliability_metrics_complete": true,
+        "target_environment_sample": false
+      }
+    },
+    {
+      "request_id": "shadow_77985089bb308597e94e96c3",
+      "query_type": "comprehensive_question",
+      "latency_metrics": {
+        "total_ms": 37.3406,
+        "rag_ms": 37.3406,
+        "tool_ms": 0.0
+      },
+      "quality_metrics": {
+        "evidence_overlap": 0.0,
+        "source_coverage": 0.0,
+        "confidence": 0.0
+      },
+      "reliability_metrics": {
+        "timed_out": false,
+        "error_type": null,
+        "timeout_reason": null,
+        "cancellation_requested": false,
+        "worker_isolated": false,
+        "legacy_preserved": true
+      },
+      "gate_features": {
+        "quality_metrics_complete": true,
+        "latency_metrics_complete": true,
+        "reliability_metrics_complete": true,
+        "target_environment_sample": false
+      }
+    },
+    {
+      "request_id": "shadow_19a9da8bc71ff8e6db28edaa",
+      "query_type": "comprehensive_question",
+      "latency_metrics": {
+        "total_ms": 36.7798,
+        "rag_ms": 36.7798,
+        "tool_ms": 0.0
+      },
+      "quality_metrics": {
+        "evidence_overlap": 0.0,
+        "source_coverage": 1.0,
+        "confidence": 0.1346
+      },
+      "reliability_metrics": {
+        "timed_out": false,
+        "error_type": null,
+        "timeout_reason": null,
+        "cancellation_requested": false,
+        "worker_isolated": false,
+        "legacy_preserved": true
+      },
+      "gate_features": {
+        "quality_metrics_complete": true,
+        "latency_metrics_complete": true,
+        "reliability_metrics_complete": true,
+        "target_environment_sample": false
+      }
+    },
+    {
+      "request_id": "shadow_6c421a6fe2e0e0fee68bc442",
+      "query_type": "comprehensive_question",
+      "latency_metrics": {
+        "total_ms": 37.6226,
+        "rag_ms": 37.6226,
+        "tool_ms": 0.0
+      },
+      "quality_metrics": {
+        "evidence_overlap": 0.166667,
+        "source_coverage": 1.0,
+        "confidence": 0.1374
+      },
+      "reliability_metrics": {
+        "timed_out": false,
+        "error_type": null,
+        "timeout_reason": null,
+        "cancellation_requested": false,
+        "worker_isolated": false,
+        "legacy_preserved": true
+      },
+      "gate_features": {
+        "quality_metrics_complete": true,
+        "latency_metrics_complete": true,
+        "reliability_metrics_complete": true,
+        "target_environment_sample": false
+      }
+    },
+    {
+      "request_id": "shadow_de38a3166e17b6f3cea5545d",
+      "query_type": "comprehensive_question",
+      "latency_metrics": {
+        "total_ms": 38.2343,
+        "rag_ms": 38.2343,
+        "tool_ms": 0.0
+      },
+      "quality_metrics": {
+        "evidence_overlap": 0.4,
+        "source_coverage": 0.75,
+        "confidence": 0.9233
+      },
+      "reliability_metrics": {
+        "timed_out": false,
+        "error_type": null,
+        "timeout_reason": null,
+        "cancellation_requested": false,
+        "worker_isolated": false,
+        "legacy_preserved": true
+      },
+      "gate_features": {
+        "quality_metrics_complete": true,
+        "latency_metrics_complete": true,
+        "reliability_metrics_complete": true,
+        "target_environment_sample": false
+      }
+    },
+    {
+      "request_id": "shadow_3ea306c24919b6e312e205af",
+      "query_type": "comprehensive_question",
+      "latency_metrics": {
+        "total_ms": 37.5105,
+        "rag_ms": 37.5105,
+        "tool_ms": 0.0
+      },
+      "quality_metrics": {
+        "evidence_overlap": 0.0,
+        "source_coverage": 0.0,
+        "confidence": 0.0
+      },
+      "reliability_metrics": {
+        "timed_out": false,
+        "error_type": null,
+        "timeout_reason": null,
+        "cancellation_requested": false,
+        "worker_isolated": false,
+        "legacy_preserved": true
+      },
+      "gate_features": {
+        "quality_metrics_complete": true,
+        "latency_metrics_complete": true,
+        "reliability_metrics_complete": true,
+        "target_environment_sample": false
+      }
+    },
+    {
+      "request_id": "shadow_76dbfd8547cc6007571bb3ee",
+      "query_type": "comprehensive_question",
+      "latency_metrics": {
+        "total_ms": 36.8973,
+        "rag_ms": 36.8973,
+        "tool_ms": 0.0
+      },
+      "quality_metrics": {
+        "evidence_overlap": 0.0,
+        "source_coverage": 0.5,
+        "confidence": 0.1388
+      },
+      "reliability_metrics": {
+        "timed_out": false,
+        "error_type": null,
+        "timeout_reason": null,
+        "cancellation_requested": false,
+        "worker_isolated": false,
+        "legacy_preserved": true
+      },
+      "gate_features": {
+        "quality_metrics_complete": true,
+        "latency_metrics_complete": true,
+        "reliability_metrics_complete": true,
+        "target_environment_sample": false
+      }
+    },
+    {
+      "request_id": "shadow_2f486dca52d2452cbc15d58a",
+      "query_type": "comprehensive_question",
+      "latency_metrics": {
+        "total_ms": 36.5218,
+        "rag_ms": 36.5218,
+        "tool_ms": 0.0
+      },
+      "quality_metrics": {
+        "evidence_overlap": 0.0,
+        "source_coverage": 0.0,
+        "confidence": 0.0
+      },
+      "reliability_metrics": {
+        "timed_out": false,
+        "error_type": null,
+        "timeout_reason": null,
+        "cancellation_requested": false,
+        "worker_isolated": false,
+        "legacy_preserved": true
+      },
+      "gate_features": {
+        "quality_metrics_complete": true,
+        "latency_metrics_complete": true,
+        "reliability_metrics_complete": true,
+        "target_environment_sample": false
+      }
+    },
+    {
+      "request_id": "shadow_891a072501c622ff318de65c",
+      "query_type": "comprehensive_question",
+      "latency_metrics": {
+        "total_ms": 35.7098,
+        "rag_ms": 35.7098,
+        "tool_ms": 0.0
+      },
+      "quality_metrics": {
+        "evidence_overlap": 0.0,
+        "source_coverage": 0.0,
+        "confidence": 0.0
+      },
+      "reliability_metrics": {
+        "timed_out": false,
+        "error_type": null,
+        "timeout_reason": null,
+        "cancellation_requested": false,
+        "worker_isolated": false,
+        "legacy_preserved": true
+      },
+      "gate_features": {
+        "quality_metrics_complete": true,
+        "latency_metrics_complete": true,
+        "reliability_metrics_complete": true,
+        "target_environment_sample": false
+      }
+    },
+    {
+      "request_id": "shadow_e39b1a6e48452a62744ec69b",
+      "query_type": "comprehensive_question",
+      "latency_metrics": {
+        "total_ms": 45.0323,
+        "rag_ms": 45.0323,
+        "tool_ms": 0.0
+      },
+      "quality_metrics": {
+        "evidence_overlap": 0.0,
+        "source_coverage": 0.0,
+        "confidence": 0.0
+      },
+      "reliability_metrics": {
+        "timed_out": false,
+        "error_type": null,
+        "timeout_reason": null,
+        "cancellation_requested": false,
+        "worker_isolated": false,
+        "legacy_preserved": true
+      },
+      "gate_features": {
+        "quality_metrics_complete": true,
+        "latency_metrics_complete": true,
+        "reliability_metrics_complete": true,
+        "target_environment_sample": false
+      }
+    },
+    {
+      "request_id": "shadow_b2587069028f99dc109faeb2",
+      "query_type": "comprehensive_question",
+      "latency_metrics": {
+        "total_ms": 37.2407,
+        "rag_ms": 37.2407,
+        "tool_ms": 0.0
+      },
+      "quality_metrics": {
+        "evidence_overlap": 0.0,
+        "source_coverage": 0.0,
+        "confidence": 0.0
+      },
+      "reliability_metrics": {
+        "timed_out": false,
+        "error_type": null,
+        "timeout_reason": null,
+        "cancellation_requested": false,
+        "worker_isolated": false,
+        "legacy_preserved": true
+      },
+      "gate_features": {
+        "quality_metrics_complete": true,
+        "latency_metrics_complete": true,
+        "reliability_metrics_complete": true,
+        "target_environment_sample": false
+      }
+    },
+    {
+      "request_id": "shadow_caf1c7bf2c786a7723728e29",
+      "query_type": "comprehensive_question",
+      "latency_metrics": {
+        "total_ms": 35.5791,
+        "rag_ms": 35.5791,
+        "tool_ms": 0.0
+      },
+      "quality_metrics": {
+        "evidence_overlap": 0.2,
+        "source_coverage": 1.0,
+        "confidence": 0.0907
+      },
+      "reliability_metrics": {
+        "timed_out": false,
+        "error_type": null,
+        "timeout_reason": null,
+        "cancellation_requested": false,
+        "worker_isolated": false,
+        "legacy_preserved": true
+      },
+      "gate_features": {
+        "quality_metrics_complete": true,
+        "latency_metrics_complete": true,
+        "reliability_metrics_complete": true,
+        "target_environment_sample": false
+      }
+    },
+    {
+      "request_id": "shadow_2470d0aea7b9e711e3db40c8",
+      "query_type": "comprehensive_question",
+      "latency_metrics": {
+        "total_ms": 35.2499,
+        "rag_ms": 35.2499,
+        "tool_ms": 0.0
+      },
+      "quality_metrics": {
+        "evidence_overlap": 0.0,
+        "source_coverage": 1.0,
+        "confidence": 0.1179
+      },
+      "reliability_metrics": {
+        "timed_out": false,
+        "error_type": null,
+        "timeout_reason": null,
+        "cancellation_requested": false,
+        "worker_isolated": false,
+        "legacy_preserved": true
+      },
+      "gate_features": {
+        "quality_metrics_complete": true,
+        "latency_metrics_complete": true,
+        "reliability_metrics_complete": true,
+        "target_environment_sample": false
+      }
+    },
+    {
+      "request_id": "shadow_cbd0196e72dae2c338df3c00",
+      "query_type": "comprehensive_question",
+      "latency_metrics": {
+        "total_ms": 40.4286,
+        "rag_ms": 40.4286,
+        "tool_ms": 0.0
+      },
+      "quality_metrics": {
+        "evidence_overlap": 0.0,
+        "source_coverage": 1.0,
+        "confidence": 0.0356
+      },
+      "reliability_metrics": {
+        "timed_out": false,
+        "error_type": null,
+        "timeout_reason": null,
+        "cancellation_requested": false,
+        "worker_isolated": false,
+        "legacy_preserved": true
+      },
+      "gate_features": {
+        "quality_metrics_complete": true,
+        "latency_metrics_complete": true,
+        "reliability_metrics_complete": true,
+        "target_environment_sample": false
+      }
+    },
+    {
+      "request_id": "shadow_eec6f5a9eac3d9ce9f226998",
+      "query_type": "comprehensive_question",
+      "latency_metrics": {
+        "total_ms": 34.6611,
+        "rag_ms": 34.6611,
+        "tool_ms": 0.0
+      },
+      "quality_metrics": {
+        "evidence_overlap": 0.25,
+        "source_coverage": 1.0,
+        "confidence": 0.0838
+      },
+      "reliability_metrics": {
+        "timed_out": false,
+        "error_type": null,
+        "timeout_reason": null,
+        "cancellation_requested": false,
+        "worker_isolated": false,
+        "legacy_preserved": true
+      },
+      "gate_features": {
+        "quality_metrics_complete": true,
+        "latency_metrics_complete": true,
+        "reliability_metrics_complete": true,
+        "target_environment_sample": false
+      }
+    },
+    {
+      "request_id": "shadow_145f265f793bceaf94e45354",
+      "query_type": "comprehensive_question",
+      "latency_metrics": {
+        "total_ms": 36.5271,
+        "rag_ms": 36.5271,
+        "tool_ms": 0.0
+      },
+      "quality_metrics": {
+        "evidence_overlap": 0.0,
+        "source_coverage": 1.0,
+        "confidence": 0.1378
+      },
+      "reliability_metrics": {
+        "timed_out": false,
+        "error_type": null,
+        "timeout_reason": null,
+        "cancellation_requested": false,
+        "worker_isolated": false,
+        "legacy_preserved": true
+      },
+      "gate_features": {
+        "quality_metrics_complete": true,
+        "latency_metrics_complete": true,
+        "reliability_metrics_complete": true,
+        "target_environment_sample": false
+      }
+    },
+    {
+      "request_id": "shadow_feb5217e607da5bc645ebf6b",
+      "query_type": "comprehensive_question",
+      "latency_metrics": {
+        "total_ms": 34.7075,
+        "rag_ms": 34.7075,
+        "tool_ms": 0.0
+      },
+      "quality_metrics": {
+        "evidence_overlap": 0.0,
+        "source_coverage": 1.0,
+        "confidence": 0.1457
+      },
+      "reliability_metrics": {
+        "timed_out": false,
+        "error_type": null,
+        "timeout_reason": null,
+        "cancellation_requested": false,
+        "worker_isolated": false,
+        "legacy_preserved": true
+      },
+      "gate_features": {
+        "quality_metrics_complete": true,
+        "latency_metrics_complete": true,
+        "reliability_metrics_complete": true,
+        "target_environment_sample": false
+      }
+    },
+    {
+      "request_id": "shadow_ceb5b403ed6e6b9a2b6143eb",
+      "query_type": "method_comparison",
+      "latency_metrics": {
+        "total_ms": 37.2396,
+        "rag_ms": 37.2396,
+        "tool_ms": 0.0
+      },
+      "quality_metrics": {
+        "evidence_overlap": 0.0,
+        "source_coverage": 1.0,
+        "confidence": 0.1291
+      },
+      "reliability_metrics": {
+        "timed_out": false,
+        "error_type": null,
+        "timeout_reason": null,
+        "cancellation_requested": false,
+        "worker_isolated": false,
+        "legacy_preserved": true
+      },
+      "gate_features": {
+        "quality_metrics_complete": true,
+        "latency_metrics_complete": true,
+        "reliability_metrics_complete": true,
+        "target_environment_sample": false
+      }
+    },
+    {
+      "request_id": "shadow_0632b9b3ed93dce3fcb76002",
+      "query_type": "method_comparison",
+      "latency_metrics": {
+        "total_ms": 37.3754,
+        "rag_ms": 37.3754,
+        "tool_ms": 0.0
+      },
+      "quality_metrics": {
+        "evidence_overlap": 0.0,
+        "source_coverage": 1.0,
+        "confidence": 0.1133
+      },
+      "reliability_metrics": {
+        "timed_out": false,
+        "error_type": null,
+        "timeout_reason": null,
+        "cancellation_requested": false,
+        "worker_isolated": false,
+        "legacy_preserved": true
+      },
+      "gate_features": {
+        "quality_metrics_complete": true,
+        "latency_metrics_complete": true,
+        "reliability_metrics_complete": true,
+        "target_environment_sample": false
+      }
+    },
+    {
+      "request_id": "shadow_7264fac12fcfba40a6f842b8",
+      "query_type": "method_comparison",
+      "latency_metrics": {
+        "total_ms": 39.2179,
+        "rag_ms": 39.2179,
+        "tool_ms": 0.0
+      },
+      "quality_metrics": {
+        "evidence_overlap": 0.0,
+        "source_coverage": 1.0,
+        "confidence": 0.1583
+      },
+      "reliability_metrics": {
+        "timed_out": false,
+        "error_type": null,
+        "timeout_reason": null,
+        "cancellation_requested": false,
+        "worker_isolated": false,
+        "legacy_preserved": true
+      },
+      "gate_features": {
+        "quality_metrics_complete": true,
+        "latency_metrics_complete": true,
+        "reliability_metrics_complete": true,
+        "target_environment_sample": false
+      }
+    },
+    {
+      "request_id": "shadow_eb4aefea60cb70ea136e88e1",
+      "query_type": "method_comparison",
+      "latency_metrics": {
+        "total_ms": 36.8694,
+        "rag_ms": 36.8694,
+        "tool_ms": 0.0
+      },
+      "quality_metrics": {
+        "evidence_overlap": 0.125,
+        "source_coverage": 0.8,
+        "confidence": 0.1469
+      },
+      "reliability_metrics": {
+        "timed_out": false,
+        "error_type": null,
+        "timeout_reason": null,
+        "cancellation_requested": false,
+        "worker_isolated": false,
+        "legacy_preserved": true
+      },
+      "gate_features": {
+        "quality_metrics_complete": true,
+        "latency_metrics_complete": true,
+        "reliability_metrics_complete": true,
+        "target_environment_sample": false
+      }
+    },
+    {
+      "request_id": "shadow_4fd5ea519ab2e0c95f2b94d2",
+      "query_type": "method_comparison",
+      "latency_metrics": {
+        "total_ms": 35.8565,
+        "rag_ms": 35.8565,
+        "tool_ms": 0.0
+      },
+      "quality_metrics": {
+        "evidence_overlap": 0.2,
+        "source_coverage": 1.0,
+        "confidence": 0.101
+      },
+      "reliability_metrics": {
+        "timed_out": false,
+        "error_type": null,
+        "timeout_reason": null,
+        "cancellation_requested": false,
+        "worker_isolated": false,
+        "legacy_preserved": true
+      },
+      "gate_features": {
+        "quality_metrics_complete": true,
+        "latency_metrics_complete": true,
+        "reliability_metrics_complete": true,
+        "target_environment_sample": false
+      }
+    },
+    {
+      "request_id": "shadow_ab15e3f067b6c32219054ced",
+      "query_type": "method_comparison",
+      "latency_metrics": {
+        "total_ms": 37.2708,
+        "rag_ms": 37.2708,
+        "tool_ms": 0.0
+      },
+      "quality_metrics": {
+        "evidence_overlap": 0.0,
+        "source_coverage": 1.0,
+        "confidence": 0.1189
+      },
+      "reliability_metrics": {
+        "timed_out": false,
+        "error_type": null,
+        "timeout_reason": null,
+        "cancellation_requested": false,
+        "worker_isolated": false,
+        "legacy_preserved": true
+      },
+      "gate_features": {
+        "quality_metrics_complete": true,
+        "latency_metrics_complete": true,
+        "reliability_metrics_complete": true,
+        "target_environment_sample": false
+      }
+    },
+    {
+      "request_id": "shadow_7f56b67256ca6fd03c5a58d1",
+      "query_type": "method_comparison",
+      "latency_metrics": {
+        "total_ms": 36.2196,
+        "rag_ms": 36.2196,
+        "tool_ms": 0.0
+      },
+      "quality_metrics": {
+        "evidence_overlap": 0.0,
+        "source_coverage": 0.0,
+        "confidence": 0.0
+      },
+      "reliability_metrics": {
+        "timed_out": false,
+        "error_type": null,
+        "timeout_reason": null,
+        "cancellation_requested": false,
+        "worker_isolated": false,
+        "legacy_preserved": true
+      },
+      "gate_features": {
+        "quality_metrics_complete": true,
+        "latency_metrics_complete": true,
+        "reliability_metrics_complete": true,
+        "target_environment_sample": false
+      }
+    },
+    {
+      "request_id": "shadow_6db8794812b07637aecfba5a",
+      "query_type": "method_comparison",
+      "latency_metrics": {
+        "total_ms": 36.758,
+        "rag_ms": 36.758,
+        "tool_ms": 0.0
+      },
+      "quality_metrics": {
+        "evidence_overlap": 0.5,
+        "source_coverage": 1.0,
+        "confidence": 0.1437
+      },
+      "reliability_metrics": {
+        "timed_out": false,
+        "error_type": null,
+        "timeout_reason": null,
+        "cancellation_requested": false,
+        "worker_isolated": false,
+        "legacy_preserved": true
+      },
+      "gate_features": {
+        "quality_metrics_complete": true,
+        "latency_metrics_complete": true,
+        "reliability_metrics_complete": true,
+        "target_environment_sample": false
+      }
+    },
+    {
+      "request_id": "shadow_c0d10dbd870c2ad576e38afa",
+      "query_type": "method_comparison",
+      "latency_metrics": {
+        "total_ms": 37.9368,
+        "rag_ms": 37.9368,
+        "tool_ms": 0.0
+      },
+      "quality_metrics": {
+        "evidence_overlap": 0.0,
+        "source_coverage": 0.6666666666666666,
+        "confidence": 0.1376
+      },
+      "reliability_metrics": {
+        "timed_out": false,
+        "error_type": null,
+        "timeout_reason": null,
+        "cancellation_requested": false,
+        "worker_isolated": false,
+        "legacy_preserved": true
+      },
+      "gate_features": {
+        "quality_metrics_complete": true,
+        "latency_metrics_complete": true,
+        "reliability_metrics_complete": true,
+        "target_environment_sample": false
+      }
+    },
+    {
+      "request_id": "shadow_bbed7262d77838a32f3c5f8e",
+      "query_type": "method_comparison",
+      "latency_metrics": {
+        "total_ms": 35.1981,
+        "rag_ms": 35.1981,
+        "tool_ms": 0.0
+      },
+      "quality_metrics": {
+        "evidence_overlap": 0.0,
+        "source_coverage": 0.5,
+        "confidence": 0.1693
+      },
+      "reliability_metrics": {
+        "timed_out": false,
+        "error_type": null,
+        "timeout_reason": null,
+        "cancellation_requested": false,
+        "worker_isolated": false,
+        "legacy_preserved": true
+      },
+      "gate_features": {
+        "quality_metrics_complete": true,
+        "latency_metrics_complete": true,
+        "reliability_metrics_complete": true,
+        "target_environment_sample": false
+      }
+    },
+    {
+      "request_id": "shadow_4ac8f3b45f67ae905481ed67",
+      "query_type": "method_comparison",
+      "latency_metrics": {
+        "total_ms": 35.9838,
+        "rag_ms": 35.9838,
+        "tool_ms": 0.0
+      },
+      "quality_metrics": {
+        "evidence_overlap": 0.0,
+        "source_coverage": 1.0,
+        "confidence": 0.1489
+      },
+      "reliability_metrics": {
+        "timed_out": false,
+        "error_type": null,
+        "timeout_reason": null,
+        "cancellation_requested": false,
+        "worker_isolated": false,
+        "legacy_preserved": true
+      },
+      "gate_features": {
+        "quality_metrics_complete": true,
+        "latency_metrics_complete": true,
+        "reliability_metrics_complete": true,
+        "target_environment_sample": false
+      }
+    },
+    {
+      "request_id": "shadow_b394b5c0103b2cf5853a4a17",
+      "query_type": "method_comparison",
+      "latency_metrics": {
+        "total_ms": 34.9933,
+        "rag_ms": 34.9933,
+        "tool_ms": 0.0
+      },
+      "quality_metrics": {
+        "evidence_overlap": 0.142857,
+        "source_coverage": 0.75,
+        "confidence": 0.9394
+      },
+      "reliability_metrics": {
+        "timed_out": false,
+        "error_type": null,
+        "timeout_reason": null,
+        "cancellation_requested": false,
+        "worker_isolated": false,
+        "legacy_preserved": true
+      },
+      "gate_features": {
+        "quality_metrics_complete": true,
+        "latency_metrics_complete": true,
+        "reliability_metrics_complete": true,
+        "target_environment_sample": false
+      }
+    },
+    {
+      "request_id": "shadow_16cece68f5219bd52fe016a6",
+      "query_type": "method_comparison",
+      "latency_metrics": {
+        "total_ms": 35.7821,
+        "rag_ms": 35.7821,
+        "tool_ms": 0.0
+      },
+      "quality_metrics": {
+        "evidence_overlap": 0.25,
+        "source_coverage": 1.0,
+        "confidence": 0.9981
+      },
+      "reliability_metrics": {
+        "timed_out": false,
+        "error_type": null,
+        "timeout_reason": null,
+        "cancellation_requested": false,
+        "worker_isolated": false,
+        "legacy_preserved": true
+      },
+      "gate_features": {
+        "quality_metrics_complete": true,
+        "latency_metrics_complete": true,
+        "reliability_metrics_complete": true,
+        "target_environment_sample": false
+      }
+    },
+    {
+      "request_id": "shadow_73f5015195f7851be87f4faf",
+      "query_type": "method_comparison",
+      "latency_metrics": {
+        "total_ms": 35.7256,
+        "rag_ms": 35.7256,
+        "tool_ms": 0.0
+      },
+      "quality_metrics": {
+        "evidence_overlap": 0.0,
+        "source_coverage": 0.0,
+        "confidence": 0.0
+      },
+      "reliability_metrics": {
+        "timed_out": false,
+        "error_type": null,
+        "timeout_reason": null,
+        "cancellation_requested": false,
+        "worker_isolated": false,
+        "legacy_preserved": true
+      },
+      "gate_features": {
+        "quality_metrics_complete": true,
+        "latency_metrics_complete": true,
+        "reliability_metrics_complete": true,
+        "target_environment_sample": false
+      }
+    },
+    {
+      "request_id": "shadow_7b80c0f52fd498cd1604c059",
+      "query_type": "method_comparison",
+      "latency_metrics": {
+        "total_ms": 38.806,
+        "rag_ms": 38.806,
+        "tool_ms": 0.0
+      },
+      "quality_metrics": {
+        "evidence_overlap": 0.0,
+        "source_coverage": 0.0,
+        "confidence": 0.0
+      },
+      "reliability_metrics": {
+        "timed_out": false,
+        "error_type": null,
+        "timeout_reason": null,
+        "cancellation_requested": false,
+        "worker_isolated": false,
+        "legacy_preserved": true
+      },
+      "gate_features": {
+        "quality_metrics_complete": true,
+        "latency_metrics_complete": true,
+        "reliability_metrics_complete": true,
+        "target_environment_sample": false
+      }
+    },
+    {
+      "request_id": "shadow_549d29265b4f343402aeda06",
+      "query_type": "method_comparison",
+      "latency_metrics": {
+        "total_ms": 38.4223,
+        "rag_ms": 38.4223,
+        "tool_ms": 0.0
+      },
+      "quality_metrics": {
+        "evidence_overlap": 0.0,
+        "source_coverage": 1.0,
+        "confidence": 0.0577
+      },
+      "reliability_metrics": {
+        "timed_out": false,
+        "error_type": null,
+        "timeout_reason": null,
+        "cancellation_requested": false,
+        "worker_isolated": false,
+        "legacy_preserved": true
+      },
+      "gate_features": {
+        "quality_metrics_complete": true,
+        "latency_metrics_complete": true,
+        "reliability_metrics_complete": true,
+        "target_environment_sample": false
+      }
+    },
+    {
+      "request_id": "shadow_550923655e803ab7d9d73005",
+      "query_type": "method_comparison",
+      "latency_metrics": {
+        "total_ms": 36.6972,
+        "rag_ms": 36.6972,
+        "tool_ms": 0.0
+      },
+      "quality_metrics": {
+        "evidence_overlap": 0.2,
+        "source_coverage": 0.5,
+        "confidence": 0.9003
+      },
+      "reliability_metrics": {
+        "timed_out": false,
+        "error_type": null,
+        "timeout_reason": null,
+        "cancellation_requested": false,
+        "worker_isolated": false,
+        "legacy_preserved": true
+      },
+      "gate_features": {
+        "quality_metrics_complete": true,
+        "latency_metrics_complete": true,
+        "reliability_metrics_complete": true,
+        "target_environment_sample": false
+      }
+    },
+    {
+      "request_id": "shadow_05f976c38b80a6c9082f705c",
+      "query_type": "method_comparison",
+      "latency_metrics": {
+        "total_ms": 36.5165,
+        "rag_ms": 36.5165,
+        "tool_ms": 0.0
+      },
+      "quality_metrics": {
+        "evidence_overlap": 0.0,
+        "source_coverage": 1.0,
+        "confidence": 0.0903
+      },
+      "reliability_metrics": {
+        "timed_out": false,
+        "error_type": null,
+        "timeout_reason": null,
+        "cancellation_requested": false,
+        "worker_isolated": false,
+        "legacy_preserved": true
+      },
+      "gate_features": {
+        "quality_metrics_complete": true,
+        "latency_metrics_complete": true,
+        "reliability_metrics_complete": true,
+        "target_environment_sample": false
+      }
+    },
+    {
+      "request_id": "shadow_4c8e16719bf6225d87f86d3f",
+      "query_type": "method_comparison",
+      "latency_metrics": {
+        "total_ms": 35.7204,
+        "rag_ms": 35.7204,
+        "tool_ms": 0.0
+      },
+      "quality_metrics": {
+        "evidence_overlap": 0.0,
+        "source_coverage": 0.0,
+        "confidence": 0.0
+      },
+      "reliability_metrics": {
+        "timed_out": false,
+        "error_type": null,
+        "timeout_reason": null,
+        "cancellation_requested": false,
+        "worker_isolated": false,
+        "legacy_preserved": true
+      },
+      "gate_features": {
+        "quality_metrics_complete": true,
+        "latency_metrics_complete": true,
+        "reliability_metrics_complete": true,
+        "target_environment_sample": false
+      }
+    },
+    {
+      "request_id": "shadow_bfcda3626918ce51d0575a9f",
+      "query_type": "method_comparison",
+      "latency_metrics": {
+        "total_ms": 36.1525,
+        "rag_ms": 36.1525,
+        "tool_ms": 0.0
+      },
+      "quality_metrics": {
+        "evidence_overlap": 0.0,
+        "source_coverage": 1.0,
+        "confidence": 0.1261
+      },
+      "reliability_metrics": {
+        "timed_out": false,
+        "error_type": null,
+        "timeout_reason": null,
+        "cancellation_requested": false,
+        "worker_isolated": false,
+        "legacy_preserved": true
+      },
+      "gate_features": {
+        "quality_metrics_complete": true,
+        "latency_metrics_complete": true,
+        "reliability_metrics_complete": true,
+        "target_environment_sample": false
+      }
+    }
+  ]
+}

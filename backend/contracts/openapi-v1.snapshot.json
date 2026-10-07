@@ -1,0 +1,5028 @@
+{
+  "contract": "openapi-v1",
+  "openapi": "3.1.0",
+  "operationCount": 83,
+  "operations": {
+    "DELETE /api/v1/admin/kb/documents/{doc_id}": {
+      "operationId": "delete_document_api_v1_admin_kb_documents__doc_id__delete",
+      "parameters": [
+        {
+          "in": "path",
+          "name": "doc_id",
+          "required": true,
+          "schema": {
+            "title": "Doc Id",
+            "type": "string"
+          }
+        }
+      ],
+      "responses": {
+        "200": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/UnifiedEnvelope"
+              }
+            }
+          }
+        },
+        "400": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/UnifiedEnvelope"
+              }
+            }
+          }
+        }
+      },
+      "security": [
+        {
+          "HTTPBearer": []
+        }
+      ],
+      "tags": [
+        "admin-kb"
+      ],
+      "x-zhixue-envelope": true
+    },
+    "DELETE /api/v1/document/{doc_id}": {
+      "operationId": "delete_my_document_api_v1_document__doc_id__delete",
+      "parameters": [
+        {
+          "in": "path",
+          "name": "doc_id",
+          "required": true,
+          "schema": {
+            "title": "Doc Id",
+            "type": "string"
+          }
+        }
+      ],
+      "responses": {
+        "200": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/UnifiedEnvelope"
+              }
+            }
+          }
+        },
+        "400": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/UnifiedEnvelope"
+              }
+            }
+          }
+        }
+      },
+      "security": [
+        {
+          "HTTPBearer": []
+        }
+      ],
+      "tags": [
+        "document-learning"
+      ],
+      "x-zhixue-envelope": true
+    },
+    "DELETE /api/v1/models/configs/{config_id}": {
+      "operationId": "delete_model_config_api_v1_models_configs__config_id__delete",
+      "parameters": [
+        {
+          "in": "path",
+          "name": "config_id",
+          "required": true,
+          "schema": {
+            "title": "Config Id",
+            "type": "string"
+          }
+        }
+      ],
+      "responses": {
+        "200": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/UnifiedEnvelope"
+              }
+            }
+          }
+        },
+        "400": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/UnifiedEnvelope"
+              }
+            }
+          }
+        }
+      },
+      "security": [
+        {
+          "HTTPBearer": []
+        }
+      ],
+      "tags": [
+        "models"
+      ],
+      "x-zhixue-envelope": true
+    },
+    "DELETE /api/v1/resource/history/{log_id}": {
+      "operationId": "resource_history_delete_api_v1_resource_history__log_id__delete",
+      "parameters": [
+        {
+          "in": "path",
+          "name": "log_id",
+          "required": true,
+          "schema": {
+            "title": "Log Id",
+            "type": "integer"
+          }
+        }
+      ],
+      "responses": {
+        "200": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/UnifiedEnvelope"
+              }
+            }
+          }
+        },
+        "400": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/UnifiedEnvelope"
+              }
+            }
+          }
+        }
+      },
+      "security": [
+        {
+          "HTTPBearer": []
+        }
+      ],
+      "tags": [
+        "resource-history"
+      ],
+      "x-zhixue-envelope": true
+    },
+    "GET /api/v1/admin/kb/documents": {
+      "operationId": "list_documents_api_v1_admin_kb_documents_get",
+      "parameters": [
+        {
+          "in": "query",
+          "name": "page",
+          "required": false,
+          "schema": {
+            "default": 1,
+            "minimum": 1,
+            "title": "Page",
+            "type": "integer"
+          }
+        },
+        {
+          "in": "query",
+          "name": "pageSize",
+          "required": false,
+          "schema": {
+            "default": 20,
+            "maximum": 100,
+            "minimum": 1,
+            "title": "Pagesize",
+            "type": "integer"
+          }
+        },
+        {
+          "in": "query",
+          "name": "keyword",
+          "required": false,
+          "schema": {
+            "anyOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Keyword"
+          }
+        },
+        {
+          "in": "query",
+          "name": "status",
+          "required": false,
+          "schema": {
+            "anyOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Status"
+          }
+        }
+      ],
+      "responses": {
+        "200": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/UnifiedEnvelope"
+              }
+            }
+          }
+        },
+        "400": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/UnifiedEnvelope"
+              }
+            }
+          }
+        }
+      },
+      "security": [
+        {
+          "HTTPBearer": []
+        }
+      ],
+      "tags": [
+        "admin-kb"
+      ],
+      "x-zhixue-envelope": true
+    },
+    "GET /api/v1/admin/metrics": {
+      "operationId": "get_metrics_api_v1_admin_metrics_get",
+      "responses": {
+        "200": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/UnifiedEnvelope"
+              }
+            }
+          }
+        }
+      },
+      "security": [
+        {
+          "HTTPBearer": []
+        }
+      ],
+      "tags": [
+        "admin-metrics"
+      ],
+      "x-zhixue-envelope": true
+    },
+    "GET /api/v1/admin/ping": {
+      "operationId": "admin_ping_api_v1_admin_ping_get",
+      "responses": {
+        "200": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/UnifiedEnvelope"
+              }
+            }
+          }
+        }
+      },
+      "security": [
+        {
+          "HTTPBearer": []
+        }
+      ],
+      "tags": [
+        "admin"
+      ],
+      "x-zhixue-envelope": true
+    },
+    "GET /api/v1/admin/prompts/{agent_id}": {
+      "operationId": "get_prompt_template_api_v1_admin_prompts__agent_id__get",
+      "parameters": [
+        {
+          "in": "path",
+          "name": "agent_id",
+          "required": true,
+          "schema": {
+            "title": "Agent Id",
+            "type": "string"
+          }
+        }
+      ],
+      "responses": {
+        "200": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/UnifiedEnvelope"
+              }
+            }
+          }
+        },
+        "400": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/UnifiedEnvelope"
+              }
+            }
+          }
+        }
+      },
+      "security": [
+        {
+          "HTTPBearer": []
+        }
+      ],
+      "tags": [
+        "admin-prompts"
+      ],
+      "x-zhixue-envelope": true
+    },
+    "GET /api/v1/admin/users": {
+      "operationId": "list_users_api_v1_admin_users_get",
+      "parameters": [
+        {
+          "in": "query",
+          "name": "page",
+          "required": false,
+          "schema": {
+            "default": 1,
+            "minimum": 1,
+            "title": "Page",
+            "type": "integer"
+          }
+        },
+        {
+          "in": "query",
+          "name": "pageSize",
+          "required": false,
+          "schema": {
+            "default": 20,
+            "maximum": 100,
+            "minimum": 1,
+            "title": "Pagesize",
+            "type": "integer"
+          }
+        }
+      ],
+      "responses": {
+        "200": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/UnifiedEnvelope"
+              }
+            }
+          }
+        },
+        "400": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/UnifiedEnvelope"
+              }
+            }
+          }
+        }
+      },
+      "security": [
+        {
+          "HTTPBearer": []
+        }
+      ],
+      "tags": [
+        "admin-users"
+      ],
+      "x-zhixue-envelope": true
+    },
+    "GET /api/v1/dashboard/evaluation": {
+      "operationId": "dashboard_evaluation_api_v1_dashboard_evaluation_get",
+      "responses": {
+        "200": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/UnifiedEnvelope"
+              }
+            }
+          }
+        }
+      },
+      "security": [
+        {
+          "HTTPBearer": []
+        }
+      ],
+      "tags": [
+        "dashboard"
+      ],
+      "x-zhixue-envelope": true,
+      "x-zhixue-generation-meta": true
+    },
+    "GET /api/v1/dashboard/overview": {
+      "operationId": "dashboard_overview_api_v1_dashboard_overview_get",
+      "responses": {
+        "200": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/UnifiedEnvelope"
+              }
+            }
+          }
+        }
+      },
+      "security": [
+        {
+          "HTTPBearer": []
+        }
+      ],
+      "tags": [
+        "dashboard"
+      ],
+      "x-zhixue-envelope": true
+    },
+    "GET /api/v1/document/list": {
+      "operationId": "list_my_documents_api_v1_document_list_get",
+      "responses": {
+        "200": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/UnifiedEnvelope"
+              }
+            }
+          }
+        }
+      },
+      "security": [
+        {
+          "HTTPBearer": []
+        }
+      ],
+      "tags": [
+        "document-learning"
+      ],
+      "x-zhixue-envelope": true
+    },
+    "GET /api/v1/document/{doc_id}": {
+      "operationId": "get_my_document_api_v1_document__doc_id__get",
+      "parameters": [
+        {
+          "in": "path",
+          "name": "doc_id",
+          "required": true,
+          "schema": {
+            "title": "Doc Id",
+            "type": "string"
+          }
+        }
+      ],
+      "responses": {
+        "200": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/UnifiedEnvelope"
+              }
+            }
+          }
+        },
+        "400": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/UnifiedEnvelope"
+              }
+            }
+          }
+        }
+      },
+      "security": [
+        {
+          "HTTPBearer": []
+        }
+      ],
+      "tags": [
+        "document-learning"
+      ],
+      "x-zhixue-envelope": true
+    },
+    "GET /api/v1/health": {
+      "operationId": "health_api_v1_health_get",
+      "responses": {
+        "200": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/UnifiedEnvelope"
+              }
+            }
+          }
+        }
+      },
+      "tags": [
+        "health"
+      ],
+      "x-zhixue-envelope": true
+    },
+    "GET /api/v1/job-market/hot": {
+      "operationId": "hot_jobs_api_v1_job_market_hot_get",
+      "responses": {
+        "200": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/UnifiedEnvelope"
+              }
+            }
+          }
+        }
+      },
+      "security": [
+        {
+          "HTTPBearer": []
+        }
+      ],
+      "tags": [
+        "job-market"
+      ],
+      "x-zhixue-envelope": true
+    },
+    "GET /api/v1/job-market/{job_id}": {
+      "operationId": "job_snapshot_api_v1_job_market__job_id__get",
+      "parameters": [
+        {
+          "in": "path",
+          "name": "job_id",
+          "required": true,
+          "schema": {
+            "title": "Job Id",
+            "type": "string"
+          }
+        }
+      ],
+      "responses": {
+        "200": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/UnifiedEnvelope"
+              }
+            }
+          }
+        },
+        "400": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/UnifiedEnvelope"
+              }
+            }
+          }
+        }
+      },
+      "security": [
+        {
+          "HTTPBearer": []
+        }
+      ],
+      "tags": [
+        "job-market"
+      ],
+      "x-zhixue-envelope": true
+    },
+    "GET /api/v1/journey": {
+      "operationId": "get_journey_api_v1_journey_get",
+      "responses": {
+        "200": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/UnifiedEnvelope"
+              }
+            }
+          }
+        }
+      },
+      "security": [
+        {
+          "HTTPBearer": []
+        }
+      ],
+      "tags": [
+        "mastery"
+      ],
+      "x-zhixue-envelope": true
+    },
+    "GET /api/v1/knowledge-graph": {
+      "operationId": "get_knowledge_graph_api_v1_knowledge_graph_get",
+      "responses": {
+        "200": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/UnifiedEnvelope"
+              }
+            }
+          }
+        }
+      },
+      "security": [
+        {
+          "HTTPBearer": []
+        }
+      ],
+      "tags": [
+        "knowledge-graph"
+      ],
+      "x-zhixue-envelope": true
+    },
+    "GET /api/v1/knowledge-system": {
+      "operationId": "get_knowledge_system_api_v1_knowledge_system_get",
+      "responses": {
+        "200": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/UnifiedEnvelope"
+              }
+            }
+          }
+        }
+      },
+      "security": [
+        {
+          "HTTPBearer": []
+        }
+      ],
+      "tags": [
+        "knowledge-system"
+      ],
+      "x-zhixue-envelope": true
+    },
+    "GET /api/v1/learning-path": {
+      "operationId": "get_learning_path_api_v1_learning_path_get",
+      "responses": {
+        "200": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/UnifiedEnvelope"
+              }
+            }
+          }
+        }
+      },
+      "security": [
+        {
+          "HTTPBearer": []
+        }
+      ],
+      "tags": [
+        "learning-path"
+      ],
+      "x-zhixue-envelope": true
+    },
+    "GET /api/v1/learning/notes/{kp_id}": {
+      "operationId": "get_note_api_v1_learning_notes__kp_id__get",
+      "parameters": [
+        {
+          "in": "path",
+          "name": "kp_id",
+          "required": true,
+          "schema": {
+            "title": "Kp Id",
+            "type": "string"
+          }
+        }
+      ],
+      "responses": {
+        "200": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/UnifiedEnvelope"
+              }
+            }
+          }
+        },
+        "400": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/UnifiedEnvelope"
+              }
+            }
+          }
+        }
+      },
+      "security": [
+        {
+          "HTTPBearer": []
+        }
+      ],
+      "tags": [
+        "learning"
+      ],
+      "x-zhixue-envelope": true
+    },
+    "GET /api/v1/learning/steps/{kp_id}": {
+      "operationId": "get_steps_api_v1_learning_steps__kp_id__get",
+      "parameters": [
+        {
+          "in": "path",
+          "name": "kp_id",
+          "required": true,
+          "schema": {
+            "title": "Kp Id",
+            "type": "string"
+          }
+        }
+      ],
+      "responses": {
+        "200": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/UnifiedEnvelope"
+              }
+            }
+          }
+        },
+        "400": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/UnifiedEnvelope"
+              }
+            }
+          }
+        }
+      },
+      "security": [
+        {
+          "HTTPBearer": []
+        }
+      ],
+      "tags": [
+        "learning"
+      ],
+      "x-zhixue-envelope": true
+    },
+    "GET /api/v1/mastery": {
+      "operationId": "get_mastery_api_v1_mastery_get",
+      "responses": {
+        "200": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/UnifiedEnvelope"
+              }
+            }
+          }
+        }
+      },
+      "security": [
+        {
+          "HTTPBearer": []
+        }
+      ],
+      "tags": [
+        "mastery"
+      ],
+      "x-zhixue-envelope": true
+    },
+    "GET /api/v1/models": {
+      "operationId": "list_models_api_v1_models_get",
+      "responses": {
+        "200": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/UnifiedEnvelope"
+              }
+            }
+          }
+        }
+      },
+      "security": [
+        {
+          "HTTPBearer": []
+        }
+      ],
+      "tags": [
+        "models"
+      ],
+      "x-zhixue-envelope": true
+    },
+    "GET /api/v1/profile/ability-portrait": {
+      "operationId": "ability_portrait_api_v1_profile_ability_portrait_get",
+      "responses": {
+        "200": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/UnifiedEnvelope"
+              }
+            }
+          }
+        }
+      },
+      "security": [
+        {
+          "HTTPBearer": []
+        }
+      ],
+      "tags": [
+        "profile"
+      ],
+      "x-zhixue-envelope": true
+    },
+    "GET /api/v1/profile/student-portrait": {
+      "operationId": "student_portrait_api_v1_profile_student_portrait_get",
+      "responses": {
+        "200": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/UnifiedEnvelope"
+              }
+            }
+          }
+        }
+      },
+      "security": [
+        {
+          "HTTPBearer": []
+        }
+      ],
+      "tags": [
+        "profile"
+      ],
+      "x-zhixue-envelope": true
+    },
+    "GET /api/v1/quiz/{kp_id}": {
+      "operationId": "get_quiz_api_v1_quiz__kp_id__get",
+      "parameters": [
+        {
+          "in": "path",
+          "name": "kp_id",
+          "required": true,
+          "schema": {
+            "title": "Kp Id",
+            "type": "string"
+          }
+        }
+      ],
+      "responses": {
+        "200": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/UnifiedEnvelope"
+              }
+            }
+          }
+        },
+        "400": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/UnifiedEnvelope"
+              }
+            }
+          }
+        }
+      },
+      "security": [
+        {
+          "HTTPBearer": []
+        }
+      ],
+      "tags": [
+        "quiz"
+      ],
+      "x-zhixue-envelope": true
+    },
+    "GET /api/v1/resource/diagram/{kp_id}": {
+      "operationId": "diagram_api_v1_resource_diagram__kp_id__get",
+      "parameters": [
+        {
+          "in": "path",
+          "name": "kp_id",
+          "required": true,
+          "schema": {
+            "title": "Kp Id",
+            "type": "string"
+          }
+        }
+      ],
+      "responses": {
+        "200": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/UnifiedEnvelope"
+              }
+            }
+          }
+        },
+        "400": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/UnifiedEnvelope"
+              }
+            }
+          }
+        }
+      },
+      "security": [
+        {
+          "HTTPBearer": []
+        }
+      ],
+      "tags": [
+        "resource"
+      ],
+      "x-zhixue-envelope": true,
+      "x-zhixue-generation-meta": true
+    },
+    "GET /api/v1/resource/external/{kp_id}": {
+      "operationId": "external_resources_api_v1_resource_external__kp_id__get",
+      "parameters": [
+        {
+          "in": "path",
+          "name": "kp_id",
+          "required": true,
+          "schema": {
+            "title": "Kp Id",
+            "type": "string"
+          }
+        }
+      ],
+      "responses": {
+        "200": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/UnifiedEnvelope"
+              }
+            }
+          }
+        },
+        "400": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/UnifiedEnvelope"
+              }
+            }
+          }
+        }
+      },
+      "security": [
+        {
+          "HTTPBearer": []
+        }
+      ],
+      "tags": [
+        "resource"
+      ],
+      "x-zhixue-envelope": true
+    },
+    "GET /api/v1/resource/history": {
+      "operationId": "resource_history_api_v1_resource_history_get",
+      "parameters": [
+        {
+          "in": "query",
+          "name": "page",
+          "required": false,
+          "schema": {
+            "default": 1,
+            "minimum": 1,
+            "title": "Page",
+            "type": "integer"
+          }
+        },
+        {
+          "in": "query",
+          "name": "pageSize",
+          "required": false,
+          "schema": {
+            "default": 20,
+            "maximum": 100,
+            "minimum": 1,
+            "title": "Pagesize",
+            "type": "integer"
+          }
+        },
+        {
+          "in": "query",
+          "name": "kind",
+          "required": false,
+          "schema": {
+            "anyOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Kind"
+          }
+        },
+        {
+          "in": "query",
+          "name": "kpId",
+          "required": false,
+          "schema": {
+            "anyOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Kpid"
+          }
+        },
+        {
+          "in": "query",
+          "name": "startTime",
+          "required": false,
+          "schema": {
+            "anyOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Starttime"
+          }
+        },
+        {
+          "in": "query",
+          "name": "endTime",
+          "required": false,
+          "schema": {
+            "anyOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Endtime"
+          }
+        }
+      ],
+      "responses": {
+        "200": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/UnifiedEnvelope"
+              }
+            }
+          }
+        },
+        "400": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/UnifiedEnvelope"
+              }
+            }
+          }
+        }
+      },
+      "security": [
+        {
+          "HTTPBearer": []
+        }
+      ],
+      "tags": [
+        "resource-history"
+      ],
+      "x-zhixue-envelope": true
+    },
+    "GET /api/v1/resource/knowledge-point/{kp_id}": {
+      "operationId": "knowledge_point_meta_api_v1_resource_knowledge_point__kp_id__get",
+      "parameters": [
+        {
+          "in": "path",
+          "name": "kp_id",
+          "required": true,
+          "schema": {
+            "title": "Kp Id",
+            "type": "string"
+          }
+        }
+      ],
+      "responses": {
+        "200": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/UnifiedEnvelope"
+              }
+            }
+          }
+        },
+        "400": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/UnifiedEnvelope"
+              }
+            }
+          }
+        }
+      },
+      "security": [
+        {
+          "HTTPBearer": []
+        }
+      ],
+      "tags": [
+        "resource"
+      ],
+      "x-zhixue-envelope": true
+    },
+    "GET /api/v1/resource/mindmap/{kp_id}": {
+      "operationId": "mindmap_api_v1_resource_mindmap__kp_id__get",
+      "parameters": [
+        {
+          "in": "path",
+          "name": "kp_id",
+          "required": true,
+          "schema": {
+            "title": "Kp Id",
+            "type": "string"
+          }
+        }
+      ],
+      "responses": {
+        "200": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/UnifiedEnvelope"
+              }
+            }
+          }
+        },
+        "400": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/UnifiedEnvelope"
+              }
+            }
+          }
+        }
+      },
+      "security": [
+        {
+          "HTTPBearer": []
+        }
+      ],
+      "tags": [
+        "resource"
+      ],
+      "x-zhixue-envelope": true,
+      "x-zhixue-generation-meta": true
+    },
+    "GET /api/v1/tasks/{task_id}": {
+      "operationId": "get_task_status_api_v1_tasks__task_id__get",
+      "parameters": [
+        {
+          "in": "path",
+          "name": "task_id",
+          "required": true,
+          "schema": {
+            "title": "Task Id",
+            "type": "string"
+          }
+        }
+      ],
+      "responses": {
+        "200": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/UnifiedEnvelope"
+              }
+            }
+          }
+        },
+        "400": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/UnifiedEnvelope"
+              }
+            }
+          }
+        }
+      },
+      "security": [
+        {
+          "HTTPBearer": []
+        }
+      ],
+      "tags": [
+        "tasks"
+      ],
+      "x-zhixue-envelope": true
+    },
+    "GET /api/v1/workflow/{workflow_id}": {
+      "operationId": "get_workflow_api_v1_workflow__workflow_id__get",
+      "parameters": [
+        {
+          "in": "path",
+          "name": "workflow_id",
+          "required": true,
+          "schema": {
+            "title": "Workflow Id",
+            "type": "string"
+          }
+        }
+      ],
+      "responses": {
+        "200": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/UnifiedEnvelope"
+              }
+            }
+          }
+        },
+        "400": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/UnifiedEnvelope"
+              }
+            }
+          }
+        }
+      },
+      "security": [
+        {
+          "HTTPBearer": []
+        }
+      ],
+      "tags": [
+        "workflow"
+      ],
+      "x-zhixue-envelope": true
+    },
+    "POST /api/v1/admin/kb/search-test": {
+      "operationId": "search_test_api_v1_admin_kb_search_test_post",
+      "requestBody": {
+        "content": {
+          "application/json": {
+            "schema": {
+              "$ref": "#/components/schemas/SearchTestRequest"
+            }
+          }
+        },
+        "required": true
+      },
+      "responses": {
+        "200": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/UnifiedEnvelope"
+              }
+            }
+          }
+        },
+        "400": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/UnifiedEnvelope"
+              }
+            }
+          }
+        }
+      },
+      "security": [
+        {
+          "HTTPBearer": []
+        }
+      ],
+      "tags": [
+        "admin-kb"
+      ],
+      "x-zhixue-envelope": true
+    },
+    "POST /api/v1/admin/kb/upload": {
+      "operationId": "upload_documents_api_v1_admin_kb_upload_post",
+      "requestBody": {
+        "content": {
+          "multipart/form-data": {
+            "schema": {
+              "$ref": "#/components/schemas/Body_upload_documents_api_v1_admin_kb_upload_post"
+            }
+          }
+        },
+        "required": true
+      },
+      "responses": {
+        "200": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/UnifiedEnvelope"
+              }
+            }
+          }
+        },
+        "400": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/UnifiedEnvelope"
+              }
+            }
+          }
+        }
+      },
+      "security": [
+        {
+          "HTTPBearer": []
+        }
+      ],
+      "tags": [
+        "admin-kb"
+      ],
+      "x-zhixue-envelope": true
+    },
+    "POST /api/v1/admin/users/{user_id}/reset-progress": {
+      "operationId": "reset_progress_api_v1_admin_users__user_id__reset_progress_post",
+      "parameters": [
+        {
+          "in": "path",
+          "name": "user_id",
+          "required": true,
+          "schema": {
+            "title": "User Id",
+            "type": "string"
+          }
+        }
+      ],
+      "responses": {
+        "200": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/UnifiedEnvelope"
+              }
+            }
+          }
+        },
+        "400": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/UnifiedEnvelope"
+              }
+            }
+          }
+        }
+      },
+      "security": [
+        {
+          "HTTPBearer": []
+        }
+      ],
+      "tags": [
+        "admin-users"
+      ],
+      "x-zhixue-envelope": true
+    },
+    "POST /api/v1/admin/users/{user_id}/toggle-active": {
+      "operationId": "toggle_active_api_v1_admin_users__user_id__toggle_active_post",
+      "parameters": [
+        {
+          "in": "path",
+          "name": "user_id",
+          "required": true,
+          "schema": {
+            "title": "User Id",
+            "type": "string"
+          }
+        }
+      ],
+      "responses": {
+        "200": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/UnifiedEnvelope"
+              }
+            }
+          }
+        },
+        "400": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/UnifiedEnvelope"
+              }
+            }
+          }
+        }
+      },
+      "security": [
+        {
+          "HTTPBearer": []
+        }
+      ],
+      "tags": [
+        "admin-users"
+      ],
+      "x-zhixue-envelope": true
+    },
+    "POST /api/v1/auth/change-password": {
+      "operationId": "change_password_api_v1_auth_change_password_post",
+      "requestBody": {
+        "content": {
+          "application/json": {
+            "schema": {
+              "$ref": "#/components/schemas/ChangePasswordRequest"
+            }
+          }
+        },
+        "required": true
+      },
+      "responses": {
+        "200": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/UnifiedEnvelope"
+              }
+            }
+          }
+        },
+        "400": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/UnifiedEnvelope"
+              }
+            }
+          }
+        }
+      },
+      "security": [
+        {
+          "HTTPBearer": []
+        }
+      ],
+      "tags": [
+        "auth"
+      ],
+      "x-zhixue-envelope": true
+    },
+    "POST /api/v1/auth/forgot-password": {
+      "operationId": "forgot_password_api_v1_auth_forgot_password_post",
+      "requestBody": {
+        "content": {
+          "application/json": {
+            "schema": {
+              "$ref": "#/components/schemas/ForgotPasswordRequest"
+            }
+          }
+        },
+        "required": true
+      },
+      "responses": {
+        "200": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/UnifiedEnvelope"
+              }
+            }
+          }
+        },
+        "400": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/UnifiedEnvelope"
+              }
+            }
+          }
+        }
+      },
+      "tags": [
+        "auth"
+      ],
+      "x-zhixue-envelope": true
+    },
+    "POST /api/v1/auth/login": {
+      "operationId": "login_api_v1_auth_login_post",
+      "requestBody": {
+        "content": {
+          "application/json": {
+            "schema": {
+              "$ref": "#/components/schemas/LoginRequest"
+            }
+          }
+        },
+        "required": true
+      },
+      "responses": {
+        "200": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/UnifiedEnvelope"
+              }
+            }
+          }
+        },
+        "400": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/UnifiedEnvelope"
+              }
+            }
+          }
+        }
+      },
+      "tags": [
+        "auth"
+      ],
+      "x-zhixue-envelope": true
+    },
+    "POST /api/v1/auth/logout": {
+      "operationId": "logout_api_v1_auth_logout_post",
+      "responses": {
+        "200": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/UnifiedEnvelope"
+              }
+            }
+          }
+        }
+      },
+      "security": [
+        {
+          "HTTPBearer": []
+        }
+      ],
+      "tags": [
+        "auth"
+      ],
+      "x-zhixue-envelope": true
+    },
+    "POST /api/v1/auth/register": {
+      "operationId": "register_api_v1_auth_register_post",
+      "requestBody": {
+        "content": {
+          "application/json": {
+            "schema": {
+              "$ref": "#/components/schemas/RegisterRequest"
+            }
+          }
+        },
+        "required": true
+      },
+      "responses": {
+        "200": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/UnifiedEnvelope"
+              }
+            }
+          }
+        },
+        "400": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/UnifiedEnvelope"
+              }
+            }
+          }
+        }
+      },
+      "tags": [
+        "auth"
+      ],
+      "x-zhixue-envelope": true
+    },
+    "POST /api/v1/document/chat": {
+      "operationId": "doc_chat_api_v1_document_chat_post",
+      "requestBody": {
+        "content": {
+          "application/json": {
+            "schema": {
+              "$ref": "#/components/schemas/DocChatRequest"
+            }
+          }
+        },
+        "required": true
+      },
+      "responses": {
+        "200": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/UnifiedEnvelope"
+              }
+            },
+            "text/event-stream": {
+              "schema": {
+                "type": "string"
+              }
+            }
+          }
+        },
+        "400": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/UnifiedEnvelope"
+              }
+            }
+          }
+        }
+      },
+      "security": [
+        {
+          "HTTPBearer": []
+        }
+      ],
+      "tags": [
+        "document-learning"
+      ],
+      "x-zhixue-envelope": true,
+      "x-zhixue-generation-meta": true
+    },
+    "POST /api/v1/document/generate/diagram": {
+      "operationId": "gen_diagram_api_v1_document_generate_diagram_post",
+      "requestBody": {
+        "content": {
+          "application/json": {
+            "schema": {
+              "$ref": "#/components/schemas/DocDiagramRequest"
+            }
+          }
+        },
+        "required": true
+      },
+      "responses": {
+        "200": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/UnifiedEnvelope"
+              }
+            }
+          }
+        },
+        "400": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/UnifiedEnvelope"
+              }
+            }
+          }
+        }
+      },
+      "security": [
+        {
+          "HTTPBearer": []
+        }
+      ],
+      "tags": [
+        "document-learning"
+      ],
+      "x-zhixue-envelope": true,
+      "x-zhixue-generation-meta": true
+    },
+    "POST /api/v1/document/generate/flashcards": {
+      "operationId": "gen_flashcards_api_v1_document_generate_flashcards_post",
+      "requestBody": {
+        "content": {
+          "application/json": {
+            "schema": {
+              "$ref": "#/components/schemas/DocFlashcardRequest"
+            }
+          }
+        },
+        "required": true
+      },
+      "responses": {
+        "200": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/UnifiedEnvelope"
+              }
+            }
+          }
+        },
+        "400": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/UnifiedEnvelope"
+              }
+            }
+          }
+        }
+      },
+      "security": [
+        {
+          "HTTPBearer": []
+        }
+      ],
+      "tags": [
+        "document-learning"
+      ],
+      "x-zhixue-envelope": true,
+      "x-zhixue-generation-meta": true
+    },
+    "POST /api/v1/document/generate/lecture": {
+      "operationId": "gen_lecture_api_v1_document_generate_lecture_post",
+      "requestBody": {
+        "content": {
+          "application/json": {
+            "schema": {
+              "$ref": "#/components/schemas/DocLectureRequest"
+            }
+          }
+        },
+        "required": true
+      },
+      "responses": {
+        "200": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/UnifiedEnvelope"
+              }
+            }
+          }
+        },
+        "400": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/UnifiedEnvelope"
+              }
+            }
+          }
+        }
+      },
+      "security": [
+        {
+          "HTTPBearer": []
+        }
+      ],
+      "tags": [
+        "document-learning"
+      ],
+      "x-zhixue-envelope": true,
+      "x-zhixue-generation-meta": true
+    },
+    "POST /api/v1/document/generate/mindmap": {
+      "operationId": "gen_mindmap_api_v1_document_generate_mindmap_post",
+      "requestBody": {
+        "content": {
+          "application/json": {
+            "schema": {
+              "$ref": "#/components/schemas/DocMindmapRequest"
+            }
+          }
+        },
+        "required": true
+      },
+      "responses": {
+        "200": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/UnifiedEnvelope"
+              }
+            }
+          }
+        },
+        "400": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/UnifiedEnvelope"
+              }
+            }
+          }
+        }
+      },
+      "security": [
+        {
+          "HTTPBearer": []
+        }
+      ],
+      "tags": [
+        "document-learning"
+      ],
+      "x-zhixue-envelope": true,
+      "x-zhixue-generation-meta": true
+    },
+    "POST /api/v1/document/generate/overview": {
+      "operationId": "gen_overview_api_v1_document_generate_overview_post",
+      "requestBody": {
+        "content": {
+          "application/json": {
+            "schema": {
+              "$ref": "#/components/schemas/DocOverviewRequest"
+            }
+          }
+        },
+        "required": true
+      },
+      "responses": {
+        "200": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/UnifiedEnvelope"
+              }
+            }
+          }
+        },
+        "400": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/UnifiedEnvelope"
+              }
+            }
+          }
+        }
+      },
+      "security": [
+        {
+          "HTTPBearer": []
+        }
+      ],
+      "tags": [
+        "document-learning"
+      ],
+      "x-zhixue-envelope": true,
+      "x-zhixue-generation-meta": true
+    },
+    "POST /api/v1/document/generate/quiz": {
+      "operationId": "gen_quiz_api_v1_document_generate_quiz_post",
+      "requestBody": {
+        "content": {
+          "application/json": {
+            "schema": {
+              "$ref": "#/components/schemas/DocQuizRequest"
+            }
+          }
+        },
+        "required": true
+      },
+      "responses": {
+        "200": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/UnifiedEnvelope"
+              }
+            }
+          }
+        },
+        "400": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/UnifiedEnvelope"
+              }
+            }
+          }
+        }
+      },
+      "security": [
+        {
+          "HTTPBearer": []
+        }
+      ],
+      "tags": [
+        "document-learning"
+      ],
+      "x-zhixue-envelope": true,
+      "x-zhixue-generation-meta": true
+    },
+    "POST /api/v1/document/generate/video": {
+      "operationId": "gen_video_api_v1_document_generate_video_post",
+      "requestBody": {
+        "content": {
+          "application/json": {
+            "schema": {
+              "$ref": "#/components/schemas/DocVideoRequest"
+            }
+          }
+        },
+        "required": true
+      },
+      "responses": {
+        "200": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/UnifiedEnvelope"
+              }
+            }
+          }
+        },
+        "400": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/UnifiedEnvelope"
+              }
+            }
+          }
+        }
+      },
+      "security": [
+        {
+          "HTTPBearer": []
+        }
+      ],
+      "tags": [
+        "document-learning"
+      ],
+      "x-zhixue-envelope": true,
+      "x-zhixue-generation-meta": true
+    },
+    "POST /api/v1/document/upload": {
+      "operationId": "upload_document_api_v1_document_upload_post",
+      "requestBody": {
+        "content": {
+          "multipart/form-data": {
+            "schema": {
+              "$ref": "#/components/schemas/Body_upload_document_api_v1_document_upload_post"
+            }
+          }
+        },
+        "required": true
+      },
+      "responses": {
+        "200": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/UnifiedEnvelope"
+              }
+            }
+          }
+        },
+        "400": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/UnifiedEnvelope"
+              }
+            }
+          }
+        }
+      },
+      "security": [
+        {
+          "HTTPBearer": []
+        }
+      ],
+      "tags": [
+        "document-learning"
+      ],
+      "x-zhixue-envelope": true
+    },
+    "POST /api/v1/job-market/match": {
+      "operationId": "job_match_api_v1_job_market_match_post",
+      "requestBody": {
+        "content": {
+          "application/json": {
+            "schema": {
+              "$ref": "#/components/schemas/JobMatchRequest"
+            }
+          }
+        },
+        "required": true
+      },
+      "responses": {
+        "200": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/UnifiedEnvelope"
+              }
+            }
+          }
+        },
+        "400": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/UnifiedEnvelope"
+              }
+            }
+          }
+        }
+      },
+      "security": [
+        {
+          "HTTPBearer": []
+        }
+      ],
+      "tags": [
+        "job-market"
+      ],
+      "x-zhixue-envelope": true,
+      "x-zhixue-generation-meta": true
+    },
+    "POST /api/v1/learning-path/generate": {
+      "operationId": "generate_learning_path_api_v1_learning_path_generate_post",
+      "requestBody": {
+        "content": {
+          "application/json": {
+            "schema": {
+              "anyOf": [
+                {
+                  "$ref": "#/components/schemas/GeneratePathRequest"
+                },
+                {
+                  "type": "null"
+                }
+              ],
+              "title": "Body"
+            }
+          }
+        }
+      },
+      "responses": {
+        "200": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/UnifiedEnvelope"
+              }
+            }
+          }
+        },
+        "400": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/UnifiedEnvelope"
+              }
+            }
+          }
+        }
+      },
+      "security": [
+        {
+          "HTTPBearer": []
+        }
+      ],
+      "tags": [
+        "learning-path"
+      ],
+      "x-zhixue-envelope": true
+    },
+    "POST /api/v1/learning/cornell-cues": {
+      "operationId": "cornell_cues_api_v1_learning_cornell_cues_post",
+      "requestBody": {
+        "content": {
+          "application/json": {
+            "schema": {
+              "$ref": "#/components/schemas/CornellCuesRequest"
+            }
+          }
+        },
+        "required": true
+      },
+      "responses": {
+        "200": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/UnifiedEnvelope"
+              }
+            }
+          }
+        },
+        "400": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/UnifiedEnvelope"
+              }
+            }
+          }
+        }
+      },
+      "security": [
+        {
+          "HTTPBearer": []
+        }
+      ],
+      "tags": [
+        "learning"
+      ],
+      "x-zhixue-envelope": true,
+      "x-zhixue-generation-meta": true
+    },
+    "POST /api/v1/learning/feynman": {
+      "operationId": "feynman_api_v1_learning_feynman_post",
+      "requestBody": {
+        "content": {
+          "application/json": {
+            "schema": {
+              "$ref": "#/components/schemas/FeynmanRequest"
+            }
+          }
+        },
+        "required": true
+      },
+      "responses": {
+        "200": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/UnifiedEnvelope"
+              }
+            },
+            "text/event-stream": {
+              "schema": {
+                "type": "string"
+              }
+            }
+          }
+        },
+        "400": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/UnifiedEnvelope"
+              }
+            }
+          }
+        }
+      },
+      "security": [
+        {
+          "HTTPBearer": []
+        }
+      ],
+      "tags": [
+        "learning"
+      ],
+      "x-zhixue-envelope": true,
+      "x-zhixue-generation-meta": true
+    },
+    "POST /api/v1/learning/steps/{kp_id}": {
+      "operationId": "update_steps_api_v1_learning_steps__kp_id__post",
+      "parameters": [
+        {
+          "in": "path",
+          "name": "kp_id",
+          "required": true,
+          "schema": {
+            "title": "Kp Id",
+            "type": "string"
+          }
+        }
+      ],
+      "requestBody": {
+        "content": {
+          "application/json": {
+            "schema": {
+              "$ref": "#/components/schemas/StepUpdateRequest"
+            }
+          }
+        },
+        "required": true
+      },
+      "responses": {
+        "200": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/UnifiedEnvelope"
+              }
+            }
+          }
+        },
+        "400": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/UnifiedEnvelope"
+              }
+            }
+          }
+        }
+      },
+      "security": [
+        {
+          "HTTPBearer": []
+        }
+      ],
+      "tags": [
+        "learning"
+      ],
+      "x-zhixue-envelope": true
+    },
+    "POST /api/v1/mastery/{kp_id}/check": {
+      "operationId": "mastery_check_api_v1_mastery__kp_id__check_post",
+      "parameters": [
+        {
+          "in": "path",
+          "name": "kp_id",
+          "required": true,
+          "schema": {
+            "title": "Kp Id",
+            "type": "string"
+          }
+        }
+      ],
+      "responses": {
+        "200": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/UnifiedEnvelope"
+              }
+            }
+          }
+        },
+        "400": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/UnifiedEnvelope"
+              }
+            }
+          }
+        }
+      },
+      "security": [
+        {
+          "HTTPBearer": []
+        }
+      ],
+      "tags": [
+        "mastery"
+      ],
+      "x-zhixue-envelope": true
+    },
+    "POST /api/v1/mastery/{kp_id}/pass": {
+      "operationId": "mastery_pass_api_v1_mastery__kp_id__pass_post",
+      "parameters": [
+        {
+          "in": "path",
+          "name": "kp_id",
+          "required": true,
+          "schema": {
+            "title": "Kp Id",
+            "type": "string"
+          }
+        }
+      ],
+      "responses": {
+        "200": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/UnifiedEnvelope"
+              }
+            }
+          }
+        },
+        "400": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/UnifiedEnvelope"
+              }
+            }
+          }
+        }
+      },
+      "security": [
+        {
+          "HTTPBearer": []
+        }
+      ],
+      "tags": [
+        "mastery"
+      ],
+      "x-zhixue-envelope": true
+    },
+    "POST /api/v1/models/configs": {
+      "operationId": "create_model_config_api_v1_models_configs_post",
+      "requestBody": {
+        "content": {
+          "application/json": {
+            "schema": {
+              "$ref": "#/components/schemas/ModelConfigCreateRequest"
+            }
+          }
+        },
+        "required": true
+      },
+      "responses": {
+        "200": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/UnifiedEnvelope"
+              }
+            }
+          }
+        },
+        "400": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/UnifiedEnvelope"
+              }
+            }
+          }
+        }
+      },
+      "security": [
+        {
+          "HTTPBearer": []
+        }
+      ],
+      "tags": [
+        "models"
+      ],
+      "x-zhixue-envelope": true
+    },
+    "POST /api/v1/models/configs/test": {
+      "operationId": "test_model_config_api_v1_models_configs_test_post",
+      "requestBody": {
+        "content": {
+          "application/json": {
+            "schema": {
+              "$ref": "#/components/schemas/ModelTestRequest"
+            }
+          }
+        },
+        "required": true
+      },
+      "responses": {
+        "200": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/UnifiedEnvelope"
+              }
+            }
+          }
+        },
+        "400": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/UnifiedEnvelope"
+              }
+            }
+          }
+        }
+      },
+      "security": [
+        {
+          "HTTPBearer": []
+        }
+      ],
+      "tags": [
+        "models"
+      ],
+      "x-zhixue-envelope": true
+    },
+    "POST /api/v1/profile/diagnosis-complete": {
+      "operationId": "diagnosis_complete_api_v1_profile_diagnosis_complete_post",
+      "requestBody": {
+        "content": {
+          "application/json": {
+            "schema": {
+              "$ref": "#/components/schemas/DiagnosisCompleteRequest"
+            }
+          }
+        },
+        "required": true
+      },
+      "responses": {
+        "200": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/UnifiedEnvelope"
+              }
+            }
+          }
+        },
+        "400": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/UnifiedEnvelope"
+              }
+            }
+          }
+        }
+      },
+      "security": [
+        {
+          "HTTPBearer": []
+        }
+      ],
+      "tags": [
+        "profile"
+      ],
+      "x-zhixue-envelope": true
+    },
+    "POST /api/v1/profile/dialogue": {
+      "operationId": "dialogue_api_v1_profile_dialogue_post",
+      "requestBody": {
+        "content": {
+          "application/json": {
+            "schema": {
+              "$ref": "#/components/schemas/DialogueRequest"
+            }
+          }
+        },
+        "required": true
+      },
+      "responses": {
+        "200": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/UnifiedEnvelope"
+              }
+            },
+            "text/event-stream": {
+              "schema": {
+                "type": "string"
+              }
+            }
+          }
+        },
+        "400": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/UnifiedEnvelope"
+              }
+            }
+          }
+        }
+      },
+      "security": [
+        {
+          "HTTPBearer": []
+        }
+      ],
+      "tags": [
+        "profile"
+      ],
+      "x-zhixue-envelope": true,
+      "x-zhixue-generation-meta": true
+    },
+    "POST /api/v1/profile/narrative": {
+      "operationId": "narrative_api_v1_profile_narrative_post",
+      "requestBody": {
+        "content": {
+          "application/json": {
+            "schema": {
+              "$ref": "#/components/schemas/NarrativeRequest"
+            }
+          }
+        },
+        "required": true
+      },
+      "responses": {
+        "200": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/UnifiedEnvelope"
+              }
+            }
+          }
+        },
+        "400": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/UnifiedEnvelope"
+              }
+            }
+          }
+        }
+      },
+      "security": [
+        {
+          "HTTPBearer": []
+        }
+      ],
+      "tags": [
+        "profile"
+      ],
+      "x-zhixue-envelope": true,
+      "x-zhixue-generation-meta": true
+    },
+    "POST /api/v1/profile/parse": {
+      "operationId": "parse_api_v1_profile_parse_post",
+      "requestBody": {
+        "content": {
+          "multipart/form-data": {
+            "schema": {
+              "$ref": "#/components/schemas/Body_parse_api_v1_profile_parse_post"
+            }
+          }
+        }
+      },
+      "responses": {
+        "200": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/UnifiedEnvelope"
+              }
+            }
+          }
+        },
+        "400": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/UnifiedEnvelope"
+              }
+            }
+          }
+        }
+      },
+      "security": [
+        {
+          "HTTPBearer": []
+        }
+      ],
+      "tags": [
+        "profile"
+      ],
+      "x-zhixue-envelope": true,
+      "x-zhixue-generation-meta": true
+    },
+    "POST /api/v1/quiz/{kp_id}/submit": {
+      "operationId": "submit_quiz_api_v1_quiz__kp_id__submit_post",
+      "parameters": [
+        {
+          "in": "path",
+          "name": "kp_id",
+          "required": true,
+          "schema": {
+            "title": "Kp Id",
+            "type": "string"
+          }
+        }
+      ],
+      "requestBody": {
+        "content": {
+          "application/json": {
+            "schema": {
+              "$ref": "#/components/schemas/QuizSubmitRequest"
+            }
+          }
+        },
+        "required": true
+      },
+      "responses": {
+        "200": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/UnifiedEnvelope"
+              }
+            }
+          }
+        },
+        "400": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/UnifiedEnvelope"
+              }
+            }
+          }
+        }
+      },
+      "security": [
+        {
+          "HTTPBearer": []
+        }
+      ],
+      "tags": [
+        "quiz"
+      ],
+      "x-zhixue-envelope": true,
+      "x-zhixue-generation-meta": true
+    },
+    "POST /api/v1/reinforce": {
+      "operationId": "reinforce_api_v1_reinforce_post",
+      "requestBody": {
+        "content": {
+          "application/json": {
+            "schema": {
+              "$ref": "#/components/schemas/ReinforceRequest"
+            }
+          }
+        },
+        "required": true
+      },
+      "responses": {
+        "200": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/UnifiedEnvelope"
+              }
+            }
+          }
+        },
+        "400": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/UnifiedEnvelope"
+              }
+            }
+          }
+        }
+      },
+      "security": [
+        {
+          "HTTPBearer": []
+        }
+      ],
+      "tags": [
+        "quiz"
+      ],
+      "x-zhixue-envelope": true,
+      "x-zhixue-generation-meta": true
+    },
+    "POST /api/v1/resource/external/aggregate": {
+      "operationId": "external_aggregate_api_v1_resource_external_aggregate_post",
+      "requestBody": {
+        "content": {
+          "application/json": {
+            "schema": {
+              "$ref": "#/components/schemas/ExternalAggregateRequest"
+            }
+          }
+        },
+        "required": true
+      },
+      "responses": {
+        "200": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/UnifiedEnvelope"
+              }
+            }
+          }
+        },
+        "400": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/UnifiedEnvelope"
+              }
+            }
+          }
+        }
+      },
+      "security": [
+        {
+          "HTTPBearer": []
+        }
+      ],
+      "tags": [
+        "resource"
+      ],
+      "x-zhixue-envelope": true,
+      "x-zhixue-generation-meta": true
+    },
+    "POST /api/v1/resource/history/log": {
+      "operationId": "resource_history_log_api_v1_resource_history_log_post",
+      "requestBody": {
+        "content": {
+          "application/json": {
+            "schema": {
+              "$ref": "#/components/schemas/HistoryLogRequest"
+            }
+          }
+        },
+        "required": true
+      },
+      "responses": {
+        "200": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/UnifiedEnvelope"
+              }
+            }
+          }
+        },
+        "400": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/UnifiedEnvelope"
+              }
+            }
+          }
+        }
+      },
+      "security": [
+        {
+          "HTTPBearer": []
+        }
+      ],
+      "tags": [
+        "resource-history"
+      ],
+      "x-zhixue-envelope": true
+    },
+    "POST /api/v1/resource/history/rename": {
+      "operationId": "resource_history_rename_api_v1_resource_history_rename_post",
+      "requestBody": {
+        "content": {
+          "application/json": {
+            "schema": {
+              "$ref": "#/components/schemas/HistoryRenameRequest"
+            }
+          }
+        },
+        "required": true
+      },
+      "responses": {
+        "200": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/UnifiedEnvelope"
+              }
+            }
+          }
+        },
+        "400": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/UnifiedEnvelope"
+              }
+            }
+          }
+        }
+      },
+      "security": [
+        {
+          "HTTPBearer": []
+        }
+      ],
+      "tags": [
+        "resource-history"
+      ],
+      "x-zhixue-envelope": true
+    },
+    "POST /api/v1/resource/lecture": {
+      "operationId": "generate_lecture_api_v1_resource_lecture_post",
+      "requestBody": {
+        "content": {
+          "application/json": {
+            "schema": {
+              "$ref": "#/components/schemas/LectureRequest"
+            }
+          }
+        },
+        "required": true
+      },
+      "responses": {
+        "200": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/UnifiedEnvelope"
+              }
+            }
+          }
+        },
+        "400": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/UnifiedEnvelope"
+              }
+            }
+          }
+        }
+      },
+      "security": [
+        {
+          "HTTPBearer": []
+        }
+      ],
+      "tags": [
+        "resource"
+      ],
+      "x-zhixue-envelope": true,
+      "x-zhixue-generation-meta": true
+    },
+    "POST /api/v1/resource/tutor/chat": {
+      "operationId": "tutor_chat_api_v1_resource_tutor_chat_post",
+      "requestBody": {
+        "content": {
+          "application/json": {
+            "schema": {
+              "$ref": "#/components/schemas/TutorChatRequest"
+            }
+          }
+        },
+        "required": true
+      },
+      "responses": {
+        "200": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/UnifiedEnvelope"
+              }
+            },
+            "text/event-stream": {
+              "schema": {
+                "type": "string"
+              }
+            }
+          }
+        },
+        "400": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/UnifiedEnvelope"
+              }
+            }
+          }
+        }
+      },
+      "security": [
+        {
+          "HTTPBearer": []
+        }
+      ],
+      "tags": [
+        "resource"
+      ],
+      "x-zhixue-envelope": true,
+      "x-zhixue-generation-meta": true
+    },
+    "POST /api/v1/resource/tutor/generate": {
+      "operationId": "tutor_generate_api_v1_resource_tutor_generate_post",
+      "requestBody": {
+        "content": {
+          "application/json": {
+            "schema": {
+              "$ref": "#/components/schemas/TutorGenerateRequest"
+            }
+          }
+        },
+        "required": true
+      },
+      "responses": {
+        "200": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/UnifiedEnvelope"
+              }
+            }
+          }
+        },
+        "400": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/UnifiedEnvelope"
+              }
+            }
+          }
+        }
+      },
+      "security": [
+        {
+          "HTTPBearer": []
+        }
+      ],
+      "tags": [
+        "resource"
+      ],
+      "x-zhixue-envelope": true,
+      "x-zhixue-generation-meta": true
+    },
+    "POST /api/v1/resource/tutor/suggest": {
+      "operationId": "tutor_suggest_api_v1_resource_tutor_suggest_post",
+      "requestBody": {
+        "content": {
+          "application/json": {
+            "schema": {
+              "$ref": "#/components/schemas/TutorSuggestRequest"
+            }
+          }
+        },
+        "required": true
+      },
+      "responses": {
+        "200": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/UnifiedEnvelope"
+              }
+            }
+          }
+        },
+        "400": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/UnifiedEnvelope"
+              }
+            }
+          }
+        }
+      },
+      "security": [
+        {
+          "HTTPBearer": []
+        }
+      ],
+      "tags": [
+        "resource"
+      ],
+      "x-zhixue-envelope": true,
+      "x-zhixue-generation-meta": true
+    },
+    "POST /api/v1/resource/video": {
+      "operationId": "generate_video_api_v1_resource_video_post",
+      "requestBody": {
+        "content": {
+          "application/json": {
+            "schema": {
+              "$ref": "#/components/schemas/VideoRequest"
+            }
+          }
+        },
+        "required": true
+      },
+      "responses": {
+        "200": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/UnifiedEnvelope"
+              }
+            }
+          }
+        },
+        "400": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/UnifiedEnvelope"
+              }
+            }
+          }
+        }
+      },
+      "security": [
+        {
+          "HTTPBearer": []
+        }
+      ],
+      "tags": [
+        "resource"
+      ],
+      "x-zhixue-envelope": true,
+      "x-zhixue-generation-meta": true
+    },
+    "POST /api/v1/resource/video/render": {
+      "operationId": "render_video_api_v1_resource_video_render_post",
+      "requestBody": {
+        "content": {
+          "application/json": {
+            "schema": {
+              "$ref": "#/components/schemas/VideoRenderRequest"
+            }
+          }
+        },
+        "required": true
+      },
+      "responses": {
+        "200": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/UnifiedEnvelope"
+              }
+            }
+          }
+        },
+        "400": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/UnifiedEnvelope"
+              }
+            }
+          }
+        }
+      },
+      "security": [
+        {
+          "HTTPBearer": []
+        }
+      ],
+      "tags": [
+        "resource"
+      ],
+      "x-zhixue-envelope": true
+    },
+    "POST /api/v1/tts/synthesize": {
+      "operationId": "tts_synthesize_api_v1_tts_synthesize_post",
+      "requestBody": {
+        "content": {
+          "application/json": {
+            "schema": {
+              "$ref": "#/components/schemas/TTSSynthesizeRequest"
+            }
+          }
+        },
+        "required": true
+      },
+      "responses": {
+        "200": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/UnifiedEnvelope"
+              }
+            }
+          }
+        },
+        "400": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/UnifiedEnvelope"
+              }
+            }
+          }
+        }
+      },
+      "security": [
+        {
+          "HTTPBearer": []
+        }
+      ],
+      "tags": [
+        "tts"
+      ],
+      "x-zhixue-envelope": true
+    },
+    "POST /api/v1/workflow/execute": {
+      "operationId": "execute_workflow_api_v1_workflow_execute_post",
+      "requestBody": {
+        "content": {
+          "application/json": {
+            "schema": {
+              "$ref": "#/components/schemas/WorkflowExecuteRequest"
+            }
+          }
+        },
+        "required": true
+      },
+      "responses": {
+        "200": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/UnifiedEnvelope"
+              }
+            }
+          }
+        },
+        "400": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/UnifiedEnvelope"
+              }
+            }
+          }
+        }
+      },
+      "security": [
+        {
+          "HTTPBearer": []
+        }
+      ],
+      "tags": [
+        "workflow"
+      ],
+      "x-zhixue-envelope": true
+    },
+    "PUT /api/v1/admin/prompts/{agent_id}": {
+      "operationId": "update_prompt_template_api_v1_admin_prompts__agent_id__put",
+      "parameters": [
+        {
+          "in": "path",
+          "name": "agent_id",
+          "required": true,
+          "schema": {
+            "title": "Agent Id",
+            "type": "string"
+          }
+        }
+      ],
+      "requestBody": {
+        "content": {
+          "application/json": {
+            "schema": {
+              "$ref": "#/components/schemas/PromptUpdateRequest"
+            }
+          }
+        },
+        "required": true
+      },
+      "responses": {
+        "200": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/UnifiedEnvelope"
+              }
+            }
+          }
+        },
+        "400": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/UnifiedEnvelope"
+              }
+            }
+          }
+        }
+      },
+      "security": [
+        {
+          "HTTPBearer": []
+        }
+      ],
+      "tags": [
+        "admin-prompts"
+      ],
+      "x-zhixue-envelope": true
+    },
+    "PUT /api/v1/learning/notes/{kp_id}": {
+      "operationId": "save_note_api_v1_learning_notes__kp_id__put",
+      "parameters": [
+        {
+          "in": "path",
+          "name": "kp_id",
+          "required": true,
+          "schema": {
+            "title": "Kp Id",
+            "type": "string"
+          }
+        }
+      ],
+      "requestBody": {
+        "content": {
+          "application/json": {
+            "schema": {
+              "$ref": "#/components/schemas/NoteSaveRequest"
+            }
+          }
+        },
+        "required": true
+      },
+      "responses": {
+        "200": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/UnifiedEnvelope"
+              }
+            }
+          }
+        },
+        "400": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/UnifiedEnvelope"
+              }
+            }
+          }
+        }
+      },
+      "security": [
+        {
+          "HTTPBearer": []
+        }
+      ],
+      "tags": [
+        "learning"
+      ],
+      "x-zhixue-envelope": true
+    },
+    "PUT /api/v1/models/configs/{config_id}": {
+      "operationId": "update_model_config_api_v1_models_configs__config_id__put",
+      "parameters": [
+        {
+          "in": "path",
+          "name": "config_id",
+          "required": true,
+          "schema": {
+            "title": "Config Id",
+            "type": "string"
+          }
+        }
+      ],
+      "requestBody": {
+        "content": {
+          "application/json": {
+            "schema": {
+              "$ref": "#/components/schemas/ModelConfigUpdateRequest"
+            }
+          }
+        },
+        "required": true
+      },
+      "responses": {
+        "200": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/UnifiedEnvelope"
+              }
+            }
+          }
+        },
+        "400": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/UnifiedEnvelope"
+              }
+            }
+          }
+        }
+      },
+      "security": [
+        {
+          "HTTPBearer": []
+        }
+      ],
+      "tags": [
+        "models"
+      ],
+      "x-zhixue-envelope": true
+    },
+    "PUT /api/v1/models/current": {
+      "operationId": "switch_model_api_v1_models_current_put",
+      "requestBody": {
+        "content": {
+          "application/json": {
+            "schema": {
+              "$ref": "#/components/schemas/ModelSwitchRequest"
+            }
+          }
+        },
+        "required": true
+      },
+      "responses": {
+        "200": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/UnifiedEnvelope"
+              }
+            }
+          }
+        },
+        "400": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/UnifiedEnvelope"
+              }
+            }
+          }
+        }
+      },
+      "security": [
+        {
+          "HTTPBearer": []
+        }
+      ],
+      "tags": [
+        "models"
+      ],
+      "x-zhixue-envelope": true
+    },
+    "PUT /api/v1/profile/student-portrait": {
+      "operationId": "write_student_portrait_api_v1_profile_student_portrait_put",
+      "requestBody": {
+        "content": {
+          "application/json": {
+            "schema": {
+              "$ref": "#/components/schemas/StudentPortraitWriteRequest"
+            }
+          }
+        },
+        "required": true
+      },
+      "responses": {
+        "200": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/UnifiedEnvelope"
+              }
+            }
+          }
+        },
+        "400": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/UnifiedEnvelope"
+              }
+            }
+          }
+        }
+      },
+      "security": [
+        {
+          "HTTPBearer": []
+        }
+      ],
+      "tags": [
+        "profile"
+      ],
+      "x-zhixue-envelope": true
+    }
+  },
+  "schemaCount": 56,
+  "schemas": {
+    "Body_parse_api_v1_profile_parse_post": {
+      "properties": {
+        "files": {
+          "anyOf": [
+            {
+              "items": {
+                "contentMediaType": "application/octet-stream",
+                "type": "string"
+              },
+              "type": "array"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "title": "Files"
+        }
+      },
+      "title": "Body_parse_api_v1_profile_parse_post",
+      "type": "object"
+    },
+    "Body_upload_document_api_v1_document_upload_post": {
+      "properties": {
+        "file": {
+          "contentMediaType": "application/octet-stream",
+          "title": "File",
+          "type": "string"
+        }
+      },
+      "required": [
+        "file"
+      ],
+      "title": "Body_upload_document_api_v1_document_upload_post",
+      "type": "object"
+    },
+    "Body_upload_documents_api_v1_admin_kb_upload_post": {
+      "properties": {
+        "category": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "title": "Category"
+        },
+        "files": {
+          "items": {
+            "contentMediaType": "application/octet-stream",
+            "type": "string"
+          },
+          "title": "Files",
+          "type": "array"
+        },
+        "tags": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "title": "Tags"
+        }
+      },
+      "required": [
+        "files"
+      ],
+      "title": "Body_upload_documents_api_v1_admin_kb_upload_post",
+      "type": "object"
+    },
+    "ChangePasswordRequest": {
+      "properties": {
+        "newPassword": {
+          "minLength": 1,
+          "title": "Newpassword",
+          "type": "string"
+        },
+        "oldPassword": {
+          "minLength": 1,
+          "title": "Oldpassword",
+          "type": "string"
+        }
+      },
+      "required": [
+        "oldPassword",
+        "newPassword"
+      ],
+      "title": "ChangePasswordRequest",
+      "type": "object"
+    },
+    "CornellCuesRequest": {
+      "properties": {
+        "difficulty": {
+          "default": "初级",
+          "title": "Difficulty",
+          "type": "string"
+        },
+        "kpId": {
+          "title": "Kpid",
+          "type": "string"
+        }
+      },
+      "required": [
+        "kpId"
+      ],
+      "title": "CornellCuesRequest",
+      "type": "object"
+    },
+    "CueNoteItem": {
+      "properties": {
+        "cueId": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "title": "Cueid"
+        },
+        "text": {
+          "default": "",
+          "title": "Text",
+          "type": "string"
+        }
+      },
+      "title": "CueNoteItem",
+      "type": "object"
+    },
+    "DiagnosisCompleteRequest": {
+      "properties": {
+        "matchPct": {
+          "title": "Matchpct",
+          "type": "integer"
+        },
+        "targetJobName": {
+          "title": "Targetjobname",
+          "type": "string"
+        }
+      },
+      "required": [
+        "targetJobName",
+        "matchPct"
+      ],
+      "title": "DiagnosisCompleteRequest",
+      "type": "object"
+    },
+    "DialogueRequest": {
+      "properties": {
+        "answer": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "title": "Answer"
+        },
+        "context": {
+          "anyOf": [
+            {
+              "additionalProperties": true,
+              "type": "object"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "title": "Context"
+        },
+        "message": {
+          "default": "",
+          "title": "Message",
+          "type": "string"
+        },
+        "sessionId": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "title": "Sessionid"
+        }
+      },
+      "title": "DialogueRequest",
+      "type": "object"
+    },
+    "DocChatRequest": {
+      "properties": {
+        "documentId": {
+          "minLength": 1,
+          "title": "Documentid",
+          "type": "string"
+        },
+        "documentIds": {
+          "anyOf": [
+            {
+              "items": {
+                "type": "string"
+              },
+              "type": "array"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "title": "Documentids"
+        },
+        "message": {
+          "minLength": 1,
+          "title": "Message",
+          "type": "string"
+        },
+        "sessionId": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "title": "Sessionid"
+        }
+      },
+      "required": [
+        "documentId",
+        "message"
+      ],
+      "title": "DocChatRequest",
+      "type": "object"
+    },
+    "DocDiagramRequest": {
+      "properties": {
+        "documentId": {
+          "minLength": 1,
+          "title": "Documentid",
+          "type": "string"
+        },
+        "documentIds": {
+          "anyOf": [
+            {
+              "items": {
+                "type": "string"
+              },
+              "type": "array"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "title": "Documentids"
+        },
+        "regenerate": {
+          "default": false,
+          "title": "Regenerate",
+          "type": "boolean"
+        }
+      },
+      "required": [
+        "documentId"
+      ],
+      "title": "DocDiagramRequest",
+      "type": "object"
+    },
+    "DocFlashcardRequest": {
+      "properties": {
+        "count": {
+          "default": 8,
+          "maximum": 30.0,
+          "minimum": 1.0,
+          "title": "Count",
+          "type": "integer"
+        },
+        "documentId": {
+          "minLength": 1,
+          "title": "Documentid",
+          "type": "string"
+        },
+        "documentIds": {
+          "anyOf": [
+            {
+              "items": {
+                "type": "string"
+              },
+              "type": "array"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "title": "Documentids"
+        },
+        "regenerate": {
+          "default": false,
+          "title": "Regenerate",
+          "type": "boolean"
+        }
+      },
+      "required": [
+        "documentId"
+      ],
+      "title": "DocFlashcardRequest",
+      "type": "object"
+    },
+    "DocLectureRequest": {
+      "properties": {
+        "difficulty": {
+          "default": "初级",
+          "title": "Difficulty",
+          "type": "string"
+        },
+        "documentId": {
+          "minLength": 1,
+          "title": "Documentid",
+          "type": "string"
+        },
+        "documentIds": {
+          "anyOf": [
+            {
+              "items": {
+                "type": "string"
+              },
+              "type": "array"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "title": "Documentids"
+        },
+        "regenerate": {
+          "default": false,
+          "title": "Regenerate",
+          "type": "boolean"
+        }
+      },
+      "required": [
+        "documentId"
+      ],
+      "title": "DocLectureRequest",
+      "type": "object"
+    },
+    "DocMindmapRequest": {
+      "properties": {
+        "documentId": {
+          "minLength": 1,
+          "title": "Documentid",
+          "type": "string"
+        },
+        "documentIds": {
+          "anyOf": [
+            {
+              "items": {
+                "type": "string"
+              },
+              "type": "array"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "title": "Documentids"
+        },
+        "regenerate": {
+          "default": false,
+          "title": "Regenerate",
+          "type": "boolean"
+        }
+      },
+      "required": [
+        "documentId"
+      ],
+      "title": "DocMindmapRequest",
+      "type": "object"
+    },
+    "DocOverviewRequest": {
+      "properties": {
+        "documentId": {
+          "minLength": 1,
+          "title": "Documentid",
+          "type": "string"
+        }
+      },
+      "required": [
+        "documentId"
+      ],
+      "title": "DocOverviewRequest",
+      "type": "object"
+    },
+    "DocQuizRequest": {
+      "properties": {
+        "count": {
+          "default": 5,
+          "maximum": 20.0,
+          "minimum": 1.0,
+          "title": "Count",
+          "type": "integer"
+        },
+        "documentId": {
+          "minLength": 1,
+          "title": "Documentid",
+          "type": "string"
+        },
+        "documentIds": {
+          "anyOf": [
+            {
+              "items": {
+                "type": "string"
+              },
+              "type": "array"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "title": "Documentids"
+        },
+        "regenerate": {
+          "default": false,
+          "title": "Regenerate",
+          "type": "boolean"
+        }
+      },
+      "required": [
+        "documentId"
+      ],
+      "title": "DocQuizRequest",
+      "type": "object"
+    },
+    "DocVideoRequest": {
+      "properties": {
+        "difficulty": {
+          "default": "初级",
+          "title": "Difficulty",
+          "type": "string"
+        },
+        "documentId": {
+          "minLength": 1,
+          "title": "Documentid",
+          "type": "string"
+        },
+        "documentIds": {
+          "anyOf": [
+            {
+              "items": {
+                "type": "string"
+              },
+              "type": "array"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "title": "Documentids"
+        },
+        "regenerate": {
+          "default": false,
+          "title": "Regenerate",
+          "type": "boolean"
+        }
+      },
+      "required": [
+        "documentId"
+      ],
+      "title": "DocVideoRequest",
+      "type": "object"
+    },
+    "DraftProfile": {
+      "properties": {
+        "education": {
+          "anyOf": [
+            {
+              "$ref": "#/components/schemas/FieldValue"
+            },
+            {
+              "type": "null"
+            }
+          ]
+        },
+        "goal": {
+          "anyOf": [
+            {
+              "$ref": "#/components/schemas/FieldValue"
+            },
+            {
+              "type": "null"
+            }
+          ]
+        },
+        "major": {
+          "anyOf": [
+            {
+              "$ref": "#/components/schemas/FieldValue"
+            },
+            {
+              "type": "null"
+            }
+          ]
+        },
+        "skills": {
+          "items": {
+            "$ref": "#/components/schemas/SkillItem"
+          },
+          "title": "Skills",
+          "type": "array"
+        }
+      },
+      "title": "DraftProfile",
+      "type": "object"
+    },
+    "ExternalAggregateRequest": {
+      "properties": {
+        "kpId": {
+          "title": "Kpid",
+          "type": "string"
+        },
+        "query": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "title": "Query"
+        },
+        "weakPoints": {
+          "items": {
+            "type": "string"
+          },
+          "title": "Weakpoints",
+          "type": "array"
+        }
+      },
+      "required": [
+        "kpId"
+      ],
+      "title": "ExternalAggregateRequest",
+      "type": "object"
+    },
+    "FeynmanRequest": {
+      "properties": {
+        "explanation": {
+          "default": "",
+          "title": "Explanation",
+          "type": "string"
+        },
+        "kpId": {
+          "title": "Kpid",
+          "type": "string"
+        },
+        "sessionId": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "title": "Sessionid"
+        }
+      },
+      "required": [
+        "kpId"
+      ],
+      "title": "FeynmanRequest",
+      "type": "object"
+    },
+    "FieldValue": {
+      "properties": {
+        "source": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "title": "Source"
+        },
+        "value": {
+          "title": "Value",
+          "type": "string"
+        }
+      },
+      "required": [
+        "value"
+      ],
+      "title": "FieldValue",
+      "type": "object"
+    },
+    "ForgotPasswordRequest": {
+      "properties": {
+        "email": {
+          "minLength": 1,
+          "title": "Email",
+          "type": "string"
+        }
+      },
+      "required": [
+        "email"
+      ],
+      "title": "ForgotPasswordRequest",
+      "type": "object"
+    },
+    "GeneratePathRequest": {
+      "properties": {
+        "targetJobId": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "title": "Targetjobid"
+        }
+      },
+      "title": "GeneratePathRequest",
+      "type": "object"
+    },
+    "GenerationMeta": {
+      "additionalProperties": false,
+      "properties": {
+        "degraded": {
+          "type": "boolean"
+        },
+        "fallbackReason": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "model": {
+          "type": "string"
+        },
+        "provider": {
+          "type": "string"
+        },
+        "source": {
+          "enum": [
+            "builtin",
+            "custom",
+            "mock",
+            "cache",
+            "fallback",
+            "deterministic"
+          ],
+          "type": "string"
+        }
+      },
+      "required": [
+        "provider",
+        "model",
+        "source",
+        "degraded",
+        "fallbackReason"
+      ],
+      "type": "object"
+    },
+    "HTTPValidationError": {
+      "properties": {
+        "detail": {
+          "items": {
+            "$ref": "#/components/schemas/ValidationError"
+          },
+          "title": "Detail",
+          "type": "array"
+        }
+      },
+      "title": "HTTPValidationError",
+      "type": "object"
+    },
+    "HistoryLogRequest": {
+      "properties": {
+        "difficulty": {
+          "default": "",
+          "title": "Difficulty",
+          "type": "string"
+        },
+        "kind": {
+          "title": "Kind",
+          "type": "string"
+        },
+        "kpId": {
+          "title": "Kpid",
+          "type": "string"
+        },
+        "resourceRef": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "title": "Resourceref"
+        },
+        "title": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "title": "Title"
+        }
+      },
+      "required": [
+        "kpId",
+        "kind"
+      ],
+      "title": "HistoryLogRequest",
+      "type": "object"
+    },
+    "HistoryRenameRequest": {
+      "properties": {
+        "id": {
+          "title": "Id",
+          "type": "integer"
+        },
+        "title": {
+          "maxLength": 256,
+          "minLength": 1,
+          "title": "Title",
+          "type": "string"
+        }
+      },
+      "required": [
+        "id",
+        "title"
+      ],
+      "title": "HistoryRenameRequest",
+      "type": "object"
+    },
+    "JobMatchRequest": {
+      "properties": {
+        "goal": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "title": "Goal"
+        },
+        "jobId": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "title": "Jobid"
+        }
+      },
+      "title": "JobMatchRequest",
+      "type": "object"
+    },
+    "LectureRequest": {
+      "properties": {
+        "difficulty": {
+          "title": "Difficulty",
+          "type": "string"
+        },
+        "kpId": {
+          "title": "Kpid",
+          "type": "string"
+        }
+      },
+      "required": [
+        "kpId",
+        "difficulty"
+      ],
+      "title": "LectureRequest",
+      "type": "object"
+    },
+    "LoginRequest": {
+      "properties": {
+        "password": {
+          "minLength": 1,
+          "title": "Password",
+          "type": "string"
+        },
+        "remember": {
+          "default": false,
+          "title": "Remember",
+          "type": "boolean"
+        },
+        "username": {
+          "minLength": 1,
+          "title": "Username",
+          "type": "string"
+        }
+      },
+      "required": [
+        "username",
+        "password"
+      ],
+      "title": "LoginRequest",
+      "type": "object"
+    },
+    "Material": {
+      "properties": {
+        "id": {
+          "title": "Id",
+          "type": "string"
+        },
+        "kind": {
+          "title": "Kind",
+          "type": "string"
+        },
+        "label": {
+          "title": "Label",
+          "type": "string"
+        }
+      },
+      "required": [
+        "id",
+        "label",
+        "kind"
+      ],
+      "title": "Material",
+      "type": "object"
+    },
+    "ModelConfigCreateRequest": {
+      "properties": {
+        "apiKey": {
+          "minLength": 1,
+          "title": "Apikey",
+          "type": "string"
+        },
+        "baseUrl": {
+          "maxLength": 256,
+          "minLength": 1,
+          "title": "Baseurl",
+          "type": "string"
+        },
+        "label": {
+          "maxLength": 64,
+          "minLength": 1,
+          "title": "Label",
+          "type": "string"
+        },
+        "modelId": {
+          "maxLength": 128,
+          "minLength": 1,
+          "title": "Modelid",
+          "type": "string"
+        },
+        "provider": {
+          "title": "Provider",
+          "type": "string"
+        }
+      },
+      "required": [
+        "label",
+        "provider",
+        "baseUrl",
+        "modelId",
+        "apiKey"
+      ],
+      "title": "ModelConfigCreateRequest",
+      "type": "object"
+    },
+    "ModelConfigUpdateRequest": {
+      "properties": {
+        "apiKey": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "title": "Apikey"
+        },
+        "baseUrl": {
+          "maxLength": 256,
+          "minLength": 1,
+          "title": "Baseurl",
+          "type": "string"
+        },
+        "label": {
+          "maxLength": 64,
+          "minLength": 1,
+          "title": "Label",
+          "type": "string"
+        },
+        "modelId": {
+          "maxLength": 128,
+          "minLength": 1,
+          "title": "Modelid",
+          "type": "string"
+        },
+        "provider": {
+          "title": "Provider",
+          "type": "string"
+        }
+      },
+      "required": [
+        "label",
+        "provider",
+        "baseUrl",
+        "modelId"
+      ],
+      "title": "ModelConfigUpdateRequest",
+      "type": "object"
+    },
+    "ModelSwitchRequest": {
+      "properties": {
+        "modelId": {
+          "minLength": 1,
+          "title": "Modelid",
+          "type": "string"
+        }
+      },
+      "required": [
+        "modelId"
+      ],
+      "title": "ModelSwitchRequest",
+      "type": "object"
+    },
+    "ModelTestRequest": {
+      "properties": {
+        "apiKey": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "title": "Apikey"
+        },
+        "baseUrl": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "title": "Baseurl"
+        },
+        "configId": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "title": "Configid"
+        },
+        "modelId": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "title": "Modelid"
+        },
+        "provider": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "title": "Provider"
+        }
+      },
+      "title": "ModelTestRequest",
+      "type": "object"
+    },
+    "NarrativeRequest": {
+      "properties": {
+        "draft": {
+          "$ref": "#/components/schemas/DraftProfile"
+        },
+        "materials": {
+          "items": {
+            "$ref": "#/components/schemas/Material"
+          },
+          "title": "Materials",
+          "type": "array"
+        },
+        "targetJob": {
+          "anyOf": [
+            {
+              "$ref": "#/components/schemas/TargetJob"
+            },
+            {
+              "type": "null"
+            }
+          ]
+        }
+      },
+      "required": [
+        "draft"
+      ],
+      "title": "NarrativeRequest",
+      "type": "object"
+    },
+    "NoteSaveRequest": {
+      "properties": {
+        "cueNotes": {
+          "items": {
+            "$ref": "#/components/schemas/CueNoteItem"
+          },
+          "title": "Cuenotes",
+          "type": "array"
+        },
+        "mainNotes": {
+          "default": "",
+          "title": "Mainnotes",
+          "type": "string"
+        }
+      },
+      "title": "NoteSaveRequest",
+      "type": "object"
+    },
+    "PortraitDimensionItem": {
+      "properties": {
+        "basis": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "title": "Basis"
+        },
+        "confidence": {
+          "default": 0.6,
+          "title": "Confidence",
+          "type": "number"
+        },
+        "key": {
+          "title": "Key",
+          "type": "string"
+        },
+        "kind": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "title": "Kind"
+        },
+        "label": {
+          "title": "Label",
+          "type": "string"
+        },
+        "optionKey": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "title": "Optionkey"
+        },
+        "score": {
+          "anyOf": [
+            {
+              "type": "integer"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "title": "Score"
+        },
+        "source": {
+          "default": "manual",
+          "title": "Source",
+          "type": "string"
+        },
+        "value": {
+          "default": "",
+          "title": "Value",
+          "type": "string"
+        }
+      },
+      "required": [
+        "key",
+        "label"
+      ],
+      "title": "PortraitDimensionItem",
+      "type": "object"
+    },
+    "PromptUpdateRequest": {
+      "properties": {
+        "template": {
+          "minLength": 1,
+          "title": "Template",
+          "type": "string"
+        }
+      },
+      "required": [
+        "template"
+      ],
+      "title": "PromptUpdateRequest",
+      "type": "object"
+    },
+    "QuizAnswerItem": {
+      "properties": {
+        "answer": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "items": {
+                "type": "string"
+              },
+              "type": "array"
+            }
+          ],
+          "title": "Answer"
+        },
+        "question_id": {
+          "title": "Question Id",
+          "type": "string"
+        }
+      },
+      "required": [
+        "question_id",
+        "answer"
+      ],
+      "title": "QuizAnswerItem",
+      "type": "object"
+    },
+    "QuizSubmitRequest": {
+      "properties": {
+        "answers": {
+          "items": {
+            "$ref": "#/components/schemas/QuizAnswerItem"
+          },
+          "title": "Answers",
+          "type": "array"
+        }
+      },
+      "title": "QuizSubmitRequest",
+      "type": "object"
+    },
+    "RegisterRequest": {
+      "properties": {
+        "password": {
+          "minLength": 1,
+          "title": "Password",
+          "type": "string"
+        },
+        "username": {
+          "minLength": 1,
+          "title": "Username",
+          "type": "string"
+        }
+      },
+      "required": [
+        "username",
+        "password"
+      ],
+      "title": "RegisterRequest",
+      "type": "object"
+    },
+    "ReinforceRequest": {
+      "properties": {
+        "kpId": {
+          "title": "Kpid",
+          "type": "string"
+        },
+        "wrongQuestionIds": {
+          "items": {
+            "type": "string"
+          },
+          "title": "Wrongquestionids",
+          "type": "array"
+        }
+      },
+      "required": [
+        "kpId"
+      ],
+      "title": "ReinforceRequest",
+      "type": "object"
+    },
+    "SearchTestRequest": {
+      "properties": {
+        "query": {
+          "minLength": 1,
+          "title": "Query",
+          "type": "string"
+        },
+        "topK": {
+          "default": 5,
+          "maximum": 50.0,
+          "minimum": 1.0,
+          "title": "Topk",
+          "type": "integer"
+        }
+      },
+      "required": [
+        "query"
+      ],
+      "title": "SearchTestRequest",
+      "type": "object"
+    },
+    "SkillItem": {
+      "properties": {
+        "level": {
+          "default": 0,
+          "title": "Level",
+          "type": "integer"
+        },
+        "name": {
+          "title": "Name",
+          "type": "string"
+        },
+        "source": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "title": "Source"
+        }
+      },
+      "required": [
+        "name"
+      ],
+      "title": "SkillItem",
+      "type": "object"
+    },
+    "StepUpdateRequest": {
+      "properties": {
+        "done": {
+          "default": true,
+          "title": "Done",
+          "type": "boolean"
+        },
+        "step": {
+          "title": "Step",
+          "type": "string"
+        }
+      },
+      "required": [
+        "step"
+      ],
+      "title": "StepUpdateRequest",
+      "type": "object"
+    },
+    "StudentPortraitWriteRequest": {
+      "properties": {
+        "dimensions": {
+          "items": {
+            "$ref": "#/components/schemas/PortraitDimensionItem"
+          },
+          "title": "Dimensions",
+          "type": "array"
+        }
+      },
+      "title": "StudentPortraitWriteRequest",
+      "type": "object"
+    },
+    "TTSSynthesizeRequest": {
+      "properties": {
+        "pitch": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "title": "Pitch"
+        },
+        "rate": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "title": "Rate"
+        },
+        "text": {
+          "title": "Text",
+          "type": "string"
+        },
+        "voice": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "title": "Voice"
+        }
+      },
+      "required": [
+        "text"
+      ],
+      "title": "TTSSynthesizeRequest",
+      "type": "object"
+    },
+    "TargetJob": {
+      "properties": {
+        "name": {
+          "title": "Name",
+          "type": "string"
+        },
+        "radar": {
+          "additionalProperties": {
+            "type": "integer"
+          },
+          "title": "Radar",
+          "type": "object"
+        }
+      },
+      "required": [
+        "name"
+      ],
+      "title": "TargetJob",
+      "type": "object"
+    },
+    "TutorChatRequest": {
+      "properties": {
+        "kpId": {
+          "title": "Kpid",
+          "type": "string"
+        },
+        "message": {
+          "title": "Message",
+          "type": "string"
+        },
+        "sessionId": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "title": "Sessionid"
+        }
+      },
+      "required": [
+        "kpId",
+        "message"
+      ],
+      "title": "TutorChatRequest",
+      "type": "object"
+    },
+    "TutorGenerateRequest": {
+      "properties": {
+        "kpId": {
+          "title": "Kpid",
+          "type": "string"
+        },
+        "problemPoint": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "title": "Problempoint"
+        },
+        "types": {
+          "items": {
+            "type": "string"
+          },
+          "title": "Types",
+          "type": "array"
+        }
+      },
+      "required": [
+        "kpId"
+      ],
+      "title": "TutorGenerateRequest",
+      "type": "object"
+    },
+    "TutorSuggestRequest": {
+      "properties": {
+        "kpId": {
+          "title": "Kpid",
+          "type": "string"
+        },
+        "question": {
+          "title": "Question",
+          "type": "string"
+        }
+      },
+      "required": [
+        "kpId",
+        "question"
+      ],
+      "title": "TutorSuggestRequest",
+      "type": "object"
+    },
+    "UnifiedEnvelope": {
+      "additionalProperties": false,
+      "properties": {
+        "code": {
+          "type": "integer"
+        },
+        "data": {},
+        "message": {
+          "type": "string"
+        },
+        "traceId": {
+          "type": "string"
+        }
+      },
+      "required": [
+        "code",
+        "message",
+        "data",
+        "traceId"
+      ],
+      "type": "object"
+    },
+    "ValidationError": {
+      "properties": {
+        "ctx": {
+          "title": "Context",
+          "type": "object"
+        },
+        "input": {
+          "title": "Input"
+        },
+        "loc": {
+          "items": {
+            "anyOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "integer"
+              }
+            ]
+          },
+          "title": "Location",
+          "type": "array"
+        },
+        "msg": {
+          "title": "Message",
+          "type": "string"
+        },
+        "type": {
+          "title": "Error Type",
+          "type": "string"
+        }
+      },
+      "required": [
+        "loc",
+        "msg",
+        "type"
+      ],
+      "title": "ValidationError",
+      "type": "object"
+    },
+    "VideoRenderRequest": {
+      "properties": {
+        "difficulty": {
+          "title": "Difficulty",
+          "type": "string"
+        },
+        "kpId": {
+          "title": "Kpid",
+          "type": "string"
+        }
+      },
+      "required": [
+        "kpId",
+        "difficulty"
+      ],
+      "title": "VideoRenderRequest",
+      "type": "object"
+    },
+    "VideoRequest": {
+      "properties": {
+        "difficulty": {
+          "title": "Difficulty",
+          "type": "string"
+        },
+        "kpId": {
+          "title": "Kpid",
+          "type": "string"
+        }
+      },
+      "required": [
+        "kpId",
+        "difficulty"
+      ],
+      "title": "VideoRequest",
+      "type": "object"
+    },
+    "WorkflowExecuteRequest": {
+      "properties": {
+        "difficulty": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "title": "Difficulty"
+        },
+        "kpId": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "title": "Kpid"
+        },
+        "targetJobId": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "title": "Targetjobid"
+        }
+      },
+      "title": "WorkflowExecuteRequest",
+      "type": "object"
+    }
+  },
+  "snapshotVersion": 1
+}

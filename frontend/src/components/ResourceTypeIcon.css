@@ -1,0 +1,19 @@
+/* 资源类型图标（磨砂玻璃圆角方块）· 全站统一。
+   底色渐变自带，深浅主题一致；外阴影/glyph 投影走令牌，暗色下磨砂质感同样成立。 */
+.rti {
+  display: inline-block;
+  flex-shrink: 0;
+  border-radius: 28%;
+  /* 磨砂玻璃外阴影：柔和落影 + 极淡描边，暗色主题下自然加深 */
+  filter: drop-shadow(0 3px 8px rgba(15, 23, 42, 0.18));
+}
+
+/* 主体图形轻微投影，白色 glyph 在任意底色/主题上都清晰 */
+.rti__glyph {
+  filter: drop-shadow(0 1px 1.5px rgba(15, 23, 42, 0.22));
+}
+
+/* 墨纸护眼主题（暖灰底）：外阴影略收敛、更柔，贴合纸感底色 */
+[data-theme='ink'] .rti {
+  filter: drop-shadow(0 3px 8px rgba(60, 50, 40, 0.16));
+}

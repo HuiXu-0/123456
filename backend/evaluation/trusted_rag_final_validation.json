@@ -1,0 +1,200 @@
+{
+  "schema_version": "trusted-rag-final-validation-v1",
+  "generated_at": "2026-07-23T05:54:14.869793+00:00",
+  "production_mutation": false,
+  "canary_enabled": false,
+  "dataset": {
+    "dataset_id": "trusted-rag-e4a-held-out-v1",
+    "sample_count": 125,
+    "query_type_counts": {
+      "comprehensive_question": 25,
+      "concept_explanation": 25,
+      "method_comparison": 25,
+      "operation_steps": 25,
+      "programming_practice": 25
+    },
+    "independence_check": {
+      "e3_query_count": 100,
+      "validation_query_count": 125,
+      "overlap_count": 0,
+      "fingerprint": "sha256(normalized_query)"
+    }
+  },
+  "embedding_profile": {
+    "collection": "kb_chunks",
+    "profile_id": "hash:deterministic_hash_v1:d512",
+    "dimension": 512,
+    "stored_dimension": 512,
+    "embedding_mode": "hash_fallback",
+    "classification": "Hash",
+    "collection_declared_profile_id": null,
+    "collection_profile_metadata_complete": false
+  },
+  "quality": {
+    "relevance": 0.701657,
+    "support_rate": 0.896,
+    "completeness": 0.316759,
+    "source_coverage": 1.0,
+    "evidence_overlap": 0.05741,
+    "by_query_type": {
+      "comprehensive_question": {
+        "relevance": 0.873333,
+        "support": 0.96,
+        "completeness": 0.64,
+        "source_coverage": 1.0,
+        "evidence_overlap": 0.045048
+      },
+      "concept_explanation": {
+        "relevance": 0.78,
+        "support": 0.88,
+        "completeness": 0.88,
+        "source_coverage": 1.0,
+        "evidence_overlap": 0.042667
+      },
+      "method_comparison": {
+        "relevance": 0.906667,
+        "support": 1.0,
+        "completeness": 0.64,
+        "source_coverage": 1.0,
+        "evidence_overlap": 0.05
+      },
+      "operation_steps": {
+        "relevance": 0.506667,
+        "support": 0.76,
+        "completeness": 0.76,
+        "source_coverage": 1.0,
+        "evidence_overlap": 0.121333
+      },
+      "programming_practice": {
+        "relevance": 0.713333,
+        "support": 0.88,
+        "completeness": 0.88,
+        "source_coverage": 1.0,
+        "evidence_overlap": 0.028
+      }
+    }
+  },
+  "latency": {
+    "environment": "local-offline-final-validation",
+    "performance_verified": false,
+    "p50_ms": 22.8809,
+    "p95_ms": 26.4052,
+    "timeout_count": 0,
+    "timeout_rate": 0.0,
+    "fallback_trigger_count": 125,
+    "fallback_overhead_mean_ms": 0.176618,
+    "fallback_overhead_p95_ms": 0.2761
+  },
+  "reliability": {
+    "error_rate": 0.0,
+    "legacy_preserved": true,
+    "timeouts_isolated": true,
+    "fault_scenarios": 11,
+    "fault_pass_count": 11,
+    "fault_block_count": 0
+  },
+  "rerank": {
+    "model": "BAAI/bge-reranker-base",
+    "independent_validation": true,
+    "human_review_complete": false,
+    "metrics_provisional": true,
+    "baseline": {
+      "mrr": 0.830667,
+      "ndcg@3": 0.747414,
+      "ndcg@5": 0.747414
+    },
+    "always": {
+      "metrics": {
+        "mrr": 0.82,
+        "ndcg@3": 0.739746,
+        "ndcg@5": 0.739746
+      },
+      "delta": {
+        "mrr": -0.010667,
+        "ndcg@3": -0.007668,
+        "ndcg@5": -0.007668
+      },
+      "degraded_by_query_type": {
+        "comprehensive_question": 1,
+        "concept_explanation": 2,
+        "operation_steps": 1,
+        "programming_practice": 4
+      }
+    },
+    "conditional": {
+      "rule": {
+        "query_types": [
+          "concept_explanation"
+        ],
+        "min_confidence": 0.9883
+      },
+      "enabled_count": 25,
+      "disabled_count": 100,
+      "metrics": {
+        "mrr": 0.826667,
+        "ndcg@3": 0.744462,
+        "ndcg@5": 0.744462
+      },
+      "delta": {
+        "mrr": -0.004,
+        "ndcg@3": -0.002952,
+        "ndcg@5": -0.002952
+      },
+      "degraded_case_count": 2
+    },
+    "operation_steps_always_degraded": 1,
+    "comprehensive_question_always_degraded": 1,
+    "retain_conditional_policy": true,
+    "model_load_ms": 2837.099,
+    "evaluation_total_ms": 33344.784,
+    "inference_p95_ms": 630.74
+  },
+  "gate": {
+    "schemaVersion": "trusted-rag-canary-gate-v3",
+    "evaluationType": "offline_final_admission_validation",
+    "generatedAt": "2026-07-23T05:54:14.864767+00:00",
+    "productionMutation": false,
+    "canaryEnabled": false,
+    "quality_pass": false,
+    "latency_pass": false,
+    "reliability_pass": true,
+    "rerank_pass": false,
+    "final_decision": "BLOCK",
+    "block_reasons": [
+      "quality.evidence_overlap_below_threshold",
+      "latency.performance_not_verified",
+      "rerank.metrics_still_provisional",
+      "rerank.human_review_incomplete",
+      "rerank.mrr_regressed",
+      "rerank.ndcg_at_3_regressed",
+      "rerank.ndcg_at_5_regressed",
+      "rerank.degraded_cases_exceeded"
+    ],
+    "remediation": [
+      "collect_and_review_shadow_quality_metrics",
+      "verify_target_environment_shadow_latency",
+      "apply_query_type_gate_or_hybrid_fallback_and_revalidate_rerank"
+    ],
+    "rollback_recommended": true,
+    "recommended_action": "keep_legacy_and_set_canary_weight_to_zero",
+    "snapshot": {
+      "sample_count": 125,
+      "p95_latency_ms": 26.4052,
+      "timeout_rate": 0.0,
+      "error_rate": 0.0,
+      "fault_scenario_count": 11,
+      "fault_failure_rate": 0.0,
+      "query_type_counts": {
+        "comprehensive_question": 25,
+        "concept_explanation": 25,
+        "method_comparison": 25,
+        "operation_steps": 25,
+        "programming_practice": 25
+      },
+      "shadow_input_type": "dataset",
+      "quality_evaluation_request_count": 125,
+      "human_relevance": 0.701657,
+      "support_rate": 0.896
+    }
+  }
+}

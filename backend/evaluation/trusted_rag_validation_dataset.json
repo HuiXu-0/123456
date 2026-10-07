@@ -1,0 +1,1659 @@
+{
+  "schema_version": "trusted-rag-validation-v1",
+  "dataset_id": "trusted-rag-e4a-held-out-v1",
+  "created_at": "2026-07-23T05:53:32.729194+00:00",
+  "source": "held_out_manual_topic_matrix",
+  "tuning_dataset_reused": false,
+  "cases": [
+    {
+      "case_id": "e4a_01_concept",
+      "query_type": "concept_explanation",
+      "query": "面向初学者说明监督学习的核心含义、关键机制与典型用途。",
+      "expected_document_ids": [
+        "doc_005"
+      ],
+      "required_concepts": [
+        "标签",
+        "分类",
+        "回归"
+      ]
+    },
+    {
+      "case_id": "e4a_01_compare",
+      "query_type": "method_comparison",
+      "query": "比较监督学习和无监督学习的目标、工作方式及适用条件，如何选择？",
+      "expected_document_ids": [
+        "doc_005",
+        "doc_006"
+      ],
+      "required_concepts": [
+        "标签",
+        "无标签"
+      ]
+    },
+    {
+      "case_id": "e4a_01_steps",
+      "query_type": "operation_steps",
+      "query": "在机器学习项目中落地监督学习时，请给出从准备、配置到检查结果的操作步骤。",
+      "expected_document_ids": [
+        "doc_005"
+      ],
+      "required_concepts": [
+        "标签",
+        "分类",
+        "回归"
+      ]
+    },
+    {
+      "case_id": "e4a_01_code",
+      "query_type": "programming_practice",
+      "query": "用Python或PyTorch实现监督学习的最小实践，需要哪些组件、伪代码和避坑检查？",
+      "expected_document_ids": [
+        "doc_005"
+      ],
+      "required_concepts": [
+        "标签",
+        "分类",
+        "回归"
+      ]
+    },
+    {
+      "case_id": "e4a_01_synthesis",
+      "query_type": "comprehensive_question",
+      "query": "综合分析监督学习与无监督学习在完整训练流程中的衔接关系、风险和验证方法。",
+      "expected_document_ids": [
+        "doc_005",
+        "doc_006"
+      ],
+      "required_concepts": [
+        "标签",
+        "分类",
+        "无标签"
+      ]
+    },
+    {
+      "case_id": "e4a_02_concept",
+      "query_type": "concept_explanation",
+      "query": "面向初学者说明无监督学习的核心含义、关键机制与典型用途。",
+      "expected_document_ids": [
+        "doc_006"
+      ],
+      "required_concepts": [
+        "无标签",
+        "聚类",
+        "降维"
+      ]
+    },
+    {
+      "case_id": "e4a_02_compare",
+      "query_type": "method_comparison",
+      "query": "比较无监督学习和损失函数的目标、工作方式及适用条件，如何选择？",
+      "expected_document_ids": [
+        "doc_006",
+        "doc_007"
+      ],
+      "required_concepts": [
+        "无标签",
+        "预测误差"
+      ]
+    },
+    {
+      "case_id": "e4a_02_steps",
+      "query_type": "operation_steps",
+      "query": "在机器学习项目中落地无监督学习时，请给出从准备、配置到检查结果的操作步骤。",
+      "expected_document_ids": [
+        "doc_006"
+      ],
+      "required_concepts": [
+        "无标签",
+        "聚类",
+        "降维"
+      ]
+    },
+    {
+      "case_id": "e4a_02_code",
+      "query_type": "programming_practice",
+      "query": "用Python或PyTorch实现无监督学习的最小实践，需要哪些组件、伪代码和避坑检查？",
+      "expected_document_ids": [
+        "doc_006"
+      ],
+      "required_concepts": [
+        "无标签",
+        "聚类",
+        "降维"
+      ]
+    },
+    {
+      "case_id": "e4a_02_synthesis",
+      "query_type": "comprehensive_question",
+      "query": "综合分析无监督学习与损失函数在完整训练流程中的衔接关系、风险和验证方法。",
+      "expected_document_ids": [
+        "doc_006",
+        "doc_007"
+      ],
+      "required_concepts": [
+        "无标签",
+        "聚类",
+        "预测误差"
+      ]
+    },
+    {
+      "case_id": "e4a_03_concept",
+      "query_type": "concept_explanation",
+      "query": "面向初学者说明损失函数的核心含义、关键机制与典型用途。",
+      "expected_document_ids": [
+        "doc_007"
+      ],
+      "required_concepts": [
+        "预测误差",
+        "代价函数",
+        "可微"
+      ]
+    },
+    {
+      "case_id": "e4a_03_compare",
+      "query_type": "method_comparison",
+      "query": "比较损失函数和过拟合与正则化的目标、工作方式及适用条件，如何选择？",
+      "expected_document_ids": [
+        "doc_007",
+        "doc_008"
+      ],
+      "required_concepts": [
+        "预测误差",
+        "训练集"
+      ]
+    },
+    {
+      "case_id": "e4a_03_steps",
+      "query_type": "operation_steps",
+      "query": "在机器学习项目中落地损失函数时，请给出从准备、配置到检查结果的操作步骤。",
+      "expected_document_ids": [
+        "doc_007"
+      ],
+      "required_concepts": [
+        "预测误差",
+        "代价函数",
+        "可微"
+      ]
+    },
+    {
+      "case_id": "e4a_03_code",
+      "query_type": "programming_practice",
+      "query": "用Python或PyTorch实现损失函数的最小实践，需要哪些组件、伪代码和避坑检查？",
+      "expected_document_ids": [
+        "doc_007"
+      ],
+      "required_concepts": [
+        "预测误差",
+        "代价函数",
+        "可微"
+      ]
+    },
+    {
+      "case_id": "e4a_03_synthesis",
+      "query_type": "comprehensive_question",
+      "query": "综合分析损失函数与过拟合与正则化在完整训练流程中的衔接关系、风险和验证方法。",
+      "expected_document_ids": [
+        "doc_007",
+        "doc_008"
+      ],
+      "required_concepts": [
+        "预测误差",
+        "代价函数",
+        "训练集"
+      ]
+    },
+    {
+      "case_id": "e4a_04_concept",
+      "query_type": "concept_explanation",
+      "query": "面向初学者说明过拟合与正则化的核心含义、关键机制与典型用途。",
+      "expected_document_ids": [
+        "doc_008"
+      ],
+      "required_concepts": [
+        "训练集",
+        "泛化",
+        "偏差方差"
+      ]
+    },
+    {
+      "case_id": "e4a_04_compare",
+      "query_type": "method_comparison",
+      "query": "比较过拟合与正则化和特征工程的目标、工作方式及适用条件，如何选择？",
+      "expected_document_ids": [
+        "doc_008",
+        "doc_009"
+      ],
+      "required_concepts": [
+        "训练集",
+        "构造"
+      ]
+    },
+    {
+      "case_id": "e4a_04_steps",
+      "query_type": "operation_steps",
+      "query": "在机器学习项目中落地过拟合与正则化时，请给出从准备、配置到检查结果的操作步骤。",
+      "expected_document_ids": [
+        "doc_008"
+      ],
+      "required_concepts": [
+        "训练集",
+        "泛化",
+        "偏差方差"
+      ]
+    },
+    {
+      "case_id": "e4a_04_code",
+      "query_type": "programming_practice",
+      "query": "用Python或PyTorch实现过拟合与正则化的最小实践，需要哪些组件、伪代码和避坑检查？",
+      "expected_document_ids": [
+        "doc_008"
+      ],
+      "required_concepts": [
+        "训练集",
+        "泛化",
+        "偏差方差"
+      ]
+    },
+    {
+      "case_id": "e4a_04_synthesis",
+      "query_type": "comprehensive_question",
+      "query": "综合分析过拟合与正则化与特征工程在完整训练流程中的衔接关系、风险和验证方法。",
+      "expected_document_ids": [
+        "doc_008",
+        "doc_009"
+      ],
+      "required_concepts": [
+        "训练集",
+        "泛化",
+        "构造"
+      ]
+    },
+    {
+      "case_id": "e4a_05_concept",
+      "query_type": "concept_explanation",
+      "query": "面向初学者说明特征工程的核心含义、关键机制与典型用途。",
+      "expected_document_ids": [
+        "doc_009"
+      ],
+      "required_concepts": [
+        "构造",
+        "选择",
+        "变换"
+      ]
+    },
+    {
+      "case_id": "e4a_05_compare",
+      "query_type": "method_comparison",
+      "query": "比较特征工程和人工神经元的目标、工作方式及适用条件，如何选择？",
+      "expected_document_ids": [
+        "doc_009",
+        "doc_010"
+      ],
+      "required_concepts": [
+        "构造",
+        "加权求和"
+      ]
+    },
+    {
+      "case_id": "e4a_05_steps",
+      "query_type": "operation_steps",
+      "query": "在机器学习项目中落地特征工程时，请给出从准备、配置到检查结果的操作步骤。",
+      "expected_document_ids": [
+        "doc_009"
+      ],
+      "required_concepts": [
+        "构造",
+        "选择",
+        "变换"
+      ]
+    },
+    {
+      "case_id": "e4a_05_code",
+      "query_type": "programming_practice",
+      "query": "用Python或PyTorch实现特征工程的最小实践，需要哪些组件、伪代码和避坑检查？",
+      "expected_document_ids": [
+        "doc_009"
+      ],
+      "required_concepts": [
+        "构造",
+        "选择",
+        "变换"
+      ]
+    },
+    {
+      "case_id": "e4a_05_synthesis",
+      "query_type": "comprehensive_question",
+      "query": "综合分析特征工程与人工神经元在完整训练流程中的衔接关系、风险和验证方法。",
+      "expected_document_ids": [
+        "doc_009",
+        "doc_010"
+      ],
+      "required_concepts": [
+        "构造",
+        "选择",
+        "加权求和"
+      ]
+    },
+    {
+      "case_id": "e4a_06_concept",
+      "query_type": "concept_explanation",
+      "query": "面向初学者说明人工神经元的核心含义、关键机制与典型用途。",
+      "expected_document_ids": [
+        "doc_010"
+      ],
+      "required_concepts": [
+        "加权求和",
+        "偏置",
+        "激活"
+      ]
+    },
+    {
+      "case_id": "e4a_06_compare",
+      "query_type": "method_comparison",
+      "query": "比较人工神经元和多层感知机的目标、工作方式及适用条件，如何选择？",
+      "expected_document_ids": [
+        "doc_010",
+        "doc_011"
+      ],
+      "required_concepts": [
+        "加权求和",
+        "隐藏层"
+      ]
+    },
+    {
+      "case_id": "e4a_06_steps",
+      "query_type": "operation_steps",
+      "query": "在机器学习项目中落地人工神经元时，请给出从准备、配置到检查结果的操作步骤。",
+      "expected_document_ids": [
+        "doc_010"
+      ],
+      "required_concepts": [
+        "加权求和",
+        "偏置",
+        "激活"
+      ]
+    },
+    {
+      "case_id": "e4a_06_code",
+      "query_type": "programming_practice",
+      "query": "用Python或PyTorch实现人工神经元的最小实践，需要哪些组件、伪代码和避坑检查？",
+      "expected_document_ids": [
+        "doc_010"
+      ],
+      "required_concepts": [
+        "加权求和",
+        "偏置",
+        "激活"
+      ]
+    },
+    {
+      "case_id": "e4a_06_synthesis",
+      "query_type": "comprehensive_question",
+      "query": "综合分析人工神经元与多层感知机在完整训练流程中的衔接关系、风险和验证方法。",
+      "expected_document_ids": [
+        "doc_010",
+        "doc_011"
+      ],
+      "required_concepts": [
+        "加权求和",
+        "偏置",
+        "隐藏层"
+      ]
+    },
+    {
+      "case_id": "e4a_07_concept",
+      "query_type": "concept_explanation",
+      "query": "面向初学者说明多层感知机的核心含义、关键机制与典型用途。",
+      "expected_document_ids": [
+        "doc_011"
+      ],
+      "required_concepts": [
+        "隐藏层",
+        "全连接",
+        "非线性"
+      ]
+    },
+    {
+      "case_id": "e4a_07_compare",
+      "query_type": "method_comparison",
+      "query": "比较多层感知机和激活函数的目标、工作方式及适用条件，如何选择？",
+      "expected_document_ids": [
+        "doc_011",
+        "doc_012"
+      ],
+      "required_concepts": [
+        "隐藏层",
+        "ReLU"
+      ]
+    },
+    {
+      "case_id": "e4a_07_steps",
+      "query_type": "operation_steps",
+      "query": "在机器学习项目中落地多层感知机时，请给出从准备、配置到检查结果的操作步骤。",
+      "expected_document_ids": [
+        "doc_011"
+      ],
+      "required_concepts": [
+        "隐藏层",
+        "全连接",
+        "非线性"
+      ]
+    },
+    {
+      "case_id": "e4a_07_code",
+      "query_type": "programming_practice",
+      "query": "用Python或PyTorch实现多层感知机的最小实践，需要哪些组件、伪代码和避坑检查？",
+      "expected_document_ids": [
+        "doc_011"
+      ],
+      "required_concepts": [
+        "隐藏层",
+        "全连接",
+        "非线性"
+      ]
+    },
+    {
+      "case_id": "e4a_07_synthesis",
+      "query_type": "comprehensive_question",
+      "query": "综合分析多层感知机与激活函数在完整训练流程中的衔接关系、风险和验证方法。",
+      "expected_document_ids": [
+        "doc_011",
+        "doc_012"
+      ],
+      "required_concepts": [
+        "隐藏层",
+        "全连接",
+        "ReLU"
+      ]
+    },
+    {
+      "case_id": "e4a_08_concept",
+      "query_type": "concept_explanation",
+      "query": "面向初学者说明激活函数的核心含义、关键机制与典型用途。",
+      "expected_document_ids": [
+        "doc_012"
+      ],
+      "required_concepts": [
+        "ReLU",
+        "Sigmoid",
+        "梯度"
+      ]
+    },
+    {
+      "case_id": "e4a_08_compare",
+      "query_type": "method_comparison",
+      "query": "比较激活函数和反向传播的目标、工作方式及适用条件，如何选择？",
+      "expected_document_ids": [
+        "doc_012",
+        "doc_013"
+      ],
+      "required_concepts": [
+        "ReLU",
+        "链式法则"
+      ]
+    },
+    {
+      "case_id": "e4a_08_steps",
+      "query_type": "operation_steps",
+      "query": "在机器学习项目中落地激活函数时，请给出从准备、配置到检查结果的操作步骤。",
+      "expected_document_ids": [
+        "doc_012"
+      ],
+      "required_concepts": [
+        "ReLU",
+        "Sigmoid",
+        "梯度"
+      ]
+    },
+    {
+      "case_id": "e4a_08_code",
+      "query_type": "programming_practice",
+      "query": "用Python或PyTorch实现激活函数的最小实践，需要哪些组件、伪代码和避坑检查？",
+      "expected_document_ids": [
+        "doc_012"
+      ],
+      "required_concepts": [
+        "ReLU",
+        "Sigmoid",
+        "梯度"
+      ]
+    },
+    {
+      "case_id": "e4a_08_synthesis",
+      "query_type": "comprehensive_question",
+      "query": "综合分析激活函数与反向传播在完整训练流程中的衔接关系、风险和验证方法。",
+      "expected_document_ids": [
+        "doc_012",
+        "doc_013"
+      ],
+      "required_concepts": [
+        "ReLU",
+        "Sigmoid",
+        "链式法则"
+      ]
+    },
+    {
+      "case_id": "e4a_09_concept",
+      "query_type": "concept_explanation",
+      "query": "面向初学者说明反向传播的核心含义、关键机制与典型用途。",
+      "expected_document_ids": [
+        "doc_013"
+      ],
+      "required_concepts": [
+        "链式法则",
+        "梯度",
+        "参数更新"
+      ]
+    },
+    {
+      "case_id": "e4a_09_compare",
+      "query_type": "method_comparison",
+      "query": "比较反向传播和梯度下降的目标、工作方式及适用条件，如何选择？",
+      "expected_document_ids": [
+        "doc_013",
+        "doc_014"
+      ],
+      "required_concepts": [
+        "链式法则",
+        "学习率"
+      ]
+    },
+    {
+      "case_id": "e4a_09_steps",
+      "query_type": "operation_steps",
+      "query": "在机器学习项目中落地反向传播时，请给出从准备、配置到检查结果的操作步骤。",
+      "expected_document_ids": [
+        "doc_013"
+      ],
+      "required_concepts": [
+        "链式法则",
+        "梯度",
+        "参数更新"
+      ]
+    },
+    {
+      "case_id": "e4a_09_code",
+      "query_type": "programming_practice",
+      "query": "用Python或PyTorch实现反向传播的最小实践，需要哪些组件、伪代码和避坑检查？",
+      "expected_document_ids": [
+        "doc_013"
+      ],
+      "required_concepts": [
+        "链式法则",
+        "梯度",
+        "参数更新"
+      ]
+    },
+    {
+      "case_id": "e4a_09_synthesis",
+      "query_type": "comprehensive_question",
+      "query": "综合分析反向传播与梯度下降在完整训练流程中的衔接关系、风险和验证方法。",
+      "expected_document_ids": [
+        "doc_013",
+        "doc_014"
+      ],
+      "required_concepts": [
+        "链式法则",
+        "梯度",
+        "学习率"
+      ]
+    },
+    {
+      "case_id": "e4a_10_concept",
+      "query_type": "concept_explanation",
+      "query": "面向初学者说明梯度下降的核心含义、关键机制与典型用途。",
+      "expected_document_ids": [
+        "doc_014"
+      ],
+      "required_concepts": [
+        "学习率",
+        "损失",
+        "收敛"
+      ]
+    },
+    {
+      "case_id": "e4a_10_compare",
+      "query_type": "method_comparison",
+      "query": "比较梯度下降和归一化的目标、工作方式及适用条件，如何选择？",
+      "expected_document_ids": [
+        "doc_014",
+        "doc_015"
+      ],
+      "required_concepts": [
+        "学习率",
+        "分布稳定"
+      ]
+    },
+    {
+      "case_id": "e4a_10_steps",
+      "query_type": "operation_steps",
+      "query": "在机器学习项目中落地梯度下降时，请给出从准备、配置到检查结果的操作步骤。",
+      "expected_document_ids": [
+        "doc_014"
+      ],
+      "required_concepts": [
+        "学习率",
+        "损失",
+        "收敛"
+      ]
+    },
+    {
+      "case_id": "e4a_10_code",
+      "query_type": "programming_practice",
+      "query": "用Python或PyTorch实现梯度下降的最小实践，需要哪些组件、伪代码和避坑检查？",
+      "expected_document_ids": [
+        "doc_014"
+      ],
+      "required_concepts": [
+        "学习率",
+        "损失",
+        "收敛"
+      ]
+    },
+    {
+      "case_id": "e4a_10_synthesis",
+      "query_type": "comprehensive_question",
+      "query": "综合分析梯度下降与归一化在完整训练流程中的衔接关系、风险和验证方法。",
+      "expected_document_ids": [
+        "doc_014",
+        "doc_015"
+      ],
+      "required_concepts": [
+        "学习率",
+        "损失",
+        "分布稳定"
+      ]
+    },
+    {
+      "case_id": "e4a_11_concept",
+      "query_type": "concept_explanation",
+      "query": "面向初学者说明归一化的核心含义、关键机制与典型用途。",
+      "expected_document_ids": [
+        "doc_015"
+      ],
+      "required_concepts": [
+        "分布稳定",
+        "BatchNorm",
+        "LayerNorm"
+      ]
+    },
+    {
+      "case_id": "e4a_11_compare",
+      "query_type": "method_comparison",
+      "query": "比较归一化和Dropout的目标、工作方式及适用条件，如何选择？",
+      "expected_document_ids": [
+        "doc_015",
+        "doc_016"
+      ],
+      "required_concepts": [
+        "分布稳定",
+        "随机失活"
+      ]
+    },
+    {
+      "case_id": "e4a_11_steps",
+      "query_type": "operation_steps",
+      "query": "在机器学习项目中落地归一化时，请给出从准备、配置到检查结果的操作步骤。",
+      "expected_document_ids": [
+        "doc_015"
+      ],
+      "required_concepts": [
+        "分布稳定",
+        "BatchNorm",
+        "LayerNorm"
+      ]
+    },
+    {
+      "case_id": "e4a_11_code",
+      "query_type": "programming_practice",
+      "query": "用Python或PyTorch实现归一化的最小实践，需要哪些组件、伪代码和避坑检查？",
+      "expected_document_ids": [
+        "doc_015"
+      ],
+      "required_concepts": [
+        "分布稳定",
+        "BatchNorm",
+        "LayerNorm"
+      ]
+    },
+    {
+      "case_id": "e4a_11_synthesis",
+      "query_type": "comprehensive_question",
+      "query": "综合分析归一化与Dropout在完整训练流程中的衔接关系、风险和验证方法。",
+      "expected_document_ids": [
+        "doc_015",
+        "doc_016"
+      ],
+      "required_concepts": [
+        "分布稳定",
+        "BatchNorm",
+        "随机失活"
+      ]
+    },
+    {
+      "case_id": "e4a_12_concept",
+      "query_type": "concept_explanation",
+      "query": "面向初学者说明Dropout的核心含义、关键机制与典型用途。",
+      "expected_document_ids": [
+        "doc_016"
+      ],
+      "required_concepts": [
+        "随机失活",
+        "正则化",
+        "推理"
+      ]
+    },
+    {
+      "case_id": "e4a_12_compare",
+      "query_type": "method_comparison",
+      "query": "比较Dropout和学习率调度的目标、工作方式及适用条件，如何选择？",
+      "expected_document_ids": [
+        "doc_016",
+        "doc_017"
+      ],
+      "required_concepts": [
+        "随机失活",
+        "预热"
+      ]
+    },
+    {
+      "case_id": "e4a_12_steps",
+      "query_type": "operation_steps",
+      "query": "在机器学习项目中落地Dropout时，请给出从准备、配置到检查结果的操作步骤。",
+      "expected_document_ids": [
+        "doc_016"
+      ],
+      "required_concepts": [
+        "随机失活",
+        "正则化",
+        "推理"
+      ]
+    },
+    {
+      "case_id": "e4a_12_code",
+      "query_type": "programming_practice",
+      "query": "用Python或PyTorch实现Dropout的最小实践，需要哪些组件、伪代码和避坑检查？",
+      "expected_document_ids": [
+        "doc_016"
+      ],
+      "required_concepts": [
+        "随机失活",
+        "正则化",
+        "推理"
+      ]
+    },
+    {
+      "case_id": "e4a_12_synthesis",
+      "query_type": "comprehensive_question",
+      "query": "综合分析Dropout与学习率调度在完整训练流程中的衔接关系、风险和验证方法。",
+      "expected_document_ids": [
+        "doc_016",
+        "doc_017"
+      ],
+      "required_concepts": [
+        "随机失活",
+        "正则化",
+        "预热"
+      ]
+    },
+    {
+      "case_id": "e4a_13_concept",
+      "query_type": "concept_explanation",
+      "query": "面向初学者说明学习率调度的核心含义、关键机制与典型用途。",
+      "expected_document_ids": [
+        "doc_017"
+      ],
+      "required_concepts": [
+        "预热",
+        "衰减",
+        "收敛"
+      ]
+    },
+    {
+      "case_id": "e4a_13_compare",
+      "query_type": "method_comparison",
+      "query": "比较学习率调度和卷积层的目标、工作方式及适用条件，如何选择？",
+      "expected_document_ids": [
+        "doc_017",
+        "doc_018"
+      ],
+      "required_concepts": [
+        "预热",
+        "卷积核"
+      ]
+    },
+    {
+      "case_id": "e4a_13_steps",
+      "query_type": "operation_steps",
+      "query": "在机器学习项目中落地学习率调度时，请给出从准备、配置到检查结果的操作步骤。",
+      "expected_document_ids": [
+        "doc_017"
+      ],
+      "required_concepts": [
+        "预热",
+        "衰减",
+        "收敛"
+      ]
+    },
+    {
+      "case_id": "e4a_13_code",
+      "query_type": "programming_practice",
+      "query": "用Python或PyTorch实现学习率调度的最小实践，需要哪些组件、伪代码和避坑检查？",
+      "expected_document_ids": [
+        "doc_017"
+      ],
+      "required_concepts": [
+        "预热",
+        "衰减",
+        "收敛"
+      ]
+    },
+    {
+      "case_id": "e4a_13_synthesis",
+      "query_type": "comprehensive_question",
+      "query": "综合分析学习率调度与卷积层在完整训练流程中的衔接关系、风险和验证方法。",
+      "expected_document_ids": [
+        "doc_017",
+        "doc_018"
+      ],
+      "required_concepts": [
+        "预热",
+        "衰减",
+        "卷积核"
+      ]
+    },
+    {
+      "case_id": "e4a_14_concept",
+      "query_type": "concept_explanation",
+      "query": "面向初学者说明卷积层的核心含义、关键机制与典型用途。",
+      "expected_document_ids": [
+        "doc_018"
+      ],
+      "required_concepts": [
+        "卷积核",
+        "步长",
+        "填充"
+      ]
+    },
+    {
+      "case_id": "e4a_14_compare",
+      "query_type": "method_comparison",
+      "query": "比较卷积层和池化层的目标、工作方式及适用条件，如何选择？",
+      "expected_document_ids": [
+        "doc_018",
+        "doc_019"
+      ],
+      "required_concepts": [
+        "卷积核",
+        "下采样"
+      ]
+    },
+    {
+      "case_id": "e4a_14_steps",
+      "query_type": "operation_steps",
+      "query": "在机器学习项目中落地卷积层时，请给出从准备、配置到检查结果的操作步骤。",
+      "expected_document_ids": [
+        "doc_018"
+      ],
+      "required_concepts": [
+        "卷积核",
+        "步长",
+        "填充"
+      ]
+    },
+    {
+      "case_id": "e4a_14_code",
+      "query_type": "programming_practice",
+      "query": "用Python或PyTorch实现卷积层的最小实践，需要哪些组件、伪代码和避坑检查？",
+      "expected_document_ids": [
+        "doc_018"
+      ],
+      "required_concepts": [
+        "卷积核",
+        "步长",
+        "填充"
+      ]
+    },
+    {
+      "case_id": "e4a_14_synthesis",
+      "query_type": "comprehensive_question",
+      "query": "综合分析卷积层与池化层在完整训练流程中的衔接关系、风险和验证方法。",
+      "expected_document_ids": [
+        "doc_018",
+        "doc_019"
+      ],
+      "required_concepts": [
+        "卷积核",
+        "步长",
+        "下采样"
+      ]
+    },
+    {
+      "case_id": "e4a_15_concept",
+      "query_type": "concept_explanation",
+      "query": "面向初学者说明池化层的核心含义、关键机制与典型用途。",
+      "expected_document_ids": [
+        "doc_019"
+      ],
+      "required_concepts": [
+        "下采样",
+        "最大池化",
+        "平均池化"
+      ]
+    },
+    {
+      "case_id": "e4a_15_compare",
+      "query_type": "method_comparison",
+      "query": "比较池化层和感受野的目标、工作方式及适用条件，如何选择？",
+      "expected_document_ids": [
+        "doc_019",
+        "doc_020"
+      ],
+      "required_concepts": [
+        "下采样",
+        "局部特征"
+      ]
+    },
+    {
+      "case_id": "e4a_15_steps",
+      "query_type": "operation_steps",
+      "query": "在机器学习项目中落地池化层时，请给出从准备、配置到检查结果的操作步骤。",
+      "expected_document_ids": [
+        "doc_019"
+      ],
+      "required_concepts": [
+        "下采样",
+        "最大池化",
+        "平均池化"
+      ]
+    },
+    {
+      "case_id": "e4a_15_code",
+      "query_type": "programming_practice",
+      "query": "用Python或PyTorch实现池化层的最小实践，需要哪些组件、伪代码和避坑检查？",
+      "expected_document_ids": [
+        "doc_019"
+      ],
+      "required_concepts": [
+        "下采样",
+        "最大池化",
+        "平均池化"
+      ]
+    },
+    {
+      "case_id": "e4a_15_synthesis",
+      "query_type": "comprehensive_question",
+      "query": "综合分析池化层与感受野在完整训练流程中的衔接关系、风险和验证方法。",
+      "expected_document_ids": [
+        "doc_019",
+        "doc_020"
+      ],
+      "required_concepts": [
+        "下采样",
+        "最大池化",
+        "局部特征"
+      ]
+    },
+    {
+      "case_id": "e4a_16_concept",
+      "query_type": "concept_explanation",
+      "query": "面向初学者说明感受野的核心含义、关键机制与典型用途。",
+      "expected_document_ids": [
+        "doc_020"
+      ],
+      "required_concepts": [
+        "局部特征",
+        "层叠",
+        "上下文"
+      ]
+    },
+    {
+      "case_id": "e4a_16_compare",
+      "query_type": "method_comparison",
+      "query": "比较感受野和CNN架构演进的目标、工作方式及适用条件，如何选择？",
+      "expected_document_ids": [
+        "doc_020",
+        "doc_021"
+      ],
+      "required_concepts": [
+        "局部特征",
+        "LeNet"
+      ]
+    },
+    {
+      "case_id": "e4a_16_steps",
+      "query_type": "operation_steps",
+      "query": "在机器学习项目中落地感受野时，请给出从准备、配置到检查结果的操作步骤。",
+      "expected_document_ids": [
+        "doc_020"
+      ],
+      "required_concepts": [
+        "局部特征",
+        "层叠",
+        "上下文"
+      ]
+    },
+    {
+      "case_id": "e4a_16_code",
+      "query_type": "programming_practice",
+      "query": "用Python或PyTorch实现感受野的最小实践，需要哪些组件、伪代码和避坑检查？",
+      "expected_document_ids": [
+        "doc_020"
+      ],
+      "required_concepts": [
+        "局部特征",
+        "层叠",
+        "上下文"
+      ]
+    },
+    {
+      "case_id": "e4a_16_synthesis",
+      "query_type": "comprehensive_question",
+      "query": "综合分析感受野与CNN架构演进在完整训练流程中的衔接关系、风险和验证方法。",
+      "expected_document_ids": [
+        "doc_020",
+        "doc_021"
+      ],
+      "required_concepts": [
+        "局部特征",
+        "层叠",
+        "LeNet"
+      ]
+    },
+    {
+      "case_id": "e4a_17_concept",
+      "query_type": "concept_explanation",
+      "query": "面向初学者说明CNN架构演进的核心含义、关键机制与典型用途。",
+      "expected_document_ids": [
+        "doc_021"
+      ],
+      "required_concepts": [
+        "LeNet",
+        "AlexNet",
+        "残差"
+      ]
+    },
+    {
+      "case_id": "e4a_17_compare",
+      "query_type": "method_comparison",
+      "query": "比较CNN架构演进和自注意力的目标、工作方式及适用条件，如何选择？",
+      "expected_document_ids": [
+        "doc_021",
+        "doc_022"
+      ],
+      "required_concepts": [
+        "LeNet",
+        "Query"
+      ]
+    },
+    {
+      "case_id": "e4a_17_steps",
+      "query_type": "operation_steps",
+      "query": "在机器学习项目中落地CNN架构演进时，请给出从准备、配置到检查结果的操作步骤。",
+      "expected_document_ids": [
+        "doc_021"
+      ],
+      "required_concepts": [
+        "LeNet",
+        "AlexNet",
+        "残差"
+      ]
+    },
+    {
+      "case_id": "e4a_17_code",
+      "query_type": "programming_practice",
+      "query": "用Python或PyTorch实现CNN架构演进的最小实践，需要哪些组件、伪代码和避坑检查？",
+      "expected_document_ids": [
+        "doc_021"
+      ],
+      "required_concepts": [
+        "LeNet",
+        "AlexNet",
+        "残差"
+      ]
+    },
+    {
+      "case_id": "e4a_17_synthesis",
+      "query_type": "comprehensive_question",
+      "query": "综合分析CNN架构演进与自注意力在完整训练流程中的衔接关系、风险和验证方法。",
+      "expected_document_ids": [
+        "doc_021",
+        "doc_022"
+      ],
+      "required_concepts": [
+        "LeNet",
+        "AlexNet",
+        "Query"
+      ]
+    },
+    {
+      "case_id": "e4a_18_concept",
+      "query_type": "concept_explanation",
+      "query": "面向初学者说明自注意力的核心含义、关键机制与典型用途。",
+      "expected_document_ids": [
+        "doc_022"
+      ],
+      "required_concepts": [
+        "Query",
+        "Key",
+        "Value"
+      ]
+    },
+    {
+      "case_id": "e4a_18_compare",
+      "query_type": "method_comparison",
+      "query": "比较自注意力和多头注意力的目标、工作方式及适用条件，如何选择？",
+      "expected_document_ids": [
+        "doc_022",
+        "doc_023"
+      ],
+      "required_concepts": [
+        "Query",
+        "投影"
+      ]
+    },
+    {
+      "case_id": "e4a_18_steps",
+      "query_type": "operation_steps",
+      "query": "在机器学习项目中落地自注意力时，请给出从准备、配置到检查结果的操作步骤。",
+      "expected_document_ids": [
+        "doc_022"
+      ],
+      "required_concepts": [
+        "Query",
+        "Key",
+        "Value"
+      ]
+    },
+    {
+      "case_id": "e4a_18_code",
+      "query_type": "programming_practice",
+      "query": "用Python或PyTorch实现自注意力的最小实践，需要哪些组件、伪代码和避坑检查？",
+      "expected_document_ids": [
+        "doc_022"
+      ],
+      "required_concepts": [
+        "Query",
+        "Key",
+        "Value"
+      ]
+    },
+    {
+      "case_id": "e4a_18_synthesis",
+      "query_type": "comprehensive_question",
+      "query": "综合分析自注意力与多头注意力在完整训练流程中的衔接关系、风险和验证方法。",
+      "expected_document_ids": [
+        "doc_022",
+        "doc_023"
+      ],
+      "required_concepts": [
+        "Query",
+        "Key",
+        "投影"
+      ]
+    },
+    {
+      "case_id": "e4a_19_concept",
+      "query_type": "concept_explanation",
+      "query": "面向初学者说明多头注意力的核心含义、关键机制与典型用途。",
+      "expected_document_ids": [
+        "doc_023"
+      ],
+      "required_concepts": [
+        "投影",
+        "并行",
+        "子空间"
+      ]
+    },
+    {
+      "case_id": "e4a_19_compare",
+      "query_type": "method_comparison",
+      "query": "比较多头注意力和位置编码的目标、工作方式及适用条件，如何选择？",
+      "expected_document_ids": [
+        "doc_023",
+        "doc_024"
+      ],
+      "required_concepts": [
+        "投影",
+        "词序"
+      ]
+    },
+    {
+      "case_id": "e4a_19_steps",
+      "query_type": "operation_steps",
+      "query": "在机器学习项目中落地多头注意力时，请给出从准备、配置到检查结果的操作步骤。",
+      "expected_document_ids": [
+        "doc_023"
+      ],
+      "required_concepts": [
+        "投影",
+        "并行",
+        "子空间"
+      ]
+    },
+    {
+      "case_id": "e4a_19_code",
+      "query_type": "programming_practice",
+      "query": "用Python或PyTorch实现多头注意力的最小实践，需要哪些组件、伪代码和避坑检查？",
+      "expected_document_ids": [
+        "doc_023"
+      ],
+      "required_concepts": [
+        "投影",
+        "并行",
+        "子空间"
+      ]
+    },
+    {
+      "case_id": "e4a_19_synthesis",
+      "query_type": "comprehensive_question",
+      "query": "综合分析多头注意力与位置编码在完整训练流程中的衔接关系、风险和验证方法。",
+      "expected_document_ids": [
+        "doc_023",
+        "doc_024"
+      ],
+      "required_concepts": [
+        "投影",
+        "并行",
+        "词序"
+      ]
+    },
+    {
+      "case_id": "e4a_20_concept",
+      "query_type": "concept_explanation",
+      "query": "面向初学者说明位置编码的核心含义、关键机制与典型用途。",
+      "expected_document_ids": [
+        "doc_024"
+      ],
+      "required_concepts": [
+        "词序",
+        "正弦余弦",
+        "位置"
+      ]
+    },
+    {
+      "case_id": "e4a_20_compare",
+      "query_type": "method_comparison",
+      "query": "比较位置编码和Transformer编码器与解码器的目标、工作方式及适用条件，如何选择？",
+      "expected_document_ids": [
+        "doc_024",
+        "doc_025"
+      ],
+      "required_concepts": [
+        "词序",
+        "编码器"
+      ]
+    },
+    {
+      "case_id": "e4a_20_steps",
+      "query_type": "operation_steps",
+      "query": "在机器学习项目中落地位置编码时，请给出从准备、配置到检查结果的操作步骤。",
+      "expected_document_ids": [
+        "doc_024"
+      ],
+      "required_concepts": [
+        "词序",
+        "正弦余弦",
+        "位置"
+      ]
+    },
+    {
+      "case_id": "e4a_20_code",
+      "query_type": "programming_practice",
+      "query": "用Python或PyTorch实现位置编码的最小实践，需要哪些组件、伪代码和避坑检查？",
+      "expected_document_ids": [
+        "doc_024"
+      ],
+      "required_concepts": [
+        "词序",
+        "正弦余弦",
+        "位置"
+      ]
+    },
+    {
+      "case_id": "e4a_20_synthesis",
+      "query_type": "comprehensive_question",
+      "query": "综合分析位置编码与Transformer编码器与解码器在完整训练流程中的衔接关系、风险和验证方法。",
+      "expected_document_ids": [
+        "doc_024",
+        "doc_025"
+      ],
+      "required_concepts": [
+        "词序",
+        "正弦余弦",
+        "编码器"
+      ]
+    },
+    {
+      "case_id": "e4a_21_concept",
+      "query_type": "concept_explanation",
+      "query": "面向初学者说明Transformer编码器与解码器的核心含义、关键机制与典型用途。",
+      "expected_document_ids": [
+        "doc_025"
+      ],
+      "required_concepts": [
+        "编码器",
+        "解码器",
+        "自回归"
+      ]
+    },
+    {
+      "case_id": "e4a_21_compare",
+      "query_type": "method_comparison",
+      "query": "比较Transformer编码器与解码器和预训练与迁移学习的目标、工作方式及适用条件，如何选择？",
+      "expected_document_ids": [
+        "doc_025",
+        "doc_026"
+      ],
+      "required_concepts": [
+        "编码器",
+        "自监督"
+      ]
+    },
+    {
+      "case_id": "e4a_21_steps",
+      "query_type": "operation_steps",
+      "query": "在机器学习项目中落地Transformer编码器与解码器时，请给出从准备、配置到检查结果的操作步骤。",
+      "expected_document_ids": [
+        "doc_025"
+      ],
+      "required_concepts": [
+        "编码器",
+        "解码器",
+        "自回归"
+      ]
+    },
+    {
+      "case_id": "e4a_21_code",
+      "query_type": "programming_practice",
+      "query": "用Python或PyTorch实现Transformer编码器与解码器的最小实践，需要哪些组件、伪代码和避坑检查？",
+      "expected_document_ids": [
+        "doc_025"
+      ],
+      "required_concepts": [
+        "编码器",
+        "解码器",
+        "自回归"
+      ]
+    },
+    {
+      "case_id": "e4a_21_synthesis",
+      "query_type": "comprehensive_question",
+      "query": "综合分析Transformer编码器与解码器与预训练与迁移学习在完整训练流程中的衔接关系、风险和验证方法。",
+      "expected_document_ids": [
+        "doc_025",
+        "doc_026"
+      ],
+      "required_concepts": [
+        "编码器",
+        "解码器",
+        "自监督"
+      ]
+    },
+    {
+      "case_id": "e4a_22_concept",
+      "query_type": "concept_explanation",
+      "query": "面向初学者说明预训练与迁移学习的核心含义、关键机制与典型用途。",
+      "expected_document_ids": [
+        "doc_026"
+      ],
+      "required_concepts": [
+        "自监督",
+        "基础模型",
+        "下游任务"
+      ]
+    },
+    {
+      "case_id": "e4a_22_compare",
+      "query_type": "method_comparison",
+      "query": "比较预训练与迁移学习和全参微调与参数高效微调的目标、工作方式及适用条件，如何选择？",
+      "expected_document_ids": [
+        "doc_026",
+        "doc_027"
+      ],
+      "required_concepts": [
+        "自监督",
+        "参数更新"
+      ]
+    },
+    {
+      "case_id": "e4a_22_steps",
+      "query_type": "operation_steps",
+      "query": "在机器学习项目中落地预训练与迁移学习时，请给出从准备、配置到检查结果的操作步骤。",
+      "expected_document_ids": [
+        "doc_026"
+      ],
+      "required_concepts": [
+        "自监督",
+        "基础模型",
+        "下游任务"
+      ]
+    },
+    {
+      "case_id": "e4a_22_code",
+      "query_type": "programming_practice",
+      "query": "用Python或PyTorch实现预训练与迁移学习的最小实践，需要哪些组件、伪代码和避坑检查？",
+      "expected_document_ids": [
+        "doc_026"
+      ],
+      "required_concepts": [
+        "自监督",
+        "基础模型",
+        "下游任务"
+      ]
+    },
+    {
+      "case_id": "e4a_22_synthesis",
+      "query_type": "comprehensive_question",
+      "query": "综合分析预训练与迁移学习与全参微调与参数高效微调在完整训练流程中的衔接关系、风险和验证方法。",
+      "expected_document_ids": [
+        "doc_026",
+        "doc_027"
+      ],
+      "required_concepts": [
+        "自监督",
+        "基础模型",
+        "参数更新"
+      ]
+    },
+    {
+      "case_id": "e4a_23_concept",
+      "query_type": "concept_explanation",
+      "query": "面向初学者说明全参微调与参数高效微调的核心含义、关键机制与典型用途。",
+      "expected_document_ids": [
+        "doc_027"
+      ],
+      "required_concepts": [
+        "参数更新",
+        "显存",
+        "适配器"
+      ]
+    },
+    {
+      "case_id": "e4a_23_compare",
+      "query_type": "method_comparison",
+      "query": "比较全参微调与参数高效微调和LoRA低秩适配的目标、工作方式及适用条件，如何选择？",
+      "expected_document_ids": [
+        "doc_027",
+        "doc_028"
+      ],
+      "required_concepts": [
+        "参数更新",
+        "冻结权重"
+      ]
+    },
+    {
+      "case_id": "e4a_23_steps",
+      "query_type": "operation_steps",
+      "query": "在机器学习项目中落地全参微调与参数高效微调时，请给出从准备、配置到检查结果的操作步骤。",
+      "expected_document_ids": [
+        "doc_027"
+      ],
+      "required_concepts": [
+        "参数更新",
+        "显存",
+        "适配器"
+      ]
+    },
+    {
+      "case_id": "e4a_23_code",
+      "query_type": "programming_practice",
+      "query": "用Python或PyTorch实现全参微调与参数高效微调的最小实践，需要哪些组件、伪代码和避坑检查？",
+      "expected_document_ids": [
+        "doc_027"
+      ],
+      "required_concepts": [
+        "参数更新",
+        "显存",
+        "适配器"
+      ]
+    },
+    {
+      "case_id": "e4a_23_synthesis",
+      "query_type": "comprehensive_question",
+      "query": "综合分析全参微调与参数高效微调与LoRA低秩适配在完整训练流程中的衔接关系、风险和验证方法。",
+      "expected_document_ids": [
+        "doc_027",
+        "doc_028"
+      ],
+      "required_concepts": [
+        "参数更新",
+        "显存",
+        "冻结权重"
+      ]
+    },
+    {
+      "case_id": "e4a_24_concept",
+      "query_type": "concept_explanation",
+      "query": "面向初学者说明LoRA低秩适配的核心含义、关键机制与典型用途。",
+      "expected_document_ids": [
+        "doc_028"
+      ],
+      "required_concepts": [
+        "冻结权重",
+        "低秩矩阵",
+        "参数量"
+      ]
+    },
+    {
+      "case_id": "e4a_24_compare",
+      "query_type": "method_comparison",
+      "query": "比较LoRA低秩适配和指令微调的目标、工作方式及适用条件，如何选择？",
+      "expected_document_ids": [
+        "doc_028",
+        "doc_029"
+      ],
+      "required_concepts": [
+        "冻结权重",
+        "指令响应"
+      ]
+    },
+    {
+      "case_id": "e4a_24_steps",
+      "query_type": "operation_steps",
+      "query": "在机器学习项目中落地LoRA低秩适配时，请给出从准备、配置到检查结果的操作步骤。",
+      "expected_document_ids": [
+        "doc_028"
+      ],
+      "required_concepts": [
+        "冻结权重",
+        "低秩矩阵",
+        "参数量"
+      ]
+    },
+    {
+      "case_id": "e4a_24_code",
+      "query_type": "programming_practice",
+      "query": "用Python或PyTorch实现LoRA低秩适配的最小实践，需要哪些组件、伪代码和避坑检查？",
+      "expected_document_ids": [
+        "doc_028"
+      ],
+      "required_concepts": [
+        "冻结权重",
+        "低秩矩阵",
+        "参数量"
+      ]
+    },
+    {
+      "case_id": "e4a_24_synthesis",
+      "query_type": "comprehensive_question",
+      "query": "综合分析LoRA低秩适配与指令微调在完整训练流程中的衔接关系、风险和验证方法。",
+      "expected_document_ids": [
+        "doc_028",
+        "doc_029"
+      ],
+      "required_concepts": [
+        "冻结权重",
+        "低秩矩阵",
+        "指令响应"
+      ]
+    },
+    {
+      "case_id": "e4a_25_concept",
+      "query_type": "concept_explanation",
+      "query": "面向初学者说明指令微调的核心含义、关键机制与典型用途。",
+      "expected_document_ids": [
+        "doc_029"
+      ],
+      "required_concepts": [
+        "指令响应",
+        "监督微调",
+        "遵循指令"
+      ]
+    },
+    {
+      "case_id": "e4a_25_compare",
+      "query_type": "method_comparison",
+      "query": "比较指令微调和监督学习的目标、工作方式及适用条件，如何选择？",
+      "expected_document_ids": [
+        "doc_029",
+        "doc_005"
+      ],
+      "required_concepts": [
+        "指令响应",
+        "标签"
+      ]
+    },
+    {
+      "case_id": "e4a_25_steps",
+      "query_type": "operation_steps",
+      "query": "在机器学习项目中落地指令微调时，请给出从准备、配置到检查结果的操作步骤。",
+      "expected_document_ids": [
+        "doc_029"
+      ],
+      "required_concepts": [
+        "指令响应",
+        "监督微调",
+        "遵循指令"
+      ]
+    },
+    {
+      "case_id": "e4a_25_code",
+      "query_type": "programming_practice",
+      "query": "用Python或PyTorch实现指令微调的最小实践，需要哪些组件、伪代码和避坑检查？",
+      "expected_document_ids": [
+        "doc_029"
+      ],
+      "required_concepts": [
+        "指令响应",
+        "监督微调",
+        "遵循指令"
+      ]
+    },
+    {
+      "case_id": "e4a_25_synthesis",
+      "query_type": "comprehensive_question",
+      "query": "综合分析指令微调与监督学习在完整训练流程中的衔接关系、风险和验证方法。",
+      "expected_document_ids": [
+        "doc_029",
+        "doc_005"
+      ],
+      "required_concepts": [
+        "指令响应",
+        "监督微调",
+        "标签"
+      ]
+    }
+  ]
+}

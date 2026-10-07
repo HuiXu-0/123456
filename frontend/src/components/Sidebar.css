@@ -1,0 +1,830 @@
+/* ============================================
+   智学中枢 V3.0 - Sidebar
+   Deep Gradient, Glow Active, Glassmorphism
+   ============================================ */
+
+.sidebar {
+  position: fixed;
+  left: 0;
+  top: 0;
+  bottom: 0;
+  width: 260px;
+  /* V3.2: 近白磨砂玻璃面板，与内容区同质；底部一抹品牌色 */
+  background:
+    linear-gradient(180deg, transparent 60%, var(--sidebar-tint) 100%),
+    linear-gradient(180deg, var(--sidebar-surface-start) 0%, var(--sidebar-surface-end) 100%);
+  backdrop-filter: blur(24px) saturate(1.4);
+  -webkit-backdrop-filter: blur(24px) saturate(1.4);
+  display: flex;
+  flex-direction: column;
+  padding: 24px;
+  z-index: 100;
+  transition: width var(--transition-normal), padding var(--transition-normal),
+    background-color 0.4s var(--ease-standard), box-shadow 0.4s var(--ease-standard);
+  /* 浅色玻璃：清晰右缘 + 柔和投影把面板从近白页面背景中托起 */
+  box-shadow:
+    inset -1px 0 0 var(--sidebar-border),
+    inset 1px 0 0 rgba(255, 255, 255, 0.7),
+    8px 0 32px rgba(15, 23, 42, 0.06);
+}
+
+.sidebar--collapsed {
+  width: 80px;
+  padding: 16px;
+}
+
+/* ========== Logo 区域 ========== */
+.sidebar__header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 24px;
+  padding-bottom: 20px;
+  border-bottom: 1px solid var(--sidebar-divider);
+  flex-shrink: 0;
+}
+
+.sidebar__logo {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+/* 图标 + 真实文字组合：图标够大，文字矢量渲染永远锐利 */
+.sidebar__logo-mark {
+  height: 44px;
+  width: auto;
+  display: block;
+  flex-shrink: 0;
+  filter: drop-shadow(0 0 10px rgba(var(--sb-accent-light), 0.35));
+}
+
+.sidebar__logo-text {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+  min-width: 0;
+}
+
+.sidebar__logo-title {
+  font-size: 20px;
+  font-weight: 700;
+  color: var(--sidebar-title);
+  letter-spacing: -0.02em;
+  line-height: 1.1;
+  white-space: nowrap;
+}
+
+.sidebar__logo-subtitle {
+  font-size: 10px;
+  font-weight: 500;
+  color: var(--sidebar-desc);
+  text-transform: uppercase;
+  /* 0.12em：给右侧折叠按钮留出余量，260px 侧边栏内不顶格 */
+  letter-spacing: 0.12em;
+  white-space: nowrap;
+}
+
+/* ========== 折叠按钮 ========== */
+.sidebar__toggle {
+  width: 30px;
+  height: 30px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: rgba(15, 23, 42, 0.03);
+  border: 1px solid var(--sidebar-border);
+  border-radius: 8px;
+  cursor: pointer;
+  color: var(--gray-400);
+  transition: all var(--transition-fast);
+}
+
+.sidebar__toggle:hover {
+  background: rgba(var(--sb-accent), 0.10);
+  border-color: rgba(var(--sb-accent), 0.25);
+  color: rgb(var(--sb-accent));
+  box-shadow: 0 0 12px rgba(var(--sb-accent), 0.15);
+}
+
+.sidebar__toggle svg {
+  width: 14px;
+  height: 14px;
+}
+
+/* ========== 导航区域 ========== */
+.sidebar__nav {
+  flex: 1 1 auto;
+  min-height: 0;
+  overflow-y: auto;
+  overflow-x: hidden;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  /* 给滚动条留出空隙，避免遮挡导航项与激活态发光 */
+  margin-right: -6px;
+  padding-right: 6px;
+}
+
+.sidebar__nav-item {
+  position: relative;
+  display: flex;
+  align-items: center;
+  gap: 13px;
+  padding: 14px 16px;
+  /* 关键：作为滚动容器 .sidebar__nav 的 flex 子项，禁止纵向被压缩。
+     否则在矮窗口下各项会从 ~65px 挤成 padding 高度(~28px)、内容裁切，
+     且因项收缩到能塞下、滚动区间几乎为 0 → 滚轮无法滚动。 */
+  flex-shrink: 0;
+  background: transparent;
+  border: none;
+  border-radius: 12px;
+  cursor: pointer;
+  text-align: left;
+  transition: all var(--transition-fast);
+  overflow: hidden;
+  isolation: isolate;
+}
+
+.sidebar__nav-item--disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+/* ===== 分组小标题 + 分隔线 ===== */
+.sidebar__nav-group-title {
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 0.1em;
+  color: var(--gray-400);
+  text-transform: uppercase;
+  padding: 0 16px;
+  margin: 10px 0 8px;
+  flex-shrink: 0;
+}
+.sidebar__nav-group-title:first-child { margin-top: 2px; }
+
+/* 学情管家分组：统领性入口，标题加主色圆点 + 主色调，视觉上突出 */
+.sidebar__nav-group-title--steward {
+  color: var(--primary);
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+.sidebar__nav-group-title--steward::before {
+  content: '';
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: var(--primary);
+  box-shadow: 0 0 8px rgba(var(--primary-rgb), 0.6);
+  flex-shrink: 0;
+}
+
+.sidebar__nav-divider {
+  height: 1px;
+  background: var(--sidebar-divider);
+  margin: 14px 8px 6px;
+  flex-shrink: 0;
+}
+
+/* ===== 主线序号徽章 ①②③ ===== */
+.sidebar__nav-seq {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 18px;
+  height: 18px;
+  flex-shrink: 0;
+  border-radius: 50%;
+  font-size: 11px;
+  font-weight: 700;
+  font-family: var(--font-mono);
+  color: var(--primary-600);
+  background: color-mix(in srgb, var(--primary) 16%, transparent);
+  border: 1px solid rgba(var(--primary-rgb), 0.3);
+}
+
+.sidebar__nav-item--active .sidebar__nav-seq {
+  color: #fff;
+  background: var(--primary);
+  border-color: transparent;
+}
+
+/* ===== 软门控：前置未完成的步骤（仍可点击）===== */
+.sidebar__nav-item--locked .sidebar__nav-icon,
+.sidebar__nav-item--locked .sidebar__nav-content {
+  opacity: 0.55;
+}
+
+.sidebar__nav-item--locked .sidebar__nav-seq {
+  color: var(--gray-400);
+  background: color-mix(in srgb, var(--ink-soft) 12%, transparent);
+  border-color: var(--line);
+}
+
+.sidebar__nav-lock {
+  width: 12px;
+  height: 12px;
+  color: var(--gray-400);
+  flex-shrink: 0;
+}
+
+/* ===== 重置引导进度（演示入口）===== */
+.sidebar__reset {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 6px;
+  margin-top: 10px;
+  flex-shrink: 0;
+  padding: 8px;
+  border: none;
+  background: transparent;
+  color: var(--gray-400);
+  font-size: 11px;
+  font-family: inherit;
+  cursor: pointer;
+  border-radius: 8px;
+  transition: all var(--transition-fast);
+}
+
+.sidebar__reset svg {
+  width: 13px;
+  height: 13px;
+}
+
+.sidebar__reset:hover {
+  color: var(--ink-soft);
+  background: var(--sidebar-hover);
+}
+
+/* ========== Hover 效果 ========== */
+.sidebar__nav-item:hover {
+  background: var(--sidebar-hover);
+}
+
+.sidebar__nav-item:hover .sidebar__nav-icon {
+  transform: scale(1.08);
+}
+
+.sidebar__nav-item:hover .sidebar__nav-label {
+  color: var(--sidebar-label-strong);
+}
+
+/* ========== Active 导航 - 蓝色柔和发光 ========== */
+.sidebar__nav-item--active {
+  background: linear-gradient(
+    135deg,
+    rgba(var(--sb-accent), 0.16) 0%,
+    rgba(var(--sb-accent), 0.10) 50%,
+    rgba(var(--sb-accent), 0.06) 100%
+  );
+  box-shadow:
+    inset 0 0 24px rgba(var(--sb-accent), 0.08),
+    inset 0 1px 0 rgba(255, 255, 255, 0.7),
+    0 4px 14px rgba(var(--sb-accent), 0.12);
+  border: 1px solid rgba(var(--sb-accent), 0.20);
+}
+
+/* 图标发光 */
+.sidebar__nav-item--active .sidebar__nav-icon {
+  filter: drop-shadow(0 0 8px rgba(var(--sb-accent-light), 0.6));
+  animation: icon-pulse 2.5s ease-in-out infinite;
+}
+
+@keyframes icon-pulse {
+  0%, 100% { filter: drop-shadow(0 0 8px rgba(var(--sb-accent-light), 0.6)); }
+  50% { filter: drop-shadow(0 0 14px rgba(var(--sb-accent-light), 0.8)); }
+}
+
+/* 文字发光 */
+.sidebar__nav-item--active .sidebar__nav-label {
+  color: var(--sidebar-label-strong);
+  font-weight: 700;
+}
+
+.sidebar__nav-item--active .sidebar__nav-desc {
+  color: var(--gray-500);
+}
+
+/* ========== Active 指示器 - 发光条 ========== */
+.sidebar__nav-indicator {
+  position: absolute;
+  left: 0;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 3px;
+  height: 55%;
+  background: linear-gradient(
+    180deg,
+    var(--primary-300) 0%,
+    var(--sb-grad-a) 40%,
+    var(--sb-grad-b) 100%
+  );
+  border-radius: 0 4px 4px 0;
+  box-shadow:
+    0 0 10px rgba(var(--sb-accent), 0.7),
+    0 0 20px rgba(var(--sb-accent), 0.3);
+}
+
+/* ========== Active 发光背景层 ========== */
+.sidebar__nav-glow {
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(
+    ellipse at left center,
+    rgba(var(--sb-accent), 0.12) 0%,
+    transparent 65%
+  );
+  border-radius: 12px;
+  z-index: -1;
+  animation: glow-breathe 3s ease-in-out infinite;
+}
+
+@keyframes glow-breathe {
+  0%, 100% { opacity: 0.5; }
+  50% { opacity: 1; }
+}
+
+/* ========== 图标系统 ========== */
+.sidebar__nav-icon {
+  width: 22px;
+  height: 22px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  transition: all var(--transition-fast);
+}
+
+.sidebar__nav-icon svg {
+  width: 100%;
+  height: 100%;
+}
+
+/* ========== 文字内容 ========== */
+.sidebar__nav-content {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  min-width: 0;
+}
+
+.sidebar__nav-label {
+  font-size: 15px;
+  font-weight: 600;
+  color: var(--sidebar-label);
+  transition: color var(--transition-fast);
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.sidebar__nav-desc {
+  font-size: 12px;
+  color: var(--sidebar-desc);
+  line-height: 1.3;
+  margin-top: 2px;
+}
+
+/* ========== Beta 标记 ========== */
+.sidebar__beta-tag {
+  display: inline-flex;
+  align-items: center;
+  padding: 1px 7px;
+  background: linear-gradient(135deg, rgba(var(--sb-accent), 0.18), rgba(var(--sb-accent), 0.10));
+  color: var(--primary-600);
+  font-size: 9px;
+  font-weight: 700;
+  letter-spacing: 0.06em;
+  border-radius: 4px;
+  border: 1px solid rgba(var(--sb-accent), 0.25);
+  text-transform: uppercase;
+  box-shadow:
+    inset 0 1px 0 rgba(255, 255, 255, 0.5);
+}
+
+/* ========== 用户资料区 - 毛玻璃卡片 ========== */
+.sidebar__user {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 14px 16px;
+  /* V3.2: 浅色毛玻璃卡片 */
+  background: rgba(255, 255, 255, 0.6);
+  backdrop-filter: blur(20px) saturate(1.2);
+  -webkit-backdrop-filter: blur(20px) saturate(1.2);
+  border-radius: 14px;
+  border: 1px solid rgba(255, 255, 255, 0.7);
+  margin-top: 16px;
+  flex-shrink: 0;
+  cursor: pointer;
+  transition: all var(--transition-fast);
+  position: relative;
+  box-shadow:
+    0 4px 16px rgba(15, 23, 42, 0.06),
+    inset 0 1px 0 rgba(255, 255, 255, 0.7);
+}
+
+.sidebar__user:hover {
+  background: rgba(255, 255, 255, 0.8);
+  border-color: rgba(var(--sb-accent), 0.25);
+  box-shadow:
+    0 8px 28px rgba(15, 23, 42, 0.10),
+    0 0 20px rgba(var(--sb-accent), 0.10),
+    inset 0 1px 0 rgba(255, 255, 255, 0.8);
+}
+
+/* ========== 用户头像 ========== */
+.sidebar__user-avatar {
+  width: 40px;
+  height: 40px;
+  background: linear-gradient(135deg, var(--sb-grad-a), var(--sb-grad-b));
+  border-radius: 11px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: white;
+  font-weight: 700;
+  font-size: 16px;
+  position: relative;
+  overflow: hidden;
+  box-shadow:
+    0 0 12px rgba(var(--sb-accent), 0.3),
+    inset 0 1px 0 rgba(255, 255, 255, 0.2);
+}
+
+.sidebar__user-avatar-glow {
+  position: absolute;
+  inset: -4px;
+  background: radial-gradient(circle, rgba(var(--sb-accent), 0.25), transparent 70%);
+  animation: avatar-glow 3s ease-in-out infinite;
+}
+
+@keyframes avatar-glow {
+  0%, 100% { opacity: 0.4; transform: scale(1); }
+  50% { opacity: 0.7; transform: scale(1.08); }
+}
+
+/* ========== 用户信息 ========== */
+.sidebar__user-info {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+  flex: 1;
+}
+
+.sidebar__user-name {
+  font-size: 13px;
+  font-weight: 600;
+  color: var(--gray-800);
+}
+
+.sidebar__user-level {
+  font-size: 11px;
+  color: var(--gray-500);
+}
+
+/* ========== 箭头指示 ========== */
+.sidebar__user-arrow {
+  color: var(--gray-400);
+  transition: all var(--transition-fast);
+  flex-shrink: 0;
+}
+
+.sidebar__user:hover .sidebar__user-arrow {
+  color: rgb(var(--sb-accent));
+  transform: translateX(2px);
+}
+
+/* ========== 折叠状态样式 ========== */
+.sidebar--collapsed .sidebar__nav-item {
+  justify-content: center;
+  padding: 14px;
+}
+
+.sidebar--collapsed .sidebar__nav-icon {
+  width: 24px;
+  height: 24px;
+}
+
+.sidebar--collapsed .sidebar__nav-indicator {
+  width: 3px;
+  height: 40%;
+  border-radius: 4px;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.sidebar--collapsed .sidebar__logo-mark {
+  height: 36px;
+}
+
+.sidebar--collapsed .sidebar__logo-text {
+  display: none;
+}
+
+.sidebar--collapsed .sidebar__toggle {
+  margin-top: 16px;
+}
+
+/* ========== 响应式适配 ========== */
+@media (max-width: 1024px) {
+  .sidebar {
+    width: 240px;
+    padding: 20px;
+  }
+}
+
+@media (max-width: 768px) {
+  .sidebar {
+    width: 100%;
+    height: auto;
+    bottom: auto;
+    flex-direction: row;
+    padding: 10px 14px;
+    overflow-x: auto;
+    background:
+      linear-gradient(90deg, transparent, var(--sidebar-tint), transparent),
+      linear-gradient(180deg, var(--sidebar-surface-start), var(--sidebar-surface-end));
+    box-shadow:
+      inset 0 -1px 0 var(--sidebar-border),
+      0 4px 20px rgba(15, 23, 42, 0.08);
+  }
+
+  .sidebar--collapsed {
+    width: 100%;
+  }
+
+  .sidebar__nav {
+    flex-direction: row;
+    gap: 6px;
+    flex: 1;
+  }
+
+  .sidebar__nav-item {
+    padding: 10px 14px;
+    border-radius: 10px;
+  }
+
+  .sidebar__nav-indicator {
+    top: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 40%;
+    height: 3px;
+    border-radius: 4px 4px 0 0;
+  }
+
+  .sidebar__header {
+    margin-bottom: 0;
+    padding-bottom: 0;
+    border-bottom: none;
+    padding-right: 14px;
+  }
+
+  .sidebar__logo-mark {
+    height: 36px;
+  }
+
+  .sidebar__logo-text {
+    display: none;
+  }
+
+  .sidebar__user {
+    margin-top: 0;
+    margin-left: auto;
+    padding: 8px 12px;
+  }
+
+  .sidebar__user-info {
+    display: none;
+  }
+
+  .sidebar__user-arrow {
+    display: none;
+  }
+}
+
+@media (max-width: 480px) {
+  .sidebar {
+    padding: 8px 10px;
+  }
+
+  .sidebar__nav-item {
+    padding: 8px 10px;
+  }
+
+  .sidebar__nav-label {
+    display: none;
+  }
+
+  .sidebar__nav-desc {
+    display: none;
+  }
+
+  .sidebar__toggle {
+    display: none;
+  }
+
+  .sidebar__user {
+    padding: 6px 10px;
+  }
+}
+
+/* ========== 用户下拉菜单（退出登录 / 设置） ========== */
+.sidebar__user-wrap {
+  position: relative;
+  flex-shrink: 0;
+}
+
+/* .sidebar__user 由 div 改为 button：补齐按钮重置，其余视觉沿用既有卡片样式 */
+.sidebar__user {
+  width: 100%;
+  font-family: inherit;
+  text-align: left;
+}
+
+.sidebar__user--open {
+  border-color: rgba(var(--sb-accent), 0.30);
+  background: rgba(255, 255, 255, 0.85);
+}
+.sidebar__user--open .sidebar__user-arrow {
+  color: rgb(var(--sb-accent));
+}
+
+.sidebar__user-menu {
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: calc(100% + 8px);
+  z-index: 40;
+  padding: 6px;
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+  background: rgba(255, 255, 255, 0.95);
+  backdrop-filter: blur(20px) saturate(1.2);
+  -webkit-backdrop-filter: blur(20px) saturate(1.2);
+  border: 1px solid rgba(255, 255, 255, 0.7);
+  border-radius: 12px;
+  box-shadow: 0 12px 32px rgba(15, 23, 42, 0.16);
+}
+
+.sidebar__user-menu-item {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  width: 100%;
+  padding: 10px 12px;
+  border: none;
+  background: transparent;
+  border-radius: 8px;
+  font-family: inherit;
+  font-size: 13px;
+  font-weight: 600;
+  color: var(--gray-700);
+  cursor: pointer;
+  transition: all var(--transition-fast);
+}
+.sidebar__user-menu-item svg {
+  width: 16px;
+  height: 16px;
+  flex-shrink: 0;
+}
+.sidebar__user-menu-item:hover {
+  background: var(--sidebar-hover);
+  color: var(--gray-900);
+}
+.sidebar__user-menu-item--danger { color: #dc2626; }
+.sidebar__user-menu-item--danger:hover {
+  background: rgba(220, 38, 38, 0.08);
+  color: #b91c1c;
+}
+
+.sidebar__user-menu-divider {
+  height: 1px;
+  margin: 2px 6px;
+  background: var(--gray-200);
+}
+
+/* ========== 设置面板（骨架占位） ========== */
+.settings-mask {
+  position: fixed;
+  inset: 0;
+  z-index: 1000;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 24px;
+  background: rgba(15, 23, 42, 0.42);
+  backdrop-filter: blur(6px);
+  -webkit-backdrop-filter: blur(6px);
+}
+
+.settings-panel {
+  position: relative;
+  width: min(440px, 100%);
+  padding: 28px;
+  border-radius: 20px;
+  background: rgba(255, 255, 255, 0.96);
+  backdrop-filter: blur(28px) saturate(1.3);
+  -webkit-backdrop-filter: blur(28px) saturate(1.3);
+  border: 1px solid rgba(255, 255, 255, 0.6);
+  box-shadow: 0 24px 64px rgba(15, 23, 42, 0.28);
+}
+.settings-panel__close {
+  position: absolute;
+  top: 14px;
+  right: 16px;
+  width: 30px;
+  height: 30px;
+  border: none;
+  border-radius: 50%;
+  background: var(--gray-100);
+  color: var(--gray-500);
+  font-size: 1.2rem;
+  line-height: 1;
+  cursor: pointer;
+  transition: all var(--transition-fast);
+}
+.settings-panel__close:hover { background: var(--gray-200); color: var(--gray-700); }
+.settings-panel__title { font-size: 1.15rem; font-weight: 700; color: var(--gray-900); }
+.settings-panel__sub { font-size: 0.8rem; color: var(--gray-500); margin-top: 4px; }
+
+.settings-panel__section {
+  margin-top: 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+.settings-panel__row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  padding: 14px 16px;
+  border-radius: 12px;
+  border: 1px solid var(--gray-200);
+  background: rgba(255, 255, 255, 0.6);
+}
+.settings-panel__row-text { display: flex; flex-direction: column; gap: 2px; }
+.settings-panel__row-label { font-size: 0.88rem; font-weight: 600; color: var(--gray-800); }
+.settings-panel__row-value { font-size: 0.74rem; color: var(--gray-500); }
+.settings-panel__row-btn {
+  padding: 7px 14px;
+  border-radius: 8px;
+  border: 1px dashed var(--gray-300);
+  background: var(--gray-50, #f8fafc);
+  color: var(--gray-400);
+  font-size: 0.78rem;
+  font-weight: 600;
+  cursor: not-allowed;
+}
+.settings-panel__row-btn--active {
+  border: 1px solid var(--primary, #3b82f6);
+  background: color-mix(in srgb, var(--primary, #3b82f6) 12%, transparent);
+  color: var(--primary-d, #2563eb);
+  cursor: pointer;
+  transition: background 0.18s;
+}
+.settings-panel__row-btn--active:hover {
+  background: color-mix(in srgb, var(--primary, #3b82f6) 18%, transparent);
+}
+
+.settings-panel__pw {
+  overflow: hidden;
+}
+
+/* 生成模型切换（接口文档 21） */
+.settings-panel__model-select {
+  max-width: 48%;
+  padding: 8px 10px;
+  border-radius: 8px;
+  border: 1px solid var(--gray-300);
+  background: rgba(255, 255, 255, 0.8);
+  color: var(--gray-800);
+  font-size: 0.78rem;
+  font-weight: 600;
+  cursor: pointer;
+}
+.settings-panel__model-select:disabled {
+  opacity: 0.6;
+  cursor: wait;
+}
+.settings-panel__model-hint {
+  margin: -2px 4px 0;
+  font-size: 0.7rem;
+  line-height: 1.6;
+  color: var(--gray-500);
+}
+
+.settings-panel__note {
+  margin-top: 18px;
+  font-size: 0.72rem;
+  line-height: 1.7;
+  color: var(--gray-500);
+}
+
+/* logo 渐变现由内联 style 的 var(--primary/--primary-d/--accent) 驱动，随主题自动切换 */

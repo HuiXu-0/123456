@@ -1,0 +1,71 @@
+/* RAG 溯源 · 论文级参考文献样式（与 MarkdownRenderer 讲义正文末尾脚注区视觉统一）。
+   语义令牌驱动，深浅主题自动联动。 */
+
+.paper-refs {
+  margin: var(--space-md, 16px) 0;
+  padding: 12px 14px;
+  border: 1px solid var(--line);
+  border-radius: var(--radius-md, 12px);
+  background: color-mix(in srgb, var(--surface) 60%, transparent);
+}
+
+.paper-refs__title {
+  display: flex;
+  align-items: baseline;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin: 0 0 8px;
+  font-size: 0.86rem;
+  font-weight: 800;
+  letter-spacing: 0.02em;
+  color: var(--ink);
+}
+
+.paper-refs__badge {
+  font-size: 0.64rem;
+  font-weight: 700;
+  color: var(--accent);
+  padding: 2px 7px;
+  border: 1px solid color-mix(in srgb, var(--accent) 40%, transparent);
+  border-radius: 999px;
+}
+
+.paper-refs__count {
+  margin-left: auto;
+  font-size: 0.68rem;
+  font-weight: 600;
+  color: var(--ink-soft);
+}
+
+.paper-refs__list {
+  margin: 0;
+  padding-left: 1.5em;
+  list-style: none;
+  counter-reset: paper-ref;
+}
+
+.paper-refs__item {
+  counter-increment: paper-ref;
+  position: relative;
+  margin: 3px 0;
+  font-size: 0.76rem;
+  line-height: 1.55;
+  color: var(--ink-soft);
+}
+
+.paper-refs__item::before {
+  content: '[' counter(paper-ref) ']';
+  position: absolute;
+  left: -1.5em;
+  font-weight: 700;
+  color: var(--accent);
+}
+
+.paper-refs__name {
+  color: var(--ink);
+  font-weight: 600;
+}
+
+.paper-refs__meta {
+  color: var(--ink-soft);
+}

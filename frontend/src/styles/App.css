@@ -1,0 +1,185 @@
+/* ============================================
+   智学中枢 V3.1 - App Layout & Background
+   Glassmorphism · 近白空气感 + 蓝/紫/绿动态光晕
+   ============================================ */
+
+/* ========== 全局布局 ========== */
+.app {
+  display: flex;
+  /* 固定为视口高度（非 min-height）：否则内容超高时 .app 会被撑大，
+     作为唯一滚动容器的 .app__main(flex:1) 随之拉伸到内容高度、内部 overflow 失效，
+     而 .app 的 overflow:hidden 又裁掉超出视口的部分 → 整页无法用滚轮滚动。
+     限高后 .app__main 重新获得有界高度，其 overflow-y:auto 正常滚动（侧栏为 fixed，不受影响）。 */
+  height: 100vh;
+  position: relative;
+  overflow: hidden;
+}
+
+/* ========== 页面渲染兜底（PageErrorBoundary） ========== */
+.page-error {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  gap: 12px;
+  min-height: 60vh;
+  padding: 48px 24px;
+}
+.page-error__icon {
+  width: 56px;
+  height: 56px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.8rem;
+  border-radius: 16px;
+  background: rgba(245, 158, 11, 0.12);
+  color: #d97706;
+}
+.page-error__title { font-size: 1.15rem; font-weight: 700; color: var(--gray-900, #0f172a); }
+.page-error__desc { font-size: 0.85rem; color: var(--gray-500, #64748b); max-width: 420px; line-height: 1.6; }
+.page-error__actions { display: flex; gap: 12px; margin-top: 8px; }
+.page-error__btn {
+  padding: 9px 18px;
+  border-radius: 10px;
+  font-size: 0.85rem;
+  font-weight: 600;
+  border: 1px solid var(--gray-200, #e2e8f0);
+  background: #fff;
+  color: var(--gray-700, #334155);
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+.page-error__btn:hover { background: var(--gray-100, #f1f5f9); }
+.page-error__btn--primary {
+  border-color: transparent;
+  color: #fff;
+  background: linear-gradient(135deg, var(--primary, #2563eb), var(--primary-d, #7c3aed));
+}
+.page-error__btn--primary:hover { filter: brightness(1.05); background: linear-gradient(135deg, var(--primary, #2563eb), var(--primary-d, #7c3aed)); }
+
+/* ========== 全局背景 - 柔和渐变 + 光晕 ========== */
+.app__background {
+  position: fixed;
+  inset: 0;
+  z-index: -1;
+  background: linear-gradient(
+    145deg,
+    var(--bg-page-start) 0%,
+    var(--bg-page-mid) 40%,
+    var(--bg-page-end) 100%
+  );
+  overflow: hidden;
+}
+
+/* 动态光晕 - 柔和深度 */
+.app__gradient-orb {
+  position: absolute;
+  border-radius: 50%;
+  filter: blur(120px);
+  animation: orb-float 25s ease-in-out infinite;
+}
+
+/* 主光晕 - 主色（随主题）*/
+.app__gradient-orb--1 {
+  width: 600px;
+  height: 600px;
+  background: radial-gradient(circle, rgba(var(--primary-rgb), 0.12), transparent 70%);
+  top: -200px;
+  left: 5%;
+}
+
+/* 辅光晕 - 主色深阶 */
+.app__gradient-orb--2 {
+  width: 500px;
+  height: 500px;
+  background: radial-gradient(circle, rgba(var(--primary-rgb), 0.08), transparent 70%);
+  bottom: 5%;
+  right: -150px;
+  animation-delay: -8s;
+}
+
+/* 微光晕 - 强调色点缀 */
+.app__gradient-orb--3 {
+  width: 350px;
+  height: 350px;
+  background: radial-gradient(circle, rgba(var(--accent-rgb), 0.07), transparent 70%);
+  top: 45%;
+  left: 25%;
+  animation-delay: -16s;
+}
+
+@keyframes orb-float {
+  0%, 100% {
+    transform: translate(0, 0) scale(1);
+    opacity: 0.7;
+  }
+  25% {
+    transform: translate(30px, -35px) scale(1.08);
+    opacity: 0.9;
+  }
+  50% {
+    transform: translate(15px, 25px) scale(0.96);
+    opacity: 0.65;
+  }
+  75% {
+    transform: translate(-25px, -15px) scale(1.04);
+    opacity: 0.85;
+  }
+}
+
+/* ========== 主内容区布局 ========== */
+.app__main {
+  flex: 1;
+  margin-left: 260px;
+  padding: var(--space-xl) var(--space-2xl);
+  transition: margin-left var(--transition-normal);
+  overflow-y: auto;
+  position: relative;
+}
+
+.app__main--expanded {
+  margin-left: 80px;
+}
+
+.app__content {
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+/* ========== 响应式适配 ========== */
+@media (max-width: 1024px) {
+  .app__main {
+    padding: var(--space-lg) var(--space-xl);
+  }
+}
+
+@media (max-width: 768px) {
+  .app__main {
+    margin-left: 0;
+    padding: 72px var(--space-md) var(--space-md);
+  }
+
+  .app__gradient-orb--1 {
+    width: 350px;
+    height: 350px;
+  }
+
+  .app__gradient-orb--2 {
+    width: 280px;
+    height: 280px;
+  }
+
+  .app__gradient-orb--3 {
+    width: 220px;
+    height: 220px;
+  }
+}
+.app__page-loading {
+  display: grid;
+  min-height: 12rem;
+  place-items: center;
+  color: var(--text-secondary, #64748b);
+  font-size: 0.95rem;
+}

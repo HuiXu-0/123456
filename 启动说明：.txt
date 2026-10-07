@@ -1,0 +1,20 @@
+启动说明：
+方式 1 — 一键脚本(推荐,最省事)
+在本会话输入框里用 ! 前缀直接跑:
+! powershell -ExecutionPolicy Bypass -File restart-dev.ps1
+或在你自己的 PowerShell 终端(任意目录,脚本会自己定位项目根):
+powershell -ExecutionPolicy Bypass -File .\restart-dev.ps1
+或在文件管理器里右键 restart-dev.ps1 →「使用 PowerShell 运行」。
+它会先杀掉占用 8000 / 3000–3005 的旧进程,再开两个新窗口分别跑前后端——所以它既能「启动」也能「重启」。
+
+方式 2 — 手动分开起(想单独看某一端日志时)
+开两个终端:
+# 终端 A:后端
+cd .\backend
+uvicorn app.main:app --reload --port 8000
+
+# 终端 B:前端
+cd .\frontend
+npm run dev
+
+关闭:在对应窗口按 Ctrl+C,或像刚才那样按端口结束进程。

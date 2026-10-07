@@ -1,0 +1,5 @@
+# 后端开发/测试依赖。生产依赖仍以 requirements.txt 为准。
+-r requirements.txt
+
+# 固定已通过全量回归的 pytest 版本，避免新环境因测试运行器漂移不可复现。
+pytest==9.1.1

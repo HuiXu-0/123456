@@ -1,0 +1,306 @@
+/* 我的资源库页样式（套设计令牌，深浅主题跟随 globals.css 变量，无硬编码主题色）。 */
+
+.reslib-page {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  padding-bottom: 40px;
+}
+
+/* 压缩顶部标题区：页头自带 margin-bottom(32px) 与页面 gap(20px) 叠加导致上部过空，
+   归零后仅保留页面 gap，整体重心上移、留白均衡 */
+.reslib-page .page-header {
+  margin-bottom: 0;
+}
+
+/* 筛选区与卡片网格 / 状态区之间的呼吸间距（此前同组无间隔，贴死拥挤） */
+.reslib-body {
+  display: flex;
+  flex-direction: column;
+  gap: 22px;
+}
+
+/* ---------- 筛选区 ---------- */
+.reslib-filters {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  padding: 14px 18px;
+  background: var(--surface);
+  border: 1px solid var(--line);
+  border-radius: var(--radius-lg);
+  box-shadow: var(--shadow-soft);
+}
+.reslib-filters__row {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+.reslib-filters__label {
+  font-size: var(--text-sm);
+  font-weight: 600;
+  color: var(--ink-soft);
+  margin-right: 2px;
+}
+.reslib-filters__label--gap {
+  margin-left: 12px;
+}
+.reslib-chips {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+.reslib-chip {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 6px 14px;
+  border-radius: var(--radius-full);
+  border: 1px solid var(--line);
+  background: var(--surface-2);
+  color: var(--ink-soft);
+  font-size: var(--text-sm);
+  cursor: pointer;
+  transition: all 0.18s ease;
+}
+.reslib-chip__icon {
+  margin-left: -2px;
+}
+.reslib-chip:hover {
+  border-color: var(--primary);
+  color: var(--primary-d);
+}
+.reslib-chip--active {
+  background: var(--primary);
+  border-color: var(--primary);
+  color: #fff;
+  box-shadow: var(--shadow-raised);
+}
+.reslib-select {
+  padding: 7px 14px;
+  border-radius: var(--radius-sm);
+  border: 1px solid var(--line);
+  background: var(--surface-2);
+  color: var(--ink);
+  font-size: var(--text-sm);
+  cursor: pointer;
+  min-width: 150px;
+}
+.reslib-select:focus {
+  outline: none;
+  border-color: var(--primary);
+}
+.reslib-clear {
+  margin-left: auto;
+  padding: 6px 14px;
+  border-radius: var(--radius-full);
+  border: 1px dashed var(--line);
+  background: transparent;
+  color: var(--ink-soft);
+  font-size: var(--text-sm);
+  cursor: pointer;
+}
+.reslib-clear:hover {
+  color: var(--accent);
+  border-color: var(--accent);
+}
+
+/* ---------- 资产网格 ---------- */
+.reslib-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+  gap: 16px;
+}
+.reslib-card {
+  display: flex;
+  flex-direction: column;
+  background: var(--surface);
+  border: 1px solid var(--line);
+  border-radius: var(--radius-lg);
+  box-shadow: var(--shadow-soft);
+  overflow: hidden;
+  transition: transform 0.18s ease, box-shadow 0.18s ease, border-color 0.18s ease;
+  border-left: 3px solid var(--kind-accent, var(--primary));
+}
+.reslib-card:hover {
+  transform: translateY(-4px);
+  box-shadow: var(--shadow-float);
+  border-color: var(--kind-accent, var(--primary));
+}
+.reslib-card__main {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  padding: 16px 18px;
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  text-align: left;
+  width: 100%;
+}
+.reslib-card__icon {
+  flex-shrink: 0;
+  width: 48px;
+  height: 48px;
+  display: grid;
+  place-items: center;
+  font-size: 24px;
+  border-radius: var(--radius-md);
+}
+.reslib-card__body {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  min-width: 0;
+}
+.reslib-card__kind {
+  font-size: var(--text-xs);
+  font-weight: 600;
+  color: var(--kind-accent, var(--primary-d));
+  letter-spacing: 0.02em;
+}
+.reslib-card__kp {
+  font-size: var(--text-base, 15px);
+  font-weight: 700;
+  color: var(--ink);
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+.reslib-card__metaline {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: var(--text-xs);
+  color: var(--ink-soft);
+}
+.reslib-card__diff {
+  padding: 1px 8px;
+  border-radius: var(--radius-full);
+  background: color-mix(in srgb, var(--accent) 16%, var(--surface));
+  color: var(--accent);
+  font-weight: 600;
+}
+.reslib-card__time {
+  font-variant-numeric: tabular-nums;
+}
+.reslib-card__actions {
+  display: flex;
+  gap: 8px;
+  padding: 0 18px 16px;
+}
+.reslib-card__btn {
+  flex: 1;
+  padding: 7px 0;
+  border-radius: var(--radius-sm);
+  border: 1px solid var(--line);
+  background: var(--surface-2);
+  color: var(--ink-soft);
+  font-size: var(--text-sm);
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.16s ease;
+}
+.reslib-card__btn:hover {
+  border-color: var(--primary);
+  color: var(--primary-d);
+}
+.reslib-card__btn--primary {
+  background: var(--primary);
+  border-color: var(--primary);
+  color: #fff;
+}
+.reslib-card__btn--danger:hover {
+  border-color: #dc2626;
+  color: #dc2626;
+  background: color-mix(in srgb, #dc2626 8%, var(--surface-2));
+}
+.reslib-card__btn:disabled {
+  opacity: 0.55;
+  cursor: default;
+}
+.reslib-card__btn--primary:hover {
+  background: var(--primary-d);
+  color: #fff;
+}
+
+/* ---------- 状态：加载 / 错误 / 空态 ---------- */
+.reslib-state {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 12px;
+  padding: 64px 24px;
+  background: var(--surface);
+  border: 1px dashed var(--line);
+  border-radius: var(--radius-lg);
+  text-align: center;
+}
+.reslib-state__icon {
+  font-size: 44px;
+}
+.reslib-state__text {
+  font-size: var(--text-sm);
+  color: var(--ink-soft);
+  max-width: 460px;
+  line-height: 1.7;
+  margin: 0;
+}
+.reslib-state__spinner {
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  border: 3px solid var(--line);
+  border-top-color: var(--primary);
+  animation: reslib-spin 0.8s linear infinite;
+}
+@keyframes reslib-spin {
+  to {
+    transform: rotate(360deg);
+  }
+}
+.reslib-empty__title {
+  font-size: 18px;
+  font-weight: 700;
+  color: var(--ink);
+  margin: 0;
+}
+.reslib-empty__cta {
+  margin-top: 6px;
+  padding: 9px 22px;
+  border-radius: var(--radius-full);
+  border: none;
+  background: var(--primary);
+  color: #fff;
+  font-size: var(--text-sm);
+  font-weight: 600;
+  cursor: pointer;
+  box-shadow: var(--shadow-raised);
+}
+.reslib-empty__cta:hover {
+  background: var(--primary-d);
+}
+
+/* ---------- 预览弹层内的跳转工具条 ---------- */
+.reslib-preview__toolbar {
+  display: flex;
+  justify-content: flex-end;
+  margin-bottom: 12px;
+}
+.reslib-preview__jump {
+  padding: 6px 16px;
+  border-radius: var(--radius-full);
+  border: 1px solid var(--line);
+  background: var(--surface-2);
+  color: var(--primary-d);
+  font-size: var(--text-sm);
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.16s ease;
+}
+.reslib-preview__jump:hover {
+  border-color: var(--primary);
+  background: color-mix(in srgb, var(--primary) 10%, var(--surface));
+}

@@ -1,0 +1,28 @@
+{
+  "measuredAt": "2026-06-13T11:03:55.247407+00:00",
+  "performance": {
+    "totalTraces": 327,
+    "workflowSampleSize": 327,
+    "genTimeSecP50": 13.17,
+    "genTimeSecP90": 37.01,
+    "genTimeSecMax": 107.77,
+    "nodeAvgMs": {
+      "diagnosis": 1456.0,
+      "generation": 6820.7,
+      "critic": 1421.4,
+      "rag": 2836.1
+    },
+    "retriedTraces": 63,
+    "degradedTraces": 53
+  },
+  "cost": {
+    "lectureSampleSize": 18,
+    "avgOutputChars": 2700.3,
+    "estOutputTokens": 1688,
+    "estInputTokens": 3100,
+    "charsPerToken": 1.6,
+    "priceInPerMillion": 2.0,
+    "priceOutPerMillion": 8.0,
+    "estCostPerLectureRMB": 0.0197
+  }
+}

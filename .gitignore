@@ -1,0 +1,136 @@
+# Python
+__pycache__/
+*.py[cod]
+*.egg-info/
+.venv/
+venv/
+backend/.bge-c3a-venv/
+.env
+
+# Node / 前端
+node_modules/
+dist/
+dist-ssr/
+*.local
+
+# 数据 / 向量库 / 本地模型缓存（B3 运行时产物，不入库）
+*.sqlite
+*.sqlite3
+*.db
+# SQLite WAL 模式的伴生文件（运行时产物，不入库）
+*.db-wal
+*.db-shm
+*.db-journal
+chroma/
+.chroma/
+backend/data/
+# TTS 合成 MP3 缓存（运行时产物，默认在 backend/data/tts_cache，已被上一行覆盖；显式标注）
+tts_cache/
+backend/data/tts_cache/
+
+# IDE / OS
+.idea/
+.vscode/
+.DS_Store
+Thumbs.db
+.claude/
+
+# Playwright MCP scratch artifacts (screenshots / console logs / snapshots)
+.playwright-mcp/
+backend/zhixue.db.bak
+*.db.bak
+
+# Dev-server 运行日志（本地起 uvicorn / vite 的产物，不入库）
+_dev_uvicorn.err
+_dev_uvicorn.out
+_dev_vite.err
+_dev_vite.out
+_vite_dev.log
+vite-dev.log
+.devserver.err.log
+.devserver.out.log
+frontend/probe-remotion/run*.log
+
+# 临时导出 / 调试 dump（如知识体系 _ks_dump.json）
+*_dump.json
+
+# 根目录临时验证截图（仅根级散图；不影响 frontend/ 内的正式图片资源）
+/*.png
+/*.jpg
+backend/uvicorn-8000.log
+
+# Local tooling and runtime state
+.runtime-logs/
+.pytest_cache/
+.codegraph/
+
+# Generated exports, review artifacts, and handoff copies
+/output/
+/deliverables/
+/qa/
+/GPT项目接手包/
+*.zip
+*.exe
+~$*
+
+# Presentation and video render intermediates
+docs/.pptx-build/
+frontend/video-demo/.render-fast/
+frontend/video-demo/realtime-*/
+frontend/video-demo/public/screens/
+frontend/video-demo/public/audio/
+frontend/video-demo/generated-scenes.json
+frontend/video-demo/*.mp4
+frontend/video-demo/*.png
+
+# Generated documentation previews
+docs/tmp.html
+docs/welcome-knowledge-space.html
+docs/欢迎页-*.html
+docs/文档学习-*.html
+
+# Unrelated local QA helpers
+/tools/audit_gis_docx.py
+/tools/build_gis_report.py
+
+# GitHub core-only view: keep local review and delivery assets out of Git
+/.codegraph/
+/frontend/video-demo/
+/scripts/screenshots/
+/*.png
+/*.jpg
+/*.jpeg
+/*.html
+/*.docx
+/*.pptx
+/*.pdf
+
+# Documentation allowlist: ignore everything, then retain core project docs
+/docs/**
+!/docs/README.md
+!/docs/AI知识体系设计-v3.md
+!/docs/Agent五层设计表述.md
+!/docs/个性化学习算法设计方案.md
+!/docs/产品定位-v2.md
+!/docs/创新点与优势-v2.md
+!/docs/参考文献-规范修正版.md
+!/docs/后端开发执行方案-v1.1.md
+!/docs/后端接口文档.md
+!/docs/学习资源-多模态创新方案设计.md
+!/docs/开发需求说明文档.md
+!/docs/技术架构模块边界.md
+!/docs/核心算法形式化.md
+!/docs/部署方案.md
+
+# 密钥文件（`.env` 只匹配文件名，覆盖不到 .env.production；含 DEEPSEEK_API_KEY / jwt_secret）
+.env.production
+*.env.production
+
+# 嵌套副本（本地误复制的整棵 backend/，含 .bge-c3a-venv，约 1.8GB / 1.6 万文件）
+backend/backend/
+
+# 本地跑 uvicorn / QA / 依赖安装验证的日志输出
+backend/*.log
+
+# 嵌套副本（backend/app 内误复制的 app/ 陈旧快照，381 文件 4MB，含 __pycache__）
+backend/app/app/

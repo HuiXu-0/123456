@@ -1,0 +1,295 @@
+/* 模型管理独立页（接口文档 21）。全部取 CSS 变量 token —— 深浅主题自动适配。 */
+
+.mm {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.mm__note,
+.mm__error,
+.mm__empty {
+  padding: 14px 18px;
+  font-size: 13px;
+  color: var(--text-secondary, var(--text));
+  border-radius: var(--radius, 12px);
+}
+
+.mm__error {
+  color: #ef4444;
+}
+
+.mm__note code {
+  padding: 1px 6px;
+  border-radius: 6px;
+  background: var(--surface-2, rgba(127, 127, 127, 0.12));
+  font-size: 12px;
+}
+
+/* ===== 模型卡片栅格 ===== */
+.mm__grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+  gap: 16px;
+}
+
+.mm__card {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  padding: 18px;
+  border-radius: var(--radius, 14px);
+  transition: transform 0.18s ease, box-shadow 0.18s ease;
+}
+
+.mm__card:hover {
+  transform: translateY(-2px);
+}
+
+.mm__card--current {
+  outline: 2px solid var(--primary);
+  outline-offset: -2px;
+}
+
+.mm__card-head {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.mm__card-title {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 8px;
+}
+
+.mm__label {
+  font-size: 15px;
+  color: var(--text-primary, var(--text));
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.mm__provider {
+  font-size: 12px;
+  color: var(--text-secondary, var(--text));
+  opacity: 0.85;
+}
+
+/* ===== 状态 chip ===== */
+.mm__chip {
+  flex-shrink: 0;
+  padding: 2px 10px;
+  border-radius: 999px;
+  font-size: 12px;
+  line-height: 18px;
+  white-space: nowrap;
+}
+
+.mm__chip--current {
+  color: #fff;
+  background: var(--primary);
+}
+
+.mm__chip--ok {
+  color: #059669;
+  background: rgba(16, 185, 129, 0.14);
+}
+
+.mm__chip--warn {
+  color: #d97706;
+  background: rgba(245, 158, 11, 0.16);
+}
+
+[data-theme='ink'] .mm__chip--ok {
+  color: #34d399;
+}
+
+[data-theme='ink'] .mm__chip--warn {
+  color: #fbbf24;
+}
+
+/* ===== 卡片元信息 ===== */
+.mm__meta {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  margin: 0;
+  padding: 10px 12px;
+  border-radius: 10px;
+  background: var(--surface-2, rgba(127, 127, 127, 0.07));
+}
+
+.mm__meta-row {
+  display: flex;
+  gap: 10px;
+  min-width: 0;
+  font-size: 12.5px;
+}
+
+.mm__meta-row dt {
+  flex-shrink: 0;
+  width: 64px;
+  color: var(--text-secondary, var(--text));
+  opacity: 0.75;
+  font-family: var(--font-mono, ui-monospace, monospace);
+}
+
+.mm__meta-row dd {
+  margin: 0;
+  min-width: 0;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  color: var(--text-primary, var(--text));
+  font-family: var(--font-mono, ui-monospace, monospace);
+}
+
+.mm__masked {
+  letter-spacing: 1px;
+}
+
+/* ===== 卡片操作 ===== */
+.mm__card-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin-top: auto;
+}
+
+.mm__btn {
+  padding: 6px 14px;
+  font-size: 12.5px;
+}
+
+.mm__btn--danger {
+  color: #ef4444 !important;
+  border-color: rgba(239, 68, 68, 0.5) !important;
+}
+
+.mm__hint {
+  margin: 0;
+  font-size: 12px;
+  line-height: 1.8;
+  color: var(--text-secondary, var(--text));
+  opacity: 0.75;
+}
+
+/* ===== 添加/编辑弹窗 ===== */
+.mm__mask {
+  position: fixed;
+  inset: 0;
+  z-index: 1000;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 24px;
+  background: rgba(15, 23, 42, 0.45);
+  backdrop-filter: blur(4px);
+}
+
+.mm__panel {
+  width: min(480px, 100%);
+  max-height: calc(100vh - 48px);
+  overflow-y: auto;
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+  padding: 24px;
+  border-radius: var(--radius, 16px);
+  background: var(--surface);
+}
+
+.mm__panel-title {
+  margin: 0 0 2px;
+  font-size: 17px;
+  color: var(--text-primary, var(--text));
+}
+
+.mm__field {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  font-size: 13px;
+  color: var(--text-secondary, var(--text));
+}
+
+.mm__field input,
+.mm__field select {
+  padding: 9px 12px;
+  border: 1px solid var(--border, rgba(127, 127, 127, 0.25));
+  border-radius: 10px;
+  background: var(--surface-2, transparent);
+  color: var(--text-primary, var(--text));
+  font-size: 13.5px;
+  outline: none;
+  transition: border-color 0.15s ease;
+}
+
+.mm__field input:focus,
+.mm__field select:focus {
+  border-color: var(--primary);
+}
+
+.mm__form-hint {
+  margin: 0;
+  padding: 8px 12px;
+  border-radius: 8px;
+  background: var(--surface-2, rgba(127, 127, 127, 0.08));
+  font-size: 12px;
+  line-height: 1.7;
+  color: var(--text-secondary, var(--text));
+}
+
+.mm__test-result {
+  margin: 0;
+  font-size: 12.5px;
+  line-height: 1.6;
+  word-break: break-all;
+}
+
+.mm__test-result--ok {
+  color: #059669;
+}
+
+.mm__test-result--fail {
+  color: #ef4444;
+}
+
+[data-theme='ink'] .mm__test-result--ok {
+  color: #34d399;
+}
+
+.mm__panel-actions {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 10px;
+  margin-top: 4px;
+}
+
+.mm__panel-actions-right {
+  display: flex;
+  gap: 10px;
+}
+
+/* ===== toast（复用管理端形态） ===== */
+.mm__toast {
+  position: fixed;
+  right: 28px;
+  bottom: 28px;
+  z-index: 1100;
+  max-width: min(420px, calc(100vw - 56px));
+  padding: 12px 18px;
+  font-size: 13px;
+  border-radius: 12px;
+  color: var(--text-primary, var(--text));
+}
+
+@media (max-width: 640px) {
+  .mm__grid {
+    grid-template-columns: 1fr;
+  }
+}

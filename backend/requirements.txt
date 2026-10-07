@@ -1,0 +1,53 @@
+# B0 骨架最小依赖集（后续阶段按需追加 Chroma / bge / LangGraph 等）
+fastapi
+uvicorn[standard]
+pydantic-settings
+python-dotenv
+# B1 数据层 + 双角色认证（SQLite 经 SQLAlchemy；JWT 用纯 Python 的 PyJWT，口令哈希用 stdlib pbkdf2，无原生构建依赖）
+sqlalchemy
+pyjwt
+# B2-a P0 主流程（Mock 数据源）：multipart 表单解析 + PDF 文本抽取
+python-multipart
+pypdf
+python-docx
+# B3 RAG 管道：Chroma 持久化向量库 + bge 本地模型 + BM25 稀疏检索
+# 说明：sentence-transformers / chromadb 加载失败会自动降级（哈希嵌入 / 内存余弦库 / 仅 RRF），
+#       无网络、无模型文件时仍可跑通全链路；rank_bm25 为纯 Python 轻量包。
+chromadb
+sentence-transformers
+rank_bm25
+# B5-a LangGraph 多智能体工作流骨架（纯 Mock provider，无密钥可跑）
+#
+# R4.5.1（Dependency Unblock）：修正 R4.3 的错误配对。
+#   原状：langgraph~=1.0.0 需要 langgraph-checkpoint >=2.1,<3.0
+#         langgraph-checkpoint-sqlite~=1.0.0 需要 langgraph-checkpoint >=1.0.11,<2.0
+#         → 两区间**无交集**，`pip install -r requirements.txt` 抛 ResolutionImpossible，
+#           导致整棵依赖树零安装、233 个测试全部无法执行（见 docs/progress/R4.5-QA 验收）。
+#   处置：**不回退 langgraph 0.3.x**（R2/R3/R4.3/R4.4 已按 1.x 方向完成），
+#         改锁**现代兼容线**，且 langgraph 与 langgraph-checkpoint-sqlite **同改**。
+#   实测组合（隔离环境 resolver + import + graph compile 全通过）：
+#         langgraph 1.2.12 / langgraph-checkpoint 4.2.0（transitive）
+#         / langgraph-checkpoint-sqlite 3.1.1 / langchain-core 1.6.1
+#   回归验证（防止再次出现无解组合）：
+#         python scripts/verify_dependency_resolution.py
+langgraph==1.2.12
+# R4.3 决策 A：引入 langchain-core（BaseTool / structured output / tool schema /
+# message-tool-call 标准）。**R4.5.1 保留不删** —— R4.3 已在
+# app/agents/langchain_adapter.py 实际使用 BaseTool / convert_to_openai_tool /
+# HumanMessage / AIMessage / ToolMessage；代码侧缺失时自动降级不崩。
+langchain-core==1.6.1
+# R2 的可选断点存储（core/checkpoint.py）：默认 workflow_checkpoint_enabled=false，
+# 关闭时 get_checkpointer() 直接返回 None，**不进入主工作流路径**；
+# 依赖缺失时仅告警回落。与 langgraph 1.2.12 配对已实测通过（resolver 解出
+# langgraph-checkpoint==4.2.0）。
+langgraph-checkpoint-sqlite==3.1.1
+# B5-b DeepSeek 真实生成（OpenAI 兼容协议 SDK）；mock 模式不经过该 SDK、无 Key 可跑
+openai
+# TTS edge-tts：微软神经语音合成（免密钥、联网即用）；tts_provider=none 或离线时优雅降级、不崩
+edge-tts
+# 讲解视频服务端渲染（mp4，增强项）：量各段 edge-tts MP3 时长以对齐画面（纯 Python、无原生依赖）；
+# 缺失则视频渲染能力判为不可用、自动降级回实时 Player+TTS，不影响其余全链路。渲染器为 Node 侧
+# @remotion/renderer（见 frontend/package.json），经 subprocess 调用，无需系统 ffmpeg。
+mutagen
+# 模型管理（接口文档 21.3+）：用户自建模型配置的 api_key 对称加密落库（Fernet）
+cryptography

@@ -1,0 +1,48 @@
+{
+  "schemaVersion": "trusted-rag-canary-gate-v3",
+  "evaluationType": "offline_final_admission_validation",
+  "generatedAt": "2026-07-23T05:54:14.864767+00:00",
+  "productionMutation": false,
+  "canaryEnabled": false,
+  "quality_pass": false,
+  "latency_pass": false,
+  "reliability_pass": true,
+  "rerank_pass": false,
+  "final_decision": "BLOCK",
+  "block_reasons": [
+    "quality.evidence_overlap_below_threshold",
+    "latency.performance_not_verified",
+    "rerank.metrics_still_provisional",
+    "rerank.human_review_incomplete",
+    "rerank.mrr_regressed",
+    "rerank.ndcg_at_3_regressed",
+    "rerank.ndcg_at_5_regressed",
+    "rerank.degraded_cases_exceeded"
+  ],
+  "remediation": [
+    "collect_and_review_shadow_quality_metrics",
+    "verify_target_environment_shadow_latency",
+    "apply_query_type_gate_or_hybrid_fallback_and_revalidate_rerank"
+  ],
+  "rollback_recommended": true,
+  "recommended_action": "keep_legacy_and_set_canary_weight_to_zero",
+  "snapshot": {
+    "sample_count": 125,
+    "p95_latency_ms": 26.4052,
+    "timeout_rate": 0.0,
+    "error_rate": 0.0,
+    "fault_scenario_count": 11,
+    "fault_failure_rate": 0.0,
+    "query_type_counts": {
+      "comprehensive_question": 25,
+      "concept_explanation": 25,
+      "method_comparison": 25,
+      "operation_steps": 25,
+      "programming_practice": 25
+    },
+    "shadow_input_type": "dataset",
+    "quality_evaluation_request_count": 125,
+    "human_relevance": 0.701657,
+    "support_rate": 0.896
+  }
+}

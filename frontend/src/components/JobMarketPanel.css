@@ -1,0 +1,227 @@
+/* 目标岗位 · 实时市场画像面板 */
+.jobmkt {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-md);
+}
+
+/* ===== 搜索 ===== */
+.jobmkt__search {
+  position: relative;
+  display: flex;
+  align-items: center;
+}
+
+.jobmkt__search-icon {
+  position: absolute;
+  left: 14px;
+  width: 16px;
+  height: 16px;
+  color: var(--ink-soft);
+  pointer-events: none;
+}
+
+.jobmkt__search-input {
+  width: 100%;
+  height: 42px;
+  padding: 0 14px 0 38px;
+  border-radius: var(--radius-md);
+  border: 1px solid var(--line);
+  background: color-mix(in srgb, var(--surface) 80%, transparent);
+  color: var(--ink);
+  font-size: 14px;
+  font-family: inherit;
+  transition: border-color var(--transition-fast), box-shadow var(--transition-fast);
+}
+.jobmkt__search-input::placeholder { color: var(--gray-400); }
+.jobmkt__search-input:focus {
+  outline: none;
+  border-color: rgba(var(--primary-rgb), 0.55);
+  box-shadow: 0 0 0 3px rgba(var(--primary-rgb), 0.14);
+}
+
+/* ===== 热门岗位 ===== */
+.jobmkt__hot {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 8px;
+}
+.jobmkt__hot-label {
+  font-size: 12px;
+  font-weight: 700;
+  color: var(--ink-soft);
+  margin-right: 2px;
+}
+.jobmkt__chip {
+  padding: 6px 14px;
+  border-radius: var(--radius-full);
+  border: 1px solid var(--line);
+  background: color-mix(in srgb, var(--surface) 70%, transparent);
+  color: var(--ink-soft);
+  font-size: 13px;
+  font-weight: 600;
+  cursor: pointer;
+  white-space: nowrap;
+  transition: all var(--transition-fast);
+}
+.jobmkt__chip:hover {
+  border-color: rgba(var(--primary-rgb), 0.4);
+  color: var(--ink);
+}
+.jobmkt__chip--active {
+  background: var(--primary);
+  border-color: transparent;
+  color: #fff;
+}
+.jobmkt__empty { font-size: 13px; color: var(--gray-400); }
+
+/* ===== 占位 ===== */
+.jobmkt__placeholder {
+  padding: 28px 16px;
+  text-align: center;
+  font-size: 14px;
+  color: var(--ink-soft);
+  border: 1px dashed var(--line);
+  border-radius: var(--radius-md);
+}
+
+/* ===== 市场画像卡 ===== */
+.jobmkt__card {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-md);
+  padding: var(--space-lg);
+  border-radius: var(--radius-lg);
+  background: color-mix(in srgb, var(--surface) 75%, transparent);
+  border: 1px solid var(--line);
+}
+
+.jobmkt__card-head {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+.jobmkt__title {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+.jobmkt__title h3 {
+  font-size: 18px;
+  font-weight: 800;
+  color: var(--ink);
+}
+.jobmkt__tag {
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+  padding: 3px 10px;
+  border-radius: var(--radius-full);
+  font-size: 11px;
+  font-weight: 700;
+}
+.jobmkt__tag--live {
+  color: var(--success-700);
+  background: color-mix(in srgb, var(--success-500) 16%, var(--surface));
+  border: 1px solid color-mix(in srgb, var(--success-500) 38%, transparent);
+}
+.jobmkt__tag--offline {
+  color: color-mix(in srgb, var(--accent) 60%, var(--ink));
+  background: color-mix(in srgb, var(--accent) 16%, var(--surface));
+  border: 1px solid color-mix(in srgb, var(--accent) 38%, transparent);
+}
+.jobmkt__live-dot {
+  width: 7px;
+  height: 7px;
+  border-radius: 50%;
+  background: var(--success-500);
+  box-shadow: 0 0 0 0 color-mix(in srgb, var(--success-500) 60%, transparent);
+  animation: jobmkt-pulse 1.8s ease-out infinite;
+}
+@keyframes jobmkt-pulse {
+  0% { box-shadow: 0 0 0 0 color-mix(in srgb, var(--success-500) 55%, transparent); }
+  70% { box-shadow: 0 0 0 7px transparent; }
+  100% { box-shadow: 0 0 0 0 transparent; }
+}
+.jobmkt__meta {
+  font-size: 11.5px;
+  color: var(--gray-400);
+}
+
+/* 关键指标 */
+.jobmkt__metrics {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: var(--space-md);
+}
+.jobmkt__metric {
+  display: flex;
+  flex-direction: column;
+  gap: 3px;
+  padding: 12px 14px;
+  border-radius: var(--radius-md);
+  background: color-mix(in srgb, var(--surface) 92%, transparent);
+  border: 1px solid var(--line);
+}
+.jobmkt__metric-value {
+  font-family: var(--font-mono);
+  font-size: 17px;
+  font-weight: 800;
+  color: var(--ink);
+}
+.jobmkt__metric-label {
+  font-size: 11px;
+  color: var(--ink-soft);
+}
+
+/* 技能频率 */
+.jobmkt__skills {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+.jobmkt__skills-title {
+  font-size: 12px;
+  font-weight: 700;
+  color: var(--ink-soft);
+  margin-bottom: 2px;
+}
+.jobmkt__skill {
+  display: grid;
+  grid-template-columns: 132px 1fr 40px;
+  align-items: center;
+  gap: 10px;
+}
+.jobmkt__skill-name {
+  font-size: 13px;
+  font-weight: 600;
+  color: var(--ink);
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+.jobmkt__skill-bar {
+  height: 7px;
+  border-radius: var(--radius-full);
+  background: color-mix(in srgb, var(--ink-soft) 16%, transparent);
+  overflow: hidden;
+}
+.jobmkt__skill-fill {
+  display: block;
+  height: 100%;
+  border-radius: var(--radius-full);
+  background: linear-gradient(90deg, color-mix(in srgb, var(--primary) 80%, white), var(--primary));
+  transition: width 0.6s var(--ease-emphasized);
+}
+.jobmkt__skill-pct {
+  font-family: var(--font-mono);
+  font-size: 12px;
+  font-weight: 700;
+  color: var(--ink-soft);
+  text-align: right;
+}
+
+@media (max-width: 560px) {
+  .jobmkt__skill { grid-template-columns: 96px 1fr 36px; }
+}

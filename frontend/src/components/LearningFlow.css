@@ -1,0 +1,465 @@
+/* ============================================
+   有序学习流（费曼 + 康奈尔）· 复用全站设计令牌
+   含：.flow 步骤流 / .cornell 三栏笔记 / .feynman 讲解 / .gate 阶段测试
+   ============================================ */
+
+/* ===== 步骤条 stepper ===== */
+.flow__stepper {
+  display: flex;
+  gap: var(--space-sm);
+  margin-bottom: var(--space-lg);
+  flex-wrap: wrap;
+}
+.flow__step {
+  position: relative;
+  flex: 1 1 0;
+  min-width: 150px;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 12px 14px;
+  border-radius: var(--radius-lg);
+  border: 1px solid var(--line);
+  background: color-mix(in srgb, var(--surface) 70%, transparent);
+  cursor: pointer;
+  text-align: left;
+  transition: all var(--transition-fast);
+}
+.flow__step:hover { border-color: var(--primary-300); }
+.flow__step--active {
+  border-color: transparent;
+  background: linear-gradient(135deg, var(--primary-500), var(--purple-500));
+  box-shadow: 0 6px 18px color-mix(in srgb, var(--primary) 28%, transparent);
+}
+.flow__step--active .flow__step-label,
+.flow__step--active .flow__step-desc { color: #fff; }
+.flow__step--active .flow__step-node {
+  background: rgba(255, 255, 255, 0.22);
+  color: #fff;
+  border-color: rgba(255, 255, 255, 0.5);
+}
+.flow__step-node {
+  flex-shrink: 0;
+  width: 34px;
+  height: 34px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+  background: var(--surface);
+  border: 1px solid var(--line);
+  font-size: 1rem;
+  color: var(--ink-soft);
+}
+.flow__step--done .flow__step-node {
+  background: var(--success-500);
+  color: #fff;
+  border-color: transparent;
+}
+.flow__step--done.flow__step--active .flow__step-node {
+  background: rgba(255, 255, 255, 0.25);
+}
+.flow__step-meta { display: flex; flex-direction: column; gap: 1px; min-width: 0; }
+.flow__step-label { font-size: 0.86rem; font-weight: 700; color: var(--ink); }
+.flow__step-desc {
+  font-size: 0.68rem;
+  color: var(--ink-soft);
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+.flow__step-line { display: none; }
+
+/* ===== 进度条 ===== */
+.flow__progress {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin-bottom: var(--space-lg);
+}
+.flow__progress-text { font-size: 0.78rem; font-weight: 600; color: var(--ink-soft); white-space: nowrap; }
+.flow__progress-bar {
+  flex: 1;
+  height: 6px;
+  border-radius: var(--radius-full);
+  background: var(--gray-200);
+  overflow: hidden;
+}
+.flow__progress-fill {
+  display: block;
+  height: 100%;
+  border-radius: var(--radius-full);
+  background: linear-gradient(90deg, var(--primary-400), var(--success-400));
+  transition: width 0.4s ease;
+}
+
+/* ===== 阶段内容面板 ===== */
+.flow__panel { min-height: 360px; }
+
+.flow__input-tabs { display: flex; gap: var(--space-sm); margin-bottom: var(--space-md); flex-wrap: wrap; }
+.flow__input-tab {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 7px 14px;
+  border-radius: var(--radius-full);
+  border: 1px solid var(--gray-200);
+  background: rgba(255, 255, 255, 0.5);
+  color: var(--gray-600);
+  font-size: 0.84rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all var(--transition-fast);
+}
+.flow__input-tab-inner { display: inline-flex; align-items: center; gap: 6px; }
+.flow__input-tab:hover { transform: translateY(-1px); }
+.flow__input-tab--active {
+  background: linear-gradient(135deg, var(--primary-500), var(--primary-600));
+  color: #fff;
+  border-color: transparent;
+}
+.flow__input-tab--done:not(.flow__input-tab--active) {
+  border-color: var(--success-300);
+  color: var(--success-700);
+}
+.flow__input-tab-check { color: var(--success-500); font-weight: 800; }
+.flow__input-tab--active .flow__input-tab-check { color: #fff; }
+.flow__input-body { min-height: 300px; }
+
+.flow__seen {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  margin-top: var(--space-md);
+  padding: 9px 16px;
+  border-radius: var(--radius-md);
+  background: color-mix(in srgb, var(--success-500) 8%, var(--surface));
+  border: 1px solid color-mix(in srgb, var(--success-500) 24%, transparent);
+  font-size: 0.82rem;
+  font-weight: 600;
+  color: var(--success-700);
+  cursor: pointer;
+}
+.flow__seen input { accent-color: var(--success-500); }
+
+/* ===== 阶段内导航 ===== */
+.flow__nav {
+  display: flex;
+  align-items: center;
+  gap: var(--space-md);
+  margin-top: var(--space-lg);
+}
+.flow__nav-hint { flex: 1; text-align: center; font-size: 0.78rem; color: var(--ink-soft); }
+.flow__nav-btn {
+  padding: 9px 20px;
+  border-radius: var(--radius-md);
+  border: 1px solid var(--gray-200);
+  background: rgba(255, 255, 255, 0.6);
+  color: var(--gray-700);
+  font-size: 0.84rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all var(--transition-fast);
+}
+.flow__nav-btn:hover:not(:disabled) { background: rgba(255, 255, 255, 0.9); }
+.flow__nav-btn:disabled { opacity: 0.4; cursor: not-allowed; }
+.flow__nav-btn--primary {
+  border: none;
+  background: linear-gradient(135deg, var(--primary-500), var(--purple-500));
+  color: #fff;
+  box-shadow: 0 4px 14px color-mix(in srgb, var(--primary) 26%, transparent);
+}
+
+/* ============ 康奈尔三栏 ============ */
+.cornell__loading { padding: var(--space-2xl); text-align: center; color: var(--gray-400); font-size: 0.9rem; }
+.cornell__bar { display: flex; align-items: center; justify-content: space-between; margin-bottom: var(--space-md); }
+.cornell__bar-title { font-size: 0.95rem; font-weight: 700; color: var(--ink); }
+.cornell__save { display: inline-flex; align-items: center; gap: 7px; font-size: 0.74rem; font-weight: 600; color: var(--gray-500); }
+.cornell__save-dot { width: 8px; height: 8px; border-radius: 50%; background: var(--gray-300); }
+.cornell__save--saving .cornell__save-dot { background: var(--warning-500); animation: regen-orb-pulse 1.2s infinite; }
+.cornell__save--saved { color: var(--success-700); }
+.cornell__save--saved .cornell__save-dot { background: var(--success-500); }
+.cornell__save--error { color: var(--warning-700); }
+.cornell__save--error .cornell__save-dot { background: var(--warning-600); }
+
+.cornell__grid {
+  display: grid;
+  grid-template-columns: minmax(220px, 0.8fr) 1.6fr;
+  gap: var(--space-md);
+}
+@media (max-width: 760px) {
+  .cornell__grid { grid-template-columns: 1fr; }
+}
+
+.cornell__col-head {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: 8px;
+  margin-bottom: 10px;
+}
+.cornell__col-name { font-size: 0.82rem; font-weight: 700; letter-spacing: 0.03em; color: var(--ink); }
+.cornell__col-hint { font-size: 0.68rem; color: var(--gray-400); }
+
+.cornell__cues {
+  padding: var(--space-md);
+  border-radius: var(--radius-lg);
+  background: color-mix(in srgb, var(--primary) 5%, var(--surface));
+  border: 1px solid var(--line);
+  border-left: 3px solid var(--primary-400);
+}
+.cornell__cue-list { list-style: none; margin: 0; padding: 0; display: flex; flex-direction: column; gap: 12px; }
+.cornell__cue-head { display: flex; gap: 8px; margin-bottom: 6px; }
+.cornell__cue-tag {
+  flex-shrink: 0;
+  width: 22px; height: 22px;
+  display: flex; align-items: center; justify-content: center;
+  border-radius: 6px;
+  font-size: 0.66rem;
+  font-weight: 700;
+  color: #fff;
+}
+.cornell__cue-tag--question { background: var(--primary-500); }
+.cornell__cue-tag--keyword { background: var(--accent); }
+.cornell__cue-text { font-size: 0.8rem; line-height: 1.5; color: var(--gray-700); font-weight: 600; }
+.cornell__cue-input {
+  width: 100%;
+  padding: 7px 10px;
+  border-radius: var(--radius-sm);
+  border: 1px solid var(--gray-200);
+  background: rgba(255, 255, 255, 0.7);
+  font-family: inherit;
+  font-size: 0.78rem;
+  color: var(--gray-800);
+}
+.cornell__cue-input:focus { outline: none; border-color: var(--primary-400); box-shadow: 0 0 0 3px color-mix(in srgb, var(--primary) 12%, transparent); }
+.cornell__empty { font-size: 0.78rem; color: var(--gray-400); }
+
+.cornell__main { display: flex; flex-direction: column; }
+.cornell__toggle {
+  border: 1px solid var(--gray-200);
+  background: rgba(255, 255, 255, 0.6);
+  border-radius: var(--radius-full);
+  padding: 3px 12px;
+  font-size: 0.72rem;
+  font-weight: 600;
+  color: var(--gray-600);
+  cursor: pointer;
+}
+.cornell__toggle:hover { border-color: var(--primary-300); color: var(--primary-700); }
+.cornell__textarea {
+  width: 100%;
+  min-height: 280px;
+  resize: vertical;
+  padding: 14px 16px;
+  border-radius: var(--radius-md);
+  border: 1px solid var(--gray-200);
+  background: rgba(255, 255, 255, 0.65);
+  font-family: var(--font-mono);
+  font-size: 0.82rem;
+  line-height: 1.7;
+  color: var(--gray-800);
+}
+.cornell__textarea:focus { outline: none; border-color: var(--primary-400); box-shadow: 0 0 0 3px color-mix(in srgb, var(--primary) 12%, transparent); }
+.cornell__preview {
+  min-height: 280px;
+  padding: 4px 16px;
+  border-radius: var(--radius-md);
+  border: 1px dashed var(--gray-200);
+  background: rgba(255, 255, 255, 0.4);
+}
+
+.cornell__summary { margin-top: var(--space-md); }
+.cornell__textarea--summary {
+  min-height: 96px;
+  background: color-mix(in srgb, var(--warning-500) 6%, var(--surface));
+  border-color: color-mix(in srgb, var(--warning-500) 26%, transparent);
+  font-family: inherit;
+  font-size: 0.86rem;
+}
+
+/* ============ 费曼讲解 ============ */
+.feynman {
+  display: grid;
+  grid-template-columns: 1.5fr 1fr;
+  gap: var(--space-lg);
+  align-items: start;
+}
+@media (max-width: 860px) {
+  .feynman { grid-template-columns: 1fr; }
+}
+.feynman__gaps {
+  position: sticky;
+  top: var(--space-md);
+  padding: var(--space-md);
+  border-radius: var(--radius-lg);
+  background: color-mix(in srgb, var(--warning-500) 6%, var(--surface));
+  border: 1px solid color-mix(in srgb, var(--warning-500) 22%, transparent);
+}
+.feynman__gaps-head { display: flex; align-items: center; gap: 8px; margin-bottom: var(--space-md); }
+.feynman__gaps-title { font-size: 0.86rem; font-weight: 700; color: var(--ink); }
+.feynman__gaps-count {
+  margin-left: auto;
+  font-family: var(--font-mono);
+  font-size: 0.72rem;
+  font-weight: 700;
+  color: var(--warning-700);
+  background: color-mix(in srgb, var(--warning-500) 16%, transparent);
+  padding: 1px 9px;
+  border-radius: var(--radius-full);
+}
+.feynman__gaps-empty { font-size: 0.78rem; line-height: 1.7; color: var(--gray-500); }
+.feynman__gap-list { list-style: none; margin: 0; padding: 0; display: flex; flex-direction: column; gap: var(--space-sm); }
+.feynman__gap {
+  padding: 12px 14px;
+  border-radius: var(--radius-md);
+  background: rgba(255, 255, 255, 0.7);
+  border: 1px solid var(--gray-200);
+  border-left: 3px solid var(--gray-300);
+}
+.feynman__gap--high { border-left-color: var(--warning-600); }
+.feynman__gap--medium { border-left-color: var(--accent); }
+.feynman__gap--low { border-left-color: var(--primary-400); }
+.feynman__gap-head { display: flex; align-items: center; gap: 8px; margin-bottom: 6px; }
+.feynman__gap-sev {
+  flex-shrink: 0;
+  font-size: 0.62rem;
+  font-weight: 700;
+  padding: 2px 8px;
+  border-radius: var(--radius-full);
+  color: #fff;
+  background: var(--gray-400);
+}
+.feynman__gap--high .feynman__gap-sev { background: var(--warning-600); }
+.feynman__gap--medium .feynman__gap-sev { background: var(--accent); }
+.feynman__gap--low .feynman__gap-sev { background: var(--primary-500); }
+.feynman__gap-title { font-size: 0.82rem; font-weight: 700; color: var(--ink); }
+.feynman__gap-detail { font-size: 0.76rem; line-height: 1.65; color: var(--gray-600); margin: 0 0 8px; }
+.feynman__gap-reviews { display: flex; flex-direction: column; gap: 6px; }
+.feynman__review {
+  text-align: left;
+  border: 1px solid var(--primary-200);
+  background: var(--primary-50);
+  color: var(--primary-700);
+  border-radius: var(--radius-sm);
+  padding: 6px 10px;
+  font-size: 0.74rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all var(--transition-fast);
+}
+.feynman__review:hover { background: var(--primary-100); border-color: var(--primary-300); }
+
+/* ============ 阶段测试 gate（独立分区） ============ */
+.gate {
+  margin-top: var(--space-2xl);
+  padding-top: var(--space-xl);
+  border-top: 2px dashed color-mix(in srgb, var(--accent) 40%, transparent);
+}
+.gate__head { display: flex; align-items: flex-start; gap: var(--space-md); margin-bottom: var(--space-lg); flex-wrap: wrap; }
+.gate__head-text { flex: 1; min-width: 240px; }
+.gate__kicker {
+  display: inline-block;
+  font-family: var(--font-mono);
+  font-size: 0.64rem;
+  font-weight: 700;
+  letter-spacing: 0.12em;
+  color: var(--accent);
+  background: color-mix(in srgb, var(--accent) 12%, transparent);
+  padding: 2px 10px;
+  border-radius: var(--radius-full);
+  margin-bottom: 8px;
+}
+.gate__title { font-size: 1.15rem; font-weight: 800; color: var(--ink); margin: 0 0 4px; }
+.gate__sub { font-size: 0.82rem; line-height: 1.7; color: var(--ink-soft); margin: 0; }
+.gate__sub strong { color: var(--accent); }
+.gate__mastery {
+  flex-shrink: 0;
+  align-self: center;
+  font-size: 0.82rem;
+  font-weight: 700;
+  padding: 8px 16px;
+  border-radius: var(--radius-md);
+}
+.gate__mastery--passed {
+  color: var(--success-700);
+  background: color-mix(in srgb, var(--success-500) 14%, var(--surface));
+  border: 1px solid color-mix(in srgb, var(--success-500) 40%, transparent);
+}
+.gate__mastery--learning,
+.gate__mastery--pending-check {
+  color: var(--gray-500);
+  background: var(--gray-100);
+  border: 1px solid var(--gray-200);
+}
+.gate__quiz-tip { font-size: 0.78rem; color: var(--gray-500); margin-bottom: var(--space-md); }
+
+.gate__passed {
+  display: flex;
+  align-items: center;
+  gap: var(--space-md);
+  padding: var(--space-lg);
+  border-radius: var(--radius-lg);
+  background: linear-gradient(135deg, var(--success-50), rgba(255, 255, 255, 0.5));
+  border: 1px solid var(--success-200);
+}
+.gate__passed-icon { font-size: 2rem; }
+.gate__passed-text { display: flex; flex-direction: column; gap: 3px; flex: 1; }
+.gate__passed-text strong { font-size: 0.95rem; color: var(--success-700); }
+.gate__passed-text span { font-size: 0.8rem; color: var(--gray-600); }
+.gate__passed-btn {
+  flex-shrink: 0;
+  padding: 10px 20px;
+  border: none;
+  border-radius: var(--radius-md);
+  background: linear-gradient(135deg, var(--success-500), var(--success-600));
+  color: #fff;
+  font-size: 0.84rem;
+  font-weight: 600;
+  cursor: pointer;
+}
+.gate__passed-btn:hover { filter: brightness(1.05); }
+
+/* 终点 gate 锁定态：学习步骤未走完时呈现，不渲染测试 */
+.gate__locked {
+  display: flex;
+  align-items: center;
+  gap: var(--space-md);
+  padding: var(--space-lg);
+  border-radius: var(--radius-lg);
+  background: linear-gradient(135deg, var(--gray-100, #f3f4f6), rgba(255, 255, 255, 0.5));
+  border: 1px dashed var(--gray-300, #d1d5db);
+}
+.gate__locked-icon { font-size: 1.6rem; filter: grayscale(0.2); }
+.gate__locked-text { display: flex; flex-direction: column; gap: 3px; flex: 1; }
+.gate__locked-text strong { font-size: 0.92rem; color: var(--ink, #1f2937); }
+.gate__locked-text span { font-size: 0.8rem; line-height: 1.6; color: var(--gray-600, #4b5563); }
+
+/* ===== 模式切换（有序学习 / 资源中枢）===== */
+.flow-mode {
+  display: inline-flex;
+  padding: 4px;
+  border-radius: var(--radius-full);
+  background: var(--gray-100);
+  border: 1px solid var(--gray-200);
+  margin-bottom: var(--space-lg);
+}
+.flow-mode__btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 8px 20px;
+  border: none;
+  background: none;
+  border-radius: var(--radius-full);
+  font-size: 0.84rem;
+  font-weight: 600;
+  color: var(--gray-500);
+  cursor: pointer;
+  transition: all var(--transition-fast);
+}
+.flow-mode__btn--active {
+  background: linear-gradient(135deg, var(--primary-500), var(--purple-500));
+  color: #fff;
+  box-shadow: 0 2px 10px color-mix(in srgb, var(--primary) 26%, transparent);
+}

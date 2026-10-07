@@ -1,0 +1,105 @@
+/* 论文级 RAG 溯源渲染：正文上标引用 [n] + 末尾学术格式「参考文献」。
+   全用语义令牌（--ink / --line / --accent…），深浅主题自动联动。 */
+
+/* ---------- 正文内的上标引用标记（remark-gfm 脚注引用）---------- */
+.markdown-body sup {
+  line-height: 0;
+}
+.markdown-body sup a[data-footnote-ref],
+.markdown-body sup a[id^='user-content-fnref'] {
+  font-size: 0.62em;
+  font-weight: 700;
+  color: var(--accent);
+  text-decoration: none;
+  padding: 0 1px;
+  vertical-align: super;
+  transition: color 0.15s;
+}
+/* 呈现成论文里的方括号引注 [1]，多引相邻时读作 [1][2] */
+.markdown-body sup a[data-footnote-ref]::before,
+.markdown-body sup a[id^='user-content-fnref']::before {
+  content: '[';
+}
+.markdown-body sup a[data-footnote-ref]::after,
+.markdown-body sup a[id^='user-content-fnref']::after {
+  content: ']';
+}
+.markdown-body sup a[data-footnote-ref]:hover,
+.markdown-body sup a[id^='user-content-fnref']:hover {
+  color: color-mix(in srgb, var(--accent) 78%, var(--ink));
+}
+
+/* ---------- 末尾「参考文献」区块（remark-gfm .footnotes）---------- */
+.markdown-body .footnotes {
+  margin-top: var(--space-xl, 28px);
+  padding-top: 14px;
+  border-top: 1px solid var(--line);
+  color: var(--ink-soft);
+}
+.markdown-body .footnotes .paper-refs__title {
+  display: flex;
+  align-items: baseline;
+  gap: 8px;
+  margin: 0 0 10px;
+  font-size: 0.86rem;
+  font-weight: 800;
+  letter-spacing: 0.02em;
+  color: var(--ink);
+}
+.markdown-body .footnotes .paper-refs__title::before {
+  content: '🛡 RAG 溯源';
+  font-size: 0.64rem;
+  font-weight: 700;
+  color: var(--accent);
+  padding: 2px 7px;
+  border: 1px solid color-mix(in srgb, var(--accent) 40%, transparent);
+  border-radius: 999px;
+}
+/* 学术编号列表：小字、悬挂缩进，像论文参考文献 */
+.markdown-body .footnotes ol {
+  margin: 0;
+  padding-left: 1.4em;
+  counter-reset: paper-ref;
+  list-style: none;
+}
+.markdown-body .footnotes ol li {
+  counter-increment: paper-ref;
+  position: relative;
+  margin: 3px 0;
+  font-size: 0.76rem;
+  line-height: 1.55;
+  color: var(--ink-soft);
+}
+.markdown-body .footnotes ol li::before {
+  content: '[' counter(paper-ref) ']';
+  position: absolute;
+  left: -1.4em;
+  font-weight: 700;
+  color: var(--accent);
+}
+.markdown-body .footnotes ol li p {
+  display: inline;
+  margin: 0;
+}
+.markdown-body .footnotes ol li strong {
+  font-weight: 700;
+  color: var(--ink);
+}
+/* 隐藏回跳箭头（↩）——论文参考文献不需要 */
+.markdown-body .footnotes a[data-footnote-backref],
+.markdown-body .footnotes a[class*='data-footnote-backref'] {
+  display: none;
+}
+
+/* ---------- 解析级降级：markdown 管线异常时的原文纯文本兜底 ---------- */
+.md-raw-fallback {
+  white-space: pre-wrap;
+  word-break: break-word;
+  font-size: 0.88rem;
+  line-height: 1.7;
+  color: var(--ink);
+  background: color-mix(in srgb, var(--ink) 4%, transparent);
+  border: 1px dashed var(--line);
+  border-radius: 10px;
+  padding: 14px 16px;
+}

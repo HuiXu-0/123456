@@ -1,0 +1,777 @@
+{
+  "scope": "offline_shadow_only",
+  "caseCount": 40,
+  "candidateSnapshot": "evaluation/rerank_real_candidates_d3b.json",
+  "policies": {
+    "never": {
+      "label": "Hybrid Only",
+      "metrics": {
+        "mrr": 0.735714,
+        "ndcg@3": 0.646784,
+        "ndcg@5": 0.67011,
+        "top1": 0.628571
+      },
+      "incrementalRerankLatencyMs": 0.0,
+      "degradedCases": []
+    },
+    "always": {
+      "label": "Hybrid + Rerank",
+      "selectedConfiguration": {
+        "batch_size": 4,
+        "max_length": 256
+      },
+      "metrics": {
+        "mrr": 0.767619,
+        "ndcg@3": 0.668729,
+        "ndcg@5": 0.690974,
+        "top1": 0.714286
+      },
+      "delta": {
+        "mrr": 0.031905,
+        "ndcg@3": 0.021945,
+        "ndcg@5": 0.020864,
+        "top1": 0.085715
+      },
+      "latency": {
+        "evaluated_query_count": 40,
+        "model_load_ms": 2801.389,
+        "total_inference_ms": 28101.911,
+        "mean_query_ms": 702.548,
+        "median_query_ms": 791.158,
+        "p95_query_ms": 1330.845
+      },
+      "degradedCases": [
+        {
+          "caseId": "compare_classification_regression",
+          "queryType": "方法比较",
+          "metricDelta": {
+            "mrr": -0.3,
+            "ndcg@3": -0.386853,
+            "ndcg@5": -0.149655,
+            "top1": 0.0
+          }
+        },
+        {
+          "caseId": "steps_instruction_tuning",
+          "queryType": "操作步骤",
+          "metricDelta": {
+            "mrr": -0.5,
+            "ndcg@3": -0.36907,
+            "ndcg@5": -0.36907,
+            "top1": -1.0
+          }
+        },
+        {
+          "caseId": "fact_relu",
+          "queryType": "事实查询",
+          "metricDelta": {
+            "mrr": -0.666667,
+            "ndcg@3": -0.5,
+            "ndcg@5": -0.5,
+            "top1": -1.0
+          }
+        },
+        {
+          "caseId": "synthesis_cnn_components",
+          "queryType": "跨段落综合",
+          "metricDelta": {
+            "mrr": -0.166667,
+            "ndcg@3": -0.061443,
+            "ndcg@5": -0.051112,
+            "top1": 0.0
+          }
+        },
+        {
+          "caseId": "synthesis_transformer_components",
+          "queryType": "跨段落综合",
+          "metricDelta": {
+            "mrr": 0.0,
+            "ndcg@3": -0.296082,
+            "ndcg@5": -0.093975,
+            "top1": 0.0
+          }
+        },
+        {
+          "caseId": "synthesis_overfit_controls",
+          "queryType": "跨段落综合",
+          "metricDelta": {
+            "mrr": -0.5,
+            "ndcg@3": -0.045174,
+            "ndcg@5": -0.045174,
+            "top1": -1.0
+          }
+        },
+        {
+          "caseId": "fuzzy_memorizes_answers",
+          "queryType": "模糊表达",
+          "metricDelta": {
+            "mrr": 0.0,
+            "ndcg@3": -0.166009,
+            "ndcg@5": -0.166009,
+            "top1": 0.0
+          }
+        }
+      ]
+    },
+    "conditional": {
+      "label": "Type + Confidence Gate",
+      "rule": {
+        "query_types": [
+          "概念解释"
+        ],
+        "min_confidence": 0.9883
+      },
+      "enabledCount": 5,
+      "disabledCount": 35,
+      "metrics": {
+        "mrr": 0.771429,
+        "ndcg@3": 0.678913,
+        "ndcg@5": 0.689934,
+        "top1": 0.685714
+      },
+      "delta": {
+        "mrr": 0.035715,
+        "ndcg@3": 0.032129,
+        "ndcg@5": 0.019824,
+        "top1": 0.057143
+      },
+      "latency": {
+        "evaluated_query_count": 5,
+        "model_load_ms": 2946.459,
+        "total_inference_ms": 5819.349,
+        "mean_query_ms": 1163.87,
+        "median_query_ms": 1045.311,
+        "p95_query_ms": 1281.763
+      },
+      "degradedCases": [],
+      "decisions": [
+        {
+          "enabled": true,
+          "reason": "validated_type_and_confidence",
+          "query_type": "概念解释",
+          "confidence": 0.9990792118701552
+        },
+        {
+          "enabled": true,
+          "reason": "validated_type_and_confidence",
+          "query_type": "概念解释",
+          "confidence": 1.0
+        },
+        {
+          "enabled": true,
+          "reason": "validated_type_and_confidence",
+          "query_type": "概念解释",
+          "confidence": 0.9976783558224652
+        },
+        {
+          "enabled": true,
+          "reason": "validated_type_and_confidence",
+          "query_type": "概念解释",
+          "confidence": 0.9964146222819861
+        },
+        {
+          "enabled": true,
+          "reason": "validated_type_and_confidence",
+          "query_type": "概念解释",
+          "confidence": 0.9985182721341616
+        },
+        {
+          "enabled": false,
+          "reason": "query_type_not_validated",
+          "query_type": "方法比较",
+          "confidence": 1.0
+        },
+        {
+          "enabled": false,
+          "reason": "query_type_not_validated",
+          "query_type": "方法比较",
+          "confidence": 0.9990460582931974
+        },
+        {
+          "enabled": false,
+          "reason": "query_type_not_validated",
+          "query_type": "方法比较",
+          "confidence": 0.9954455614496452
+        },
+        {
+          "enabled": false,
+          "reason": "query_type_not_validated",
+          "query_type": "方法比较",
+          "confidence": 1.0
+        },
+        {
+          "enabled": false,
+          "reason": "query_type_not_validated",
+          "query_type": "方法比较",
+          "confidence": 0.9922461820939283
+        },
+        {
+          "enabled": false,
+          "reason": "query_type_not_validated",
+          "query_type": "操作步骤",
+          "confidence": 0.999104023558911
+        },
+        {
+          "enabled": false,
+          "reason": "query_type_not_validated",
+          "query_type": "操作步骤",
+          "confidence": 1.0
+        },
+        {
+          "enabled": false,
+          "reason": "query_type_not_validated",
+          "query_type": "操作步骤",
+          "confidence": 1.0
+        },
+        {
+          "enabled": false,
+          "reason": "query_type_not_validated",
+          "query_type": "操作步骤",
+          "confidence": 0.8228998686290803
+        },
+        {
+          "enabled": false,
+          "reason": "query_type_not_validated",
+          "query_type": "操作步骤",
+          "confidence": 1.0
+        },
+        {
+          "enabled": false,
+          "reason": "query_type_not_validated",
+          "query_type": "事实查询",
+          "confidence": 0.9923953874463008
+        },
+        {
+          "enabled": false,
+          "reason": "query_type_not_validated",
+          "query_type": "事实查询",
+          "confidence": 1.0
+        },
+        {
+          "enabled": false,
+          "reason": "query_type_not_validated",
+          "query_type": "事实查询",
+          "confidence": 1.0
+        },
+        {
+          "enabled": false,
+          "reason": "query_type_not_validated",
+          "query_type": "事实查询",
+          "confidence": 1.0
+        },
+        {
+          "enabled": false,
+          "reason": "query_type_not_validated",
+          "query_type": "事实查询",
+          "confidence": 0.9938036493208648
+        },
+        {
+          "enabled": false,
+          "reason": "query_type_not_validated",
+          "query_type": "跨段落综合",
+          "confidence": 0.9969530748157402
+        },
+        {
+          "enabled": false,
+          "reason": "query_type_not_validated",
+          "query_type": "跨段落综合",
+          "confidence": 1.0
+        },
+        {
+          "enabled": false,
+          "reason": "query_type_not_validated",
+          "query_type": "跨段落综合",
+          "confidence": 0.9899888089911382
+        },
+        {
+          "enabled": false,
+          "reason": "query_type_not_validated",
+          "query_type": "跨段落综合",
+          "confidence": 0.0
+        },
+        {
+          "enabled": false,
+          "reason": "query_type_not_validated",
+          "query_type": "跨段落综合",
+          "confidence": 0.9930515434302024
+        },
+        {
+          "enabled": false,
+          "reason": "query_type_not_validated",
+          "query_type": "模糊表达",
+          "confidence": 0.9897613571743759
+        },
+        {
+          "enabled": false,
+          "reason": "query_type_not_validated",
+          "query_type": "模糊表达",
+          "confidence": 0.9993029000974407
+        },
+        {
+          "enabled": false,
+          "reason": "query_type_not_validated",
+          "query_type": "模糊表达",
+          "confidence": 1.0
+        },
+        {
+          "enabled": false,
+          "reason": "query_type_not_validated",
+          "query_type": "模糊表达",
+          "confidence": 0.9853229064799071
+        },
+        {
+          "enabled": false,
+          "reason": "query_type_not_validated",
+          "query_type": "模糊表达",
+          "confidence": 0.9913924294201235
+        },
+        {
+          "enabled": false,
+          "reason": "query_type_not_validated",
+          "query_type": "无答案问题",
+          "confidence": 0.0
+        },
+        {
+          "enabled": false,
+          "reason": "query_type_not_validated",
+          "query_type": "无答案问题",
+          "confidence": 0.0
+        },
+        {
+          "enabled": false,
+          "reason": "query_type_not_validated",
+          "query_type": "无答案问题",
+          "confidence": 0.0
+        },
+        {
+          "enabled": false,
+          "reason": "query_type_not_validated",
+          "query_type": "无答案问题",
+          "confidence": 0.0
+        },
+        {
+          "enabled": false,
+          "reason": "query_type_not_validated",
+          "query_type": "无答案问题",
+          "confidence": 0.0
+        },
+        {
+          "enabled": false,
+          "reason": "query_type_not_validated",
+          "query_type": "带knowledge_scope过滤",
+          "confidence": 0.9023612622042003
+        },
+        {
+          "enabled": false,
+          "reason": "query_type_not_validated",
+          "query_type": "带knowledge_scope过滤",
+          "confidence": 0.9883143607463262
+        },
+        {
+          "enabled": false,
+          "reason": "query_type_not_validated",
+          "query_type": "带knowledge_scope过滤",
+          "confidence": 1.0
+        },
+        {
+          "enabled": false,
+          "reason": "query_type_not_validated",
+          "query_type": "带knowledge_scope过滤",
+          "confidence": 1.0
+        },
+        {
+          "enabled": false,
+          "reason": "query_type_not_validated",
+          "query_type": "带knowledge_scope过滤",
+          "confidence": 0.9824587552277588
+        }
+      ]
+    }
+  },
+  "latencyExperiments": [
+    {
+      "batch_size": 4,
+      "max_length": 256,
+      "metrics": {
+        "mrr": 0.767619,
+        "ndcg@3": 0.668729,
+        "ndcg@5": 0.690974,
+        "top1": 0.714286
+      },
+      "delta": {
+        "mrr": 0.031905,
+        "ndcg@3": 0.021945,
+        "ndcg@5": 0.020864,
+        "top1": 0.085715
+      },
+      "latency": {
+        "evaluated_query_count": 40,
+        "model_load_ms": 2801.389,
+        "total_inference_ms": 28101.911,
+        "mean_query_ms": 702.548,
+        "median_query_ms": 791.158,
+        "p95_query_ms": 1330.845
+      },
+      "degradedCases": [
+        {
+          "caseId": "compare_classification_regression",
+          "queryType": "方法比较",
+          "metricDelta": {
+            "mrr": -0.3,
+            "ndcg@3": -0.386853,
+            "ndcg@5": -0.149655,
+            "top1": 0.0
+          }
+        },
+        {
+          "caseId": "steps_instruction_tuning",
+          "queryType": "操作步骤",
+          "metricDelta": {
+            "mrr": -0.5,
+            "ndcg@3": -0.36907,
+            "ndcg@5": -0.36907,
+            "top1": -1.0
+          }
+        },
+        {
+          "caseId": "fact_relu",
+          "queryType": "事实查询",
+          "metricDelta": {
+            "mrr": -0.666667,
+            "ndcg@3": -0.5,
+            "ndcg@5": -0.5,
+            "top1": -1.0
+          }
+        },
+        {
+          "caseId": "synthesis_cnn_components",
+          "queryType": "跨段落综合",
+          "metricDelta": {
+            "mrr": -0.166667,
+            "ndcg@3": -0.061443,
+            "ndcg@5": -0.051112,
+            "top1": 0.0
+          }
+        },
+        {
+          "caseId": "synthesis_transformer_components",
+          "queryType": "跨段落综合",
+          "metricDelta": {
+            "mrr": 0.0,
+            "ndcg@3": -0.296082,
+            "ndcg@5": -0.093975,
+            "top1": 0.0
+          }
+        },
+        {
+          "caseId": "synthesis_overfit_controls",
+          "queryType": "跨段落综合",
+          "metricDelta": {
+            "mrr": -0.5,
+            "ndcg@3": -0.045174,
+            "ndcg@5": -0.045174,
+            "top1": -1.0
+          }
+        },
+        {
+          "caseId": "fuzzy_memorizes_answers",
+          "queryType": "模糊表达",
+          "metricDelta": {
+            "mrr": 0.0,
+            "ndcg@3": -0.166009,
+            "ndcg@5": -0.166009,
+            "top1": 0.0
+          }
+        }
+      ]
+    },
+    {
+      "batch_size": 8,
+      "max_length": 256,
+      "metrics": {
+        "mrr": 0.767619,
+        "ndcg@3": 0.668729,
+        "ndcg@5": 0.690974,
+        "top1": 0.714286
+      },
+      "delta": {
+        "mrr": 0.031905,
+        "ndcg@3": 0.021945,
+        "ndcg@5": 0.020864,
+        "top1": 0.085715
+      },
+      "latency": {
+        "evaluated_query_count": 40,
+        "model_load_ms": 2666.473,
+        "total_inference_ms": 30899.53,
+        "mean_query_ms": 772.488,
+        "median_query_ms": 795.476,
+        "p95_query_ms": 1706.847
+      },
+      "degradedCases": [
+        {
+          "caseId": "compare_classification_regression",
+          "queryType": "方法比较",
+          "metricDelta": {
+            "mrr": -0.3,
+            "ndcg@3": -0.386853,
+            "ndcg@5": -0.149655,
+            "top1": 0.0
+          }
+        },
+        {
+          "caseId": "steps_instruction_tuning",
+          "queryType": "操作步骤",
+          "metricDelta": {
+            "mrr": -0.5,
+            "ndcg@3": -0.36907,
+            "ndcg@5": -0.36907,
+            "top1": -1.0
+          }
+        },
+        {
+          "caseId": "fact_relu",
+          "queryType": "事实查询",
+          "metricDelta": {
+            "mrr": -0.666667,
+            "ndcg@3": -0.5,
+            "ndcg@5": -0.5,
+            "top1": -1.0
+          }
+        },
+        {
+          "caseId": "synthesis_cnn_components",
+          "queryType": "跨段落综合",
+          "metricDelta": {
+            "mrr": -0.166667,
+            "ndcg@3": -0.061443,
+            "ndcg@5": -0.051112,
+            "top1": 0.0
+          }
+        },
+        {
+          "caseId": "synthesis_transformer_components",
+          "queryType": "跨段落综合",
+          "metricDelta": {
+            "mrr": 0.0,
+            "ndcg@3": -0.296082,
+            "ndcg@5": -0.093975,
+            "top1": 0.0
+          }
+        },
+        {
+          "caseId": "synthesis_overfit_controls",
+          "queryType": "跨段落综合",
+          "metricDelta": {
+            "mrr": -0.5,
+            "ndcg@3": -0.045174,
+            "ndcg@5": -0.045174,
+            "top1": -1.0
+          }
+        },
+        {
+          "caseId": "fuzzy_memorizes_answers",
+          "queryType": "模糊表达",
+          "metricDelta": {
+            "mrr": 0.0,
+            "ndcg@3": -0.166009,
+            "ndcg@5": -0.166009,
+            "top1": 0.0
+          }
+        }
+      ]
+    },
+    {
+      "batch_size": 4,
+      "max_length": 512,
+      "metrics": {
+        "mrr": 0.76381,
+        "ndcg@3": 0.655782,
+        "ndcg@5": 0.684249,
+        "top1": 0.714286
+      },
+      "delta": {
+        "mrr": 0.028096,
+        "ndcg@3": 0.008998,
+        "ndcg@5": 0.014139,
+        "top1": 0.085715
+      },
+      "latency": {
+        "evaluated_query_count": 40,
+        "model_load_ms": 2880.929,
+        "total_inference_ms": 38336.158,
+        "mean_query_ms": 958.404,
+        "median_query_ms": 963.005,
+        "p95_query_ms": 2572.039
+      },
+      "degradedCases": [
+        {
+          "caseId": "compare_classification_regression",
+          "queryType": "方法比较",
+          "metricDelta": {
+            "mrr": -0.3,
+            "ndcg@3": -0.386853,
+            "ndcg@5": -0.149655,
+            "top1": 0.0
+          }
+        },
+        {
+          "caseId": "steps_instruction_tuning",
+          "queryType": "操作步骤",
+          "metricDelta": {
+            "mrr": -0.5,
+            "ndcg@3": -0.36907,
+            "ndcg@5": -0.36907,
+            "top1": -1.0
+          }
+        },
+        {
+          "caseId": "fact_relu",
+          "queryType": "事实查询",
+          "metricDelta": {
+            "mrr": -0.8,
+            "ndcg@3": -1.0,
+            "ndcg@5": -0.613147,
+            "top1": -1.0
+          }
+        },
+        {
+          "caseId": "synthesis_cnn_components",
+          "queryType": "跨段落综合",
+          "metricDelta": {
+            "mrr": -0.166667,
+            "ndcg@3": -0.061443,
+            "ndcg@5": -0.051112,
+            "top1": 0.0
+          }
+        },
+        {
+          "caseId": "synthesis_transformer_components",
+          "queryType": "跨段落综合",
+          "metricDelta": {
+            "mrr": 0.0,
+            "ndcg@3": -0.296082,
+            "ndcg@5": -0.093975,
+            "top1": 0.0
+          }
+        },
+        {
+          "caseId": "synthesis_overfit_controls",
+          "queryType": "跨段落综合",
+          "metricDelta": {
+            "mrr": -0.5,
+            "ndcg@3": -0.045174,
+            "ndcg@5": -0.068924,
+            "top1": -1.0
+          }
+        },
+        {
+          "caseId": "fuzzy_memorizes_answers",
+          "queryType": "模糊表达",
+          "metricDelta": {
+            "mrr": 0.0,
+            "ndcg@3": -0.166009,
+            "ndcg@5": -0.166009,
+            "top1": 0.0
+          }
+        }
+      ]
+    },
+    {
+      "batch_size": 8,
+      "max_length": 512,
+      "metrics": {
+        "mrr": 0.76381,
+        "ndcg@3": 0.655782,
+        "ndcg@5": 0.684249,
+        "top1": 0.714286
+      },
+      "delta": {
+        "mrr": 0.028096,
+        "ndcg@3": 0.008998,
+        "ndcg@5": 0.014139,
+        "top1": 0.085715
+      },
+      "latency": {
+        "evaluated_query_count": 40,
+        "model_load_ms": 2877.917,
+        "total_inference_ms": 44541.942,
+        "mean_query_ms": 1113.549,
+        "median_query_ms": 966.178,
+        "p95_query_ms": 3208.948
+      },
+      "degradedCases": [
+        {
+          "caseId": "compare_classification_regression",
+          "queryType": "方法比较",
+          "metricDelta": {
+            "mrr": -0.3,
+            "ndcg@3": -0.386853,
+            "ndcg@5": -0.149655,
+            "top1": 0.0
+          }
+        },
+        {
+          "caseId": "steps_instruction_tuning",
+          "queryType": "操作步骤",
+          "metricDelta": {
+            "mrr": -0.5,
+            "ndcg@3": -0.36907,
+            "ndcg@5": -0.36907,
+            "top1": -1.0
+          }
+        },
+        {
+          "caseId": "fact_relu",
+          "queryType": "事实查询",
+          "metricDelta": {
+            "mrr": -0.8,
+            "ndcg@3": -1.0,
+            "ndcg@5": -0.613147,
+            "top1": -1.0
+          }
+        },
+        {
+          "caseId": "synthesis_cnn_components",
+          "queryType": "跨段落综合",
+          "metricDelta": {
+            "mrr": -0.166667,
+            "ndcg@3": -0.061443,
+            "ndcg@5": -0.051112,
+            "top1": 0.0
+          }
+        },
+        {
+          "caseId": "synthesis_transformer_components",
+          "queryType": "跨段落综合",
+          "metricDelta": {
+            "mrr": 0.0,
+            "ndcg@3": -0.296082,
+            "ndcg@5": -0.093975,
+            "top1": 0.0
+          }
+        },
+        {
+          "caseId": "synthesis_overfit_controls",
+          "queryType": "跨段落综合",
+          "metricDelta": {
+            "mrr": -0.5,
+            "ndcg@3": -0.045174,
+            "ndcg@5": -0.068924,
+            "top1": -1.0
+          }
+        },
+        {
+          "caseId": "fuzzy_memorizes_answers",
+          "queryType": "模糊表达",
+          "metricDelta": {
+            "mrr": 0.0,
+            "ndcg@3": -0.166009,
+            "ndcg@5": -0.166009,
+            "top1": 0.0
+          }
+        }
+      ]
+    }
+  ]
+}

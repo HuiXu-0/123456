@@ -1,0 +1,3845 @@
+{
+  "strategy": "fixed_hybrid_top20",
+  "embedding_profile": "hash:deterministic_hash_v1:d512",
+  "collection": "kb_chunks__hash_d512__utf8_v2",
+  "cases": [
+    {
+      "query_id": "concept_neural_network",
+      "query": "什么是神经网络",
+      "query_type": "概念解释",
+      "embedding_profile": "hash:deterministic_hash_v1:d512",
+      "collection": "kb_chunks__hash_d512__utf8_v2",
+      "candidates": [
+        {
+          "id": "doc_016#1",
+          "content": "Dropout 是一种针对神经网络的正则化技术。训练时以概率 p 随机将一部分神经元的输出置零，使网络不能过度依赖某些特定神经元，从而学到更鲁棒、更冗余的特征表示。它相当于在训练中集成了大量共享权重的子网络。",
+          "source": {
+            "chunkId": "doc_016#1",
+            "documentId": "doc_016",
+            "title": "Dropout与正则化技术",
+            "location": "Dropout 与正则化技术 / Dropout 的原理 / 段落 1"
+          },
+          "metadata": {
+            "chunk_index": 1,
+            "document_title": "Dropout与正则化技术",
+            "chunking_version": "heading-window-v1",
+            "token_count": 62,
+            "source_encoding": "utf-8",
+            "source_location": "Dropout 与正则化技术 / Dropout 的原理 / 段落 1",
+            "document_id": "doc_016",
+            "queryOverlap": 0.714286
+          },
+          "dense_score": 0.4108908176422119,
+          "keyword_score": 9.049666576738225,
+          "normalized_dense_score": 1.0,
+          "normalized_keyword_score": 0.9815842374031044,
+          "fusion_score": 0.01631411951348493,
+          "confidence_score": 0.9990792118701552
+        },
+        {
+          "id": "doc_010#4",
+          "content": "单个神经元表达能力有限，把大量神经元分层连接、引入非线性激活函数，就构成多层神经网络，从而能逼近复杂的非线性函数。权重正是网络通过学习不断调整的参数。",
+          "source": {
+            "chunkId": "doc_010#4",
+            "documentId": "doc_010",
+            "title": "感知机与神经元模型",
+            "location": "感知机与神经元模型 / 从单元到网络 / 段落 1"
+          },
+          "metadata": {
+            "chunk_index": 4,
+            "source_location": "感知机与神经元模型 / 从单元到网络 / 段落 1",
+            "source_encoding": "utf-8",
+            "document_id": "doc_010",
+            "chunking_version": "heading-window-v1",
+            "document_title": "感知机与神经元模型",
+            "token_count": 47,
+            "queryOverlap": 0.714286
+          },
+          "dense_score": 0.4019313454627991,
+          "keyword_score": 9.219449775069915,
+          "normalized_dense_score": 0.9781950051090837,
+          "normalized_keyword_score": 1.0,
+          "fusion_score": 0.016208355367530406,
+          "confidence_score": 0.9906371062012043
+        },
+        {
+          "id": "doc_004#0",
+          "content": "卷积神经网络（CNN）是处理图像等网格结构数据的经典深度学习架构。CNN 的核心思想是局部连接、权重共享和池化下采样，三者共同大幅减少参数量并赋予模型对平移的鲁棒性。",
+          "source": {
+            "chunkId": "doc_004#0",
+            "documentId": "doc_004",
+            "title": "CNN架构与卷积网络",
+            "location": "CNN 架构与卷积神经网络 / 段落 1"
+          },
+          "metadata": {
+            "chunk_index": 0,
+            "token_count": 49,
+            "document_title": "CNN架构与卷积网络",
+            "document_id": "doc_004",
+            "source_location": "CNN 架构与卷积神经网络 / 段落 1",
+            "source_encoding": "utf-8",
+            "chunking_version": "heading-window-v1",
+            "queryOverlap": 0.714286
+          },
+          "dense_score": 0.31187254190444946,
+          "keyword_score": 7.190762015294216,
+          "normalized_dense_score": 0.7590156034492263,
+          "normalized_keyword_score": 0.7799556579546186,
+          "fusion_score": 0.015588723051409618,
+          "confidence_score": 0.9156380044924739
+        },
+        {
+          "id": "doc_001#0",
+          "content": "本讲义介绍神经网络的基本结构、前向传播与反向传播算法，是深度学习的基石。",
+          "source": {
+            "chunkId": "doc_001#0",
+            "documentId": "doc_001",
+            "title": "神经网络与反向传播",
+            "location": "神经网络基础与反向传播算法 / 段落 1"
+          },
+          "metadata": {
+            "chunking_version": "heading-window-v1",
+            "document_id": "doc_001",
+            "source_encoding": "utf-8",
+            "source_location": "神经网络基础与反向传播算法 / 段落 1",
+            "document_title": "神经网络与反向传播",
+            "chunk_index": 0,
+            "token_count": 22,
+            "queryOverlap": 0.714286
+          },
+          "dense_score": 0.2817181348800659,
+          "keyword_score": 7.723670947225404,
+          "normalized_dense_score": 0.6856277210005101,
+          "normalized_keyword_score": 0.8377583408622488,
+          "fusion_score": 0.015293560606060606,
+          "confidence_score": 0.8911450050358658
+        },
+        {
+          "id": "doc_013#4",
+          "content": "反向传播只负责求梯度，参数更新由优化器完成：w ← w − η·∂L/∂w，其中 η 是学习率。前向传播、反向传播、参数更新三步循环往复，构成神经网络的训练过程。梯度消失与梯度爆炸是深层网络反向传播的常见难题。",
+          "source": {
+            "chunkId": "doc_013#4",
+            "documentId": "doc_013",
+            "title": "反向传播与链式法则",
+            "location": "反向传播与链式法则 / 与梯度下降的配合 / 段落 1"
+          },
+          "metadata": {
+            "document_id": "doc_013",
+            "document_title": "反向传播与链式法则",
+            "token_count": 58,
+            "source_location": "反向传播与链式法则 / 与梯度下降的配合 / 段落 1",
+            "chunk_index": 4,
+            "chunking_version": "heading-window-v1",
+            "source_encoding": "utf-8",
+            "queryOverlap": 0.714286
+          },
+          "dense_score": 0.25496673583984375,
+          "keyword_score": 6.587243030332497,
+          "normalized_dense_score": 0.6205218634548779,
+          "normalized_keyword_score": 0.7144941608277858,
+          "fusion_score": 0.014430641821946168,
+          "confidence_score": 0.8198707941477716
+        },
+        {
+          "id": "doc_008#3",
+          "content": "早停（early stopping）在验证集损失不再下降时停止训练，避免过度拟合。数据增强通过对训练样本做变换扩充数据多样性。交叉验证帮助更可靠地评估泛化能力。对神经网络，Dropout 随机丢弃神经元也是常用正则手段。",
+          "source": {
+            "chunkId": "doc_008#3",
+            "documentId": "doc_008",
+            "title": "过拟合与正则化",
+            "location": "过拟合与正则化 / 其他缓解手段 / 段落 1"
+          },
+          "metadata": {
+            "document_id": "doc_008",
+            "source_encoding": "utf-8",
+            "source_location": "过拟合与正则化 / 其他缓解手段 / 段落 1",
+            "document_title": "过拟合与正则化",
+            "chunk_index": 3,
+            "chunking_version": "heading-window-v1",
+            "token_count": 60,
+            "queryOverlap": 0.714286
+          },
+          "dense_score": 0.2405228614807129,
+          "keyword_score": 7.2540412653232975,
+          "normalized_dense_score": 0.5853692785370322,
+          "normalized_keyword_score": 0.7868193267822523,
+          "fusion_score": 0.014267676767676768,
+          "confidence_score": 0.8089049123758223
+        },
+        {
+          "id": "doc_001#1",
+          "content": "神经元是神经网络的基本计算单元。每个神经元接收若干输入，对其加权求和并加上偏置，再经过激活函数得到输出。可以把一个神经元想象成一个小小的投票委员会：每个输入意见都有自己的权重，权重大的意见更有分量；偏置相当于委员会的固有立场；激活函数则像最终拍板的裁判，决定这个信号要不要继续往下传、传多强。\n神经元的运算顺序固定为三步：先加权求和，再加上偏置，最后通过激活函数。这个顺序不能颠倒，因为激活必须作用在「加权和加偏置」的整体结果上，提前激活会破坏非线性表达能力。\n前向传播指信号从输入层逐层经过隐藏层传递到输出层的过程。给定输入向量 x、权重矩阵 W 与偏置 b，单层的计算为 z = Wx + b，随后通过激活函数 a = f(z) 得到该层输出。多层网络就是把这个过程逐层串联：上一层的输出作为下一层的输入，像流水线一样层层加工，把原始输入逐步变换成更有用的表示。\n常见激活函数包括 Sigmoid、Tanh 与 ReLU。Sigmoid 把任意实数压缩到 0 到 1 之间，常用于输出概率；Tanh 输出零均值，范围在 -1 到 1 之间；ReLU 即修正线性单元，定义为 max(0, x)，计算极快。ReLU 在正区间梯度恒为 1，能有效缓解深层网络的梯度消失问题，是现代网络的默认选择。如果没有激活函数，多层线性变换叠加之后仍然等价于一个线性变换，网络将无法拟合复杂的非线性关系——这正是激活函数存在的根本原因。\n用代码表达单个神经元的前向计算非常简单：z = np.dot(x, w) + b，再取 np.maximum(0, z) 即得 ReLU 激活后的输出。输入与权重相乘求和，加偏置得到 z，再经激活函数得到本层输出。",
+          "source": {
+            "chunkId": "doc_001#1",
+            "documentId": "doc_001",
+            "title": "神经网络与反向传播",
+            "location": "神经网络基础与反向传播算法 / 第一章 神经元与前向传播 / 段落 1"
+          },
+          "metadata": {
+            "token_count": 397,
+            "source_location": "神经网络基础与反向传播算法 / 第一章 神经元与前向传播 / 段落 1",
+            "document_title": "神经网络与反向传播",
+            "document_id": "doc_001",
+            "source_encoding": "utf-8",
+            "chunking_version": "heading-window-v1",
+            "chunk_index": 1,
+            "queryOverlap": 0.714286
+          },
+          "dense_score": 0.2098146677017212,
+          "keyword_score": 6.343506258892564,
+          "normalized_dense_score": 0.5106336250240078,
+          "normalized_keyword_score": 0.6880569246166818,
+          "fusion_score": 0.013558685446009388,
+          "confidence_score": 0.7483459536752419
+        },
+        {
+          "id": "doc_013#1",
+          "content": "反向传播是训练神经网络的核心算法，用于高效计算损失函数对每个参数的梯度。有了梯度，就能用梯度下降更新权重，使损失逐步下降。",
+          "source": {
+            "chunkId": "doc_013#1",
+            "documentId": "doc_013",
+            "title": "反向传播与链式法则",
+            "location": "反向传播与链式法则 / 反向传播的目标 / 段落 1"
+          },
+          "metadata": {
+            "chunking_version": "heading-window-v1",
+            "source_location": "反向传播与链式法则 / 反向传播的目标 / 段落 1",
+            "document_id": "doc_013",
+            "chunk_index": 1,
+            "document_title": "反向传播与链式法则",
+            "source_encoding": "utf-8",
+            "token_count": 38,
+            "queryOverlap": 0.714286
+          },
+          "dense_score": 0.20619654655456543,
+          "keyword_score": 6.652415984166019,
+          "normalized_dense_score": 0.5018280713542582,
+          "normalized_keyword_score": 0.721563232781489,
+          "fusion_score": 0.013438735177865611,
+          "confidence_score": 0.740994946400107
+        },
+        {
+          "id": "doc_004#3",
+          "content": "感受野（Receptive Field）指输出特征图上一个点能「看到」的原始输入区域大小。随着卷积层与池化层的堆叠，感受野逐层扩大：浅层神经元只能看到几个像素，负责检测边缘与纹理等低级特征；深层神经元的感受野覆盖大半张图，能够组合出物体部件乃至整体语义。小卷积核多层堆叠（如两层 3×3 等效一层 5×5 的感受野）比单个大卷积核参数更少、非线性更强，这是 VGG 网络的核心设计哲学。",
+          "source": {
+            "chunkId": "doc_004#3",
+            "documentId": "doc_004",
+            "title": "CNN架构与卷积网络",
+            "location": "CNN 架构与卷积神经网络 / 第三章 感受野 / 段落 1"
+          },
+          "metadata": {
+            "chunking_version": "heading-window-v1",
+            "source_encoding": "utf-8",
+            "source_location": "CNN 架构与卷积神经网络 / 第三章 感受野 / 段落 1",
+            "token_count": 109,
+            "document_title": "CNN架构与卷积网络",
+            "document_id": "doc_004",
+            "chunk_index": 3,
+            "queryOverlap": 0.714286
+          },
+          "dense_score": 0.20788049697875977,
+          "keyword_score": 5.629244002570984,
+          "normalized_dense_score": 0.5059263630460932,
+          "normalized_keyword_score": 0.610583509852495,
+          "fusion_score": 0.013210526315789473,
+          "confidence_score": 0.7203582309865019
+        },
+        {
+          "id": "doc_018#1",
+          "content": "卷积层是卷积神经网络的核心，用于提取图像的局部空间特征。它用一组小的权重矩阵（卷积核，也称滤波器）在输入上滑动，每停留一处就与覆盖区域做逐元素相乘再求和，得到输出特征图上的一个值。",
+          "source": {
+            "chunkId": "doc_018#1",
+            "documentId": "doc_018",
+            "title": "卷积运算与卷积核",
+            "location": "卷积运算与卷积核 / 卷积层的作用 / 段落 1"
+          },
+          "metadata": {
+            "document_id": "doc_018",
+            "token_count": 56,
+            "source_location": "卷积运算与卷积核 / 卷积层的作用 / 段落 1",
+            "chunking_version": "heading-window-v1",
+            "document_title": "卷积运算与卷积核",
+            "source_encoding": "utf-8",
+            "chunk_index": 1,
+            "queryOverlap": 0.714286
+          },
+          "dense_score": 0.0,
+          "keyword_score": 5.750761849166775,
+          "normalized_dense_score": 0.0,
+          "normalized_keyword_score": 0.623764106261229,
+          "fusion_score": 0.004054054054054054,
+          "confidence_score": 0.04861282168278039
+        },
+        {
+          "id": "doc_005#2",
+          "content": "分类的目标是把输入划分到离散的类别中。当类别只有两个时称为二分类（如垃圾邮件识别），多于两个时称为多分类（如手写数字识别 0-9）。常见的分类算法包括逻辑回归、支持向量机、决策树与神经网络。分类模型通常输出每个类别的概率，取概率最大的类别作为预测结果。",
+          "source": {
+            "chunkId": "doc_005#2",
+            "documentId": "doc_005",
+            "title": "监督学习与分类回归",
+            "location": "监督学习与分类回归 / 分类任务 / 段落 1"
+          },
+          "metadata": {
+            "chunk_index": 2,
+            "source_encoding": "utf-8",
+            "chunking_version": "heading-window-v1",
+            "source_location": "监督学习与分类回归 / 分类任务 / 段落 1",
+            "document_id": "doc_005",
+            "document_title": "监督学习与分类回归",
+            "token_count": 77,
+            "queryOverlap": 0.714286
+          },
+          "dense_score": 0.0,
+          "keyword_score": 4.973030492546036,
+          "normalized_dense_score": 0.0,
+          "normalized_keyword_score": 0.5394064303049282,
+          "fusion_score": 0.003846153846153846,
+          "confidence_score": 0.030276530775141787
+        }
+      ]
+    },
+    {
+      "query_id": "concept_perceptron",
+      "query": "感知机模型是什么",
+      "query_type": "概念解释",
+      "embedding_profile": "hash:deterministic_hash_v1:d512",
+      "collection": "kb_chunks__hash_d512__utf8_v2",
+      "candidates": [
+        {
+          "id": "doc_010#3",
+          "content": "感知机是最早的神经元模型，使用阶跃函数作为激活，可用于线性可分的二分类。感知机学习算法在预测错误时按误差方向调整权重。其局限在于无法解决异或这类线性不可分问题。",
+          "source": {
+            "chunkId": "doc_010#3",
+            "documentId": "doc_010",
+            "title": "感知机与神经元模型",
+            "location": "感知机与神经元模型 / 感知机 / 段落 1"
+          },
+          "metadata": {
+            "chunking_version": "heading-window-v1",
+            "document_id": "doc_010",
+            "source_encoding": "utf-8",
+            "document_title": "感知机与神经元模型",
+            "chunk_index": 3,
+            "source_location": "感知机与神经元模型 / 感知机 / 段落 1",
+            "token_count": 51,
+            "queryOverlap": 0.75
+          },
+          "dense_score": 0.3768512010574341,
+          "keyword_score": 10.139503671891285,
+          "normalized_dense_score": 1.0,
+          "normalized_keyword_score": 1.0,
+          "fusion_score": 0.016393442622950817,
+          "confidence_score": 1.0
+        },
+        {
+          "id": "doc_002#3",
+          "content": "由于自注意力本身对输入顺序不敏感——打乱词序得到的注意力结果完全相同——Transformer 需要通过位置编码（Positional Encoding）为模型注入序列的位置信息。原始论文采用不同频率的正弦与余弦函数生成位置编码，使模型能够推断相对位置关系；后续工作提出了可学习位置编码与旋转位置编码（RoPE）等改进方案，RoPE 已成为主流开源大模型的标配。",
+          "source": {
+            "chunkId": "doc_002#3",
+            "documentId": "doc_002",
+            "title": "Transformer与注意力机制",
+            "location": "Transformer 架构与注意力机制 / 第三章 位置编码 / 段落 1"
+          },
+          "metadata": {
+            "source_location": "Transformer 架构与注意力机制 / 第三章 位置编码 / 段落 1",
+            "chunk_index": 3,
+            "source_encoding": "utf-8",
+            "token_count": 98,
+            "chunking_version": "heading-window-v1",
+            "document_title": "Transformer与注意力机制",
+            "document_id": "doc_002",
+            "queryOverlap": 0.375
+          },
+          "dense_score": 0.37656426429748535,
+          "keyword_score": 4.093019569116018,
+          "normalized_dense_score": 0.9992385940149757,
+          "normalized_keyword_score": 0.4036706037656143,
+          "fusion_score": 0.015702087286527514,
+          "confidence_score": 0.9236285899871224
+        },
+        {
+          "id": "doc_026#1",
+          "content": "预训练指在大规模无标注语料上，用自监督目标训练一个通用基础模型。语言模型常用的预训练目标包括自回归地预测下一个词（GPT 类）与掩码语言建模——遮住部分词让模型还原（BERT 类）。预训练让模型学到广泛的语言与世界知识。",
+          "source": {
+            "chunkId": "doc_026#1",
+            "documentId": "doc_026",
+            "title": "预训练与迁移学习",
+            "location": "预训练与迁移学习 / 预训练范式 / 段落 1"
+          },
+          "metadata": {
+            "document_title": "预训练与迁移学习",
+            "token_count": 65,
+            "chunk_index": 1,
+            "source_location": "预训练与迁移学习 / 预训练范式 / 段落 1",
+            "source_encoding": "utf-8",
+            "document_id": "doc_026",
+            "chunking_version": "heading-window-v1",
+            "queryOverlap": 0.375
+          },
+          "dense_score": 0.35680919885635376,
+          "keyword_score": 3.681065261401412,
+          "normalized_dense_score": 0.946817199613951,
+          "normalized_keyword_score": 0.36304195752757157,
+          "fusion_score": 0.015277777777777776,
+          "confidence_score": 0.887829315766821
+        },
+        {
+          "id": "doc_002#1",
+          "content": "自注意力（Self-Attention）让序列中的每个位置都能直接关注序列中的其他所有位置，从而捕捉长距离依赖关系。可以把自注意力想象成一场圆桌会议：每个词同时是提问者和回答者，它环顾整句话里的所有词，决定该重点听谁的发言，再把听到的信息按重要性加权汇总成自己的新理解。\n对于输入序列，模型为每个位置生成查询向量 Q（Query）、键向量 K（Key）与值向量 V（Value）。Q 表示「我在找什么」，K 表示「我能提供什么线索」，V 表示「我实际携带的内容」。注意力权重由 Q 与 K 的点积经过缩放和 Softmax 归一化得到，最终输出是 V 的加权求和。\n这就是缩放点积注意力（Scaled Dot-Product Attention），公式为 Attention(Q, K, V) = softmax(QK^T / √d_k) V。缩放因子为键向量维度 d_k 的平方根，用于防止点积过大导致 Softmax 进入饱和区、梯度过小。点积越大表示查询与键越匹配，经 Softmax 归一化后得到一组和为 1 的注意力权重。\n自注意力的计算复杂度与序列长度的平方成正比（O(n²·d)），这是 Transformer 处理长文本时的主要瓶颈，也催生了稀疏注意力、线性注意力与 FlashAttention 等工程优化方向。",
+          "source": {
+            "chunkId": "doc_002#1",
+            "documentId": "doc_002",
+            "title": "Transformer与注意力机制",
+            "location": "Transformer 架构与注意力机制 / 第一章 自注意力机制 / 段落 1"
+          },
+          "metadata": {
+            "document_title": "Transformer与注意力机制",
+            "source_encoding": "utf-8",
+            "token_count": 277,
+            "document_id": "doc_002",
+            "chunk_index": 1,
+            "source_location": "Transformer 架构与注意力机制 / 第一章 自注意力机制 / 段落 1",
+            "chunking_version": "heading-window-v1",
+            "queryOverlap": 0.625
+          },
+          "dense_score": 0.0,
+          "keyword_score": 7.716302261652565,
+          "normalized_dense_score": 0.0,
+          "normalized_keyword_score": 0.7610138041612121,
+          "fusion_score": 0.004838709677419355,
+          "confidence_score": 0.11124303610652878
+        }
+      ]
+    },
+    {
+      "query_id": "concept_activation",
+      "query": "激活函数有什么作用",
+      "query_type": "概念解释",
+      "embedding_profile": "hash:deterministic_hash_v1:d512",
+      "collection": "kb_chunks__hash_d512__utf8_v2",
+      "candidates": [
+        {
+          "id": "doc_012#1",
+          "content": "激活函数为神经网络引入非线性，使多层网络能够表达复杂的非线性关系。没有激活函数，无论堆叠多少层，整个网络都等价于一次线性变换。",
+          "source": {
+            "chunkId": "doc_012#1",
+            "documentId": "doc_012",
+            "title": "激活函数详解",
+            "location": "激活函数详解 / 激活函数的作用 / 段落 1"
+          },
+          "metadata": {
+            "source_encoding": "utf-8",
+            "token_count": 39,
+            "source_location": "激活函数详解 / 激活函数的作用 / 段落 1",
+            "document_id": "doc_012",
+            "chunking_version": "heading-window-v1",
+            "document_title": "激活函数详解",
+            "chunk_index": 1,
+            "queryOverlap": 0.555556
+          },
+          "dense_score": 0.3595463037490845,
+          "keyword_score": 12.452154404035545,
+          "normalized_dense_score": 1.0,
+          "normalized_keyword_score": 0.9535671164493051,
+          "fusion_score": 0.01631411951348493,
+          "confidence_score": 0.9976783558224652
+        },
+        {
+          "id": "doc_001#1",
+          "content": "神经元是神经网络的基本计算单元。每个神经元接收若干输入，对其加权求和并加上偏置，再经过激活函数得到输出。可以把一个神经元想象成一个小小的投票委员会：每个输入意见都有自己的权重，权重大的意见更有分量；偏置相当于委员会的固有立场；激活函数则像最终拍板的裁判，决定这个信号要不要继续往下传、传多强。\n神经元的运算顺序固定为三步：先加权求和，再加上偏置，最后通过激活函数。这个顺序不能颠倒，因为激活必须作用在「加权和加偏置」的整体结果上，提前激活会破坏非线性表达能力。\n前向传播指信号从输入层逐层经过隐藏层传递到输出层的过程。给定输入向量 x、权重矩阵 W 与偏置 b，单层的计算为 z = Wx + b，随后通过激活函数 a = f(z) 得到该层输出。多层网络就是把这个过程逐层串联：上一层的输出作为下一层的输入，像流水线一样层层加工，把原始输入逐步变换成更有用的表示。\n常见激活函数包括 Sigmoid、Tanh 与 ReLU。Sigmoid 把任意实数压缩到 0 到 1 之间，常用于输出概率；Tanh 输出零均值，范围在 -1 到 1 之间；ReLU 即修正线性单元，定义为 max(0, x)，计算极快。ReLU 在正区间梯度恒为 1，能有效缓解深层网络的梯度消失问题，是现代网络的默认选择。如果没有激活函数，多层线性变换叠加之后仍然等价于一个线性变换，网络将无法拟合复杂的非线性关系——这正是激活函数存在的根本原因。\n用代码表达单个神经元的前向计算非常简单：z = np.dot(x, w) + b，再取 np.maximum(0, z) 即得 ReLU 激活后的输出。输入与权重相乘求和，加偏置得到 z，再经激活函数得到本层输出。",
+          "source": {
+            "chunkId": "doc_001#1",
+            "documentId": "doc_001",
+            "title": "神经网络与反向传播",
+            "location": "神经网络基础与反向传播算法 / 第一章 神经元与前向传播 / 段落 1"
+          },
+          "metadata": {
+            "document_title": "神经网络与反向传播",
+            "source_location": "神经网络基础与反向传播算法 / 第一章 神经元与前向传播 / 段落 1",
+            "chunking_version": "heading-window-v1",
+            "source_encoding": "utf-8",
+            "chunk_index": 1,
+            "token_count": 397,
+            "document_id": "doc_001",
+            "queryOverlap": 0.777778
+          },
+          "dense_score": 0.3411659002304077,
+          "keyword_score": 13.05849812690929,
+          "normalized_dense_score": 0.9488788973019068,
+          "normalized_keyword_score": 1.0,
+          "fusion_score": 0.016208355367530406,
+          "confidence_score": 0.9877326311412495
+        },
+        {
+          "id": "doc_011#3",
+          "content": "若各层都只有线性变换，多层叠加仍等价于单层线性变换，无法增强表达能力。激活函数引入非线性，使网络能拟合任意连续函数，这正是通用近似定理的核心结论。",
+          "source": {
+            "chunkId": "doc_011#3",
+            "documentId": "doc_011",
+            "title": "前向传播与多层感知机",
+            "location": "前向传播与多层感知机 / 为什么需要非线性 / 段落 1"
+          },
+          "metadata": {
+            "source_encoding": "utf-8",
+            "token_count": 46,
+            "document_id": "doc_011",
+            "chunk_index": 3,
+            "source_location": "前向传播与多层感知机 / 为什么需要非线性 / 段落 1",
+            "document_title": "前向传播与多层感知机",
+            "chunking_version": "heading-window-v1",
+            "queryOverlap": 0.666667
+          },
+          "dense_score": 0.29002106189727783,
+          "keyword_score": 11.297193751595282,
+          "normalized_dense_score": 0.8066306310846516,
+          "normalized_keyword_score": 0.8651219797103209,
+          "fusion_score": 0.015873015873015872,
+          "confidence_score": 0.9440771907567711
+        },
+        {
+          "id": "doc_010#3",
+          "content": "感知机是最早的神经元模型，使用阶跃函数作为激活，可用于线性可分的二分类。感知机学习算法在预测错误时按误差方向调整权重。其局限在于无法解决异或这类线性不可分问题。",
+          "source": {
+            "chunkId": "doc_010#3",
+            "documentId": "doc_010",
+            "title": "感知机与神经元模型",
+            "location": "感知机与神经元模型 / 感知机 / 段落 1"
+          },
+          "metadata": {
+            "source_encoding": "utf-8",
+            "document_title": "感知机与神经元模型",
+            "chunking_version": "heading-window-v1",
+            "token_count": 51,
+            "chunk_index": 3,
+            "document_id": "doc_010",
+            "source_location": "感知机与神经元模型 / 感知机 / 段落 1",
+            "queryOverlap": 0.666667
+          },
+          "dense_score": 0.2750095725059509,
+          "keyword_score": 10.946727287625151,
+          "normalized_dense_score": 0.7648794317681848,
+          "normalized_keyword_score": 0.8382837889349258,
+          "fusion_score": 0.015293560606060606,
+          "confidence_score": 0.8993582915187723
+        },
+        {
+          "id": "doc_004#4",
+          "content": "一个典型的 CNN 由「卷积 → 激活 → 池化」模块反复堆叠，最后接全连接层输出分类结果。LeNet 是 CNN 的开山之作，用于手写数字识别，奠定了卷积-池化-全连接的基本范式。AlexNet 在 2012 年 ImageNet 竞赛中以巨大优势夺冠，引爆了深度学习浪潮，其贡献包括使用 ReLU 激活、Dropout 正则与 GPU 训练。VGG 用统一的 3×3 小卷积核堆出 16-19 层，结构规整、易于迁移。\nResNet（残差网络）通过残差连接（shortcut）让输入可以跨层直达输出，使梯度在反向传播时拥有恒等通路，成功训练了上百层的网络，解决了深层网络的退化问题。残差连接此后成为几乎所有深层架构（包括 Transformer）的标配组件。",
+          "source": {
+            "chunkId": "doc_004#4",
+            "documentId": "doc_004",
+            "title": "CNN架构与卷积网络",
+            "location": "CNN 架构与卷积神经网络 / 第四章 经典网络结构 / 段落 1"
+          },
+          "metadata": {
+            "chunk_index": 4,
+            "document_title": "CNN架构与卷积网络",
+            "source_location": "CNN 架构与卷积神经网络 / 第四章 经典网络结构 / 段落 1",
+            "source_encoding": "utf-8",
+            "document_id": "doc_004",
+            "chunking_version": "heading-window-v1",
+            "token_count": 164,
+            "queryOverlap": 0.666667
+          },
+          "dense_score": 0.21417641639709473,
+          "keyword_score": 8.279817305879842,
+          "normalized_dense_score": 0.5956852126244118,
+          "normalized_keyword_score": 0.6340558635007075,
+          "fusion_score": 0.013814393208566466,
+          "confidence_score": 0.7721574058265146
+        },
+        {
+          "id": "doc_012#2",
+          "content": "ReLU（修正线性单元）定义为 max(0, x)：负输入输出 0，正输入原样通过。它计算简单、收敛快，且在正区间梯度恒为 1，能有效缓解梯度消失，是目前最常用的激活函数。其缺点是负区间梯度为 0，可能导致神经元\"死亡\"，由此衍生出 LeakyReLU、PReLU 等改进。",
+          "source": {
+            "chunkId": "doc_012#2",
+            "documentId": "doc_012",
+            "title": "激活函数详解",
+            "location": "激活函数详解 / ReLU / 段落 1"
+          },
+          "metadata": {
+            "chunking_version": "heading-window-v1",
+            "document_title": "激活函数详解",
+            "chunk_index": 2,
+            "source_location": "激活函数详解 / ReLU / 段落 1",
+            "token_count": 69,
+            "source_encoding": "utf-8",
+            "document_id": "doc_012",
+            "queryOverlap": 0.666667
+          },
+          "dense_score": 0.19051593542099,
+          "keyword_score": 8.778943892196367,
+          "normalized_dense_score": 0.529878720583218,
+          "normalized_keyword_score": 0.6722782211919024,
+          "fusion_score": 0.01314647377938517,
+          "confidence_score": 0.7223011414298968
+        },
+        {
+          "id": "doc_011#2",
+          "content": "前向传播是数据从输入层逐层流向输出层的计算过程。对每一层，先用权重矩阵与上一层输出做矩阵乘法并加偏置得到 z，再经激活函数得到该层输出 a，作为下一层的输入。向量化形式为 Z = W·A_prev + b，A = f(Z)。",
+          "source": {
+            "chunkId": "doc_011#2",
+            "documentId": "doc_011",
+            "title": "前向传播与多层感知机",
+            "location": "前向传播与多层感知机 / 前向传播过程 / 段落 1"
+          },
+          "metadata": {
+            "source_encoding": "utf-8",
+            "chunking_version": "heading-window-v1",
+            "chunk_index": 2,
+            "token_count": 59,
+            "document_id": "doc_011",
+            "document_title": "前向传播与多层感知机",
+            "source_location": "前向传播与多层感知机 / 前向传播过程 / 段落 1",
+            "queryOverlap": 0.666667
+          },
+          "dense_score": 0.0,
+          "keyword_score": 10.35323724755832,
+          "normalized_dense_score": 0.0,
+          "normalized_keyword_score": 0.792835220937367,
+          "fusion_score": 0.004545454545454545,
+          "confidence_score": 0.09345662351380636
+        }
+      ]
+    },
+    {
+      "query_id": "concept_self_attention",
+      "query": "什么是自注意力机制",
+      "query_type": "概念解释",
+      "embedding_profile": "hash:deterministic_hash_v1:d512",
+      "collection": "kb_chunks__hash_d512__utf8_v2",
+      "candidates": [
+        {
+          "id": "doc_024#4",
+          "content": "位置编码通常与词嵌入相加后送入编码器。它与自注意力、多头注意力、前馈网络共同构成 Transformer 处理序列的完整机制。",
+          "source": {
+            "chunkId": "doc_024#4",
+            "documentId": "doc_024",
+            "title": "位置编码",
+            "location": "位置编码 / 与嵌入的结合 / 段落 1"
+          },
+          "metadata": {
+            "chunk_index": 4,
+            "chunking_version": "heading-window-v1",
+            "source_encoding": "utf-8",
+            "document_id": "doc_024",
+            "source_location": "位置编码 / 与嵌入的结合 / 段落 1",
+            "document_title": "位置编码",
+            "token_count": 34,
+            "queryOverlap": 0.666667
+          },
+          "dense_score": 0.4351532459259033,
+          "keyword_score": 16.06790024273721,
+          "normalized_dense_score": 1.0,
+          "normalized_keyword_score": 0.9282924456397224,
+          "fusion_score": 0.01631411951348493,
+          "confidence_score": 0.9964146222819861
+        },
+        {
+          "id": "doc_002#1",
+          "content": "自注意力（Self-Attention）让序列中的每个位置都能直接关注序列中的其他所有位置，从而捕捉长距离依赖关系。可以把自注意力想象成一场圆桌会议：每个词同时是提问者和回答者，它环顾整句话里的所有词，决定该重点听谁的发言，再把听到的信息按重要性加权汇总成自己的新理解。\n对于输入序列，模型为每个位置生成查询向量 Q（Query）、键向量 K（Key）与值向量 V（Value）。Q 表示「我在找什么」，K 表示「我能提供什么线索」，V 表示「我实际携带的内容」。注意力权重由 Q 与 K 的点积经过缩放和 Softmax 归一化得到，最终输出是 V 的加权求和。\n这就是缩放点积注意力（Scaled Dot-Product Attention），公式为 Attention(Q, K, V) = softmax(QK^T / √d_k) V。缩放因子为键向量维度 d_k 的平方根，用于防止点积过大导致 Softmax 进入饱和区、梯度过小。点积越大表示查询与键越匹配，经 Softmax 归一化后得到一组和为 1 的注意力权重。\n自注意力的计算复杂度与序列长度的平方成正比（O(n²·d)），这是 Transformer 处理长文本时的主要瓶颈，也催生了稀疏注意力、线性注意力与 FlashAttention 等工程优化方向。",
+          "source": {
+            "chunkId": "doc_002#1",
+            "documentId": "doc_002",
+            "title": "Transformer与注意力机制",
+            "location": "Transformer 架构与注意力机制 / 第一章 自注意力机制 / 段落 1"
+          },
+          "metadata": {
+            "source_location": "Transformer 架构与注意力机制 / 第一章 自注意力机制 / 段落 1",
+            "document_title": "Transformer与注意力机制",
+            "chunk_index": 1,
+            "document_id": "doc_002",
+            "source_encoding": "utf-8",
+            "token_count": 277,
+            "chunking_version": "heading-window-v1",
+            "queryOverlap": 0.777778
+          },
+          "dense_score": 0.3624207377433777,
+          "keyword_score": 17.309092967641458,
+          "normalized_dense_score": 0.8328577142340555,
+          "normalized_keyword_score": 1.0,
+          "fusion_score": 0.016029143897996354,
+          "confidence_score": 0.9639332089778139
+        },
+        {
+          "id": "doc_024#1",
+          "content": "自注意力对输入是置换不变的：打乱词序，注意力的计算结果集合不变。但语言中顺序至关重要。位置编码为模型注入序列的位置信息，使其能区分\"猫追狗\"和\"狗追猫\"。",
+          "source": {
+            "chunkId": "doc_024#1",
+            "documentId": "doc_024",
+            "title": "位置编码",
+            "location": "位置编码 / 为什么需要位置编码 / 段落 1"
+          },
+          "metadata": {
+            "chunk_index": 1,
+            "document_title": "位置编码",
+            "source_encoding": "utf-8",
+            "document_id": "doc_024",
+            "source_location": "位置编码 / 为什么需要位置编码 / 段落 1",
+            "chunking_version": "heading-window-v1",
+            "token_count": 47,
+            "queryOverlap": 0.555556
+          },
+          "dense_score": 0.3636363744735718,
+          "keyword_score": 10.830783575973165,
+          "normalized_dense_score": 0.8356512972799719,
+          "normalized_keyword_score": 0.6257279683124245,
+          "fusion_score": 0.01597782258064516,
+          "confidence_score": 0.9420137587369813
+        },
+        {
+          "id": "doc_002#0",
+          "content": "Transformer 是当前大语言模型的主流架构，完全基于注意力机制，摒弃了循环与卷积结构。它的出现被称为「从循环到注意力的范式革命」：RNN 必须逐个时间步串行处理序列，而 Transformer 让所有位置同时互相观察，既解决了长距离依赖，又解锁了大规模并行训练。",
+          "source": {
+            "chunkId": "doc_002#0",
+            "documentId": "doc_002",
+            "title": "Transformer与注意力机制",
+            "location": "Transformer 架构与注意力机制 / 段落 1"
+          },
+          "metadata": {
+            "source_location": "Transformer 架构与注意力机制 / 段落 1",
+            "source_encoding": "utf-8",
+            "chunking_version": "heading-window-v1",
+            "document_id": "doc_002",
+            "document_title": "Transformer与注意力机制",
+            "chunk_index": 0,
+            "token_count": 73,
+            "queryOverlap": 0.666667
+          },
+          "dense_score": 0.27126288414001465,
+          "keyword_score": 11.473118444832469,
+          "normalized_dense_score": 0.6233732292696824,
+          "normalized_keyword_score": 0.6628376464486573,
+          "fusion_score": 0.01476190476190476,
+          "confidence_score": 0.8400690182850786
+        }
+      ]
+    },
+    {
+      "query_id": "concept_lora",
+      "query": "LoRA低秩适配是什么",
+      "query_type": "概念解释",
+      "embedding_profile": "hash:deterministic_hash_v1:d512",
+      "collection": "kb_chunks__hash_d512__utf8_v2",
+      "candidates": [
+        {
+          "id": "doc_028#1",
+          "content": "LoRA（低秩适配）的核心思想是：冻结预训练模型的原始权重，用两个低秩矩阵 A 与 B 的乘积来表示权重更新增量 ΔW = B·A。微调时只训练 A、B，原权重保持不变。由于秩 r 远小于权重维度，可训练参数量大幅下降。",
+          "source": {
+            "chunkId": "doc_028#1",
+            "documentId": "doc_028",
+            "title": "LoRA低秩适配",
+            "location": "LoRA 低秩适配 / 核心思想 / 段落 1"
+          },
+          "metadata": {
+            "source_location": "LoRA 低秩适配 / 核心思想 / 段落 1",
+            "source_encoding": "utf-8",
+            "chunk_index": 1,
+            "document_title": "LoRA低秩适配",
+            "chunking_version": "heading-window-v1",
+            "document_id": "doc_028",
+            "token_count": 58,
+            "queryOverlap": 0.75
+          },
+          "dense_score": 0.3796282410621643,
+          "keyword_score": 16.976853072393688,
+          "normalized_dense_score": 1.0,
+          "normalized_keyword_score": 0.9703654426832308,
+          "fusion_score": 0.01631411951348493,
+          "confidence_score": 0.9985182721341616
+        },
+        {
+          "id": "doc_028#2",
+          "content": "LoRA 基于一个观察：微调引起的权重变化往往具有较低的\"内在秩\"，即可以用低维结构很好地近似。因此用低秩分解就足以捕捉适配所需的变化，而无需更新整个权重矩阵。",
+          "source": {
+            "chunkId": "doc_028#2",
+            "documentId": "doc_028",
+            "title": "LoRA低秩适配",
+            "location": "LoRA 低秩适配 / 低秩假设 / 段落 1"
+          },
+          "metadata": {
+            "source_location": "LoRA 低秩适配 / 低秩假设 / 段落 1",
+            "document_id": "doc_028",
+            "chunk_index": 2,
+            "document_title": "LoRA低秩适配",
+            "source_encoding": "utf-8",
+            "chunking_version": "heading-window-v1",
+            "token_count": 48,
+            "queryOverlap": 0.625
+          },
+          "dense_score": 0.32969021797180176,
+          "keyword_score": 17.495319109313815,
+          "normalized_dense_score": 0.8684554580274623,
+          "normalized_keyword_score": 1.0,
+          "fusion_score": 0.016208355367530406,
+          "confidence_score": 0.9796902872138051
+        },
+        {
+          "id": "doc_003#3",
+          "content": "预训练大模型在海量语料上学习通用知识，但通用模型无法直接完美适配特定任务（如客服对话、专业领域问答），微调（Fine-tuning）就是让预训练模型适配特定下游任务的过程。可以把预训练模型看作受过通识教育的毕业生，微调则是岗前培训。\n全参数微调更新模型的全部权重，理论上能最大程度适配下游任务，效果通常最好，但显存与算力开销巨大：训练时除了权重本身，还要保存梯度与优化器状态，对大模型动辄需要数百 GB 显存，且每个任务都要保存一份完整模型副本。\n参数高效微调（PEFT）只更新少量参数即可达到接近全参微调的效果。LoRA（Low-Rank Adaptation，低秩适配）是其中代表：它冻结原始权重 W，用两个低秩矩阵 A 与 B 来近似参数更新的增量 ΔW = BA，秩 r 远小于原维度，从而把可训练参数量降低几个数量级，显存占用大幅下降，推理时还可把 BA 合并回原权重做到零额外延迟。其它 PEFT 方法还包括 Adapter（在层间插入小型瓶颈网络）与 Prompt Tuning（只学习软提示向量）。工程上选择全参微调还是 LoRA，取决于数据量、算力预算与任务与预训练分布的差距。",
+          "source": {
+            "chunkId": "doc_003#3",
+            "documentId": "doc_003",
+            "title": "机器学习基础与大模型微调",
+            "location": "机器学习基础与大模型微调 / 第三章 大模型微调技术 / 段落 1"
+          },
+          "metadata": {
+            "document_id": "doc_003",
+            "chunk_index": 3,
+            "document_title": "机器学习基础与大模型微调",
+            "source_location": "机器学习基础与大模型微调 / 第三章 大模型微调技术 / 段落 1",
+            "chunking_version": "heading-window-v1",
+            "source_encoding": "utf-8",
+            "token_count": 274,
+            "queryOverlap": 0.75
+          },
+          "dense_score": 0.24923211336135864,
+          "keyword_score": 12.491018853958419,
+          "normalized_dense_score": 0.6565162609189203,
+          "normalized_keyword_score": 0.7139634765111941,
+          "fusion_score": 0.015873015873015872,
+          "confidence_score": 0.9215078285802416
+        }
+      ]
+    },
+    {
+      "query_id": "compare_supervised_unsupervised",
+      "query": "监督学习和无监督学习有什么区别",
+      "query_type": "方法比较",
+      "embedding_profile": "hash:deterministic_hash_v1:d512",
+      "collection": "kb_chunks__hash_d512__utf8_v2",
+      "candidates": [
+        {
+          "id": "doc_006#1",
+          "content": "无监督学习处理没有标签的数据，目标是发现数据内在的结构与规律。与监督学习不同，它没有明确的\"正确答案\"作为监督信号，而是依靠数据自身的分布与相似性。典型任务包括聚类、降维与密度估计。",
+          "source": {
+            "chunkId": "doc_006#1",
+            "documentId": "doc_006",
+            "title": "无监督学习与聚类降维",
+            "location": "无监督学习与聚类降维 / 无监督学习的定义 / 段落 1"
+          },
+          "metadata": {
+            "token_count": 56,
+            "document_id": "doc_006",
+            "chunking_version": "heading-window-v1",
+            "chunk_index": 1,
+            "document_title": "无监督学习与聚类降维",
+            "source_location": "无监督学习与聚类降维 / 无监督学习的定义 / 段落 1",
+            "source_encoding": "utf-8",
+            "queryOverlap": 0.545455
+          },
+          "dense_score": 0.3942148685455322,
+          "keyword_score": 27.88433957362859,
+          "normalized_dense_score": 1.0,
+          "normalized_keyword_score": 1.0,
+          "fusion_score": 0.016393442622950817,
+          "confidence_score": 1.0
+        },
+        {
+          "id": "doc_003#1",
+          "content": "机器学习的本质是让计算机从数据中自动学习规律，而不是依靠人工编写规则。机器学习主要分为监督学习、无监督学习与强化学习。\n监督学习使用带标签的数据训练模型，就像学生做带标准答案的练习题：模型给出预测，与标准答案对照，错了就修正。典型任务包括分类与回归。分类预测离散的类别标签，例如判断一封邮件是否为垃圾邮件、识别图片中的物体类别；回归预测连续的数值，例如预测房价或气温。\n无监督学习从无标签数据中发现结构，像在没有答案的情况下自己整理笔记。典型任务包括聚类与降维：聚类把相似的样本自动分组，例如把用户按行为习惯分群；降维在尽量保留信息的前提下压缩特征维度，便于可视化与后续建模。强化学习则让智能体在与环境的交互中通过奖励信号学习策略。\n特征是模型观察世界的窗口。特征工程指从原始数据中构造、选择对预测有用的输入变量，特征的质量往往比模型的选择更能决定效果上限。损失函数衡量预测与真实目标的差距，是模型优化的方向盘：回归常用均方误差，分类常用交叉熵。训练过程就是不断调整参数让损失变小。",
+          "source": {
+            "chunkId": "doc_003#1",
+            "documentId": "doc_003",
+            "title": "机器学习基础与大模型微调",
+            "location": "机器学习基础与大模型微调 / 第一章 机器学习范式 / 段落 1"
+          },
+          "metadata": {
+            "document_id": "doc_003",
+            "document_title": "机器学习基础与大模型微调",
+            "chunk_index": 1,
+            "token_count": 279,
+            "source_encoding": "utf-8",
+            "source_location": "机器学习基础与大模型微调 / 第一章 机器学习范式 / 段落 1",
+            "chunking_version": "heading-window-v1",
+            "queryOverlap": 0.636364
+          },
+          "dense_score": 0.37171536684036255,
+          "keyword_score": 23.145661325367467,
+          "normalized_dense_score": 0.9429257912361797,
+          "normalized_keyword_score": 0.8300595129481677,
+          "fusion_score": 0.016129032258064516,
+          "confidence_score": 0.9680196359128679
+        },
+        {
+          "id": "doc_005#1",
+          "content": "监督学习是机器学习的一类范式：给定带标注的训练样本（输入特征 x 与目标标签 y 成对出现），算法学习一个从输入到输出的映射函数，使其在未见过的新数据上也能给出正确预测。监督学习的两大基本任务是分类与回归。",
+          "source": {
+            "chunkId": "doc_005#1",
+            "documentId": "doc_005",
+            "title": "监督学习与分类回归",
+            "location": "监督学习与分类回归 / 监督学习的定义 / 段落 1"
+          },
+          "metadata": {
+            "source_location": "监督学习与分类回归 / 监督学习的定义 / 段落 1",
+            "source_encoding": "utf-8",
+            "chunk_index": 1,
+            "token_count": 63,
+            "chunking_version": "heading-window-v1",
+            "document_title": "监督学习与分类回归",
+            "document_id": "doc_005",
+            "queryOverlap": 0.363636
+          },
+          "dense_score": 0.3649793863296509,
+          "keyword_score": 22.50575665157678,
+          "normalized_dense_score": 0.9258387124672731,
+          "normalized_keyword_score": 0.8071109804178914,
+          "fusion_score": 0.015873015873015872,
+          "confidence_score": 0.9479518974356906
+        }
+      ]
+    },
+    {
+      "query_id": "compare_classification_regression",
+      "query": "分类任务和回归任务如何区分",
+      "query_type": "方法比较",
+      "embedding_profile": "hash:deterministic_hash_v1:d512",
+      "collection": "kb_chunks__hash_d512__utf8_v2",
+      "candidates": [
+        {
+          "id": "doc_012#4",
+          "content": "隐藏层通常首选 ReLU 及其变体；输出层依任务选择：回归用线性、二分类用 Sigmoid、多分类用 Softmax。Softmax 把一组实数归一化为和为 1 的概率分布。",
+          "source": {
+            "chunkId": "doc_012#4",
+            "documentId": "doc_012",
+            "title": "激活函数详解",
+            "location": "激活函数详解 / 选择建议 / 段落 1"
+          },
+          "metadata": {
+            "source_encoding": "utf-8",
+            "document_id": "doc_012",
+            "chunk_index": 4,
+            "source_location": "激活函数详解 / 选择建议 / 段落 1",
+            "document_title": "激活函数详解",
+            "token_count": 41,
+            "chunking_version": "heading-window-v1",
+            "queryOverlap": 0.7
+          },
+          "dense_score": 0.4129805564880371,
+          "keyword_score": 21.006197891980452,
+          "normalized_dense_score": 0.9904605829319741,
+          "normalized_keyword_score": 1.0,
+          "fusion_score": 0.016208355367530406,
+          "confidence_score": 0.9990460582931974
+        },
+        {
+          "id": "doc_005#2",
+          "content": "分类的目标是把输入划分到离散的类别中。当类别只有两个时称为二分类（如垃圾邮件识别），多于两个时称为多分类（如手写数字识别 0-9）。常见的分类算法包括逻辑回归、支持向量机、决策树与神经网络。分类模型通常输出每个类别的概率，取概率最大的类别作为预测结果。",
+          "source": {
+            "chunkId": "doc_005#2",
+            "documentId": "doc_005",
+            "title": "监督学习与分类回归",
+            "location": "监督学习与分类回归 / 分类任务 / 段落 1"
+          },
+          "metadata": {
+            "chunk_index": 2,
+            "source_location": "监督学习与分类回归 / 分类任务 / 段落 1",
+            "chunking_version": "heading-window-v1",
+            "document_title": "监督学习与分类回归",
+            "source_encoding": "utf-8",
+            "token_count": 77,
+            "document_id": "doc_005",
+            "queryOverlap": 0.5
+          },
+          "dense_score": 0.4169580936431885,
+          "keyword_score": 12.083119699685673,
+          "normalized_dense_score": 1.0,
+          "normalized_keyword_score": 0.5752168841701073,
+          "fusion_score": 0.015823235923022094,
+          "confidence_score": 0.9524851827608294
+        },
+        {
+          "id": "doc_011#4",
+          "content": "输出层根据任务选择形式：回归用线性输出，二分类用 Sigmoid，多分类用 Softmax 把输出转成概率分布。前向传播得到预测后，由损失函数衡量误差，再由反向传播计算梯度。",
+          "source": {
+            "chunkId": "doc_011#4",
+            "documentId": "doc_011",
+            "title": "前向传播与多层感知机",
+            "location": "前向传播与多层感知机 / 输出层 / 段落 1"
+          },
+          "metadata": {
+            "chunking_version": "heading-window-v1",
+            "source_encoding": "utf-8",
+            "document_id": "doc_011",
+            "chunk_index": 4,
+            "document_title": "前向传播与多层感知机",
+            "token_count": 48,
+            "source_location": "前向传播与多层感知机 / 输出层 / 段落 1",
+            "queryOverlap": 0.6
+          },
+          "dense_score": 0.32280004024505615,
+          "keyword_score": 16.526434064478362,
+          "normalized_dense_score": 0.7741786169074631,
+          "normalized_keyword_score": 0.7867408537928545,
+          "fusion_score": 0.015776209677419356,
+          "confidence_score": 0.9372707689742238
+        },
+        {
+          "id": "doc_001#2",
+          "content": "损失函数衡量模型预测与真实标签之间的差距，可以理解为给模型打分的「扣分规则」：预测越离谱，损失越大。回归任务常用均方误差（MSE），即预测值与真实值之差的平方的平均；分类任务常用交叉熵损失，它对「自信且错误」的预测惩罚极重。训练的目标就是通过调整参数，使损失函数在训练数据上尽可能小。",
+          "source": {
+            "chunkId": "doc_001#2",
+            "documentId": "doc_001",
+            "title": "神经网络与反向传播",
+            "location": "神经网络基础与反向传播算法 / 第二章 损失函数 / 段落 1"
+          },
+          "metadata": {
+            "source_encoding": "utf-8",
+            "chunk_index": 2,
+            "chunking_version": "heading-window-v1",
+            "document_id": "doc_001",
+            "document_title": "神经网络与反向传播",
+            "source_location": "神经网络基础与反向传播算法 / 第二章 损失函数 / 段落 1",
+            "token_count": 86,
+            "queryOverlap": 0.6
+          },
+          "dense_score": 0.24249166250228882,
+          "keyword_score": 14.755452183887565,
+          "normalized_dense_score": 0.5815732233028695,
+          "normalized_keyword_score": 0.7024332656373176,
+          "fusion_score": 0.01476190476190476,
+          "confidence_score": 0.8445915603051063
+        },
+        {
+          "id": "doc_003#1",
+          "content": "机器学习的本质是让计算机从数据中自动学习规律，而不是依靠人工编写规则。机器学习主要分为监督学习、无监督学习与强化学习。\n监督学习使用带标签的数据训练模型，就像学生做带标准答案的练习题：模型给出预测，与标准答案对照，错了就修正。典型任务包括分类与回归。分类预测离散的类别标签，例如判断一封邮件是否为垃圾邮件、识别图片中的物体类别；回归预测连续的数值，例如预测房价或气温。\n无监督学习从无标签数据中发现结构，像在没有答案的情况下自己整理笔记。典型任务包括聚类与降维：聚类把相似的样本自动分组，例如把用户按行为习惯分群；降维在尽量保留信息的前提下压缩特征维度，便于可视化与后续建模。强化学习则让智能体在与环境的交互中通过奖励信号学习策略。\n特征是模型观察世界的窗口。特征工程指从原始数据中构造、选择对预测有用的输入变量，特征的质量往往比模型的选择更能决定效果上限。损失函数衡量预测与真实目标的差距，是模型优化的方向盘：回归常用均方误差，分类常用交叉熵。训练过程就是不断调整参数让损失变小。",
+          "source": {
+            "chunkId": "doc_003#1",
+            "documentId": "doc_003",
+            "title": "机器学习基础与大模型微调",
+            "location": "机器学习基础与大模型微调 / 第一章 机器学习范式 / 段落 1"
+          },
+          "metadata": {
+            "chunking_version": "heading-window-v1",
+            "chunk_index": 1,
+            "document_title": "机器学习基础与大模型微调",
+            "token_count": 279,
+            "source_location": "机器学习基础与大模型微调 / 第一章 机器学习范式 / 段落 1",
+            "source_encoding": "utf-8",
+            "document_id": "doc_003",
+            "queryOverlap": 0.7
+          },
+          "dense_score": 0.20721441507339478,
+          "keyword_score": 13.370917256804624,
+          "normalized_dense_score": 0.4969670051559626,
+          "normalized_keyword_score": 0.6365224837717656,
+          "fusion_score": 0.013878787878787878,
+          "confidence_score": 0.7725827152743421
+        },
+        {
+          "id": "doc_005#1",
+          "content": "监督学习是机器学习的一类范式：给定带标注的训练样本（输入特征 x 与目标标签 y 成对出现），算法学习一个从输入到输出的映射函数，使其在未见过的新数据上也能给出正确预测。监督学习的两大基本任务是分类与回归。",
+          "source": {
+            "chunkId": "doc_005#1",
+            "documentId": "doc_005",
+            "title": "监督学习与分类回归",
+            "location": "监督学习与分类回归 / 监督学习的定义 / 段落 1"
+          },
+          "metadata": {
+            "document_title": "监督学习与分类回归",
+            "token_count": 63,
+            "chunk_index": 1,
+            "document_id": "doc_005",
+            "chunking_version": "heading-window-v1",
+            "source_encoding": "utf-8",
+            "source_location": "监督学习与分类回归 / 监督学习的定义 / 段落 1",
+            "queryOverlap": 0.6
+          },
+          "dense_score": 0.20078229904174805,
+          "keyword_score": 13.574281970676411,
+          "normalized_dense_score": 0.4815407162082032,
+          "normalized_keyword_score": 0.6462036604853024,
+          "fusion_score": 0.013778409090909091,
+          "confidence_score": 0.7646755711314325
+        }
+      ]
+    },
+    {
+      "query_id": "compare_l1_l2",
+      "query": "L1正则化与L2正则化有什么不同",
+      "query_type": "方法比较",
+      "embedding_profile": "hash:deterministic_hash_v1:d512",
+      "collection": "kb_chunks__hash_d512__utf8_v2",
+      "candidates": [
+        {
+          "id": "doc_016#3",
+          "content": "Dropout 常与权重衰减（L2 正则）、数据增强、早停等手段配合使用。在卷积层中也有空间 Dropout 等变体。归一化层在一定程度上也带来正则效果。",
+          "source": {
+            "chunkId": "doc_016#3",
+            "documentId": "doc_016",
+            "title": "Dropout与正则化技术",
+            "location": "Dropout 与正则化技术 / 与其他正则手段的配合 / 段落 1"
+          },
+          "metadata": {
+            "chunking_version": "heading-window-v1",
+            "document_title": "Dropout与正则化技术",
+            "document_id": "doc_016",
+            "source_encoding": "utf-8",
+            "source_location": "Dropout 与正则化技术 / 与其他正则手段的配合 / 段落 1",
+            "token_count": 40,
+            "chunk_index": 3,
+            "queryOverlap": 0.545455
+          },
+          "dense_score": 0.43656420707702637,
+          "keyword_score": 20.03373794636325,
+          "normalized_dense_score": 1.0,
+          "normalized_keyword_score": 0.9089112289929056,
+          "fusion_score": 0.01631411951348493,
+          "confidence_score": 0.9954455614496452
+        },
+        {
+          "id": "doc_008#2",
+          "content": "正则化通过约束模型复杂度来缓解过拟合。L2 正则化（权重衰减）在损失中加入权重平方和的惩罚项，促使权重变小而平滑。L1 正则化加入权重绝对值之和的惩罚，倾向于产生稀疏权重，可用于特征选择。",
+          "source": {
+            "chunkId": "doc_008#2",
+            "documentId": "doc_008",
+            "title": "过拟合与正则化",
+            "location": "过拟合与正则化 / 正则化的思想 / 段落 1"
+          },
+          "metadata": {
+            "chunking_version": "heading-window-v1",
+            "token_count": 56,
+            "document_id": "doc_008",
+            "source_location": "过拟合与正则化 / 正则化的思想 / 段落 1",
+            "document_title": "过拟合与正则化",
+            "chunk_index": 2,
+            "source_encoding": "utf-8",
+            "queryOverlap": 0.454545
+          },
+          "dense_score": 0.37509685754776,
+          "keyword_score": 22.04146819548163,
+          "normalized_dense_score": 0.859202040541035,
+          "normalized_keyword_score": 1.0,
+          "fusion_score": 0.016208355367530406,
+          "confidence_score": 0.9787649454651624
+        },
+        {
+          "id": "doc_003#2",
+          "content": "过拟合指模型在训练集上表现很好，但在测试集上泛化能力差，本质是模型记住了训练数据中的噪声而不是学到了普适规律。这就像学生把习题册的答案背得滚瓜烂熟，一到新考卷就不会做。过拟合最典型的表现是训练误差持续下降而验证误差开始回升。\n缓解过拟合的常用方法包括正则化（如 L1、L2）、Dropout、数据增强与早停。L2 正则化通过惩罚过大的参数来限制模型复杂度，使决策边界更平滑；L1 正则化还能让部分参数稀疏归零，起到特征选择作用。Dropout 在训练时随机丢弃一部分神经元，迫使网络不依赖任何单一通路。早停在验证集指标不再提升时终止训练。交叉验证把数据轮流划分为训练与验证子集，用来更可靠地评估泛化能力、选择超参数。从偏差-方差权衡的角度看，正则化以略微增大偏差为代价显著降低方差。",
+          "source": {
+            "chunkId": "doc_003#2",
+            "documentId": "doc_003",
+            "title": "机器学习基础与大模型微调",
+            "location": "机器学习基础与大模型微调 / 第二章 过拟合与正则化 / 段落 1"
+          },
+          "metadata": {
+            "source_location": "机器学习基础与大模型微调 / 第二章 过拟合与正则化 / 段落 1",
+            "document_title": "机器学习基础与大模型微调",
+            "document_id": "doc_003",
+            "token_count": 205,
+            "source_encoding": "utf-8",
+            "chunk_index": 2,
+            "chunking_version": "heading-window-v1",
+            "queryOverlap": 0.636364
+          },
+          "dense_score": 0.3708283305168152,
+          "keyword_score": 19.26215728993761,
+          "normalized_dense_score": 0.8494244935920436,
+          "normalized_keyword_score": 0.8739053641574673,
+          "fusion_score": 0.015873015873015872,
+          "confidence_score": 0.9487957462298676
+        },
+        {
+          "id": "doc_015#3",
+          "content": "层归一化（LayerNorm）在单个样本的所有特征维度上做归一化，不依赖批大小，特别适合循环网络与 Transformer。Transformer 的每个子层后都接残差连接与层归一化。",
+          "source": {
+            "chunkId": "doc_015#3",
+            "documentId": "doc_015",
+            "title": "批归一化与层归一化",
+            "location": "批归一化与层归一化 / 层归一化 / 段落 1"
+          },
+          "metadata": {
+            "chunk_index": 3,
+            "chunking_version": "heading-window-v1",
+            "document_id": "doc_015",
+            "source_location": "批归一化与层归一化 / 层归一化 / 段落 1",
+            "source_encoding": "utf-8",
+            "document_title": "批归一化与层归一化",
+            "token_count": 45,
+            "queryOverlap": 0.363636
+          },
+          "dense_score": 0.3577709197998047,
+          "keyword_score": 0.0,
+          "normalized_dense_score": 0.8195150083311352,
+          "normalized_keyword_score": 0.0,
+          "fusion_score": 0.0109375,
+          "confidence_score": 0.5682072224093748
+        },
+        {
+          "id": "doc_002#1",
+          "content": "自注意力（Self-Attention）让序列中的每个位置都能直接关注序列中的其他所有位置，从而捕捉长距离依赖关系。可以把自注意力想象成一场圆桌会议：每个词同时是提问者和回答者，它环顾整句话里的所有词，决定该重点听谁的发言，再把听到的信息按重要性加权汇总成自己的新理解。\n对于输入序列，模型为每个位置生成查询向量 Q（Query）、键向量 K（Key）与值向量 V（Value）。Q 表示「我在找什么」，K 表示「我能提供什么线索」，V 表示「我实际携带的内容」。注意力权重由 Q 与 K 的点积经过缩放和 Softmax 归一化得到，最终输出是 V 的加权求和。\n这就是缩放点积注意力（Scaled Dot-Product Attention），公式为 Attention(Q, K, V) = softmax(QK^T / √d_k) V。缩放因子为键向量维度 d_k 的平方根，用于防止点积过大导致 Softmax 进入饱和区、梯度过小。点积越大表示查询与键越匹配，经 Softmax 归一化后得到一组和为 1 的注意力权重。\n自注意力的计算复杂度与序列长度的平方成正比（O(n²·d)），这是 Transformer 处理长文本时的主要瓶颈，也催生了稀疏注意力、线性注意力与 FlashAttention 等工程优化方向。",
+          "source": {
+            "chunkId": "doc_002#1",
+            "documentId": "doc_002",
+            "title": "Transformer与注意力机制",
+            "location": "Transformer 架构与注意力机制 / 第一章 自注意力机制 / 段落 1"
+          },
+          "metadata": {
+            "document_title": "Transformer与注意力机制",
+            "source_encoding": "utf-8",
+            "token_count": 277,
+            "document_id": "doc_002",
+            "chunk_index": 1,
+            "source_location": "Transformer 架构与注意力机制 / 第一章 自注意力机制 / 段落 1",
+            "chunking_version": "heading-window-v1",
+            "queryOverlap": 0.636364
+          },
+          "dense_score": 0.0,
+          "keyword_score": 12.12702539632066,
+          "normalized_dense_score": 0.0,
+          "normalized_keyword_score": 0.5501913615176791,
+          "fusion_score": 0.0046875,
+          "confidence_score": 0.09093422741191803
+        }
+      ]
+    },
+    {
+      "query_id": "compare_batch_layer_norm",
+      "query": "批归一化和层归一化的区别",
+      "query_type": "方法比较",
+      "embedding_profile": "hash:deterministic_hash_v1:d512",
+      "collection": "kb_chunks__hash_d512__utf8_v2",
+      "candidates": [
+        {
+          "id": "doc_015#3",
+          "content": "层归一化（LayerNorm）在单个样本的所有特征维度上做归一化，不依赖批大小，特别适合循环网络与 Transformer。Transformer 的每个子层后都接残差连接与层归一化。",
+          "source": {
+            "chunkId": "doc_015#3",
+            "documentId": "doc_015",
+            "title": "批归一化与层归一化",
+            "location": "批归一化与层归一化 / 层归一化 / 段落 1"
+          },
+          "metadata": {
+            "document_title": "批归一化与层归一化",
+            "document_id": "doc_015",
+            "token_count": 45,
+            "chunk_index": 3,
+            "source_location": "批归一化与层归一化 / 层归一化 / 段落 1",
+            "chunking_version": "heading-window-v1",
+            "source_encoding": "utf-8",
+            "queryOverlap": 0.777778
+          },
+          "dense_score": 0.6363961696624756,
+          "keyword_score": 19.294974913865133,
+          "normalized_dense_score": 1.0,
+          "normalized_keyword_score": 1.0,
+          "fusion_score": 0.016393442622950817,
+          "confidence_score": 1.0
+        },
+        {
+          "id": "doc_012#4",
+          "content": "隐藏层通常首选 ReLU 及其变体；输出层依任务选择：回归用线性、二分类用 Sigmoid、多分类用 Softmax。Softmax 把一组实数归一化为和为 1 的概率分布。",
+          "source": {
+            "chunkId": "doc_012#4",
+            "documentId": "doc_012",
+            "title": "激活函数详解",
+            "location": "激活函数详解 / 选择建议 / 段落 1"
+          },
+          "metadata": {
+            "source_encoding": "utf-8",
+            "token_count": 41,
+            "source_location": "激活函数详解 / 选择建议 / 段落 1",
+            "chunking_version": "heading-window-v1",
+            "document_id": "doc_012",
+            "chunk_index": 4,
+            "document_title": "激活函数详解",
+            "queryOverlap": 0.666667
+          },
+          "dense_score": 0.37126004695892334,
+          "keyword_score": 13.231500066721459,
+          "normalized_dense_score": 0.5833788207050774,
+          "normalized_keyword_score": 0.6857484980306175,
+          "fusion_score": 0.016129032258064516,
+          "confidence_score": 0.9245674996259214
+        },
+        {
+          "id": "doc_002#1",
+          "content": "自注意力（Self-Attention）让序列中的每个位置都能直接关注序列中的其他所有位置，从而捕捉长距离依赖关系。可以把自注意力想象成一场圆桌会议：每个词同时是提问者和回答者，它环顾整句话里的所有词，决定该重点听谁的发言，再把听到的信息按重要性加权汇总成自己的新理解。\n对于输入序列，模型为每个位置生成查询向量 Q（Query）、键向量 K（Key）与值向量 V（Value）。Q 表示「我在找什么」，K 表示「我能提供什么线索」，V 表示「我实际携带的内容」。注意力权重由 Q 与 K 的点积经过缩放和 Softmax 归一化得到，最终输出是 V 的加权求和。\n这就是缩放点积注意力（Scaled Dot-Product Attention），公式为 Attention(Q, K, V) = softmax(QK^T / √d_k) V。缩放因子为键向量维度 d_k 的平方根，用于防止点积过大导致 Softmax 进入饱和区、梯度过小。点积越大表示查询与键越匹配，经 Softmax 归一化后得到一组和为 1 的注意力权重。\n自注意力的计算复杂度与序列长度的平方成正比（O(n²·d)），这是 Transformer 处理长文本时的主要瓶颈，也催生了稀疏注意力、线性注意力与 FlashAttention 等工程优化方向。",
+          "source": {
+            "chunkId": "doc_002#1",
+            "documentId": "doc_002",
+            "title": "Transformer与注意力机制",
+            "location": "Transformer 架构与注意力机制 / 第一章 自注意力机制 / 段落 1"
+          },
+          "metadata": {
+            "token_count": 277,
+            "source_location": "Transformer 架构与注意力机制 / 第一章 自注意力机制 / 段落 1",
+            "chunk_index": 1,
+            "source_encoding": "utf-8",
+            "document_id": "doc_002",
+            "document_title": "Transformer与注意力机制",
+            "chunking_version": "heading-window-v1",
+            "queryOverlap": 0.666667
+          },
+          "dense_score": 0.28127211332321167,
+          "keyword_score": 9.849533976282443,
+          "normalized_dense_score": 0.4419764397268285,
+          "normalized_keyword_score": 0.5104714579962831,
+          "fusion_score": 0.014134495641344955,
+          "confidence_score": 0.7654472744857368
+        },
+        {
+          "id": "doc_001#4",
+          "content": "深层网络在训练时可能出现梯度消失或梯度爆炸。梯度消失指反向传播过程中梯度逐层衰减，导致靠近输入层的参数几乎无法更新；梯度爆炸则相反，梯度逐层放大导致训练不稳定。Sigmoid 与 Tanh 在饱和区导数趋近于零，是深层网络梯度消失的常见诱因；ReLU 在正区间导数恒为 1，梯度不会被反复压缩，因此比 Sigmoid 更不易梯度消失。\n批归一化（BatchNorm）通过把每层输入规范到稳定的分布来加速收敛并缓解梯度问题；残差连接为梯度提供了跨层直达通路；合适的权重初始化（如 Xavier、He 初始化）也能显著改善训练稳定性。\n常见优化器包括 SGD、带动量的 SGD、RMSprop 与 Adam。SGD 沿小批量梯度方向直接更新；动量法累积历史梯度方向，像滚下山坡的球一样冲过小的沟壑；RMSprop 按梯度幅度自适应缩放各参数的学习率；Adam 同时结合了动量与自适应学习率，是工程实践中最常用的默认优化器。工程上还常配合学习率调度（如预热、余弦退火）与梯度裁剪来稳定大模型训练。",
+          "source": {
+            "chunkId": "doc_001#4",
+            "documentId": "doc_001",
+            "title": "神经网络与反向传播",
+            "location": "神经网络基础与反向传播算法 / 第四章 梯度问题与优化 / 段落 1"
+          },
+          "metadata": {
+            "chunking_version": "heading-window-v1",
+            "token_count": 246,
+            "source_location": "神经网络基础与反向传播算法 / 第四章 梯度问题与优化 / 段落 1",
+            "document_id": "doc_001",
+            "document_title": "神经网络与反向传播",
+            "chunk_index": 4,
+            "source_encoding": "utf-8",
+            "queryOverlap": 0.888889
+          },
+          "dense_score": 0.0,
+          "keyword_score": 11.412621380247964,
+          "normalized_dense_score": 0.0,
+          "normalized_keyword_score": 0.5914815350211725,
+          "fusion_score": 0.0047619047619047615,
+          "confidence_score": 0.08520253263947983
+        },
+        {
+          "id": "doc_004#5",
+          "content": "用框架实现卷积层只需一行：例如 nn.Conv2d(in_channels, out_channels, kernel_size=3, stride=1, padding=1)，后接 nn.ReLU() 与 nn.MaxPool2d(2)。工程上需要权衡的要点：卷积核数量与层深决定模型容量与显存占用；批归一化几乎是卷积层的标配，可加速收敛；数据增强（随机裁剪、翻转、颜色抖动）是图像任务对抗过拟合的第一手段；部署侧常用深度可分离卷积（MobileNet）在精度与计算量之间取得平衡。",
+          "source": {
+            "chunkId": "doc_004#5",
+            "documentId": "doc_004",
+            "title": "CNN架构与卷积网络",
+            "location": "CNN 架构与卷积神经网络 / 第五章 工程实践视角 / 段落 1"
+          },
+          "metadata": {
+            "source_location": "CNN 架构与卷积神经网络 / 第五章 工程实践视角 / 段落 1",
+            "source_encoding": "utf-8",
+            "document_id": "doc_004",
+            "document_title": "CNN架构与卷积网络",
+            "token_count": 109,
+            "chunking_version": "heading-window-v1",
+            "chunk_index": 5,
+            "queryOverlap": 0.666667
+          },
+          "dense_score": 0.0,
+          "keyword_score": 9.465811962409884,
+          "normalized_dense_score": 0.0,
+          "normalized_keyword_score": 0.49058431040549666,
+          "fusion_score": 0.004347826086956522,
+          "confidence_score": 0.05187832259585316
+        }
+      ]
+    },
+    {
+      "query_id": "compare_full_peft",
+      "query": "全参数微调和PEFT相比有什么优缺点",
+      "query_type": "方法比较",
+      "embedding_profile": "hash:deterministic_hash_v1:d512",
+      "collection": "kb_chunks__hash_d512__utf8_v2",
+      "candidates": [
+        {
+          "id": "doc_027#2",
+          "content": "参数高效微调（PEFT）只更新少量新增或选定的参数，冻结绝大部分原始权重，在显著降低成本的同时逼近全参微调的效果。常见方法包括 LoRA、Adapter 与 Prompt Tuning。",
+          "source": {
+            "chunkId": "doc_027#2",
+            "documentId": "doc_027",
+            "title": "全参微调与PEFT",
+            "location": "全参微调与参数高效微调 / 参数高效微调 / 段落 1"
+          },
+          "metadata": {
+            "document_id": "doc_027",
+            "source_encoding": "utf-8",
+            "document_title": "全参微调与PEFT",
+            "chunk_index": 2,
+            "token_count": 46,
+            "chunking_version": "heading-window-v1",
+            "source_location": "全参微调与参数高效微调 / 参数高效微调 / 段落 1",
+            "queryOverlap": 0.4
+          },
+          "dense_score": 0.376867413520813,
+          "keyword_score": 15.386115965700068,
+          "normalized_dense_score": 1.0,
+          "normalized_keyword_score": 0.8449236418785667,
+          "fusion_score": 0.016237314597970336,
+          "confidence_score": 0.9922461820939283
+        }
+      ]
+    },
+    {
+      "query_id": "steps_backprop",
+      "query": "反向传播计算梯度的步骤",
+      "query_type": "操作步骤",
+      "embedding_profile": "hash:deterministic_hash_v1:d512",
+      "collection": "kb_chunks__hash_d512__utf8_v2",
+      "candidates": [
+        {
+          "id": "doc_001#3",
+          "content": "反向传播（Backpropagation）是训练神经网络的核心算法。它的核心作用是高效地计算损失函数对网络中每一个参数的梯度。\n反向传播通过链式法则，将损失对输出层的误差自顶向下逐层传播，计算损失对各层权重与偏置的偏导数。具体而言，先计算输出层的误差项，再利用链式法则把误差反向传播到前一层，每一层的梯度等于本层误差与该层输入的外积。直观地说，反向传播就是在追责：输出错了多少，按各条路径上的「责任比例」（权重）把误差分摊回每一个参数，让每个参数知道自己该朝哪个方向修正。\n得到梯度之后，使用梯度下降法更新参数：W ← W − η·∂L/∂W，其中 η 为学习率。学习率控制每一步更新的幅度：太大容易在最优点附近来回震荡甚至发散，太小则收敛缓慢。网络利用梯度沿损失下降最快的方向更新权重，一轮一轮迭代，损失逐渐降低。\n反向传播的关键在于复用前向传播缓存的中间结果，从而避免重复计算，使梯度计算的复杂度与前向传播同阶。计算图视角下，前向传播沿图的方向计算每个节点的值，反向传播沿相反方向应用链式法则累积梯度，这也是现代深度学习框架自动求导的实现基础。\n如果没有反向传播，我们就无法在深层网络中高效地求解梯度，深度学习的大规模训练也就无从谈起。因此反向传播被视为连接网络结构与优化算法的桥梁。神经元、前向传播、激活、反向传播更新，构成了神经网络学习的完整闭环。",
+          "source": {
+            "chunkId": "doc_001#3",
+            "documentId": "doc_001",
+            "title": "神经网络与反向传播",
+            "location": "神经网络基础与反向传播算法 / 第三章 反向传播算法 / 段落 1"
+          },
+          "metadata": {
+            "chunking_version": "heading-window-v1",
+            "source_encoding": "utf-8",
+            "document_title": "神经网络与反向传播",
+            "chunk_index": 3,
+            "source_location": "神经网络基础与反向传播算法 / 第三章 反向传播算法 / 段落 1",
+            "document_id": "doc_001",
+            "token_count": 350,
+            "queryOverlap": 0.909091
+          },
+          "dense_score": 0.6437981128692627,
+          "keyword_score": 23.050033979013282,
+          "normalized_dense_score": 1.0,
+          "normalized_keyword_score": 0.9820804711782202,
+          "fusion_score": 0.01631411951348493,
+          "confidence_score": 0.999104023558911
+        },
+        {
+          "id": "doc_013#2",
+          "content": "反向传播本质是微积分链式法则在计算图上的系统应用。前向传播把输入逐层映射到损失；反向传播则从损失出发，沿计算图反方向逐层把梯度传回，每一层用本地导数乘以上游传来的梯度，得到对本层参数与输入的梯度。",
+          "source": {
+            "chunkId": "doc_013#2",
+            "documentId": "doc_013",
+            "title": "反向传播与链式法则",
+            "location": "反向传播与链式法则 / 链式法则 / 段落 1"
+          },
+          "metadata": {
+            "token_count": 62,
+            "chunking_version": "heading-window-v1",
+            "source_location": "反向传播与链式法则 / 链式法则 / 段落 1",
+            "source_encoding": "utf-8",
+            "document_id": "doc_013",
+            "chunk_index": 2,
+            "document_title": "反向传播与链式法则",
+            "queryOverlap": 0.818182
+          },
+          "dense_score": 0.6121905446052551,
+          "keyword_score": 23.470616365438698,
+          "normalized_dense_score": 0.9509045341510248,
+          "normalized_keyword_score": 1.0,
+          "fusion_score": 0.016208355367530406,
+          "confidence_score": 0.9879080591053984
+        },
+        {
+          "id": "doc_013#4",
+          "content": "反向传播只负责求梯度，参数更新由优化器完成：w ← w − η·∂L/∂w，其中 η 是学习率。前向传播、反向传播、参数更新三步循环往复，构成神经网络的训练过程。梯度消失与梯度爆炸是深层网络反向传播的常见难题。",
+          "source": {
+            "chunkId": "doc_013#4",
+            "documentId": "doc_013",
+            "title": "反向传播与链式法则",
+            "location": "反向传播与链式法则 / 与梯度下降的配合 / 段落 1"
+          },
+          "metadata": {
+            "document_id": "doc_013",
+            "chunking_version": "heading-window-v1",
+            "chunk_index": 4,
+            "token_count": 58,
+            "source_encoding": "utf-8",
+            "source_location": "反向传播与链式法则 / 与梯度下降的配合 / 段落 1",
+            "document_title": "反向传播与链式法则",
+            "queryOverlap": 0.727273
+          },
+          "dense_score": 0.5875800848007202,
+          "keyword_score": 21.71944567946582,
+          "normalized_dense_score": 0.9126775507029814,
+          "normalized_keyword_score": 0.9253888070638172,
+          "fusion_score": 0.01579861111111111,
+          "confidence_score": 0.9525292578809648
+        },
+        {
+          "id": "doc_001#0",
+          "content": "本讲义介绍神经网络的基本结构、前向传播与反向传播算法，是深度学习的基石。",
+          "source": {
+            "chunkId": "doc_001#0",
+            "documentId": "doc_001",
+            "title": "神经网络与反向传播",
+            "location": "神经网络基础与反向传播算法 / 段落 1"
+          },
+          "metadata": {
+            "chunk_index": 0,
+            "chunking_version": "heading-window-v1",
+            "source_encoding": "utf-8",
+            "document_title": "神经网络与反向传播",
+            "document_id": "doc_001",
+            "source_location": "神经网络基础与反向传播算法 / 段落 1",
+            "token_count": 22,
+            "queryOverlap": 0.636364
+          },
+          "dense_score": 0.49441325664520264,
+          "keyword_score": 17.826897239425012,
+          "normalized_dense_score": 0.7679631964774088,
+          "normalized_keyword_score": 0.759541077313834,
+          "fusion_score": 0.015384615384615384,
+          "confidence_score": 0.9016511773685338
+        },
+        {
+          "id": "doc_011#4",
+          "content": "输出层根据任务选择形式：回归用线性输出，二分类用 Sigmoid，多分类用 Softmax 把输出转成概率分布。前向传播得到预测后，由损失函数衡量误差，再由反向传播计算梯度。",
+          "source": {
+            "chunkId": "doc_011#4",
+            "documentId": "doc_011",
+            "title": "前向传播与多层感知机",
+            "location": "前向传播与多层感知机 / 输出层 / 段落 1"
+          },
+          "metadata": {
+            "source_encoding": "utf-8",
+            "source_location": "前向传播与多层感知机 / 输出层 / 段落 1",
+            "document_id": "doc_011",
+            "chunking_version": "heading-window-v1",
+            "document_title": "前向传播与多层感知机",
+            "chunk_index": 4,
+            "token_count": 48,
+            "queryOverlap": 0.727273
+          },
+          "dense_score": 0.33333325386047363,
+          "keyword_score": 17.67661184231839,
+          "normalized_dense_score": 0.5177605326845129,
+          "normalized_keyword_score": 0.753137947768079,
+          "fusion_score": 0.014690382081686429,
+          "confidence_score": 0.8291656915082046
+        },
+        {
+          "id": "doc_014#2",
+          "content": "批量梯度下降用全部样本计算梯度，稳定但慢。随机梯度下降（SGD）每次用一个样本，快但噪声大。小批量梯度下降折中，用一小批样本计算梯度，是深度学习的标准做法，能兼顾效率与稳定。",
+          "source": {
+            "chunkId": "doc_014#2",
+            "documentId": "doc_014",
+            "title": "梯度下降与优化器",
+            "location": "梯度下降与优化器 / 批量、随机与小批量 / 段落 1"
+          },
+          "metadata": {
+            "document_id": "doc_014",
+            "source_location": "梯度下降与优化器 / 批量、随机与小批量 / 段落 1",
+            "source_encoding": "utf-8",
+            "chunk_index": 2,
+            "token_count": 52,
+            "document_title": "梯度下降与优化器",
+            "chunking_version": "heading-window-v1",
+            "queryOverlap": 0.454545
+          },
+          "dense_score": 0.360576331615448,
+          "keyword_score": 10.494828318381229,
+          "normalized_dense_score": 0.5600767141246202,
+          "normalized_keyword_score": 0.44714753779688676,
+          "fusion_score": 0.01451946975973488,
+          "confidence_score": 0.8064912122975352
+        },
+        {
+          "id": "doc_004#4",
+          "content": "一个典型的 CNN 由「卷积 → 激活 → 池化」模块反复堆叠，最后接全连接层输出分类结果。LeNet 是 CNN 的开山之作，用于手写数字识别，奠定了卷积-池化-全连接的基本范式。AlexNet 在 2012 年 ImageNet 竞赛中以巨大优势夺冠，引爆了深度学习浪潮，其贡献包括使用 ReLU 激活、Dropout 正则与 GPU 训练。VGG 用统一的 3×3 小卷积核堆出 16-19 层，结构规整、易于迁移。\nResNet（残差网络）通过残差连接（shortcut）让输入可以跨层直达输出，使梯度在反向传播时拥有恒等通路，成功训练了上百层的网络，解决了深层网络的退化问题。残差连接此后成为几乎所有深层架构（包括 Transformer）的标配组件。",
+          "source": {
+            "chunkId": "doc_004#4",
+            "documentId": "doc_004",
+            "title": "CNN架构与卷积网络",
+            "location": "CNN 架构与卷积神经网络 / 第四章 经典网络结构 / 段落 1"
+          },
+          "metadata": {
+            "document_title": "CNN架构与卷积网络",
+            "document_id": "doc_004",
+            "chunk_index": 4,
+            "token_count": 164,
+            "chunking_version": "heading-window-v1",
+            "source_location": "CNN 架构与卷积神经网络 / 第四章 经典网络结构 / 段落 1",
+            "source_encoding": "utf-8",
+            "queryOverlap": 0.636364
+          },
+          "dense_score": 0.0,
+          "keyword_score": 8.963043209789348,
+          "normalized_dense_score": 0.0,
+          "normalized_keyword_score": 0.3818835888344092,
+          "fusion_score": 0.004054054054054054,
+          "confidence_score": 0.0365187958114394
+        }
+      ]
+    },
+    {
+      "query_id": "steps_kmeans",
+      "query": "K-means聚类的操作步骤是什么",
+      "query_type": "操作步骤",
+      "embedding_profile": "hash:deterministic_hash_v1:d512",
+      "collection": "kb_chunks__hash_d512__utf8_v2",
+      "candidates": [
+        {
+          "id": "doc_006#2",
+          "content": "聚类把相似的样本归为同一组，使组内样本尽量相似、组间样本尽量不同。K-means 是最常用的聚类算法：先随机选取 K 个簇中心，反复地把每个点分配给最近的中心、再用每簇的均值更新中心，直至收敛。层次聚类与 DBSCAN 是另两类常见方法，后者能发现任意形状的簇并识别噪声点。",
+          "source": {
+            "chunkId": "doc_006#2",
+            "documentId": "doc_006",
+            "title": "无监督学习与聚类降维",
+            "location": "无监督学习与聚类降维 / 聚类 / 段落 1"
+          },
+          "metadata": {
+            "chunk_index": 2,
+            "document_id": "doc_006",
+            "document_title": "无监督学习与聚类降维",
+            "source_location": "无监督学习与聚类降维 / 聚类 / 段落 1",
+            "chunking_version": "heading-window-v1",
+            "source_encoding": "utf-8",
+            "token_count": 79,
+            "queryOverlap": 0.5
+          },
+          "dense_score": 0.4155259132385254,
+          "keyword_score": 19.45401938891092,
+          "normalized_dense_score": 1.0,
+          "normalized_keyword_score": 1.0,
+          "fusion_score": 0.016393442622950817,
+          "confidence_score": 1.0
+        }
+      ]
+    },
+    {
+      "query_id": "steps_gradient_descent",
+      "query": "使用梯度下降优化模型要经过哪些步骤",
+      "query_type": "操作步骤",
+      "embedding_profile": "hash:deterministic_hash_v1:d512",
+      "collection": "kb_chunks__hash_d512__utf8_v2",
+      "candidates": [
+        {
+          "id": "doc_013#1",
+          "content": "反向传播是训练神经网络的核心算法，用于高效计算损失函数对每个参数的梯度。有了梯度，就能用梯度下降更新权重，使损失逐步下降。",
+          "source": {
+            "chunkId": "doc_013#1",
+            "documentId": "doc_013",
+            "title": "反向传播与链式法则",
+            "location": "反向传播与链式法则 / 反向传播的目标 / 段落 1"
+          },
+          "metadata": {
+            "chunking_version": "heading-window-v1",
+            "token_count": 38,
+            "source_encoding": "utf-8",
+            "chunk_index": 1,
+            "document_title": "反向传播与链式法则",
+            "document_id": "doc_013",
+            "source_location": "反向传播与链式法则 / 反向传播的目标 / 段落 1",
+            "queryOverlap": 0.470588
+          },
+          "dense_score": 0.3969420790672302,
+          "keyword_score": 16.08751353086182,
+          "normalized_dense_score": 1.0,
+          "normalized_keyword_score": 1.0,
+          "fusion_score": 0.016393442622950817,
+          "confidence_score": 1.0
+        },
+        {
+          "id": "doc_030#3",
+          "content": "直接偏好优化（DPO）跳过显式奖励模型与强化学习，直接用偏好数据构造分类式损失来优化策略，训练更稳定、实现更简单，被越来越多模型采用。",
+          "source": {
+            "chunkId": "doc_030#3",
+            "documentId": "doc_030",
+            "title": "RLHF与偏好对齐",
+            "location": "RLHF 与偏好对齐 / DPO 等简化方法 / 段落 1"
+          },
+          "metadata": {
+            "document_id": "doc_030",
+            "token_count": 40,
+            "source_encoding": "utf-8",
+            "document_title": "RLHF与偏好对齐",
+            "chunk_index": 3,
+            "source_location": "RLHF 与偏好对齐 / DPO 等简化方法 / 段落 1",
+            "chunking_version": "heading-window-v1",
+            "queryOverlap": 0.352941
+          },
+          "dense_score": 0.3579169511795044,
+          "keyword_score": 9.161372803132126,
+          "normalized_dense_score": 0.901685586019425,
+          "normalized_keyword_score": 0.5694710239439559,
+          "fusion_score": 0.014957264957264956,
+          "confidence_score": 0.8701423585216113
+        },
+        {
+          "id": "doc_003#3",
+          "content": "预训练大模型在海量语料上学习通用知识，但通用模型无法直接完美适配特定任务（如客服对话、专业领域问答），微调（Fine-tuning）就是让预训练模型适配特定下游任务的过程。可以把预训练模型看作受过通识教育的毕业生，微调则是岗前培训。\n全参数微调更新模型的全部权重，理论上能最大程度适配下游任务，效果通常最好，但显存与算力开销巨大：训练时除了权重本身，还要保存梯度与优化器状态，对大模型动辄需要数百 GB 显存，且每个任务都要保存一份完整模型副本。\n参数高效微调（PEFT）只更新少量参数即可达到接近全参微调的效果。LoRA（Low-Rank Adaptation，低秩适配）是其中代表：它冻结原始权重 W，用两个低秩矩阵 A 与 B 来近似参数更新的增量 ΔW = BA，秩 r 远小于原维度，从而把可训练参数量降低几个数量级，显存占用大幅下降，推理时还可把 BA 合并回原权重做到零额外延迟。其它 PEFT 方法还包括 Adapter（在层间插入小型瓶颈网络）与 Prompt Tuning（只学习软提示向量）。工程上选择全参微调还是 LoRA，取决于数据量、算力预算与任务与预训练分布的差距。",
+          "source": {
+            "chunkId": "doc_003#3",
+            "documentId": "doc_003",
+            "title": "机器学习基础与大模型微调",
+            "location": "机器学习基础与大模型微调 / 第三章 大模型微调技术 / 段落 1"
+          },
+          "metadata": {
+            "document_id": "doc_003",
+            "document_title": "机器学习基础与大模型微调",
+            "source_encoding": "utf-8",
+            "chunk_index": 3,
+            "source_location": "机器学习基础与大模型微调 / 第三章 大模型微调技术 / 段落 1",
+            "chunking_version": "heading-window-v1",
+            "token_count": 274,
+            "queryOverlap": 0.647059
+          },
+          "dense_score": 0.25962382555007935,
+          "keyword_score": 10.464555996246999,
+          "normalized_dense_score": 0.6540597211567151,
+          "normalized_keyword_score": 0.6504769041015629,
+          "fusion_score": 0.013745173745173745,
+          "confidence_score": 0.766299207118711
+        },
+        {
+          "id": "doc_001#3",
+          "content": "反向传播（Backpropagation）是训练神经网络的核心算法。它的核心作用是高效地计算损失函数对网络中每一个参数的梯度。\n反向传播通过链式法则，将损失对输出层的误差自顶向下逐层传播，计算损失对各层权重与偏置的偏导数。具体而言，先计算输出层的误差项，再利用链式法则把误差反向传播到前一层，每一层的梯度等于本层误差与该层输入的外积。直观地说，反向传播就是在追责：输出错了多少，按各条路径上的「责任比例」（权重）把误差分摊回每一个参数，让每个参数知道自己该朝哪个方向修正。\n得到梯度之后，使用梯度下降法更新参数：W ← W − η·∂L/∂W，其中 η 为学习率。学习率控制每一步更新的幅度：太大容易在最优点附近来回震荡甚至发散，太小则收敛缓慢。网络利用梯度沿损失下降最快的方向更新权重，一轮一轮迭代，损失逐渐降低。\n反向传播的关键在于复用前向传播缓存的中间结果，从而避免重复计算，使梯度计算的复杂度与前向传播同阶。计算图视角下，前向传播沿图的方向计算每个节点的值，反向传播沿相反方向应用链式法则累积梯度，这也是现代深度学习框架自动求导的实现基础。\n如果没有反向传播，我们就无法在深层网络中高效地求解梯度，深度学习的大规模训练也就无从谈起。因此反向传播被视为连接网络结构与优化算法的桥梁。神经元、前向传播、激活、反向传播更新，构成了神经网络学习的完整闭环。",
+          "source": {
+            "chunkId": "doc_001#3",
+            "documentId": "doc_001",
+            "title": "神经网络与反向传播",
+            "location": "神经网络基础与反向传播算法 / 第三章 反向传播算法 / 段落 1"
+          },
+          "metadata": {
+            "document_title": "神经网络与反向传播",
+            "chunking_version": "heading-window-v1",
+            "chunk_index": 3,
+            "document_id": "doc_001",
+            "source_location": "神经网络基础与反向传播算法 / 第三章 反向传播算法 / 段落 1",
+            "token_count": 350,
+            "source_encoding": "utf-8",
+            "queryOverlap": 0.764706
+          },
+          "dense_score": 0.0,
+          "keyword_score": 12.788304135681098,
+          "normalized_dense_score": 0.0,
+          "normalized_keyword_score": 0.7949211114040953,
+          "fusion_score": 0.0047619047619047615,
+          "confidence_score": 0.0920010316347046
+        }
+      ]
+    },
+    {
+      "query_id": "steps_preprocessing",
+      "query": "数值特征预处理通常怎么做",
+      "query_type": "操作步骤",
+      "embedding_profile": "hash:deterministic_hash_v1:d512",
+      "collection": "kb_chunks__hash_d512__utf8_v2",
+      "candidates": [
+        {
+          "id": "doc_004#1",
+          "content": "卷积层的主要作用是提取局部空间特征。卷积核（也称滤波器）是一个小的权重矩阵，它在输入图像上按一定步长滑动，每停留一处就与覆盖区域做逐元素相乘再求和，得到输出特征图上的一个值。可以把卷积核想象成一只拿着小手电筒的眼睛：它一格一格扫过整张图片，每次只看一小块局部区域，寻找边缘、纹理、角点这类局部模式。\n权重共享指同一个卷积核在图像所有位置使用同一组参数：无论猫耳朵出现在图片左上角还是右下角，都由同一个「猫耳检测器」负责识别。这与全连接层每个连接都有独立参数形成鲜明对比，使参数量从百万级骤降到几百个，也让特征检测天然具备平移等变性。\n卷积的两个关键超参数是步长（stride）与填充（padding）。步长控制卷积核每次滑动的距离，步长越大输出特征图越小；填充在输入边缘补零，使边缘像素也能被充分覆盖。输出特征图的边长可由公式计算：output = (input − kernel + 2 × padding) / stride + 1。例如 32×32 的输入、5×5 的卷积核、填充 2、步长 1，输出仍为 32×32。\n一个卷积层通常包含多个卷积核，每个卷积核产生一张特征图（feature map），不同特征图对应不同类型的局部特征。卷积之后一般接 ReLU 激活引入非线性。",
+          "source": {
+            "chunkId": "doc_004#1",
+            "documentId": "doc_004",
+            "title": "CNN架构与卷积网络",
+            "location": "CNN 架构与卷积神经网络 / 第一章 卷积层 / 段落 1"
+          },
+          "metadata": {
+            "document_title": "CNN架构与卷积网络",
+            "source_encoding": "utf-8",
+            "source_location": "CNN 架构与卷积神经网络 / 第一章 卷积层 / 段落 1",
+            "document_id": "doc_004",
+            "chunk_index": 1,
+            "token_count": 299,
+            "chunking_version": "heading-window-v1",
+            "queryOverlap": 0.75
+          },
+          "dense_score": 0.2381027340888977,
+          "keyword_score": 8.99409084824548,
+          "normalized_dense_score": 0.7334874476123151,
+          "normalized_keyword_score": 0.715853548474231,
+          "fusion_score": 0.01414486921529175,
+          "confidence_score": 0.8228998686290803
+        },
+        {
+          "id": "doc_003#1",
+          "content": "机器学习的本质是让计算机从数据中自动学习规律，而不是依靠人工编写规则。机器学习主要分为监督学习、无监督学习与强化学习。\n监督学习使用带标签的数据训练模型，就像学生做带标准答案的练习题：模型给出预测，与标准答案对照，错了就修正。典型任务包括分类与回归。分类预测离散的类别标签，例如判断一封邮件是否为垃圾邮件、识别图片中的物体类别；回归预测连续的数值，例如预测房价或气温。\n无监督学习从无标签数据中发现结构，像在没有答案的情况下自己整理笔记。典型任务包括聚类与降维：聚类把相似的样本自动分组，例如把用户按行为习惯分群；降维在尽量保留信息的前提下压缩特征维度，便于可视化与后续建模。强化学习则让智能体在与环境的交互中通过奖励信号学习策略。\n特征是模型观察世界的窗口。特征工程指从原始数据中构造、选择对预测有用的输入变量，特征的质量往往比模型的选择更能决定效果上限。损失函数衡量预测与真实目标的差距，是模型优化的方向盘：回归常用均方误差，分类常用交叉熵。训练过程就是不断调整参数让损失变小。",
+          "source": {
+            "chunkId": "doc_003#1",
+            "documentId": "doc_003",
+            "title": "机器学习基础与大模型微调",
+            "location": "机器学习基础与大模型微调 / 第一章 机器学习范式 / 段落 1"
+          },
+          "metadata": {
+            "source_location": "机器学习基础与大模型微调 / 第一章 机器学习范式 / 段落 1",
+            "chunking_version": "heading-window-v1",
+            "source_encoding": "utf-8",
+            "token_count": 279,
+            "chunk_index": 1,
+            "document_id": "doc_003",
+            "document_title": "机器学习基础与大模型微调",
+            "queryOverlap": 0.75
+          },
+          "dense_score": 0.21956980228424072,
+          "keyword_score": 9.613814917271757,
+          "normalized_dense_score": 0.676395819084036,
+          "normalized_keyword_score": 0.7651783419828367,
+          "fusion_score": 0.013622291021671826,
+          "confidence_score": 0.7837743776291809
+        }
+      ]
+    },
+    {
+      "query_id": "steps_instruction_tuning",
+      "query": "指令微调SFT的数据和训练流程是什么",
+      "query_type": "操作步骤",
+      "embedding_profile": "hash:deterministic_hash_v1:d512",
+      "collection": "kb_chunks__hash_d512__utf8_v2",
+      "candidates": [
+        {
+          "id": "doc_029#1",
+          "content": "指令微调（Instruction Tuning / SFT，监督微调）用大量\"指令—响应\"样本训练预训练模型，使其学会理解并遵循自然语言指令。预训练模型擅长续写文本，但未必会按用户意图作答；指令微调弥合了这一差距。",
+          "source": {
+            "chunkId": "doc_029#1",
+            "documentId": "doc_029",
+            "title": "指令微调SFT",
+            "location": "指令微调 SFT / 指令微调的目标 / 段落 1"
+          },
+          "metadata": {
+            "token_count": 56,
+            "document_title": "指令微调SFT",
+            "chunking_version": "heading-window-v1",
+            "chunk_index": 1,
+            "source_encoding": "utf-8",
+            "source_location": "指令微调 SFT / 指令微调的目标 / 段落 1",
+            "document_id": "doc_029",
+            "queryOverlap": 0.4375
+          },
+          "dense_score": 0.45363229513168335,
+          "keyword_score": 21.955926706980385,
+          "normalized_dense_score": 1.0,
+          "normalized_keyword_score": 1.0,
+          "fusion_score": 0.016393442622950817,
+          "confidence_score": 1.0
+        },
+        {
+          "id": "doc_003#4",
+          "content": "指令微调（Instruction Tuning / SFT，监督微调）使用「指令-响应」格式的样本训练模型，使其更好地理解并遵循自然语言指令，从「续写文本的语言模型」转变为「听得懂要求的助手」。指令数据的多样性与质量直接决定模型的泛化表现。\n在此基础上，对齐（Alignment）让模型输出符合人类偏好与价值观。基于人类反馈的强化学习（RLHF）先用人类对回答的排序训练奖励模型，再用强化学习优化生成策略；DPO（直接偏好优化）则跳过显式奖励模型，直接在偏好对上优化，流程更简单、训练更稳定。预训练、指令微调、对齐三个阶段串起来，构成了现代对话式大模型的完整训练管线。",
+          "source": {
+            "chunkId": "doc_003#4",
+            "documentId": "doc_003",
+            "title": "机器学习基础与大模型微调",
+            "location": "机器学习基础与大模型微调 / 第四章 指令微调与对齐 / 段落 1"
+          },
+          "metadata": {
+            "document_title": "机器学习基础与大模型微调",
+            "chunk_index": 4,
+            "token_count": 158,
+            "document_id": "doc_003",
+            "chunking_version": "heading-window-v1",
+            "source_location": "机器学习基础与大模型微调 / 第四章 指令微调与对齐 / 段落 1",
+            "source_encoding": "utf-8",
+            "queryOverlap": 0.75
+          },
+          "dense_score": 0.40717244148254395,
+          "keyword_score": 21.469844631069336,
+          "normalized_dense_score": 0.8975825704039596,
+          "normalized_keyword_score": 0.9778610084466847,
+          "fusion_score": 0.016129032258064516,
+          "confidence_score": 0.9708753886045718
+        },
+        {
+          "id": "doc_026#2",
+          "content": "迁移学习把在源任务上学到的知识迁移到目标任务，减少对目标领域标注数据的需求。在大模型时代，典型流程是\"预训练—微调\"：先得到通用基座，再在下游任务的小数据上微调。",
+          "source": {
+            "chunkId": "doc_026#2",
+            "documentId": "doc_026",
+            "title": "预训练与迁移学习",
+            "location": "预训练与迁移学习 / 迁移学习 / 段落 1"
+          },
+          "metadata": {
+            "chunk_index": 2,
+            "document_title": "预训练与迁移学习",
+            "document_id": "doc_026",
+            "source_location": "预训练与迁移学习 / 迁移学习 / 段落 1",
+            "token_count": 50,
+            "source_encoding": "utf-8",
+            "chunking_version": "heading-window-v1",
+            "queryOverlap": 0.625
+          },
+          "dense_score": 0.3756505250930786,
+          "keyword_score": 15.610389304401343,
+          "normalized_dense_score": 0.8280947567545479,
+          "normalized_keyword_score": 0.7109874938432171,
+          "fusion_score": 0.015726495726495725,
+          "confidence_score": 0.9235209941845407
+        },
+        {
+          "id": "doc_026#4",
+          "content": "当目标任务数据稀缺、但存在相关大规模预训练模型时，迁移学习尤为有效。它已成为自然语言处理与计算机视觉的标准实践，催生了全参微调、参数高效微调与指令微调等一系列方法。",
+          "source": {
+            "chunkId": "doc_026#4",
+            "documentId": "doc_026",
+            "title": "预训练与迁移学习",
+            "location": "预训练与迁移学习 / 适用场景 / 段落 1"
+          },
+          "metadata": {
+            "token_count": 52,
+            "document_id": "doc_026",
+            "document_title": "预训练与迁移学习",
+            "source_location": "预训练与迁移学习 / 适用场景 / 段落 1",
+            "chunking_version": "heading-window-v1",
+            "source_encoding": "utf-8",
+            "chunk_index": 4,
+            "queryOverlap": 0.5625
+          },
+          "dense_score": 0.3575485348701477,
+          "keyword_score": 15.606377684991175,
+          "normalized_dense_score": 0.7881902120005724,
+          "normalized_keyword_score": 0.7108047814729443,
+          "fusion_score": 0.015314685314685314,
+          "confidence_score": 0.891835997474915
+        },
+        {
+          "id": "doc_003#2",
+          "content": "过拟合指模型在训练集上表现很好，但在测试集上泛化能力差，本质是模型记住了训练数据中的噪声而不是学到了普适规律。这就像学生把习题册的答案背得滚瓜烂熟，一到新考卷就不会做。过拟合最典型的表现是训练误差持续下降而验证误差开始回升。\n缓解过拟合的常用方法包括正则化（如 L1、L2）、Dropout、数据增强与早停。L2 正则化通过惩罚过大的参数来限制模型复杂度，使决策边界更平滑；L1 正则化还能让部分参数稀疏归零，起到特征选择作用。Dropout 在训练时随机丢弃一部分神经元，迫使网络不依赖任何单一通路。早停在验证集指标不再提升时终止训练。交叉验证把数据轮流划分为训练与验证子集，用来更可靠地评估泛化能力、选择超参数。从偏差-方差权衡的角度看，正则化以略微增大偏差为代价显著降低方差。",
+          "source": {
+            "chunkId": "doc_003#2",
+            "documentId": "doc_003",
+            "title": "机器学习基础与大模型微调",
+            "location": "机器学习基础与大模型微调 / 第二章 过拟合与正则化 / 段落 1"
+          },
+          "metadata": {
+            "source_location": "机器学习基础与大模型微调 / 第二章 过拟合与正则化 / 段落 1",
+            "chunk_index": 2,
+            "document_id": "doc_003",
+            "document_title": "机器学习基础与大模型微调",
+            "token_count": 205,
+            "source_encoding": "utf-8",
+            "chunking_version": "heading-window-v1",
+            "queryOverlap": 0.5625
+          },
+          "dense_score": 0.37313878536224365,
+          "keyword_score": 9.635053894426846,
+          "normalized_dense_score": 0.8225578058853295,
+          "normalized_keyword_score": 0.43883612944306294,
+          "fusion_score": 0.0149375,
+          "confidence_score": 0.856316711858093
+        },
+        {
+          "id": "doc_005#4",
+          "content": "监督学习通过最小化训练集上的损失来拟合参数，但真正的目标是泛化——在测试集和真实场景中表现良好。为评估泛化能力，通常将数据划分为训练集、验证集与测试集，并使用交叉验证减少评估的偶然性。",
+          "source": {
+            "chunkId": "doc_005#4",
+            "documentId": "doc_005",
+            "title": "监督学习与分类回归",
+            "location": "监督学习与分类回归 / 训练与泛化 / 段落 1"
+          },
+          "metadata": {
+            "chunk_index": 4,
+            "source_encoding": "utf-8",
+            "source_location": "监督学习与分类回归 / 训练与泛化 / 段落 1",
+            "document_title": "监督学习与分类回归",
+            "token_count": 58,
+            "document_id": "doc_005",
+            "chunking_version": "heading-window-v1",
+            "queryOverlap": 0.4375
+          },
+          "dense_score": 0.3557562232017517,
+          "keyword_score": 0.0,
+          "normalized_dense_score": 0.784239188919476,
+          "normalized_keyword_score": 0.0,
+          "fusion_score": 0.010606060606060605,
+          "confidence_score": 0.5393467615814029
+        }
+      ]
+    },
+    {
+      "query_id": "fact_relu",
+      "query": "ReLU函数在输入大于零时输出什么",
+      "query_type": "事实查询",
+      "embedding_profile": "hash:deterministic_hash_v1:d512",
+      "collection": "kb_chunks__hash_d512__utf8_v2",
+      "candidates": [
+        {
+          "id": "doc_012#3",
+          "content": "Sigmoid 把输入压缩到 (0,1)，常用于二分类输出层表示概率，但在两端饱和、梯度趋近 0，深层网络中易梯度消失。Tanh 把输入压缩到 (-1,1)，输出零均值、收敛通常快于 Sigmoid，但同样存在饱和问题。",
+          "source": {
+            "chunkId": "doc_012#3",
+            "documentId": "doc_012",
+            "title": "激活函数详解",
+            "location": "激活函数详解 / Sigmoid 与 Tanh / 段落 1"
+          },
+          "metadata": {
+            "source_encoding": "utf-8",
+            "chunking_version": "heading-window-v1",
+            "token_count": 54,
+            "source_location": "激活函数详解 / Sigmoid 与 Tanh / 段落 1",
+            "chunk_index": 3,
+            "document_title": "激活函数详解",
+            "document_id": "doc_012",
+            "queryOverlap": 0.461538
+          },
+          "dense_score": 0.43355512619018555,
+          "keyword_score": 11.363793140639963,
+          "normalized_dense_score": 1.0,
+          "normalized_keyword_score": 0.8479077489260177,
+          "fusion_score": 0.016237314597970336,
+          "confidence_score": 0.9923953874463008
+        },
+        {
+          "id": "doc_001#1",
+          "content": "神经元是神经网络的基本计算单元。每个神经元接收若干输入，对其加权求和并加上偏置，再经过激活函数得到输出。可以把一个神经元想象成一个小小的投票委员会：每个输入意见都有自己的权重，权重大的意见更有分量；偏置相当于委员会的固有立场；激活函数则像最终拍板的裁判，决定这个信号要不要继续往下传、传多强。\n神经元的运算顺序固定为三步：先加权求和，再加上偏置，最后通过激活函数。这个顺序不能颠倒，因为激活必须作用在「加权和加偏置」的整体结果上，提前激活会破坏非线性表达能力。\n前向传播指信号从输入层逐层经过隐藏层传递到输出层的过程。给定输入向量 x、权重矩阵 W 与偏置 b，单层的计算为 z = Wx + b，随后通过激活函数 a = f(z) 得到该层输出。多层网络就是把这个过程逐层串联：上一层的输出作为下一层的输入，像流水线一样层层加工，把原始输入逐步变换成更有用的表示。\n常见激活函数包括 Sigmoid、Tanh 与 ReLU。Sigmoid 把任意实数压缩到 0 到 1 之间，常用于输出概率；Tanh 输出零均值，范围在 -1 到 1 之间；ReLU 即修正线性单元，定义为 max(0, x)，计算极快。ReLU 在正区间梯度恒为 1，能有效缓解深层网络的梯度消失问题，是现代网络的默认选择。如果没有激活函数，多层线性变换叠加之后仍然等价于一个线性变换，网络将无法拟合复杂的非线性关系——这正是激活函数存在的根本原因。\n用代码表达单个神经元的前向计算非常简单：z = np.dot(x, w) + b，再取 np.maximum(0, z) 即得 ReLU 激活后的输出。输入与权重相乘求和，加偏置得到 z，再经激活函数得到本层输出。",
+          "source": {
+            "chunkId": "doc_001#1",
+            "documentId": "doc_001",
+            "title": "神经网络与反向传播",
+            "location": "神经网络基础与反向传播算法 / 第一章 神经元与前向传播 / 段落 1"
+          },
+          "metadata": {
+            "source_encoding": "utf-8",
+            "chunking_version": "heading-window-v1",
+            "document_title": "神经网络与反向传播",
+            "source_location": "神经网络基础与反向传播算法 / 第一章 神经元与前向传播 / 段落 1",
+            "document_id": "doc_001",
+            "chunk_index": 1,
+            "token_count": 397,
+            "queryOverlap": 0.769231
+          },
+          "dense_score": 0.3512852191925049,
+          "keyword_score": 13.4021574340294,
+          "normalized_dense_score": 0.8102434914779633,
+          "normalized_keyword_score": 1.0,
+          "fusion_score": 0.016208355367530406,
+          "confidence_score": 0.9790531210121698
+        },
+        {
+          "id": "doc_004#4",
+          "content": "一个典型的 CNN 由「卷积 → 激活 → 池化」模块反复堆叠，最后接全连接层输出分类结果。LeNet 是 CNN 的开山之作，用于手写数字识别，奠定了卷积-池化-全连接的基本范式。AlexNet 在 2012 年 ImageNet 竞赛中以巨大优势夺冠，引爆了深度学习浪潮，其贡献包括使用 ReLU 激活、Dropout 正则与 GPU 训练。VGG 用统一的 3×3 小卷积核堆出 16-19 层，结构规整、易于迁移。\nResNet（残差网络）通过残差连接（shortcut）让输入可以跨层直达输出，使梯度在反向传播时拥有恒等通路，成功训练了上百层的网络，解决了深层网络的退化问题。残差连接此后成为几乎所有深层架构（包括 Transformer）的标配组件。",
+          "source": {
+            "chunkId": "doc_004#4",
+            "documentId": "doc_004",
+            "title": "CNN架构与卷积网络",
+            "location": "CNN 架构与卷积神经网络 / 第四章 经典网络结构 / 段落 1"
+          },
+          "metadata": {
+            "source_encoding": "utf-8",
+            "chunking_version": "heading-window-v1",
+            "chunk_index": 4,
+            "document_title": "CNN架构与卷积网络",
+            "source_location": "CNN 架构与卷积神经网络 / 第四章 经典网络结构 / 段落 1",
+            "document_id": "doc_004",
+            "token_count": 164,
+            "queryOverlap": 0.692308
+          },
+          "dense_score": 0.21417635679244995,
+          "keyword_score": 8.768432236569803,
+          "normalized_dense_score": 0.4940002870557647,
+          "normalized_keyword_score": 0.6542552779081588,
+          "fusion_score": 0.013260073260073259,
+          "confidence_score": 0.7294547176916004
+        },
+        {
+          "id": "doc_004#1",
+          "content": "卷积层的主要作用是提取局部空间特征。卷积核（也称滤波器）是一个小的权重矩阵，它在输入图像上按一定步长滑动，每停留一处就与覆盖区域做逐元素相乘再求和，得到输出特征图上的一个值。可以把卷积核想象成一只拿着小手电筒的眼睛：它一格一格扫过整张图片，每次只看一小块局部区域，寻找边缘、纹理、角点这类局部模式。\n权重共享指同一个卷积核在图像所有位置使用同一组参数：无论猫耳朵出现在图片左上角还是右下角，都由同一个「猫耳检测器」负责识别。这与全连接层每个连接都有独立参数形成鲜明对比，使参数量从百万级骤降到几百个，也让特征检测天然具备平移等变性。\n卷积的两个关键超参数是步长（stride）与填充（padding）。步长控制卷积核每次滑动的距离，步长越大输出特征图越小；填充在输入边缘补零，使边缘像素也能被充分覆盖。输出特征图的边长可由公式计算：output = (input − kernel + 2 × padding) / stride + 1。例如 32×32 的输入、5×5 的卷积核、填充 2、步长 1，输出仍为 32×32。\n一个卷积层通常包含多个卷积核，每个卷积核产生一张特征图（feature map），不同特征图对应不同类型的局部特征。卷积之后一般接 ReLU 激活引入非线性。",
+          "source": {
+            "chunkId": "doc_004#1",
+            "documentId": "doc_004",
+            "title": "CNN架构与卷积网络",
+            "location": "CNN 架构与卷积神经网络 / 第一章 卷积层 / 段落 1"
+          },
+          "metadata": {
+            "chunking_version": "heading-window-v1",
+            "chunk_index": 1,
+            "document_title": "CNN架构与卷积网络",
+            "document_id": "doc_004",
+            "source_encoding": "utf-8",
+            "source_location": "CNN 架构与卷积神经网络 / 第一章 卷积层 / 段落 1",
+            "token_count": 299,
+            "queryOverlap": 0.615385
+          },
+          "dense_score": 0.22338658571243286,
+          "keyword_score": 8.10276982184005,
+          "normalized_dense_score": 0.5152437884322026,
+          "normalized_keyword_score": 0.6045869750243583,
+          "fusion_score": 0.01309090909090909,
+          "confidence_score": 0.7175808035426362
+        },
+        {
+          "id": "doc_002#1",
+          "content": "自注意力（Self-Attention）让序列中的每个位置都能直接关注序列中的其他所有位置，从而捕捉长距离依赖关系。可以把自注意力想象成一场圆桌会议：每个词同时是提问者和回答者，它环顾整句话里的所有词，决定该重点听谁的发言，再把听到的信息按重要性加权汇总成自己的新理解。\n对于输入序列，模型为每个位置生成查询向量 Q（Query）、键向量 K（Key）与值向量 V（Value）。Q 表示「我在找什么」，K 表示「我能提供什么线索」，V 表示「我实际携带的内容」。注意力权重由 Q 与 K 的点积经过缩放和 Softmax 归一化得到，最终输出是 V 的加权求和。\n这就是缩放点积注意力（Scaled Dot-Product Attention），公式为 Attention(Q, K, V) = softmax(QK^T / √d_k) V。缩放因子为键向量维度 d_k 的平方根，用于防止点积过大导致 Softmax 进入饱和区、梯度过小。点积越大表示查询与键越匹配，经 Softmax 归一化后得到一组和为 1 的注意力权重。\n自注意力的计算复杂度与序列长度的平方成正比（O(n²·d)），这是 Transformer 处理长文本时的主要瓶颈，也催生了稀疏注意力、线性注意力与 FlashAttention 等工程优化方向。",
+          "source": {
+            "chunkId": "doc_002#1",
+            "documentId": "doc_002",
+            "title": "Transformer与注意力机制",
+            "location": "Transformer 架构与注意力机制 / 第一章 自注意力机制 / 段落 1"
+          },
+          "metadata": {
+            "document_title": "Transformer与注意力机制",
+            "source_encoding": "utf-8",
+            "token_count": 277,
+            "document_id": "doc_002",
+            "chunk_index": 1,
+            "source_location": "Transformer 架构与注意力机制 / 第一章 自注意力机制 / 段落 1",
+            "chunking_version": "heading-window-v1",
+            "queryOverlap": 0.692308
+          },
+          "dense_score": 0.0,
+          "keyword_score": 11.619133248853624,
+          "normalized_dense_score": 0.0,
+          "normalized_keyword_score": 0.866959913435392,
+          "fusion_score": 0.004838709677419355,
+          "confidence_score": 0.11745546037493848
+        },
+        {
+          "id": "doc_001#4",
+          "content": "深层网络在训练时可能出现梯度消失或梯度爆炸。梯度消失指反向传播过程中梯度逐层衰减，导致靠近输入层的参数几乎无法更新；梯度爆炸则相反，梯度逐层放大导致训练不稳定。Sigmoid 与 Tanh 在饱和区导数趋近于零，是深层网络梯度消失的常见诱因；ReLU 在正区间导数恒为 1，梯度不会被反复压缩，因此比 Sigmoid 更不易梯度消失。\n批归一化（BatchNorm）通过把每层输入规范到稳定的分布来加速收敛并缓解梯度问题；残差连接为梯度提供了跨层直达通路；合适的权重初始化（如 Xavier、He 初始化）也能显著改善训练稳定性。\n常见优化器包括 SGD、带动量的 SGD、RMSprop 与 Adam。SGD 沿小批量梯度方向直接更新；动量法累积历史梯度方向，像滚下山坡的球一样冲过小的沟壑；RMSprop 按梯度幅度自适应缩放各参数的学习率；Adam 同时结合了动量与自适应学习率，是工程实践中最常用的默认优化器。工程上还常配合学习率调度（如预热、余弦退火）与梯度裁剪来稳定大模型训练。",
+          "source": {
+            "chunkId": "doc_001#4",
+            "documentId": "doc_001",
+            "title": "神经网络与反向传播",
+            "location": "神经网络基础与反向传播算法 / 第四章 梯度问题与优化 / 段落 1"
+          },
+          "metadata": {
+            "chunking_version": "heading-window-v1",
+            "token_count": 246,
+            "source_location": "神经网络基础与反向传播算法 / 第四章 梯度问题与优化 / 段落 1",
+            "document_id": "doc_001",
+            "document_title": "神经网络与反向传播",
+            "chunk_index": 4,
+            "source_encoding": "utf-8",
+            "queryOverlap": 0.769231
+          },
+          "dense_score": 0.0,
+          "keyword_score": 8.530439380383633,
+          "normalized_dense_score": 0.0,
+          "normalized_keyword_score": 0.6364974760499386,
+          "fusion_score": 0.004166666666666667,
+          "confidence_score": 0.06018698992346279
+        }
+      ]
+    },
+    {
+      "query_id": "fact_dropout",
+      "query": "Dropout训练时会随机做什么",
+      "query_type": "事实查询",
+      "embedding_profile": "hash:deterministic_hash_v1:d512",
+      "collection": "kb_chunks__hash_d512__utf8_v2",
+      "candidates": [
+        {
+          "id": "doc_008#3",
+          "content": "早停（early stopping）在验证集损失不再下降时停止训练，避免过度拟合。数据增强通过对训练样本做变换扩充数据多样性。交叉验证帮助更可靠地评估泛化能力。对神经网络，Dropout 随机丢弃神经元也是常用正则手段。",
+          "source": {
+            "chunkId": "doc_008#3",
+            "documentId": "doc_008",
+            "title": "过拟合与正则化",
+            "location": "过拟合与正则化 / 其他缓解手段 / 段落 1"
+          },
+          "metadata": {
+            "source_encoding": "utf-8",
+            "token_count": 60,
+            "chunk_index": 3,
+            "chunking_version": "heading-window-v1",
+            "document_title": "过拟合与正则化",
+            "document_id": "doc_008",
+            "source_location": "过拟合与正则化 / 其他缓解手段 / 段落 1",
+            "queryOverlap": 0.7
+          },
+          "dense_score": 0.2587318420410156,
+          "keyword_score": 13.611571259517145,
+          "normalized_dense_score": 1.0,
+          "normalized_keyword_score": 1.0,
+          "fusion_score": 0.016393442622950817,
+          "confidence_score": 1.0
+        },
+        {
+          "id": "doc_016#2",
+          "content": "训练阶段随机丢弃神经元；推理阶段保留全部神经元，但需按保留概率缩放激活（或在训练时做反向缩放），以保证期望输出一致。常用丢弃概率在 0.2 到 0.5 之间。",
+          "source": {
+            "chunkId": "doc_016#2",
+            "documentId": "doc_016",
+            "title": "Dropout与正则化技术",
+            "location": "Dropout 与正则化技术 / 训练与推理差异 / 段落 1"
+          },
+          "metadata": {
+            "token_count": 45,
+            "chunking_version": "heading-window-v1",
+            "document_id": "doc_016",
+            "document_title": "Dropout与正则化技术",
+            "chunk_index": 2,
+            "source_encoding": "utf-8",
+            "source_location": "Dropout 与正则化技术 / 训练与推理差异 / 段落 1",
+            "queryOverlap": 0.6
+          },
+          "dense_score": 0.24343228340148926,
+          "keyword_score": 11.569951229895644,
+          "normalized_dense_score": 0.940867121267969,
+          "normalized_keyword_score": 0.8500084971311441,
+          "fusion_score": 0.015949820788530467,
+          "confidence_score": 0.9567630953435549
+        },
+        {
+          "id": "doc_001#5",
+          "content": "训练一个神经网络的典型流程是：准备数据并划分训练集与验证集，前向传播计算预测与损失，反向传播计算梯度，优化器更新参数，如此循环若干轮（epoch）。为防止过拟合，可使用 Dropout 在训练时随机丢弃部分神经元、用 L2 正则惩罚过大权重、或在验证集指标不再提升时早停。批大小（batch size）影响梯度估计的方差与显存占用，需要在训练速度与稳定性之间权衡。",
+          "source": {
+            "chunkId": "doc_001#5",
+            "documentId": "doc_001",
+            "title": "神经网络与反向传播",
+            "location": "神经网络基础与反向传播算法 / 第五章 训练实践要点 / 段落 1"
+          },
+          "metadata": {
+            "source_location": "神经网络基础与反向传播算法 / 第五章 训练实践要点 / 段落 1",
+            "document_id": "doc_001",
+            "document_title": "神经网络与反向传播",
+            "chunking_version": "heading-window-v1",
+            "source_encoding": "utf-8",
+            "token_count": 103,
+            "chunk_index": 5,
+            "queryOverlap": 0.6
+          },
+          "dense_score": 0.24880671501159668,
+          "keyword_score": 10.382886743294964,
+          "normalized_dense_score": 0.961639329155916,
+          "normalized_keyword_score": 0.7627985443660885,
+          "fusion_score": 0.015905707196029774,
+          "confidence_score": 0.9515141267324618
+        },
+        {
+          "id": "doc_003#2",
+          "content": "过拟合指模型在训练集上表现很好，但在测试集上泛化能力差，本质是模型记住了训练数据中的噪声而不是学到了普适规律。这就像学生把习题册的答案背得滚瓜烂熟，一到新考卷就不会做。过拟合最典型的表现是训练误差持续下降而验证误差开始回升。\n缓解过拟合的常用方法包括正则化（如 L1、L2）、Dropout、数据增强与早停。L2 正则化通过惩罚过大的参数来限制模型复杂度，使决策边界更平滑；L1 正则化还能让部分参数稀疏归零，起到特征选择作用。Dropout 在训练时随机丢弃一部分神经元，迫使网络不依赖任何单一通路。早停在验证集指标不再提升时终止训练。交叉验证把数据轮流划分为训练与验证子集，用来更可靠地评估泛化能力、选择超参数。从偏差-方差权衡的角度看，正则化以略微增大偏差为代价显著降低方差。",
+          "source": {
+            "chunkId": "doc_003#2",
+            "documentId": "doc_003",
+            "title": "机器学习基础与大模型微调",
+            "location": "机器学习基础与大模型微调 / 第二章 过拟合与正则化 / 段落 1"
+          },
+          "metadata": {
+            "document_id": "doc_003",
+            "token_count": 205,
+            "document_title": "机器学习基础与大模型微调",
+            "source_encoding": "utf-8",
+            "chunking_version": "heading-window-v1",
+            "source_location": "机器学习基础与大模型微调 / 第二章 过拟合与正则化 / 段落 1",
+            "chunk_index": 2,
+            "queryOverlap": 0.8
+          },
+          "dense_score": 0.24123799800872803,
+          "keyword_score": 10.767175103306576,
+          "normalized_dense_score": 0.9323861960928861,
+          "normalized_keyword_score": 0.7910310204472697,
+          "fusion_score": 0.015625,
+          "confidence_score": 0.9311289064501288
+        },
+        {
+          "id": "doc_016#1",
+          "content": "Dropout 是一种针对神经网络的正则化技术。训练时以概率 p 随机将一部分神经元的输出置零，使网络不能过度依赖某些特定神经元，从而学到更鲁棒、更冗余的特征表示。它相当于在训练中集成了大量共享权重的子网络。",
+          "source": {
+            "chunkId": "doc_016#1",
+            "documentId": "doc_016",
+            "title": "Dropout与正则化技术",
+            "location": "Dropout 与正则化技术 / Dropout 的原理 / 段落 1"
+          },
+          "metadata": {
+            "chunk_index": 1,
+            "chunking_version": "heading-window-v1",
+            "source_location": "Dropout 与正则化技术 / Dropout 的原理 / 段落 1",
+            "document_title": "Dropout与正则化技术",
+            "source_encoding": "utf-8",
+            "document_id": "doc_016",
+            "token_count": 62,
+            "queryOverlap": 0.6
+          },
+          "dense_score": 0.23799872398376465,
+          "keyword_score": 11.225198065439393,
+          "normalized_dense_score": 0.9198663840766679,
+          "normalized_keyword_score": 0.8246805494693192,
+          "fusion_score": 0.015367965367965367,
+          "confidence_score": 0.9142793424827593
+        }
+      ]
+    },
+    {
+      "query_id": "fact_position_encoding",
+      "query": "Transformer为什么需要位置编码",
+      "query_type": "事实查询",
+      "embedding_profile": "hash:deterministic_hash_v1:d512",
+      "collection": "kb_chunks__hash_d512__utf8_v2",
+      "candidates": [
+        {
+          "id": "doc_002#3",
+          "content": "由于自注意力本身对输入顺序不敏感——打乱词序得到的注意力结果完全相同——Transformer 需要通过位置编码（Positional Encoding）为模型注入序列的位置信息。原始论文采用不同频率的正弦与余弦函数生成位置编码，使模型能够推断相对位置关系；后续工作提出了可学习位置编码与旋转位置编码（RoPE）等改进方案，RoPE 已成为主流开源大模型的标配。",
+          "source": {
+            "chunkId": "doc_002#3",
+            "documentId": "doc_002",
+            "title": "Transformer与注意力机制",
+            "location": "Transformer 架构与注意力机制 / 第三章 位置编码 / 段落 1"
+          },
+          "metadata": {
+            "document_id": "doc_002",
+            "source_location": "Transformer 架构与注意力机制 / 第三章 位置编码 / 段落 1",
+            "chunking_version": "heading-window-v1",
+            "document_title": "Transformer与注意力机制",
+            "source_encoding": "utf-8",
+            "token_count": 98,
+            "chunk_index": 3,
+            "queryOverlap": 0.8
+          },
+          "dense_score": 0.507447361946106,
+          "keyword_score": 20.220392755606852,
+          "normalized_dense_score": 1.0,
+          "normalized_keyword_score": 1.0,
+          "fusion_score": 0.016393442622950817,
+          "confidence_score": 1.0
+        },
+        {
+          "id": "doc_024#2",
+          "content": "原始 Transformer 使用正弦位置编码：用不同频率的正弦与余弦函数为每个位置生成一个向量，加到词嵌入上。这种编码无需训练、可外推到更长序列，且任意两个位置的相对关系可由三角恒等式线性表示。",
+          "source": {
+            "chunkId": "doc_024#2",
+            "documentId": "doc_024",
+            "title": "位置编码",
+            "location": "位置编码 / 正弦位置编码 / 段落 1"
+          },
+          "metadata": {
+            "source_encoding": "utf-8",
+            "document_title": "位置编码",
+            "source_location": "位置编码 / 正弦位置编码 / 段落 1",
+            "chunk_index": 2,
+            "token_count": 57,
+            "chunking_version": "heading-window-v1",
+            "document_id": "doc_024",
+            "queryOverlap": 0.7
+          },
+          "dense_score": 0.405095636844635,
+          "keyword_score": 18.30620081968779,
+          "normalized_dense_score": 0.7983008036361783,
+          "normalized_keyword_score": 0.9053335927222144,
+          "fusion_score": 0.016129032258064516,
+          "confidence_score": 0.9572538519910131
+        },
+        {
+          "id": "doc_024#1",
+          "content": "自注意力对输入是置换不变的：打乱词序，注意力的计算结果集合不变。但语言中顺序至关重要。位置编码为模型注入序列的位置信息，使其能区分\"猫追狗\"和\"狗追猫\"。",
+          "source": {
+            "chunkId": "doc_024#1",
+            "documentId": "doc_024",
+            "title": "位置编码",
+            "location": "位置编码 / 为什么需要位置编码 / 段落 1"
+          },
+          "metadata": {
+            "token_count": 47,
+            "source_encoding": "utf-8",
+            "chunking_version": "heading-window-v1",
+            "document_id": "doc_024",
+            "chunk_index": 1,
+            "document_title": "位置编码",
+            "source_location": "位置编码 / 为什么需要位置编码 / 段落 1",
+            "queryOverlap": 0.6
+          },
+          "dense_score": 0.28867512941360474,
+          "keyword_score": 13.91999185082697,
+          "normalized_dense_score": 0.5688769930865535,
+          "normalized_keyword_score": 0.6884135248543645,
+          "fusion_score": 0.015456730769230768,
+          "confidence_score": 0.8780973004341516
+        },
+        {
+          "id": "doc_002#1",
+          "content": "自注意力（Self-Attention）让序列中的每个位置都能直接关注序列中的其他所有位置，从而捕捉长距离依赖关系。可以把自注意力想象成一场圆桌会议：每个词同时是提问者和回答者，它环顾整句话里的所有词，决定该重点听谁的发言，再把听到的信息按重要性加权汇总成自己的新理解。\n对于输入序列，模型为每个位置生成查询向量 Q（Query）、键向量 K（Key）与值向量 V（Value）。Q 表示「我在找什么」，K 表示「我能提供什么线索」，V 表示「我实际携带的内容」。注意力权重由 Q 与 K 的点积经过缩放和 Softmax 归一化得到，最终输出是 V 的加权求和。\n这就是缩放点积注意力（Scaled Dot-Product Attention），公式为 Attention(Q, K, V) = softmax(QK^T / √d_k) V。缩放因子为键向量维度 d_k 的平方根，用于防止点积过大导致 Softmax 进入饱和区、梯度过小。点积越大表示查询与键越匹配，经 Softmax 归一化后得到一组和为 1 的注意力权重。\n自注意力的计算复杂度与序列长度的平方成正比（O(n²·d)），这是 Transformer 处理长文本时的主要瓶颈，也催生了稀疏注意力、线性注意力与 FlashAttention 等工程优化方向。",
+          "source": {
+            "chunkId": "doc_002#1",
+            "documentId": "doc_002",
+            "title": "Transformer与注意力机制",
+            "location": "Transformer 架构与注意力机制 / 第一章 自注意力机制 / 段落 1"
+          },
+          "metadata": {
+            "chunking_version": "heading-window-v1",
+            "token_count": 277,
+            "source_location": "Transformer 架构与注意力机制 / 第一章 自注意力机制 / 段落 1",
+            "chunk_index": 1,
+            "document_title": "Transformer与注意力机制",
+            "source_encoding": "utf-8",
+            "document_id": "doc_002",
+            "queryOverlap": 0.7
+          },
+          "dense_score": 0.20669198036193848,
+          "keyword_score": 13.008992114465448,
+          "normalized_dense_score": 0.4073170852031948,
+          "normalized_keyword_score": 0.6433600114349027,
+          "fusion_score": 0.014690382081686429,
+          "confidence_score": 0.8079739852683393
+        }
+      ]
+    },
+    {
+      "query_id": "fact_receptive_field",
+      "query": "CNN感受野表示什么范围",
+      "query_type": "事实查询",
+      "embedding_profile": "hash:deterministic_hash_v1:d512",
+      "collection": "kb_chunks__hash_d512__utf8_v2",
+      "candidates": [
+        {
+          "id": "doc_020#1",
+          "content": "感受野指输出特征图上一个神经元所\"看到\"的输入区域大小。浅层神经元感受野小、只感知局部边缘纹理；随着卷积与池化层叠加，深层神经元感受野逐步扩大，能够整合更大范围的上下文，感知物体的部件乃至整体。",
+          "source": {
+            "chunkId": "doc_020#1",
+            "documentId": "doc_020",
+            "title": "感受野与权重共享",
+            "location": "感受野与权重共享 / 感受野 / 段落 1"
+          },
+          "metadata": {
+            "document_id": "doc_020",
+            "source_encoding": "utf-8",
+            "token_count": 60,
+            "chunking_version": "heading-window-v1",
+            "chunk_index": 1,
+            "source_location": "感受野与权重共享 / 感受野 / 段落 1",
+            "document_title": "感受野与权重共享",
+            "queryOverlap": 0.5
+          },
+          "dense_score": 0.39000678062438965,
+          "keyword_score": 22.612467190752813,
+          "normalized_dense_score": 1.0,
+          "normalized_keyword_score": 1.0,
+          "fusion_score": 0.016393442622950817,
+          "confidence_score": 1.0
+        }
+      ]
+    },
+    {
+      "query_id": "fact_rlhf",
+      "query": "RLHF中的奖励模型依据什么训练",
+      "query_type": "事实查询",
+      "embedding_profile": "hash:deterministic_hash_v1:d512",
+      "collection": "kb_chunks__hash_d512__utf8_v2",
+      "candidates": [
+        {
+          "id": "doc_003#4",
+          "content": "指令微调（Instruction Tuning / SFT，监督微调）使用「指令-响应」格式的样本训练模型，使其更好地理解并遵循自然语言指令，从「续写文本的语言模型」转变为「听得懂要求的助手」。指令数据的多样性与质量直接决定模型的泛化表现。\n在此基础上，对齐（Alignment）让模型输出符合人类偏好与价值观。基于人类反馈的强化学习（RLHF）先用人类对回答的排序训练奖励模型，再用强化学习优化生成策略；DPO（直接偏好优化）则跳过显式奖励模型，直接在偏好对上优化，流程更简单、训练更稳定。预训练、指令微调、对齐三个阶段串起来，构成了现代对话式大模型的完整训练管线。",
+          "source": {
+            "chunkId": "doc_003#4",
+            "documentId": "doc_003",
+            "title": "机器学习基础与大模型微调",
+            "location": "机器学习基础与大模型微调 / 第四章 指令微调与对齐 / 段落 1"
+          },
+          "metadata": {
+            "source_encoding": "utf-8",
+            "chunking_version": "heading-window-v1",
+            "token_count": 158,
+            "chunk_index": 4,
+            "document_title": "机器学习基础与大模型微调",
+            "document_id": "doc_003",
+            "source_location": "机器学习基础与大模型微调 / 第四章 指令微调与对齐 / 段落 1",
+            "queryOverlap": 0.692308
+          },
+          "dense_score": 0.4517172574996948,
+          "keyword_score": 16.851521629906806,
+          "normalized_dense_score": 1.0,
+          "normalized_keyword_score": 0.8760729864172969,
+          "fusion_score": 0.01631411951348493,
+          "confidence_score": 0.9938036493208648
+        },
+        {
+          "id": "doc_030#2",
+          "content": "基于人类反馈的强化学习（RLHF）通常分三步：先做监督微调得到初始模型；再收集人类对多个候选回答的偏好排序，训练一个奖励模型来预测人类偏好；最后用强化学习（如 PPO）优化语言模型，使其生成的回答获得更高奖励，同时用 KL 惩罚约束不要偏离初始模型太远。",
+          "source": {
+            "chunkId": "doc_030#2",
+            "documentId": "doc_030",
+            "title": "RLHF与偏好对齐",
+            "location": "RLHF 与偏好对齐 / RLHF 流程 / 段落 1"
+          },
+          "metadata": {
+            "token_count": 75,
+            "document_id": "doc_030",
+            "chunk_index": 2,
+            "document_title": "RLHF与偏好对齐",
+            "source_location": "RLHF 与偏好对齐 / RLHF 流程 / 段落 1",
+            "chunking_version": "heading-window-v1",
+            "source_encoding": "utf-8",
+            "queryOverlap": 0.615385
+          },
+          "dense_score": 0.4149676561355591,
+          "keyword_score": 19.235294194860582,
+          "normalized_dense_score": 0.9186446814816223,
+          "normalized_keyword_score": 1.0,
+          "fusion_score": 0.016029143897996354,
+          "confidence_score": 0.9725850213946267
+        },
+        {
+          "id": "doc_026#1",
+          "content": "预训练指在大规模无标注语料上，用自监督目标训练一个通用基础模型。语言模型常用的预训练目标包括自回归地预测下一个词（GPT 类）与掩码语言建模——遮住部分词让模型还原（BERT 类）。预训练让模型学到广泛的语言与世界知识。",
+          "source": {
+            "chunkId": "doc_026#1",
+            "documentId": "doc_026",
+            "title": "预训练与迁移学习",
+            "location": "预训练与迁移学习 / 预训练范式 / 段落 1"
+          },
+          "metadata": {
+            "source_encoding": "utf-8",
+            "source_location": "预训练与迁移学习 / 预训练范式 / 段落 1",
+            "chunk_index": 1,
+            "document_id": "doc_026",
+            "token_count": 65,
+            "chunking_version": "heading-window-v1",
+            "document_title": "预训练与迁移学习",
+            "queryOverlap": 0.384615
+          },
+          "dense_score": 0.423392653465271,
+          "keyword_score": 7.205582868797831,
+          "normalized_dense_score": 0.9372957230122142,
+          "normalized_keyword_score": 0.37460216598730617,
+          "fusion_score": 0.015767934520943667,
+          "confidence_score": 0.9255086437084439
+        },
+        {
+          "id": "doc_030#4",
+          "content": "偏好对齐让大模型从\"能续写\"进化为\"好用、可信赖的助手\"。它与预训练、指令微调共同构成现代大模型的训练三部曲，是模型落地应用的重要保障。",
+          "source": {
+            "chunkId": "doc_030#4",
+            "documentId": "doc_030",
+            "title": "RLHF与偏好对齐",
+            "location": "RLHF 与偏好对齐 / 对齐的意义 / 段落 1"
+          },
+          "metadata": {
+            "source_location": "RLHF 与偏好对齐 / 对齐的意义 / 段落 1",
+            "chunking_version": "heading-window-v1",
+            "document_id": "doc_030",
+            "token_count": 41,
+            "chunk_index": 4,
+            "document_title": "RLHF与偏好对齐",
+            "source_encoding": "utf-8",
+            "queryOverlap": 0.384615
+          },
+          "dense_score": 0.40703868865966797,
+          "keyword_score": 7.084174971975089,
+          "normalized_dense_score": 0.9010917380324859,
+          "normalized_keyword_score": 0.36829044048974763,
+          "fusion_score": 0.015349264705882352,
+          "confidence_score": 0.8932484025147459
+        },
+        {
+          "id": "doc_008#1",
+          "content": "过拟合指模型在训练集上表现很好、但在测试集上表现明显变差，原因是模型记住了训练数据中的噪声而非普遍规律。欠拟合则相反，模型过于简单、连训练集都拟合不好。两者的平衡由偏差-方差权衡刻画。",
+          "source": {
+            "chunkId": "doc_008#1",
+            "documentId": "doc_008",
+            "title": "过拟合与正则化",
+            "location": "过拟合与正则化 / 过拟合与欠拟合 / 段落 1"
+          },
+          "metadata": {
+            "token_count": 58,
+            "document_title": "过拟合与正则化",
+            "chunking_version": "heading-window-v1",
+            "document_id": "doc_008",
+            "chunk_index": 1,
+            "source_encoding": "utf-8",
+            "source_location": "过拟合与正则化 / 过拟合与欠拟合 / 段落 1",
+            "queryOverlap": 0.538462
+          },
+          "dense_score": 0.35303664207458496,
+          "keyword_score": 7.855595814546043,
+          "normalized_dense_score": 0.7815434017922671,
+          "normalized_keyword_score": 0.4083948878018697,
+          "fusion_score": 0.015314685314685314,
+          "confidence_score": 0.8809593927424959
+        },
+        {
+          "id": "doc_003#1",
+          "content": "机器学习的本质是让计算机从数据中自动学习规律，而不是依靠人工编写规则。机器学习主要分为监督学习、无监督学习与强化学习。\n监督学习使用带标签的数据训练模型，就像学生做带标准答案的练习题：模型给出预测，与标准答案对照，错了就修正。典型任务包括分类与回归。分类预测离散的类别标签，例如判断一封邮件是否为垃圾邮件、识别图片中的物体类别；回归预测连续的数值，例如预测房价或气温。\n无监督学习从无标签数据中发现结构，像在没有答案的情况下自己整理笔记。典型任务包括聚类与降维：聚类把相似的样本自动分组，例如把用户按行为习惯分群；降维在尽量保留信息的前提下压缩特征维度，便于可视化与后续建模。强化学习则让智能体在与环境的交互中通过奖励信号学习策略。\n特征是模型观察世界的窗口。特征工程指从原始数据中构造、选择对预测有用的输入变量，特征的质量往往比模型的选择更能决定效果上限。损失函数衡量预测与真实目标的差距，是模型优化的方向盘：回归常用均方误差，分类常用交叉熵。训练过程就是不断调整参数让损失变小。",
+          "source": {
+            "chunkId": "doc_003#1",
+            "documentId": "doc_003",
+            "title": "机器学习基础与大模型微调",
+            "location": "机器学习基础与大模型微调 / 第一章 机器学习范式 / 段落 1"
+          },
+          "metadata": {
+            "document_title": "机器学习基础与大模型微调",
+            "chunk_index": 1,
+            "chunking_version": "heading-window-v1",
+            "document_id": "doc_003",
+            "token_count": 279,
+            "source_location": "机器学习基础与大模型微调 / 第一章 机器学习范式 / 段落 1",
+            "source_encoding": "utf-8",
+            "queryOverlap": 0.769231
+          },
+          "dense_score": 0.3296183943748474,
+          "keyword_score": 9.318328166308785,
+          "normalized_dense_score": 0.7297006897618254,
+          "normalized_keyword_score": 0.48443907703779854,
+          "fusion_score": 0.015063145809414464,
+          "confidence_score": 0.8625599364077994
+        }
+      ]
+    },
+    {
+      "query_id": "synthesis_mlp_training",
+      "query": "综合说明多层感知机从前向传播到反向传播和优化的过程",
+      "query_type": "跨段落综合",
+      "embedding_profile": "hash:deterministic_hash_v1:d512",
+      "collection": "kb_chunks__hash_d512__utf8_v2",
+      "candidates": [
+        {
+          "id": "doc_001#3",
+          "content": "反向传播（Backpropagation）是训练神经网络的核心算法。它的核心作用是高效地计算损失函数对网络中每一个参数的梯度。\n反向传播通过链式法则，将损失对输出层的误差自顶向下逐层传播，计算损失对各层权重与偏置的偏导数。具体而言，先计算输出层的误差项，再利用链式法则把误差反向传播到前一层，每一层的梯度等于本层误差与该层输入的外积。直观地说，反向传播就是在追责：输出错了多少，按各条路径上的「责任比例」（权重）把误差分摊回每一个参数，让每个参数知道自己该朝哪个方向修正。\n得到梯度之后，使用梯度下降法更新参数：W ← W − η·∂L/∂W，其中 η 为学习率。学习率控制每一步更新的幅度：太大容易在最优点附近来回震荡甚至发散，太小则收敛缓慢。网络利用梯度沿损失下降最快的方向更新权重，一轮一轮迭代，损失逐渐降低。\n反向传播的关键在于复用前向传播缓存的中间结果，从而避免重复计算，使梯度计算的复杂度与前向传播同阶。计算图视角下，前向传播沿图的方向计算每个节点的值，反向传播沿相反方向应用链式法则累积梯度，这也是现代深度学习框架自动求导的实现基础。\n如果没有反向传播，我们就无法在深层网络中高效地求解梯度，深度学习的大规模训练也就无从谈起。因此反向传播被视为连接网络结构与优化算法的桥梁。神经元、前向传播、激活、反向传播更新，构成了神经网络学习的完整闭环。",
+          "source": {
+            "chunkId": "doc_001#3",
+            "documentId": "doc_001",
+            "title": "神经网络与反向传播",
+            "location": "神经网络基础与反向传播算法 / 第三章 反向传播算法 / 段落 1"
+          },
+          "metadata": {
+            "document_title": "神经网络与反向传播",
+            "source_encoding": "utf-8",
+            "source_location": "神经网络基础与反向传播算法 / 第三章 反向传播算法 / 段落 1",
+            "chunking_version": "heading-window-v1",
+            "document_id": "doc_001",
+            "token_count": 350,
+            "chunk_index": 3,
+            "queryOverlap": 0.681818
+          },
+          "dense_score": 0.5188526511192322,
+          "keyword_score": 32.376806592523366,
+          "normalized_dense_score": 1.0,
+          "normalized_keyword_score": 0.9390614963148066,
+          "fusion_score": 0.01631411951348493,
+          "confidence_score": 0.9969530748157402
+        },
+        {
+          "id": "doc_013#4",
+          "content": "反向传播只负责求梯度，参数更新由优化器完成：w ← w − η·∂L/∂w，其中 η 是学习率。前向传播、反向传播、参数更新三步循环往复，构成神经网络的训练过程。梯度消失与梯度爆炸是深层网络反向传播的常见难题。",
+          "source": {
+            "chunkId": "doc_013#4",
+            "documentId": "doc_013",
+            "title": "反向传播与链式法则",
+            "location": "反向传播与链式法则 / 与梯度下降的配合 / 段落 1"
+          },
+          "metadata": {
+            "source_encoding": "utf-8",
+            "document_title": "反向传播与链式法则",
+            "document_id": "doc_013",
+            "token_count": 58,
+            "chunk_index": 4,
+            "chunking_version": "heading-window-v1",
+            "source_location": "反向传播与链式法则 / 与梯度下降的配合 / 段落 1",
+            "queryOverlap": 0.5
+          },
+          "dense_score": 0.4711695909500122,
+          "keyword_score": 34.47783422020906,
+          "normalized_dense_score": 0.9080990333838298,
+          "normalized_keyword_score": 1.0,
+          "fusion_score": 0.016029143897996354,
+          "confidence_score": 0.9715304565848475
+        },
+        {
+          "id": "doc_013#2",
+          "content": "反向传播本质是微积分链式法则在计算图上的系统应用。前向传播把输入逐层映射到损失；反向传播则从损失出发，沿计算图反方向逐层把梯度传回，每一层用本地导数乘以上游传来的梯度，得到对本层参数与输入的梯度。",
+          "source": {
+            "chunkId": "doc_013#2",
+            "documentId": "doc_013",
+            "title": "反向传播与链式法则",
+            "location": "反向传播与链式法则 / 链式法则 / 段落 1"
+          },
+          "metadata": {
+            "document_id": "doc_013",
+            "chunking_version": "heading-window-v1",
+            "source_location": "反向传播与链式法则 / 链式法则 / 段落 1",
+            "document_title": "反向传播与链式法则",
+            "chunk_index": 2,
+            "token_count": 62,
+            "source_encoding": "utf-8",
+            "queryOverlap": 0.409091
+          },
+          "dense_score": 0.4778456687927246,
+          "keyword_score": 31.74335759571715,
+          "normalized_dense_score": 0.920966034888614,
+          "normalized_keyword_score": 0.9206888516538806,
+          "fusion_score": 0.01605222734254992,
+          "confidence_score": 0.9704132628989397
+        },
+        {
+          "id": "doc_011#2",
+          "content": "前向传播是数据从输入层逐层流向输出层的计算过程。对每一层，先用权重矩阵与上一层输出做矩阵乘法并加偏置得到 z，再经激活函数得到该层输出 a，作为下一层的输入。向量化形式为 Z = W·A_prev + b，A = f(Z)。",
+          "source": {
+            "chunkId": "doc_011#2",
+            "documentId": "doc_011",
+            "title": "前向传播与多层感知机",
+            "location": "前向传播与多层感知机 / 前向传播过程 / 段落 1"
+          },
+          "metadata": {
+            "document_title": "前向传播与多层感知机",
+            "chunking_version": "heading-window-v1",
+            "chunk_index": 2,
+            "source_encoding": "utf-8",
+            "source_location": "前向传播与多层感知机 / 前向传播过程 / 段落 1",
+            "token_count": 59,
+            "document_id": "doc_011",
+            "queryOverlap": 0.5
+          },
+          "dense_score": 0.37015581130981445,
+          "keyword_score": 25.47453456832292,
+          "normalized_dense_score": 0.713412199998093,
+          "normalized_keyword_score": 0.7388670183172674,
+          "fusion_score": 0.015314685314685314,
+          "confidence_score": 0.8906698790888483
+        }
+      ]
+    },
+    {
+      "query_id": "synthesis_cnn_components",
+      "query": "卷积核、池化、感受野和经典网络如何构成CNN",
+      "query_type": "跨段落综合",
+      "embedding_profile": "hash:deterministic_hash_v1:d512",
+      "collection": "kb_chunks__hash_d512__utf8_v2",
+      "candidates": [
+        {
+          "id": "doc_004#0",
+          "content": "卷积神经网络（CNN）是处理图像等网格结构数据的经典深度学习架构。CNN 的核心思想是局部连接、权重共享和池化下采样，三者共同大幅减少参数量并赋予模型对平移的鲁棒性。",
+          "source": {
+            "chunkId": "doc_004#0",
+            "documentId": "doc_004",
+            "title": "CNN架构与卷积网络",
+            "location": "CNN 架构与卷积神经网络 / 段落 1"
+          },
+          "metadata": {
+            "chunking_version": "heading-window-v1",
+            "token_count": 49,
+            "source_location": "CNN 架构与卷积神经网络 / 段落 1",
+            "source_encoding": "utf-8",
+            "chunk_index": 0,
+            "document_id": "doc_004",
+            "document_title": "CNN架构与卷积网络",
+            "queryOverlap": 0.666667
+          },
+          "dense_score": 0.48621666431427,
+          "keyword_score": 28.893927829121637,
+          "normalized_dense_score": 1.0,
+          "normalized_keyword_score": 1.0,
+          "fusion_score": 0.016393442622950817,
+          "confidence_score": 1.0
+        },
+        {
+          "id": "doc_020#1",
+          "content": "感受野指输出特征图上一个神经元所\"看到\"的输入区域大小。浅层神经元感受野小、只感知局部边缘纹理；随着卷积与池化层叠加，深层神经元感受野逐步扩大，能够整合更大范围的上下文，感知物体的部件乃至整体。",
+          "source": {
+            "chunkId": "doc_020#1",
+            "documentId": "doc_020",
+            "title": "感受野与权重共享",
+            "location": "感受野与权重共享 / 感受野 / 段落 1"
+          },
+          "metadata": {
+            "token_count": 60,
+            "source_encoding": "utf-8",
+            "source_location": "感受野与权重共享 / 感受野 / 段落 1",
+            "document_title": "感受野与权重共享",
+            "document_id": "doc_020",
+            "chunk_index": 1,
+            "chunking_version": "heading-window-v1",
+            "queryOverlap": 0.444444
+          },
+          "dense_score": 0.393291711807251,
+          "keyword_score": 24.78165508379986,
+          "normalized_dense_score": 0.808881596771113,
+          "normalized_keyword_score": 0.8576769219594611,
+          "fusion_score": 0.01605222734254992,
+          "confidence_score": 0.950832605724794
+        },
+        {
+          "id": "doc_004#3",
+          "content": "感受野（Receptive Field）指输出特征图上一个点能「看到」的原始输入区域大小。随着卷积层与池化层的堆叠，感受野逐层扩大：浅层神经元只能看到几个像素，负责检测边缘与纹理等低级特征；深层神经元的感受野覆盖大半张图，能够组合出物体部件乃至整体语义。小卷积核多层堆叠（如两层 3×3 等效一层 5×5 的感受野）比单个大卷积核参数更少、非线性更强，这是 VGG 网络的核心设计哲学。",
+          "source": {
+            "chunkId": "doc_004#3",
+            "documentId": "doc_004",
+            "title": "CNN架构与卷积网络",
+            "location": "CNN 架构与卷积神经网络 / 第三章 感受野 / 段落 1"
+          },
+          "metadata": {
+            "chunking_version": "heading-window-v1",
+            "source_location": "CNN 架构与卷积神经网络 / 第三章 感受野 / 段落 1",
+            "source_encoding": "utf-8",
+            "document_id": "doc_004",
+            "chunk_index": 3,
+            "token_count": 109,
+            "document_title": "CNN架构与卷积网络",
+            "queryOverlap": 0.666667
+          },
+          "dense_score": 0.3889087438583374,
+          "keyword_score": 28.685594954054366,
+          "normalized_dense_score": 0.7998671629382146,
+          "normalized_keyword_score": 0.9927897350509302,
+          "fusion_score": 0.015949820788530467,
+          "confidence_score": 0.9498021614065687
+        }
+      ]
+    },
+    {
+      "query_id": "synthesis_transformer_components",
+      "query": "综合说明多头注意力、位置编码和编码器解码器如何组成Transformer",
+      "query_type": "跨段落综合",
+      "embedding_profile": "hash:deterministic_hash_v1:d512",
+      "collection": "kb_chunks__hash_d512__utf8_v2",
+      "candidates": [
+        {
+          "id": "doc_024#4",
+          "content": "位置编码通常与词嵌入相加后送入编码器。它与自注意力、多头注意力、前馈网络共同构成 Transformer 处理序列的完整机制。",
+          "source": {
+            "chunkId": "doc_024#4",
+            "documentId": "doc_024",
+            "title": "位置编码",
+            "location": "位置编码 / 与嵌入的结合 / 段落 1"
+          },
+          "metadata": {
+            "chunking_version": "heading-window-v1",
+            "source_encoding": "utf-8",
+            "token_count": 34,
+            "document_id": "doc_024",
+            "chunk_index": 4,
+            "document_title": "位置编码",
+            "source_location": "位置编码 / 与嵌入的结合 / 段落 1",
+            "queryOverlap": 0.571429
+          },
+          "dense_score": 0.5462960004806519,
+          "keyword_score": 47.44405005353788,
+          "normalized_dense_score": 0.8998880899113811,
+          "normalized_keyword_score": 1.0,
+          "fusion_score": 0.016208355367530406,
+          "confidence_score": 0.9899888089911382
+        },
+        {
+          "id": "doc_025#1",
+          "content": "原始 Transformer 采用编码器-解码器结构。编码器把输入序列编码为一组上下文表示；解码器依据编码器输出与已生成的内容，自回归地逐个生成目标序列。两者都由多个相同的层堆叠而成。",
+          "source": {
+            "chunkId": "doc_025#1",
+            "documentId": "doc_025",
+            "title": "编码器解码器结构",
+            "location": "编码器解码器结构 / 整体结构 / 段落 1"
+          },
+          "metadata": {
+            "chunking_version": "heading-window-v1",
+            "chunk_index": 1,
+            "document_title": "编码器解码器结构",
+            "source_encoding": "utf-8",
+            "source_location": "编码器解码器结构 / 整体结构 / 段落 1",
+            "document_id": "doc_025",
+            "token_count": 53,
+            "queryOverlap": 0.380952
+          },
+          "dense_score": 0.607071042060852,
+          "keyword_score": 40.15725519403459,
+          "normalized_dense_score": 1.0,
+          "normalized_keyword_score": 0.8464128831480331,
+          "fusion_score": 0.016162909836065574,
+          "confidence_score": 0.989220018063063
+        },
+        {
+          "id": "doc_023#4",
+          "content": "多头自注意力是 Transformer 编码器与解码器每一层的核心子层，后接残差连接与层归一化，再接前馈网络。正是多头注意力让 Transformer 能并行高效地建模复杂的序列关系。",
+          "source": {
+            "chunkId": "doc_023#4",
+            "documentId": "doc_023",
+            "title": "多头注意力",
+            "location": "多头注意力 / 在 Transformer 中的位置 / 段落 1"
+          },
+          "metadata": {
+            "chunk_index": 4,
+            "source_location": "多头注意力 / 在 Transformer 中的位置 / 段落 1",
+            "token_count": 48,
+            "document_title": "多头注意力",
+            "source_encoding": "utf-8",
+            "chunking_version": "heading-window-v1",
+            "document_id": "doc_023",
+            "queryOverlap": 0.47619
+          },
+          "dense_score": 0.5329442620277405,
+          "keyword_score": 41.751624861330896,
+          "normalized_dense_score": 0.8778943897876104,
+          "normalized_keyword_score": 0.8800181437760181,
+          "fusion_score": 0.015873015873015872,
+          "confidence_score": 0.9589110365052098
+        },
+        {
+          "id": "doc_025#3",
+          "content": "每个解码器层包含三个子层：带掩码的多头自注意力（防止看到未来位置）、对编码器输出的交叉注意力、以及前馈网络，同样配残差与层归一化。掩码保证生成第 t 个词时只能利用前面的词。",
+          "source": {
+            "chunkId": "doc_025#3",
+            "documentId": "doc_025",
+            "title": "编码器解码器结构",
+            "location": "编码器解码器结构 / 解码器层 / 段落 1"
+          },
+          "metadata": {
+            "source_location": "编码器解码器结构 / 解码器层 / 段落 1",
+            "chunking_version": "heading-window-v1",
+            "source_encoding": "utf-8",
+            "token_count": 53,
+            "chunk_index": 3,
+            "document_id": "doc_025",
+            "document_title": "编码器解码器结构",
+            "queryOverlap": 0.571429
+          },
+          "dense_score": 0.47042179107666016,
+          "keyword_score": 42.389633492479,
+          "normalized_dense_score": 0.7749040202604585,
+          "normalized_keyword_score": 0.8934657442744609,
+          "fusion_score": 0.015776209677419356,
+          "confidence_score": 0.9426795538336037
+        },
+        {
+          "id": "doc_002#4",
+          "content": "标准 Transformer 由编码器（Encoder）与解码器（Decoder）堆叠而成。编码器负责理解输入序列，解码器负责逐步生成输出序列。每个层包含多头注意力子层与前馈网络子层，并配合残差连接与层归一化（LayerNorm）：残差连接让梯度可以跨层直达，层归一化稳定每层输入的分布，两者共同保证了深层堆叠的可训练性。前馈网络对每个位置独立地做两层线性变换与非线性激活。\n正是这种结构使 Transformer 能够高度并行化训练，支撑起大规模预训练模型。BERT 只用编码器做双向理解，GPT 只用解码器做自回归生成，二者都是 Transformer 的直系后代。",
+          "source": {
+            "chunkId": "doc_002#4",
+            "documentId": "doc_002",
+            "title": "Transformer与注意力机制",
+            "location": "Transformer 架构与注意力机制 / 第四章 整体结构 / 段落 1"
+          },
+          "metadata": {
+            "token_count": 151,
+            "source_encoding": "utf-8",
+            "source_location": "Transformer 架构与注意力机制 / 第四章 整体结构 / 段落 1",
+            "chunking_version": "heading-window-v1",
+            "document_id": "doc_002",
+            "document_title": "Transformer与注意力机制",
+            "chunk_index": 4,
+            "queryOverlap": 0.666667
+          },
+          "dense_score": 0.43984925746917725,
+          "keyword_score": 39.496064725746805,
+          "normalized_dense_score": 0.7245433021743233,
+          "normalized_keyword_score": 0.8324766684374072,
+          "fusion_score": 0.015384615384615384,
+          "confidence_score": 0.9078766053419202
+        },
+        {
+          "id": "doc_002#3",
+          "content": "由于自注意力本身对输入顺序不敏感——打乱词序得到的注意力结果完全相同——Transformer 需要通过位置编码（Positional Encoding）为模型注入序列的位置信息。原始论文采用不同频率的正弦与余弦函数生成位置编码，使模型能够推断相对位置关系；后续工作提出了可学习位置编码与旋转位置编码（RoPE）等改进方案，RoPE 已成为主流开源大模型的标配。",
+          "source": {
+            "chunkId": "doc_002#3",
+            "documentId": "doc_002",
+            "title": "Transformer与注意力机制",
+            "location": "Transformer 架构与注意力机制 / 第三章 位置编码 / 段落 1"
+          },
+          "metadata": {
+            "token_count": 98,
+            "chunk_index": 3,
+            "document_id": "doc_002",
+            "chunking_version": "heading-window-v1",
+            "source_location": "Transformer 架构与注意力机制 / 第三章 位置编码 / 段落 1",
+            "source_encoding": "utf-8",
+            "document_title": "Transformer与注意力机制",
+            "queryOverlap": 0.428571
+          },
+          "dense_score": 0.4288218021392822,
+          "keyword_score": 36.34901978600155,
+          "normalized_dense_score": 0.7063782859474587,
+          "normalized_keyword_score": 0.766144959061964,
+          "fusion_score": 0.01515151515151515,
+          "confidence_score": 0.8868397177655605
+        }
+      ]
+    },
+    {
+      "query_id": "synthesis_finetuning_stack",
+      "query": "从预训练到PEFT、LoRA、SFT和RLHF的技术链路是什么",
+      "query_type": "跨段落综合",
+      "embedding_profile": "hash:deterministic_hash_v1:d512",
+      "collection": "kb_chunks__hash_d512__utf8_v2",
+      "candidates": []
+    },
+    {
+      "query_id": "synthesis_overfit_controls",
+      "query": "如何结合正则化、Dropout和学习率策略缓解训练过拟合",
+      "query_type": "跨段落综合",
+      "embedding_profile": "hash:deterministic_hash_v1:d512",
+      "collection": "kb_chunks__hash_d512__utf8_v2",
+      "candidates": [
+        {
+          "id": "doc_017#4",
+          "content": "通常先用学习率扫描找到合适量级，再叠加调度与正则。批大小、学习率与训练轮数需要联合调整，监控训练曲线判断是否欠拟合或过拟合。",
+          "source": {
+            "chunkId": "doc_017#4",
+            "documentId": "doc_017",
+            "title": "学习率调度与训练技巧",
+            "location": "学习率调度与训练技巧 / 调参实践 / 段落 1"
+          },
+          "metadata": {
+            "document_id": "doc_017",
+            "document_title": "学习率调度与训练技巧",
+            "chunk_index": 4,
+            "source_encoding": "utf-8",
+            "token_count": 39,
+            "chunking_version": "heading-window-v1",
+            "source_location": "学习率调度与训练技巧 / 调参实践 / 段落 1",
+            "queryOverlap": 0.5
+          },
+          "dense_score": 0.550457239151001,
+          "keyword_score": 23.12026764704077,
+          "normalized_dense_score": 1.0,
+          "normalized_keyword_score": 0.8610308686040485,
+          "fusion_score": 0.01631411951348493,
+          "confidence_score": 0.9930515434302024
+        },
+        {
+          "id": "doc_003#2",
+          "content": "过拟合指模型在训练集上表现很好，但在测试集上泛化能力差，本质是模型记住了训练数据中的噪声而不是学到了普适规律。这就像学生把习题册的答案背得滚瓜烂熟，一到新考卷就不会做。过拟合最典型的表现是训练误差持续下降而验证误差开始回升。\n缓解过拟合的常用方法包括正则化（如 L1、L2）、Dropout、数据增强与早停。L2 正则化通过惩罚过大的参数来限制模型复杂度，使决策边界更平滑；L1 正则化还能让部分参数稀疏归零，起到特征选择作用。Dropout 在训练时随机丢弃一部分神经元，迫使网络不依赖任何单一通路。早停在验证集指标不再提升时终止训练。交叉验证把数据轮流划分为训练与验证子集，用来更可靠地评估泛化能力、选择超参数。从偏差-方差权衡的角度看，正则化以略微增大偏差为代价显著降低方差。",
+          "source": {
+            "chunkId": "doc_003#2",
+            "documentId": "doc_003",
+            "title": "机器学习基础与大模型微调",
+            "location": "机器学习基础与大模型微调 / 第二章 过拟合与正则化 / 段落 1"
+          },
+          "metadata": {
+            "source_location": "机器学习基础与大模型微调 / 第二章 过拟合与正则化 / 段落 1",
+            "document_id": "doc_003",
+            "document_title": "机器学习基础与大模型微调",
+            "chunking_version": "heading-window-v1",
+            "source_encoding": "utf-8",
+            "token_count": 205,
+            "chunk_index": 2,
+            "queryOverlap": 0.85
+          },
+          "dense_score": 0.44953906536102295,
+          "keyword_score": 26.851845259072583,
+          "normalized_dense_score": 0.8166648258716165,
+          "normalized_keyword_score": 1.0,
+          "fusion_score": 0.016208355367530406,
+          "confidence_score": 0.9745112239982205
+        },
+        {
+          "id": "doc_016#4",
+          "content": "抑制过拟合是一个系统工程：增大数据量与多样性、降低模型复杂度、加入正则项、使用 Dropout 与早停，并通过验证集监控泛化表现，是深度学习训练的常规组合拳。",
+          "source": {
+            "chunkId": "doc_016#4",
+            "documentId": "doc_016",
+            "title": "Dropout与正则化技术",
+            "location": "Dropout 与正则化技术 / 抑制过拟合的整体策略 / 段落 1"
+          },
+          "metadata": {
+            "document_id": "doc_016",
+            "chunk_index": 4,
+            "source_encoding": "utf-8",
+            "token_count": 46,
+            "source_location": "Dropout 与正则化技术 / 抑制过拟合的整体策略 / 段落 1",
+            "chunking_version": "heading-window-v1",
+            "document_title": "Dropout与正则化技术",
+            "queryOverlap": 0.55
+          },
+          "dense_score": 0.3541440963745117,
+          "keyword_score": 20.71092975854285,
+          "normalized_dense_score": 0.6433635007157444,
+          "normalized_keyword_score": 0.7713037803815412,
+          "fusion_score": 0.015625,
+          "confidence_score": 0.9062805573470832
+        },
+        {
+          "id": "doc_008#4",
+          "content": "判断过拟合的直接方法是观察训练曲线与验证曲线的差距：若训练损失持续下降而验证损失回升，即出现过拟合，应增加正则强度或获取更多数据。",
+          "source": {
+            "chunkId": "doc_008#4",
+            "documentId": "doc_008",
+            "title": "过拟合与正则化",
+            "location": "过拟合与正则化 / 实践要点 / 段落 1"
+          },
+          "metadata": {
+            "document_title": "过拟合与正则化",
+            "chunk_index": 4,
+            "chunking_version": "heading-window-v1",
+            "document_id": "doc_008",
+            "source_encoding": "utf-8",
+            "token_count": 41,
+            "source_location": "过拟合与正则化 / 实践要点 / 段落 1",
+            "queryOverlap": 0.35
+          },
+          "dense_score": 0.3978447914123535,
+          "keyword_score": 16.215651505382823,
+          "normalized_dense_score": 0.7227533096412182,
+          "normalized_keyword_score": 0.6038933767467601,
+          "fusion_score": 0.015522875816993463,
+          "confidence_score": 0.8989400137729205
+        },
+        {
+          "id": "doc_001#4",
+          "content": "深层网络在训练时可能出现梯度消失或梯度爆炸。梯度消失指反向传播过程中梯度逐层衰减，导致靠近输入层的参数几乎无法更新；梯度爆炸则相反，梯度逐层放大导致训练不稳定。Sigmoid 与 Tanh 在饱和区导数趋近于零，是深层网络梯度消失的常见诱因；ReLU 在正区间导数恒为 1，梯度不会被反复压缩，因此比 Sigmoid 更不易梯度消失。\n批归一化（BatchNorm）通过把每层输入规范到稳定的分布来加速收敛并缓解梯度问题；残差连接为梯度提供了跨层直达通路；合适的权重初始化（如 Xavier、He 初始化）也能显著改善训练稳定性。\n常见优化器包括 SGD、带动量的 SGD、RMSprop 与 Adam。SGD 沿小批量梯度方向直接更新；动量法累积历史梯度方向，像滚下山坡的球一样冲过小的沟壑；RMSprop 按梯度幅度自适应缩放各参数的学习率；Adam 同时结合了动量与自适应学习率，是工程实践中最常用的默认优化器。工程上还常配合学习率调度（如预热、余弦退火）与梯度裁剪来稳定大模型训练。",
+          "source": {
+            "chunkId": "doc_001#4",
+            "documentId": "doc_001",
+            "title": "神经网络与反向传播",
+            "location": "神经网络基础与反向传播算法 / 第四章 梯度问题与优化 / 段落 1"
+          },
+          "metadata": {
+            "document_id": "doc_001",
+            "source_location": "神经网络基础与反向传播算法 / 第四章 梯度问题与优化 / 段落 1",
+            "chunking_version": "heading-window-v1",
+            "token_count": 246,
+            "chunk_index": 4,
+            "document_title": "神经网络与反向传播",
+            "source_encoding": "utf-8",
+            "queryOverlap": 0.75
+          },
+          "dense_score": 0.2701869606971741,
+          "keyword_score": 16.645226214662724,
+          "normalized_dense_score": 0.49084096180458553,
+          "normalized_keyword_score": 0.6198913353650699,
+          "fusion_score": 0.013878787878787878,
+          "confidence_score": 0.7653212450277226
+        },
+        {
+          "id": "doc_003#1",
+          "content": "机器学习的本质是让计算机从数据中自动学习规律，而不是依靠人工编写规则。机器学习主要分为监督学习、无监督学习与强化学习。\n监督学习使用带标签的数据训练模型，就像学生做带标准答案的练习题：模型给出预测，与标准答案对照，错了就修正。典型任务包括分类与回归。分类预测离散的类别标签，例如判断一封邮件是否为垃圾邮件、识别图片中的物体类别；回归预测连续的数值，例如预测房价或气温。\n无监督学习从无标签数据中发现结构，像在没有答案的情况下自己整理笔记。典型任务包括聚类与降维：聚类把相似的样本自动分组，例如把用户按行为习惯分群；降维在尽量保留信息的前提下压缩特征维度，便于可视化与后续建模。强化学习则让智能体在与环境的交互中通过奖励信号学习策略。\n特征是模型观察世界的窗口。特征工程指从原始数据中构造、选择对预测有用的输入变量，特征的质量往往比模型的选择更能决定效果上限。损失函数衡量预测与真实目标的差距，是模型优化的方向盘：回归常用均方误差，分类常用交叉熵。训练过程就是不断调整参数让损失变小。",
+          "source": {
+            "chunkId": "doc_003#1",
+            "documentId": "doc_003",
+            "title": "机器学习基础与大模型微调",
+            "location": "机器学习基础与大模型微调 / 第一章 机器学习范式 / 段落 1"
+          },
+          "metadata": {
+            "chunk_index": 1,
+            "chunking_version": "heading-window-v1",
+            "source_location": "机器学习基础与大模型微调 / 第一章 机器学习范式 / 段落 1",
+            "document_id": "doc_003",
+            "token_count": 279,
+            "source_encoding": "utf-8",
+            "document_title": "机器学习基础与大模型微调",
+            "queryOverlap": 0.6
+          },
+          "dense_score": 0.252766489982605,
+          "keyword_score": 13.514933208890033,
+          "normalized_dense_score": 0.45919368845518316,
+          "normalized_keyword_score": 0.5033148775622289,
+          "fusion_score": 0.012808127914723516,
+          "confidence_score": 0.6838943684180936
+        }
+      ]
+    },
+    {
+      "query_id": "fuzzy_memorizes_answers",
+      "query": "模型像背答案一样训练集很好换题就不行怎么办",
+      "query_type": "模糊表达",
+      "embedding_profile": "hash:deterministic_hash_v1:d512",
+      "collection": "kb_chunks__hash_d512__utf8_v2",
+      "candidates": [
+        {
+          "id": "doc_008#1",
+          "content": "过拟合指模型在训练集上表现很好、但在测试集上表现明显变差，原因是模型记住了训练数据中的噪声而非普遍规律。欠拟合则相反，模型过于简单、连训练集都拟合不好。两者的平衡由偏差-方差权衡刻画。",
+          "source": {
+            "chunkId": "doc_008#1",
+            "documentId": "doc_008",
+            "title": "过拟合与正则化",
+            "location": "过拟合与正则化 / 过拟合与欠拟合 / 段落 1"
+          },
+          "metadata": {
+            "chunking_version": "heading-window-v1",
+            "document_id": "doc_008",
+            "chunk_index": 1,
+            "token_count": 58,
+            "source_location": "过拟合与正则化 / 过拟合与欠拟合 / 段落 1",
+            "source_encoding": "utf-8",
+            "document_title": "过拟合与正则化",
+            "queryOverlap": 0.380952
+          },
+          "dense_score": 0.3819305896759033,
+          "keyword_score": 17.81162738263894,
+          "normalized_dense_score": 1.0,
+          "normalized_keyword_score": 0.7952271434875168,
+          "fusion_score": 0.01631411951348493,
+          "confidence_score": 0.9897613571743759
+        },
+        {
+          "id": "doc_003#2",
+          "content": "过拟合指模型在训练集上表现很好，但在测试集上泛化能力差，本质是模型记住了训练数据中的噪声而不是学到了普适规律。这就像学生把习题册的答案背得滚瓜烂熟，一到新考卷就不会做。过拟合最典型的表现是训练误差持续下降而验证误差开始回升。\n缓解过拟合的常用方法包括正则化（如 L1、L2）、Dropout、数据增强与早停。L2 正则化通过惩罚过大的参数来限制模型复杂度，使决策边界更平滑；L1 正则化还能让部分参数稀疏归零，起到特征选择作用。Dropout 在训练时随机丢弃一部分神经元，迫使网络不依赖任何单一通路。早停在验证集指标不再提升时终止训练。交叉验证把数据轮流划分为训练与验证子集，用来更可靠地评估泛化能力、选择超参数。从偏差-方差权衡的角度看，正则化以略微增大偏差为代价显著降低方差。",
+          "source": {
+            "chunkId": "doc_003#2",
+            "documentId": "doc_003",
+            "title": "机器学习基础与大模型微调",
+            "location": "机器学习基础与大模型微调 / 第二章 过拟合与正则化 / 段落 1"
+          },
+          "metadata": {
+            "chunk_index": 2,
+            "document_id": "doc_003",
+            "source_location": "机器学习基础与大模型微调 / 第二章 过拟合与正则化 / 段落 1",
+            "chunking_version": "heading-window-v1",
+            "token_count": 205,
+            "source_encoding": "utf-8",
+            "document_title": "机器学习基础与大模型微调",
+            "queryOverlap": 0.714286
+          },
+          "dense_score": 0.3691292405128479,
+          "keyword_score": 22.398163252482767,
+          "normalized_dense_score": 0.966482524550028,
+          "normalized_keyword_score": 1.0,
+          "fusion_score": 0.016208355367530406,
+          "confidence_score": 0.9894929938660617
+        },
+        {
+          "id": "doc_003#1",
+          "content": "机器学习的本质是让计算机从数据中自动学习规律，而不是依靠人工编写规则。机器学习主要分为监督学习、无监督学习与强化学习。\n监督学习使用带标签的数据训练模型，就像学生做带标准答案的练习题：模型给出预测，与标准答案对照，错了就修正。典型任务包括分类与回归。分类预测离散的类别标签，例如判断一封邮件是否为垃圾邮件、识别图片中的物体类别；回归预测连续的数值，例如预测房价或气温。\n无监督学习从无标签数据中发现结构，像在没有答案的情况下自己整理笔记。典型任务包括聚类与降维：聚类把相似的样本自动分组，例如把用户按行为习惯分群；降维在尽量保留信息的前提下压缩特征维度，便于可视化与后续建模。强化学习则让智能体在与环境的交互中通过奖励信号学习策略。\n特征是模型观察世界的窗口。特征工程指从原始数据中构造、选择对预测有用的输入变量，特征的质量往往比模型的选择更能决定效果上限。损失函数衡量预测与真实目标的差距，是模型优化的方向盘：回归常用均方误差，分类常用交叉熵。训练过程就是不断调整参数让损失变小。",
+          "source": {
+            "chunkId": "doc_003#1",
+            "documentId": "doc_003",
+            "title": "机器学习基础与大模型微调",
+            "location": "机器学习基础与大模型微调 / 第一章 机器学习范式 / 段落 1"
+          },
+          "metadata": {
+            "document_title": "机器学习基础与大模型微调",
+            "chunking_version": "heading-window-v1",
+            "token_count": 279,
+            "chunk_index": 1,
+            "source_location": "机器学习基础与大模型微调 / 第一章 机器学习范式 / 段落 1",
+            "source_encoding": "utf-8",
+            "document_id": "doc_003",
+            "queryOverlap": 0.619048
+          },
+          "dense_score": 0.2489687204360962,
+          "keyword_score": 16.65740190215992,
+          "normalized_dense_score": 0.6518690232363027,
+          "normalized_keyword_score": 0.7436949947363874,
+          "fusion_score": 0.014350945857795172,
+          "confidence_score": 0.8195571237088768
+        }
+      ]
+    },
+    {
+      "query_id": "fuzzy_forgets_order",
+      "query": "模型看懂了词却分不清先后顺序怎么办",
+      "query_type": "模糊表达",
+      "embedding_profile": "hash:deterministic_hash_v1:d512",
+      "collection": "kb_chunks__hash_d512__utf8_v2",
+      "candidates": [
+        {
+          "id": "doc_002#3",
+          "content": "由于自注意力本身对输入顺序不敏感——打乱词序得到的注意力结果完全相同——Transformer 需要通过位置编码（Positional Encoding）为模型注入序列的位置信息。原始论文采用不同频率的正弦与余弦函数生成位置编码，使模型能够推断相对位置关系；后续工作提出了可学习位置编码与旋转位置编码（RoPE）等改进方案，RoPE 已成为主流开源大模型的标配。",
+          "source": {
+            "chunkId": "doc_002#3",
+            "documentId": "doc_002",
+            "title": "Transformer与注意力机制",
+            "location": "Transformer 架构与注意力机制 / 第三章 位置编码 / 段落 1"
+          },
+          "metadata": {
+            "document_title": "Transformer与注意力机制",
+            "source_location": "Transformer 架构与注意力机制 / 第三章 位置编码 / 段落 1",
+            "document_id": "doc_002",
+            "chunking_version": "heading-window-v1",
+            "token_count": 98,
+            "source_encoding": "utf-8",
+            "chunk_index": 3,
+            "queryOverlap": 0.470588
+          },
+          "dense_score": 0.3772602677345276,
+          "keyword_score": 15.093225187930303,
+          "normalized_dense_score": 1.0,
+          "normalized_keyword_score": 0.9860580019488157,
+          "fusion_score": 0.01631411951348493,
+          "confidence_score": 0.9993029000974407
+        },
+        {
+          "id": "doc_030#2",
+          "content": "基于人类反馈的强化学习（RLHF）通常分三步：先做监督微调得到初始模型；再收集人类对多个候选回答的偏好排序，训练一个奖励模型来预测人类偏好；最后用强化学习（如 PPO）优化语言模型，使其生成的回答获得更高奖励，同时用 KL 惩罚约束不要偏离初始模型太远。",
+          "source": {
+            "chunkId": "doc_030#2",
+            "documentId": "doc_030",
+            "title": "RLHF与偏好对齐",
+            "location": "RLHF 与偏好对齐 / RLHF 流程 / 段落 1"
+          },
+          "metadata": {
+            "document_title": "RLHF与偏好对齐",
+            "source_location": "RLHF 与偏好对齐 / RLHF 流程 / 段落 1",
+            "token_count": 75,
+            "chunking_version": "heading-window-v1",
+            "document_id": "doc_030",
+            "source_encoding": "utf-8",
+            "chunk_index": 2,
+            "queryOverlap": 0.411765
+          },
+          "dense_score": 0.35959410667419434,
+          "keyword_score": 10.495020402729315,
+          "normalized_dense_score": 0.9531724844325121,
+          "normalized_keyword_score": 0.6856519213006199,
+          "fusion_score": 0.01597782258064516,
+          "confidence_score": 0.9567620751016451
+        }
+      ]
+    },
+    {
+      "query_id": "fuzzy_image_flashlight",
+      "query": "像拿小手电筒扫描图片那样提取局部特征是什么",
+      "query_type": "模糊表达",
+      "embedding_profile": "hash:deterministic_hash_v1:d512",
+      "collection": "kb_chunks__hash_d512__utf8_v2",
+      "candidates": [
+        {
+          "id": "doc_004#1",
+          "content": "卷积层的主要作用是提取局部空间特征。卷积核（也称滤波器）是一个小的权重矩阵，它在输入图像上按一定步长滑动，每停留一处就与覆盖区域做逐元素相乘再求和，得到输出特征图上的一个值。可以把卷积核想象成一只拿着小手电筒的眼睛：它一格一格扫过整张图片，每次只看一小块局部区域，寻找边缘、纹理、角点这类局部模式。\n权重共享指同一个卷积核在图像所有位置使用同一组参数：无论猫耳朵出现在图片左上角还是右下角，都由同一个「猫耳检测器」负责识别。这与全连接层每个连接都有独立参数形成鲜明对比，使参数量从百万级骤降到几百个，也让特征检测天然具备平移等变性。\n卷积的两个关键超参数是步长（stride）与填充（padding）。步长控制卷积核每次滑动的距离，步长越大输出特征图越小；填充在输入边缘补零，使边缘像素也能被充分覆盖。输出特征图的边长可由公式计算：output = (input − kernel + 2 × padding) / stride + 1。例如 32×32 的输入、5×5 的卷积核、填充 2、步长 1，输出仍为 32×32。\n一个卷积层通常包含多个卷积核，每个卷积核产生一张特征图（feature map），不同特征图对应不同类型的局部特征。卷积之后一般接 ReLU 激活引入非线性。",
+          "source": {
+            "chunkId": "doc_004#1",
+            "documentId": "doc_004",
+            "title": "CNN架构与卷积网络",
+            "location": "CNN 架构与卷积神经网络 / 第一章 卷积层 / 段落 1"
+          },
+          "metadata": {
+            "chunking_version": "heading-window-v1",
+            "document_title": "CNN架构与卷积网络",
+            "source_location": "CNN 架构与卷积神经网络 / 第一章 卷积层 / 段落 1",
+            "source_encoding": "utf-8",
+            "token_count": 299,
+            "chunk_index": 1,
+            "document_id": "doc_004",
+            "queryOverlap": 0.761905
+          },
+          "dense_score": 0.3199799060821533,
+          "keyword_score": 28.059694811552436,
+          "normalized_dense_score": 1.0,
+          "normalized_keyword_score": 1.0,
+          "fusion_score": 0.016393442622950817,
+          "confidence_score": 1.0
+        }
+      ]
+    },
+    {
+      "query_id": "fuzzy_small_adapter",
+      "query": "不改大模型主体只加很小的可训练旁路该用什么",
+      "query_type": "模糊表达",
+      "embedding_profile": "hash:deterministic_hash_v1:d512",
+      "collection": "kb_chunks__hash_d512__utf8_v2",
+      "candidates": [
+        {
+          "id": "doc_027#3",
+          "content": "Adapter 在每层中插入小型瓶颈模块，只训练这些模块。LoRA 用低秩矩阵表示权重增量。Prompt/Prefix Tuning 在输入端引入可学习的虚拟提示向量，只优化这些向量。它们都把可训练参数压到原模型的很小比例。",
+          "source": {
+            "chunkId": "doc_027#3",
+            "documentId": "doc_027",
+            "title": "全参微调与PEFT",
+            "location": "全参微调与参数高效微调 / 主要方法 / 段落 1"
+          },
+          "metadata": {
+            "chunking_version": "heading-window-v1",
+            "source_location": "全参微调与参数高效微调 / 主要方法 / 段落 1",
+            "chunk_index": 3,
+            "document_id": "doc_027",
+            "token_count": 58,
+            "document_title": "全参微调与PEFT",
+            "source_encoding": "utf-8",
+            "queryOverlap": 0.47619
+          },
+          "dense_score": 0.37084197998046875,
+          "keyword_score": 15.61246733245206,
+          "normalized_dense_score": 0.8532290647990707,
+          "normalized_keyword_score": 1.0,
+          "fusion_score": 0.016029143897996354,
+          "confidence_score": 0.9853229064799071
+        },
+        {
+          "id": "doc_027#4",
+          "content": "PEFT 让单卡微调大模型成为可能，且不同任务只需保存各自的小增量权重，便于多任务切换与部署。它已成为大模型时代领域适配的主流路线，与全参微调形成成本-效果的不同取舍。",
+          "source": {
+            "chunkId": "doc_027#4",
+            "documentId": "doc_027",
+            "title": "全参微调与PEFT",
+            "location": "全参微调与参数高效微调 / 工程优势 / 段落 1"
+          },
+          "metadata": {
+            "document_title": "全参微调与PEFT",
+            "source_encoding": "utf-8",
+            "chunk_index": 4,
+            "chunking_version": "heading-window-v1",
+            "source_location": "全参微调与参数高效微调 / 工程优势 / 段落 1",
+            "document_id": "doc_027",
+            "token_count": 51,
+            "queryOverlap": 0.47619
+          },
+          "dense_score": 0.3556174039840698,
+          "keyword_score": 15.60588289313811,
+          "normalized_dense_score": 0.818200531244013,
+          "normalized_keyword_score": 0.9995782576082474,
+          "fusion_score": 0.015607940446650124,
+          "confidence_score": 0.9526419712974941
+        },
+        {
+          "id": "doc_030#4",
+          "content": "偏好对齐让大模型从\"能续写\"进化为\"好用、可信赖的助手\"。它与预训练、指令微调共同构成现代大模型的训练三部曲，是模型落地应用的重要保障。",
+          "source": {
+            "chunkId": "doc_030#4",
+            "documentId": "doc_030",
+            "title": "RLHF与偏好对齐",
+            "location": "RLHF 与偏好对齐 / 对齐的意义 / 段落 1"
+          },
+          "metadata": {
+            "source_location": "RLHF 与偏好对齐 / 对齐的意义 / 段落 1",
+            "chunking_version": "heading-window-v1",
+            "document_title": "RLHF与偏好对齐",
+            "document_id": "doc_030",
+            "source_encoding": "utf-8",
+            "chunk_index": 4,
+            "token_count": 41,
+            "queryOverlap": 0.380952
+          },
+          "dense_score": 0.4346335530281067,
+          "keyword_score": 9.656056727632041,
+          "normalized_dense_score": 1.0,
+          "normalized_keyword_score": 0.6184837106151038,
+          "fusion_score": 0.015475409836065573,
+          "confidence_score": 0.9425930154955244
+        },
+        {
+          "id": "doc_002#3",
+          "content": "由于自注意力本身对输入顺序不敏感——打乱词序得到的注意力结果完全相同——Transformer 需要通过位置编码（Positional Encoding）为模型注入序列的位置信息。原始论文采用不同频率的正弦与余弦函数生成位置编码，使模型能够推断相对位置关系；后续工作提出了可学习位置编码与旋转位置编码（RoPE）等改进方案，RoPE 已成为主流开源大模型的标配。",
+          "source": {
+            "chunkId": "doc_002#3",
+            "documentId": "doc_002",
+            "title": "Transformer与注意力机制",
+            "location": "Transformer 架构与注意力机制 / 第三章 位置编码 / 段落 1"
+          },
+          "metadata": {
+            "document_id": "doc_002",
+            "source_location": "Transformer 架构与注意力机制 / 第三章 位置编码 / 段落 1",
+            "chunking_version": "heading-window-v1",
+            "token_count": 98,
+            "source_encoding": "utf-8",
+            "chunk_index": 3,
+            "document_title": "Transformer与注意力机制",
+            "queryOverlap": 0.428571
+          },
+          "dense_score": 0.3588460683822632,
+          "keyword_score": 11.529141214099559,
+          "normalized_dense_score": 0.825629006049281,
+          "normalized_keyword_score": 0.7384573474901752,
+          "fusion_score": 0.015415111940298508,
+          "confidence_score": 0.9269805926692645
+        },
+        {
+          "id": "doc_001#4",
+          "content": "深层网络在训练时可能出现梯度消失或梯度爆炸。梯度消失指反向传播过程中梯度逐层衰减，导致靠近输入层的参数几乎无法更新；梯度爆炸则相反，梯度逐层放大导致训练不稳定。Sigmoid 与 Tanh 在饱和区导数趋近于零，是深层网络梯度消失的常见诱因；ReLU 在正区间导数恒为 1，梯度不会被反复压缩，因此比 Sigmoid 更不易梯度消失。\n批归一化（BatchNorm）通过把每层输入规范到稳定的分布来加速收敛并缓解梯度问题；残差连接为梯度提供了跨层直达通路；合适的权重初始化（如 Xavier、He 初始化）也能显著改善训练稳定性。\n常见优化器包括 SGD、带动量的 SGD、RMSprop 与 Adam。SGD 沿小批量梯度方向直接更新；动量法累积历史梯度方向，像滚下山坡的球一样冲过小的沟壑；RMSprop 按梯度幅度自适应缩放各参数的学习率；Adam 同时结合了动量与自适应学习率，是工程实践中最常用的默认优化器。工程上还常配合学习率调度（如预热、余弦退火）与梯度裁剪来稳定大模型训练。",
+          "source": {
+            "chunkId": "doc_001#4",
+            "documentId": "doc_001",
+            "title": "神经网络与反向传播",
+            "location": "神经网络基础与反向传播算法 / 第四章 梯度问题与优化 / 段落 1"
+          },
+          "metadata": {
+            "chunking_version": "heading-window-v1",
+            "token_count": 246,
+            "source_location": "神经网络基础与反向传播算法 / 第四章 梯度问题与优化 / 段落 1",
+            "document_id": "doc_001",
+            "document_title": "神经网络与反向传播",
+            "chunk_index": 4,
+            "source_encoding": "utf-8",
+            "queryOverlap": 0.619048
+          },
+          "dense_score": 0.0,
+          "keyword_score": 10.826839765406344,
+          "normalized_dense_score": 0.0,
+          "normalized_keyword_score": 0.6934739740272625,
+          "fusion_score": 0.004347826086956522,
+          "confidence_score": 0.0760570539364102
+        }
+      ]
+    },
+    {
+      "query_id": "fuzzy_follow_instructions",
+      "query": "怎样让只会续写的模型真正听懂用户要求",
+      "query_type": "模糊表达",
+      "embedding_profile": "hash:deterministic_hash_v1:d512",
+      "collection": "kb_chunks__hash_d512__utf8_v2",
+      "candidates": [
+        {
+          "id": "doc_003#4",
+          "content": "指令微调（Instruction Tuning / SFT，监督微调）使用「指令-响应」格式的样本训练模型，使其更好地理解并遵循自然语言指令，从「续写文本的语言模型」转变为「听得懂要求的助手」。指令数据的多样性与质量直接决定模型的泛化表现。\n在此基础上，对齐（Alignment）让模型输出符合人类偏好与价值观。基于人类反馈的强化学习（RLHF）先用人类对回答的排序训练奖励模型，再用强化学习优化生成策略；DPO（直接偏好优化）则跳过显式奖励模型，直接在偏好对上优化，流程更简单、训练更稳定。预训练、指令微调、对齐三个阶段串起来，构成了现代对话式大模型的完整训练管线。",
+          "source": {
+            "chunkId": "doc_003#4",
+            "documentId": "doc_003",
+            "title": "机器学习基础与大模型微调",
+            "location": "机器学习基础与大模型微调 / 第四章 指令微调与对齐 / 段落 1"
+          },
+          "metadata": {
+            "chunk_index": 4,
+            "source_location": "机器学习基础与大模型微调 / 第四章 指令微调与对齐 / 段落 1",
+            "document_id": "doc_003",
+            "chunking_version": "heading-window-v1",
+            "document_title": "机器学习基础与大模型微调",
+            "token_count": 158,
+            "source_encoding": "utf-8",
+            "queryOverlap": 0.666667
+          },
+          "dense_score": 0.38388586044311523,
+          "keyword_score": 19.132046710703545,
+          "normalized_dense_score": 0.9139242942012357,
+          "normalized_keyword_score": 1.0,
+          "fusion_score": 0.016208355367530406,
+          "confidence_score": 0.9913924294201235
+        },
+        {
+          "id": "doc_030#4",
+          "content": "偏好对齐让大模型从\"能续写\"进化为\"好用、可信赖的助手\"。它与预训练、指令微调共同构成现代大模型的训练三部曲，是模型落地应用的重要保障。",
+          "source": {
+            "chunkId": "doc_030#4",
+            "documentId": "doc_030",
+            "title": "RLHF与偏好对齐",
+            "location": "RLHF 与偏好对齐 / 对齐的意义 / 段落 1"
+          },
+          "metadata": {
+            "source_encoding": "utf-8",
+            "chunking_version": "heading-window-v1",
+            "token_count": 41,
+            "chunk_index": 4,
+            "document_title": "RLHF与偏好对齐",
+            "source_location": "RLHF 与偏好对齐 / 对齐的意义 / 段落 1",
+            "document_id": "doc_030",
+            "queryOverlap": 0.444444
+          },
+          "dense_score": 0.42004120349884033,
+          "keyword_score": 15.946602939372742,
+          "normalized_dense_score": 1.0,
+          "normalized_keyword_score": 0.8335021955832521,
+          "fusion_score": 0.016162909836065574,
+          "confidence_score": 0.988574483684824
+        },
+        {
+          "id": "doc_003#1",
+          "content": "机器学习的本质是让计算机从数据中自动学习规律，而不是依靠人工编写规则。机器学习主要分为监督学习、无监督学习与强化学习。\n监督学习使用带标签的数据训练模型，就像学生做带标准答案的练习题：模型给出预测，与标准答案对照，错了就修正。典型任务包括分类与回归。分类预测离散的类别标签，例如判断一封邮件是否为垃圾邮件、识别图片中的物体类别；回归预测连续的数值，例如预测房价或气温。\n无监督学习从无标签数据中发现结构，像在没有答案的情况下自己整理笔记。典型任务包括聚类与降维：聚类把相似的样本自动分组，例如把用户按行为习惯分群；降维在尽量保留信息的前提下压缩特征维度，便于可视化与后续建模。强化学习则让智能体在与环境的交互中通过奖励信号学习策略。\n特征是模型观察世界的窗口。特征工程指从原始数据中构造、选择对预测有用的输入变量，特征的质量往往比模型的选择更能决定效果上限。损失函数衡量预测与真实目标的差距，是模型优化的方向盘：回归常用均方误差，分类常用交叉熵。训练过程就是不断调整参数让损失变小。",
+          "source": {
+            "chunkId": "doc_003#1",
+            "documentId": "doc_003",
+            "title": "机器学习基础与大模型微调",
+            "location": "机器学习基础与大模型微调 / 第一章 机器学习范式 / 段落 1"
+          },
+          "metadata": {
+            "source_encoding": "utf-8",
+            "chunking_version": "heading-window-v1",
+            "document_title": "机器学习基础与大模型微调",
+            "source_location": "机器学习基础与大模型微调 / 第一章 机器学习范式 / 段落 1",
+            "token_count": 279,
+            "chunk_index": 1,
+            "document_id": "doc_003",
+            "queryOverlap": 0.666667
+          },
+          "dense_score": 0.2969290614128113,
+          "keyword_score": 13.313657900367689,
+          "normalized_dense_score": 0.7069046058802444,
+          "normalized_keyword_score": 0.6958825734477889,
+          "fusion_score": 0.01515151515151515,
+          "confidence_score": 0.8833792304781304
+        }
+      ]
+    },
+    {
+      "query_id": "no_answer_quantum",
+      "query": "量子纠错中的表面码阈值是多少",
+      "query_type": "无答案问题",
+      "embedding_profile": "hash:deterministic_hash_v1:d512",
+      "collection": "kb_chunks__hash_d512__utf8_v2",
+      "candidates": []
+    },
+    {
+      "query_id": "no_answer_crispr",
+      "query": "CRISPR基因编辑如何设计向导RNA",
+      "query_type": "无答案问题",
+      "embedding_profile": "hash:deterministic_hash_v1:d512",
+      "collection": "kb_chunks__hash_d512__utf8_v2",
+      "candidates": []
+    },
+    {
+      "query_id": "no_answer_contract_law",
+      "query": "民法典中合同撤销权的期限是多久",
+      "query_type": "无答案问题",
+      "embedding_profile": "hash:deterministic_hash_v1:d512",
+      "collection": "kb_chunks__hash_d512__utf8_v2",
+      "candidates": []
+    },
+    {
+      "query_id": "no_answer_astronomy",
+      "query": "詹姆斯韦布望远镜最近观测到什么系外行星",
+      "query_type": "无答案问题",
+      "embedding_profile": "hash:deterministic_hash_v1:d512",
+      "collection": "kb_chunks__hash_d512__utf8_v2",
+      "candidates": []
+    },
+    {
+      "query_id": "no_answer_chemistry",
+      "query": "如何合成阿司匹林并计算反应收率",
+      "query_type": "无答案问题",
+      "embedding_profile": "hash:deterministic_hash_v1:d512",
+      "collection": "kb_chunks__hash_d512__utf8_v2",
+      "candidates": []
+    },
+    {
+      "query_id": "scope_lora_only",
+      "query": "LoRA如何减少微调参数量",
+      "query_type": "带knowledge_scope过滤",
+      "embedding_profile": "hash:deterministic_hash_v1:d512",
+      "collection": "kb_chunks__hash_d512__utf8_v2",
+      "candidates": [
+        {
+          "id": "doc_028#4",
+          "content": "QLoRA 在 LoRA 基础上对基座模型做 4 比特量化，进一步压缩显存，使在单张消费级显卡上微调超大模型成为可能。LoRA 已成为参数高效微调中最广泛使用的方法之一。",
+          "source": {
+            "chunkId": "doc_028#4",
+            "documentId": "doc_028",
+            "title": "LoRA低秩适配",
+            "location": "LoRA 低秩适配 / 扩展 / 段落 1"
+          },
+          "metadata": {
+            "document_id": "doc_028",
+            "token_count": 46,
+            "document_title": "LoRA低秩适配",
+            "source_encoding": "utf-8",
+            "source_location": "LoRA 低秩适配 / 扩展 / 段落 1",
+            "chunking_version": "heading-window-v1",
+            "chunk_index": 4,
+            "queryOverlap": 0.6
+          },
+          "dense_score": 0.2951216697692871,
+          "keyword_score": 13.440976338679564,
+          "normalized_dense_score": 0.6393915957787644,
+          "normalized_keyword_score": 0.8246051083758368,
+          "fusion_score": 0.015607940446650124,
+          "confidence_score": 0.9023612622042003
+        },
+        {
+          "id": "doc_028#1",
+          "content": "LoRA（低秩适配）的核心思想是：冻结预训练模型的原始权重，用两个低秩矩阵 A 与 B 的乘积来表示权重更新增量 ΔW = B·A。微调时只训练 A、B，原权重保持不变。由于秩 r 远小于权重维度，可训练参数量大幅下降。",
+          "source": {
+            "chunkId": "doc_028#1",
+            "documentId": "doc_028",
+            "title": "LoRA低秩适配",
+            "location": "LoRA 低秩适配 / 核心思想 / 段落 1"
+          },
+          "metadata": {
+            "token_count": 58,
+            "source_encoding": "utf-8",
+            "chunk_index": 1,
+            "document_id": "doc_028",
+            "source_location": "LoRA 低秩适配 / 核心思想 / 段落 1",
+            "chunking_version": "heading-window-v1",
+            "document_title": "LoRA低秩适配",
+            "queryOverlap": 0.6
+          },
+          "dense_score": 0.0,
+          "keyword_score": 10.072115088603308,
+          "normalized_dense_score": 0.0,
+          "normalized_keyword_score": 0.6179251674084535,
+          "fusion_score": 0.004615384615384615,
+          "confidence_score": 0.08907478972561528
+        }
+      ]
+    },
+    {
+      "query_id": "scope_pooling_only",
+      "query": "最大池化与平均池化",
+      "query_type": "带knowledge_scope过滤",
+      "embedding_profile": "hash:deterministic_hash_v1:d512",
+      "collection": "kb_chunks__hash_d512__utf8_v2",
+      "candidates": [
+        {
+          "id": "doc_019#2",
+          "content": "最大池化在每个局部窗口内取最大值，保留最显著的激活，是分类任务的常用选择。平均池化取窗口内的平均值，保留整体强度信息。全局平均池化把每张特征图压成一个数，常用于替代末端全连接层以减少参数。",
+          "source": {
+            "chunkId": "doc_019#2",
+            "documentId": "doc_019",
+            "title": "池化与下采样",
+            "location": "池化与下采样 / 最大池化与平均池化 / 段落 1"
+          },
+          "metadata": {
+            "source_encoding": "utf-8",
+            "document_id": "doc_019",
+            "token_count": 59,
+            "chunking_version": "heading-window-v1",
+            "chunk_index": 2,
+            "source_location": "池化与下采样 / 最大池化与平均池化 / 段落 1",
+            "document_title": "池化与下采样",
+            "queryOverlap": 0.857143
+          },
+          "dense_score": 0.5060768723487854,
+          "keyword_score": 22.49978448276552,
+          "normalized_dense_score": 0.9546961933526726,
+          "normalized_keyword_score": 1.0,
+          "fusion_score": 0.016208355367530406,
+          "confidence_score": 0.9883143607463262
+        },
+        {
+          "id": "doc_019#1",
+          "content": "池化层对特征图做下采样，降低空间尺寸，从而减少计算量与参数、扩大后续层的感受野，并增强对小幅平移的不变性。池化通常在卷积加激活之后进行。",
+          "source": {
+            "chunkId": "doc_019#1",
+            "documentId": "doc_019",
+            "title": "池化与下采样",
+            "location": "池化与下采样 / 池化的作用 / 段落 1"
+          },
+          "metadata": {
+            "document_id": "doc_019",
+            "source_location": "池化与下采样 / 池化的作用 / 段落 1",
+            "source_encoding": "utf-8",
+            "chunk_index": 1,
+            "chunking_version": "heading-window-v1",
+            "token_count": 42,
+            "document_title": "池化与下采样",
+            "queryOverlap": 0.714286
+          },
+          "dense_score": 0.34995657205581665,
+          "keyword_score": 14.776183223433504,
+          "normalized_dense_score": 0.6601807461183032,
+          "normalized_keyword_score": 0.6567255448491885,
+          "fusion_score": 0.015873015873015872,
+          "confidence_score": 0.9190123805170796
+        }
+      ]
+    },
+    {
+      "query_id": "scope_loss_only",
+      "query": "MSE和MAE的差异",
+      "query_type": "带knowledge_scope过滤",
+      "embedding_profile": "hash:deterministic_hash_v1:d512",
+      "collection": "kb_chunks__hash_d512__utf8_v2",
+      "candidates": [
+        {
+          "id": "doc_007#2",
+          "content": "均方误差（MSE）取预测误差平方的平均，对大误差惩罚更重，但对离群点敏感。平均绝对误差（MAE）取误差绝对值的平均，对离群点更鲁棒。Huber 损失结合两者优点：小误差时类似 MSE、大误差时类似 MAE。",
+          "source": {
+            "chunkId": "doc_007#2",
+            "documentId": "doc_007",
+            "title": "损失函数与代价函数",
+            "location": "损失函数与代价函数 / 回归常用损失 / 段落 1"
+          },
+          "metadata": {
+            "source_encoding": "utf-8",
+            "source_location": "损失函数与代价函数 / 回归常用损失 / 段落 1",
+            "document_id": "doc_007",
+            "chunk_index": 2,
+            "document_title": "损失函数与代价函数",
+            "chunking_version": "heading-window-v1",
+            "token_count": 55,
+            "queryOverlap": 0.666667
+          },
+          "dense_score": 0.41989123821258545,
+          "keyword_score": 18.210828118163285,
+          "normalized_dense_score": 1.0,
+          "normalized_keyword_score": 1.0,
+          "fusion_score": 0.016393442622950817,
+          "confidence_score": 1.0
+        },
+        {
+          "id": "doc_007#3",
+          "content": "交叉熵损失（Cross-Entropy）衡量预测概率分布与真实分布的差异，是分类任务的主流选择。二分类用二元交叉熵，多分类配合 Softmax 用类别交叉熵。交叉熵在预测错误且自信时给出很大的梯度，促使模型快速纠正。",
+          "source": {
+            "chunkId": "doc_007#3",
+            "documentId": "doc_007",
+            "title": "损失函数与代价函数",
+            "location": "损失函数与代价函数 / 分类常用损失 / 段落 1"
+          },
+          "metadata": {
+            "token_count": 59,
+            "source_encoding": "utf-8",
+            "document_title": "损失函数与代价函数",
+            "chunking_version": "heading-window-v1",
+            "document_id": "doc_007",
+            "source_location": "损失函数与代价函数 / 分类常用损失 / 段落 1",
+            "chunk_index": 3,
+            "queryOverlap": 0.5
+          },
+          "dense_score": 0.0,
+          "keyword_score": 6.973743288698729,
+          "normalized_dense_score": 0.0,
+          "normalized_keyword_score": 0.3829448745245798,
+          "fusion_score": 0.0046875,
+          "confidence_score": 0.08217398602768766
+        }
+      ]
+    },
+    {
+      "query_id": "scope_attention_only",
+      "query": "多头注意力为什么并行多个头",
+      "query_type": "带knowledge_scope过滤",
+      "embedding_profile": "hash:deterministic_hash_v1:d512",
+      "collection": "kb_chunks__hash_d512__utf8_v2",
+      "candidates": [
+        {
+          "id": "doc_023#1",
+          "content": "单个注意力头只能在一个表示子空间里建模一种相关性模式。多头注意力把 Query、Key、Value 分别线性投影到多个低维子空间，并行执行多组注意力，让模型同时关注不同位置、不同方面的信息。",
+          "source": {
+            "chunkId": "doc_023#1",
+            "documentId": "doc_023",
+            "title": "多头注意力",
+            "location": "多头注意力 / 为什么需要多头 / 段落 1"
+          },
+          "metadata": {
+            "chunk_index": 1,
+            "source_encoding": "utf-8",
+            "document_id": "doc_023",
+            "source_location": "多头注意力 / 为什么需要多头 / 段落 1",
+            "chunking_version": "heading-window-v1",
+            "document_title": "多头注意力",
+            "token_count": 54,
+            "queryOverlap": 0.727273
+          },
+          "dense_score": 0.639763355255127,
+          "keyword_score": 29.13285693743894,
+          "normalized_dense_score": 1.0,
+          "normalized_keyword_score": 1.0,
+          "fusion_score": 0.016393442622950817,
+          "confidence_score": 1.0
+        },
+        {
+          "id": "doc_023#2",
+          "content": "设有 h 个头，每个头独立做缩放点积注意力，得到各自的输出；再把所有头的输出拼接起来，经过一个线性变换融合，得到多头注意力的最终结果。每个头的维度通常是总维度除以头数，使总计算量与单头相当。",
+          "source": {
+            "chunkId": "doc_023#2",
+            "documentId": "doc_023",
+            "title": "多头注意力",
+            "location": "多头注意力 / 计算流程 / 段落 1"
+          },
+          "metadata": {
+            "document_id": "doc_023",
+            "chunk_index": 2,
+            "chunking_version": "heading-window-v1",
+            "source_encoding": "utf-8",
+            "document_title": "多头注意力",
+            "source_location": "多头注意力 / 计算流程 / 段落 1",
+            "token_count": 58,
+            "queryOverlap": 0.545455
+          },
+          "dense_score": 0.507932722568512,
+          "keyword_score": 23.867609233949594,
+          "normalized_dense_score": 0.7939384436389872,
+          "normalized_keyword_score": 0.8192677184116838,
+          "fusion_score": 0.01579861111111111,
+          "confidence_score": 0.930367585047674
+        }
+      ]
+    },
+    {
+      "query_id": "scope_optimizer_only",
+      "query": "Adam优化器结合了哪些思想",
+      "query_type": "带knowledge_scope过滤",
+      "embedding_profile": "hash:deterministic_hash_v1:d512",
+      "collection": "kb_chunks__hash_d512__utf8_v2",
+      "candidates": [
+        {
+          "id": "doc_014#3",
+          "content": "动量法累积历史梯度方向，加速收敛并抑制震荡。RMSprop 按参数自适应缩放学习率。Adam 结合动量与自适应学习率，对大多数任务收敛快、调参容易，是最常用的优化器之一。",
+          "source": {
+            "chunkId": "doc_014#3",
+            "documentId": "doc_014",
+            "title": "梯度下降与优化器",
+            "location": "梯度下降与优化器 / 动量与自适应优化器 / 段落 1"
+          },
+          "metadata": {
+            "chunking_version": "heading-window-v1",
+            "source_location": "梯度下降与优化器 / 动量与自适应优化器 / 段落 1",
+            "token_count": 48,
+            "source_encoding": "utf-8",
+            "document_title": "梯度下降与优化器",
+            "chunk_index": 3,
+            "document_id": "doc_014",
+            "queryOverlap": 0.545455
+          },
+          "dense_score": 0.1896418333053589,
+          "keyword_score": 12.826881165402222,
+          "normalized_dense_score": 0.8245875522775885,
+          "normalized_keyword_score": 1.0,
+          "fusion_score": 0.016029143897996354,
+          "confidence_score": 0.9824587552277588
+        },
+        {
+          "id": "doc_014#4",
+          "content": "梯度裁剪可防止梯度爆炸；合适的权重初始化（如 He、Xavier）配合归一化能缓解梯度消失。优化器的选择与学习率调度共同决定训练的收敛速度与最终效果。",
+          "source": {
+            "chunkId": "doc_014#4",
+            "documentId": "doc_014",
+            "title": "梯度下降与优化器",
+            "location": "梯度下降与优化器 / 训练稳定性 / 段落 1"
+          },
+          "metadata": {
+            "source_encoding": "utf-8",
+            "chunk_index": 4,
+            "token_count": 43,
+            "document_id": "doc_014",
+            "source_location": "梯度下降与优化器 / 训练稳定性 / 段落 1",
+            "document_title": "梯度下降与优化器",
+            "chunking_version": "heading-window-v1",
+            "queryOverlap": 0.363636
+          },
+          "dense_score": 0.2299838662147522,
+          "keyword_score": 7.361639761071814,
+          "normalized_dense_score": 1.0,
+          "normalized_keyword_score": 0.5739228161658088,
+          "fusion_score": 0.015953021776364082,
+          "confidence_score": 0.9734267340870295
+        }
+      ]
+    }
+  ]
+}

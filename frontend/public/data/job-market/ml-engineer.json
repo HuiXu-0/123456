@@ -1,0 +1,27 @@
+{
+  "id": "ml-engineer",
+  "name": "机器学习工程师",
+  "salaryRange": "28K–52K · 15薪",
+  "salaryMedian": "38K",
+  "heat": "高",
+  "heatPct": 88,
+  "openings": 1560,
+  "source": "聚合自 BOSS直聘 / 拉勾 / 智联 公开 JD 样本（离线管线 + LLM 抽取）",
+  "fetchedAt": "2026-06-06T06:00:00+08:00",
+  "skills": [
+    { "name": "机器学习", "freqPct": 91 },
+    { "name": "深度学习", "freqPct": 80 },
+    { "name": "Python", "freqPct": 86 },
+    { "name": "MLOps / 工程化", "freqPct": 62 },
+    { "name": "PyTorch", "freqPct": 68 },
+    { "name": "分布式训练", "freqPct": 44 }
+  ],
+  "radar": {
+    "机器学习基础": 90,
+    "神经网络": 88,
+    "深度学习": 90,
+    "注意力机制": 70,
+    "Transformer": 72,
+    "大模型微调": 60
+  }
+}

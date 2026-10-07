@@ -1,0 +1,967 @@
+{
+  "schemaVersion": "rerank-independent-blind-evaluation-v1",
+  "evaluationType": "offline_independent_blind_candidate_ranking",
+  "productionPerformance": false,
+  "generatedAt": "2026-07-22T07:05:57.041255+00:00",
+  "environment": {
+    "datasetVersion": "rerank-blind-independent-v1",
+    "modelName": "BAAI/bge-reranker-base",
+    "modelVersion": "2cfc18c9415c912f9d8155881c133215df768a70",
+    "weightHash": "sha256:ced967c45fd1902eb92716c9ceeca7c95a936770ea9db611f5a841b926e33fbd",
+    "device": "cpu",
+    "batchSize": 4,
+    "maxLength": 256,
+    "modelLoadMs": 4989.515,
+    "inferenceLatencyMs": {
+      "total": 13523.681,
+      "mean": 676.184,
+      "median": 641.866,
+      "p95": 828.989
+    },
+    "runtime": {
+      "python": "3.12.13",
+      "implementation": "CPython",
+      "platform": "Windows-11-10.0.26200-SP0"
+    }
+  },
+  "datasetVersion": "rerank-blind-independent-v1",
+  "caseCount": 20,
+  "candidateStrategy": "fixed_anonymized_candidates",
+  "modelEvaluationPolicy": "reranker_ranks_only; frozen labels score results",
+  "metricsProvisional": true,
+  "baseline": {
+    "recall@1": 0.141667,
+    "recall@3": 0.608333,
+    "recall@5": 1.0,
+    "mrr": 0.564167,
+    "ndcg@3": 0.267762,
+    "ndcg@5": 0.510888
+  },
+  "rerank": {
+    "recall@1": 0.591667,
+    "recall@3": 0.925,
+    "recall@5": 1.0,
+    "mrr": 1.0,
+    "ndcg@3": 0.971078,
+    "ndcg@5": 0.979257
+  },
+  "delta": {
+    "recall@1": 0.45,
+    "recall@3": 0.316667,
+    "recall@5": 0.0,
+    "mrr": 0.435833,
+    "ndcg@3": 0.703316,
+    "ndcg@5": 0.468369
+  },
+  "humanPreference": {
+    "status": "pending_independent_human_review",
+    "reviewedCount": 0,
+    "totalCount": 20,
+    "counts": {
+      "baseline": 0,
+      "rerank": 0,
+      "tie": 0
+    },
+    "rerankPreferenceRate": null
+  },
+  "relevanceReview": {
+    "status": "pending_independent_human_review",
+    "verifiedLabelCount": 0,
+    "totalLabelCount": 100
+  },
+  "degradedCaseCount": 2,
+  "degradedCases": [
+    {
+      "caseId": "t004c_blind_11",
+      "degradedMetrics": [
+        "recall@3"
+      ],
+      "delta": {
+        "recall@1": 0.0,
+        "recall@3": -0.5,
+        "recall@5": 0.0,
+        "mrr": 0.0,
+        "ndcg@3": 0.327614,
+        "ndcg@5": 0.37831
+      }
+    },
+    {
+      "caseId": "t004c_blind_20",
+      "degradedMetrics": [
+        "recall@3"
+      ],
+      "delta": {
+        "recall@1": 0.0,
+        "recall@3": -0.5,
+        "recall@5": 0.0,
+        "mrr": 0.0,
+        "ndcg@3": 0.327614,
+        "ndcg@5": 0.384053
+      }
+    }
+  ],
+  "caseResults": [
+    {
+      "caseId": "t004c_blind_01",
+      "baselineRanking": [
+        "RB01-A7K2",
+        "RB01-M4Q9",
+        "RB01-T8X3",
+        "RB01-C5V1",
+        "RB01-P2N6"
+      ],
+      "rerankRanking": [
+        "RB01-M4Q9",
+        "RB01-T8X3",
+        "RB01-P2N6",
+        "RB01-C5V1",
+        "RB01-A7K2"
+      ],
+      "baseline": {
+        "recall@1": 0.0,
+        "recall@3": 1.0,
+        "recall@5": 1.0,
+        "mrr": 0.5,
+        "ndcg@3": 0.63093,
+        "ndcg@5": 0.63093
+      },
+      "rerank": {
+        "recall@1": 1.0,
+        "recall@3": 1.0,
+        "recall@5": 1.0,
+        "mrr": 1.0,
+        "ndcg@3": 1.0,
+        "ndcg@5": 1.0
+      },
+      "delta": {
+        "recall@1": 1.0,
+        "recall@3": 0.0,
+        "recall@5": 0.0,
+        "mrr": 0.5,
+        "ndcg@3": 0.36907,
+        "ndcg@5": 0.36907
+      },
+      "degradedMetrics": []
+    },
+    {
+      "caseId": "t004c_blind_02",
+      "baselineRanking": [
+        "RB02-A7K2",
+        "RB02-M4Q9",
+        "RB02-T8X3",
+        "RB02-C5V1",
+        "RB02-P2N6"
+      ],
+      "rerankRanking": [
+        "RB02-T8X3",
+        "RB02-A7K2",
+        "RB02-C5V1",
+        "RB02-P2N6",
+        "RB02-M4Q9"
+      ],
+      "baseline": {
+        "recall@1": 0.5,
+        "recall@3": 1.0,
+        "recall@5": 1.0,
+        "mrr": 1.0,
+        "ndcg@3": 0.589705,
+        "ndcg@5": 0.589705
+      },
+      "rerank": {
+        "recall@1": 0.5,
+        "recall@3": 1.0,
+        "recall@5": 1.0,
+        "mrr": 1.0,
+        "ndcg@3": 1.0,
+        "ndcg@5": 1.0
+      },
+      "delta": {
+        "recall@1": 0.0,
+        "recall@3": 0.0,
+        "recall@5": 0.0,
+        "mrr": 0.0,
+        "ndcg@3": 0.410295,
+        "ndcg@5": 0.410295
+      },
+      "degradedMetrics": []
+    },
+    {
+      "caseId": "t004c_blind_03",
+      "baselineRanking": [
+        "RB03-A7K2",
+        "RB03-M4Q9",
+        "RB03-T8X3",
+        "RB03-C5V1",
+        "RB03-P2N6"
+      ],
+      "rerankRanking": [
+        "RB03-C5V1",
+        "RB03-M4Q9",
+        "RB03-A7K2",
+        "RB03-P2N6",
+        "RB03-T8X3"
+      ],
+      "baseline": {
+        "recall@1": 0.333333,
+        "recall@3": 0.666667,
+        "recall@5": 1.0,
+        "mrr": 1.0,
+        "ndcg@3": 0.30798,
+        "ndcg@5": 0.628943
+      },
+      "rerank": {
+        "recall@1": 0.333333,
+        "recall@3": 1.0,
+        "recall@5": 1.0,
+        "mrr": 1.0,
+        "ndcg@3": 1.0,
+        "ndcg@5": 1.0
+      },
+      "delta": {
+        "recall@1": 0.0,
+        "recall@3": 0.333333,
+        "recall@5": 0.0,
+        "mrr": 0.0,
+        "ndcg@3": 0.69202,
+        "ndcg@5": 0.371057
+      },
+      "degradedMetrics": []
+    },
+    {
+      "caseId": "t004c_blind_04",
+      "baselineRanking": [
+        "RB04-A7K2",
+        "RB04-M4Q9",
+        "RB04-T8X3",
+        "RB04-C5V1",
+        "RB04-P2N6"
+      ],
+      "rerankRanking": [
+        "RB04-C5V1",
+        "RB04-M4Q9",
+        "RB04-A7K2",
+        "RB04-T8X3",
+        "RB04-P2N6"
+      ],
+      "baseline": {
+        "recall@1": 0.0,
+        "recall@3": 0.5,
+        "recall@5": 1.0,
+        "mrr": 0.5,
+        "ndcg@3": 0.082681,
+        "ndcg@5": 0.477749
+      },
+      "rerank": {
+        "recall@1": 0.5,
+        "recall@3": 1.0,
+        "recall@5": 1.0,
+        "mrr": 1.0,
+        "ndcg@3": 1.0,
+        "ndcg@5": 1.0
+      },
+      "delta": {
+        "recall@1": 0.5,
+        "recall@3": 0.5,
+        "recall@5": 0.0,
+        "mrr": 0.5,
+        "ndcg@3": 0.917319,
+        "ndcg@5": 0.522251
+      },
+      "degradedMetrics": []
+    },
+    {
+      "caseId": "t004c_blind_05",
+      "baselineRanking": [
+        "RB05-A7K2",
+        "RB05-M4Q9",
+        "RB05-T8X3",
+        "RB05-C5V1",
+        "RB05-P2N6"
+      ],
+      "rerankRanking": [
+        "RB05-T8X3",
+        "RB05-C5V1",
+        "RB05-M4Q9",
+        "RB05-A7K2",
+        "RB05-P2N6"
+      ],
+      "baseline": {
+        "recall@1": 0.0,
+        "recall@3": 1.0,
+        "recall@5": 1.0,
+        "mrr": 0.333333,
+        "ndcg@3": 0.5,
+        "ndcg@5": 0.5
+      },
+      "rerank": {
+        "recall@1": 1.0,
+        "recall@3": 1.0,
+        "recall@5": 1.0,
+        "mrr": 1.0,
+        "ndcg@3": 1.0,
+        "ndcg@5": 1.0
+      },
+      "delta": {
+        "recall@1": 1.0,
+        "recall@3": 0.0,
+        "recall@5": 0.0,
+        "mrr": 0.666667,
+        "ndcg@3": 0.5,
+        "ndcg@5": 0.5
+      },
+      "degradedMetrics": []
+    },
+    {
+      "caseId": "t004c_blind_06",
+      "baselineRanking": [
+        "RB06-A7K2",
+        "RB06-M4Q9",
+        "RB06-T8X3",
+        "RB06-C5V1",
+        "RB06-P2N6"
+      ],
+      "rerankRanking": [
+        "RB06-T8X3",
+        "RB06-M4Q9",
+        "RB06-C5V1",
+        "RB06-A7K2",
+        "RB06-P2N6"
+      ],
+      "baseline": {
+        "recall@1": 0.0,
+        "recall@3": 0.5,
+        "recall@5": 1.0,
+        "mrr": 0.333333,
+        "ndcg@3": 0.168676,
+        "ndcg@5": 0.507685
+      },
+      "rerank": {
+        "recall@1": 0.5,
+        "recall@3": 1.0,
+        "recall@5": 1.0,
+        "mrr": 1.0,
+        "ndcg@3": 0.730929,
+        "ndcg@5": 0.730929
+      },
+      "delta": {
+        "recall@1": 0.5,
+        "recall@3": 0.5,
+        "recall@5": 0.0,
+        "mrr": 0.666667,
+        "ndcg@3": 0.562253,
+        "ndcg@5": 0.223244
+      },
+      "degradedMetrics": []
+    },
+    {
+      "caseId": "t004c_blind_07",
+      "baselineRanking": [
+        "RB07-A7K2",
+        "RB07-M4Q9",
+        "RB07-T8X3",
+        "RB07-C5V1",
+        "RB07-P2N6"
+      ],
+      "rerankRanking": [
+        "RB07-C5V1",
+        "RB07-M4Q9",
+        "RB07-T8X3",
+        "RB07-P2N6",
+        "RB07-A7K2"
+      ],
+      "baseline": {
+        "recall@1": 0.0,
+        "recall@3": 0.5,
+        "recall@5": 1.0,
+        "mrr": 0.5,
+        "ndcg@3": 0.082681,
+        "ndcg@5": 0.477749
+      },
+      "rerank": {
+        "recall@1": 0.5,
+        "recall@3": 1.0,
+        "recall@5": 1.0,
+        "mrr": 1.0,
+        "ndcg@3": 1.0,
+        "ndcg@5": 1.0
+      },
+      "delta": {
+        "recall@1": 0.5,
+        "recall@3": 0.5,
+        "recall@5": 0.0,
+        "mrr": 0.5,
+        "ndcg@3": 0.917319,
+        "ndcg@5": 0.522251
+      },
+      "degradedMetrics": []
+    },
+    {
+      "caseId": "t004c_blind_08",
+      "baselineRanking": [
+        "RB08-A7K2",
+        "RB08-M4Q9",
+        "RB08-T8X3",
+        "RB08-C5V1",
+        "RB08-P2N6"
+      ],
+      "rerankRanking": [
+        "RB08-T8X3",
+        "RB08-A7K2",
+        "RB08-C5V1",
+        "RB08-M4Q9",
+        "RB08-P2N6"
+      ],
+      "baseline": {
+        "recall@1": 0.5,
+        "recall@3": 1.0,
+        "recall@5": 1.0,
+        "mrr": 1.0,
+        "ndcg@3": 0.589705,
+        "ndcg@5": 0.589705
+      },
+      "rerank": {
+        "recall@1": 0.5,
+        "recall@3": 1.0,
+        "recall@5": 1.0,
+        "mrr": 1.0,
+        "ndcg@3": 1.0,
+        "ndcg@5": 1.0
+      },
+      "delta": {
+        "recall@1": 0.0,
+        "recall@3": 0.0,
+        "recall@5": 0.0,
+        "mrr": 0.0,
+        "ndcg@3": 0.410295,
+        "ndcg@5": 0.410295
+      },
+      "degradedMetrics": []
+    },
+    {
+      "caseId": "t004c_blind_09",
+      "baselineRanking": [
+        "RB09-A7K2",
+        "RB09-M4Q9",
+        "RB09-T8X3",
+        "RB09-C5V1",
+        "RB09-P2N6"
+      ],
+      "rerankRanking": [
+        "RB09-C5V1",
+        "RB09-M4Q9",
+        "RB09-T8X3",
+        "RB09-P2N6",
+        "RB09-A7K2"
+      ],
+      "baseline": {
+        "recall@1": 0.0,
+        "recall@3": 0.5,
+        "recall@5": 1.0,
+        "mrr": 0.5,
+        "ndcg@3": 0.082681,
+        "ndcg@5": 0.477749
+      },
+      "rerank": {
+        "recall@1": 0.5,
+        "recall@3": 1.0,
+        "recall@5": 1.0,
+        "mrr": 1.0,
+        "ndcg@3": 1.0,
+        "ndcg@5": 1.0
+      },
+      "delta": {
+        "recall@1": 0.5,
+        "recall@3": 0.5,
+        "recall@5": 0.0,
+        "mrr": 0.5,
+        "ndcg@3": 0.917319,
+        "ndcg@5": 0.522251
+      },
+      "degradedMetrics": []
+    },
+    {
+      "caseId": "t004c_blind_10",
+      "baselineRanking": [
+        "RB10-A7K2",
+        "RB10-M4Q9",
+        "RB10-T8X3",
+        "RB10-C5V1",
+        "RB10-P2N6"
+      ],
+      "rerankRanking": [
+        "RB10-P2N6",
+        "RB10-A7K2",
+        "RB10-C5V1",
+        "RB10-T8X3",
+        "RB10-M4Q9"
+      ],
+      "baseline": {
+        "recall@1": 0.0,
+        "recall@3": 0.5,
+        "recall@5": 1.0,
+        "mrr": 0.333333,
+        "ndcg@3": 0.065523,
+        "ndcg@5": 0.42039
+      },
+      "rerank": {
+        "recall@1": 0.5,
+        "recall@3": 0.5,
+        "recall@5": 1.0,
+        "mrr": 1.0,
+        "ndcg@3": 0.917319,
+        "ndcg@5": 0.973758
+      },
+      "delta": {
+        "recall@1": 0.5,
+        "recall@3": 0.0,
+        "recall@5": 0.0,
+        "mrr": 0.666667,
+        "ndcg@3": 0.851796,
+        "ndcg@5": 0.553368
+      },
+      "degradedMetrics": []
+    },
+    {
+      "caseId": "t004c_blind_11",
+      "baselineRanking": [
+        "RB11-A7K2",
+        "RB11-M4Q9",
+        "RB11-T8X3",
+        "RB11-C5V1",
+        "RB11-P2N6"
+      ],
+      "rerankRanking": [
+        "RB11-T8X3",
+        "RB11-P2N6",
+        "RB11-M4Q9",
+        "RB11-C5V1",
+        "RB11-A7K2"
+      ],
+      "baseline": {
+        "recall@1": 0.5,
+        "recall@3": 1.0,
+        "recall@5": 1.0,
+        "mrr": 1.0,
+        "ndcg@3": 0.589705,
+        "ndcg@5": 0.589705
+      },
+      "rerank": {
+        "recall@1": 0.5,
+        "recall@3": 0.5,
+        "recall@5": 1.0,
+        "mrr": 1.0,
+        "ndcg@3": 0.917319,
+        "ndcg@5": 0.968015
+      },
+      "delta": {
+        "recall@1": 0.0,
+        "recall@3": -0.5,
+        "recall@5": 0.0,
+        "mrr": 0.0,
+        "ndcg@3": 0.327614,
+        "ndcg@5": 0.37831
+      },
+      "degradedMetrics": [
+        "recall@3"
+      ]
+    },
+    {
+      "caseId": "t004c_blind_12",
+      "baselineRanking": [
+        "RB12-A7K2",
+        "RB12-M4Q9",
+        "RB12-T8X3",
+        "RB12-C5V1",
+        "RB12-P2N6"
+      ],
+      "rerankRanking": [
+        "RB12-C5V1",
+        "RB12-A7K2",
+        "RB12-T8X3",
+        "RB12-P2N6",
+        "RB12-M4Q9"
+      ],
+      "baseline": {
+        "recall@1": 0.0,
+        "recall@3": 0.5,
+        "recall@5": 1.0,
+        "mrr": 0.333333,
+        "ndcg@3": 0.168676,
+        "ndcg@5": 0.507685
+      },
+      "rerank": {
+        "recall@1": 0.5,
+        "recall@3": 1.0,
+        "recall@5": 1.0,
+        "mrr": 1.0,
+        "ndcg@3": 0.955831,
+        "ndcg@5": 0.955831
+      },
+      "delta": {
+        "recall@1": 0.5,
+        "recall@3": 0.5,
+        "recall@5": 0.0,
+        "mrr": 0.666667,
+        "ndcg@3": 0.787155,
+        "ndcg@5": 0.448146
+      },
+      "degradedMetrics": []
+    },
+    {
+      "caseId": "t004c_blind_13",
+      "baselineRanking": [
+        "RB13-A7K2",
+        "RB13-M4Q9",
+        "RB13-T8X3",
+        "RB13-C5V1",
+        "RB13-P2N6"
+      ],
+      "rerankRanking": [
+        "RB13-P2N6",
+        "RB13-M4Q9",
+        "RB13-C5V1",
+        "RB13-T8X3",
+        "RB13-A7K2"
+      ],
+      "baseline": {
+        "recall@1": 0.0,
+        "recall@3": 0.5,
+        "recall@5": 1.0,
+        "mrr": 0.5,
+        "ndcg@3": 0.082681,
+        "ndcg@5": 0.437548
+      },
+      "rerank": {
+        "recall@1": 0.5,
+        "recall@3": 1.0,
+        "recall@5": 1.0,
+        "mrr": 1.0,
+        "ndcg@3": 1.0,
+        "ndcg@5": 1.0
+      },
+      "delta": {
+        "recall@1": 0.5,
+        "recall@3": 0.5,
+        "recall@5": 0.0,
+        "mrr": 0.5,
+        "ndcg@3": 0.917319,
+        "ndcg@5": 0.562452
+      },
+      "degradedMetrics": []
+    },
+    {
+      "caseId": "t004c_blind_14",
+      "baselineRanking": [
+        "RB14-A7K2",
+        "RB14-M4Q9",
+        "RB14-T8X3",
+        "RB14-C5V1",
+        "RB14-P2N6"
+      ],
+      "rerankRanking": [
+        "RB14-C5V1",
+        "RB14-M4Q9",
+        "RB14-T8X3",
+        "RB14-A7K2",
+        "RB14-P2N6"
+      ],
+      "baseline": {
+        "recall@1": 0.0,
+        "recall@3": 0.0,
+        "recall@5": 1.0,
+        "mrr": 0.25,
+        "ndcg@3": 0.0,
+        "ndcg@5": 0.430677
+      },
+      "rerank": {
+        "recall@1": 1.0,
+        "recall@3": 1.0,
+        "recall@5": 1.0,
+        "mrr": 1.0,
+        "ndcg@3": 1.0,
+        "ndcg@5": 1.0
+      },
+      "delta": {
+        "recall@1": 1.0,
+        "recall@3": 1.0,
+        "recall@5": 0.0,
+        "mrr": 0.75,
+        "ndcg@3": 1.0,
+        "ndcg@5": 0.569323
+      },
+      "degradedMetrics": []
+    },
+    {
+      "caseId": "t004c_blind_15",
+      "baselineRanking": [
+        "RB15-A7K2",
+        "RB15-M4Q9",
+        "RB15-T8X3",
+        "RB15-C5V1",
+        "RB15-P2N6"
+      ],
+      "rerankRanking": [
+        "RB15-T8X3",
+        "RB15-C5V1",
+        "RB15-M4Q9",
+        "RB15-P2N6",
+        "RB15-A7K2"
+      ],
+      "baseline": {
+        "recall@1": 0.0,
+        "recall@3": 0.5,
+        "recall@5": 1.0,
+        "mrr": 0.333333,
+        "ndcg@3": 0.45866,
+        "ndcg@5": 0.515098
+      },
+      "rerank": {
+        "recall@1": 0.5,
+        "recall@3": 1.0,
+        "recall@5": 1.0,
+        "mrr": 1.0,
+        "ndcg@3": 1.0,
+        "ndcg@5": 1.0
+      },
+      "delta": {
+        "recall@1": 0.5,
+        "recall@3": 0.5,
+        "recall@5": 0.0,
+        "mrr": 0.666667,
+        "ndcg@3": 0.54134,
+        "ndcg@5": 0.484902
+      },
+      "degradedMetrics": []
+    },
+    {
+      "caseId": "t004c_blind_16",
+      "baselineRanking": [
+        "RB16-A7K2",
+        "RB16-M4Q9",
+        "RB16-T8X3",
+        "RB16-C5V1",
+        "RB16-P2N6"
+      ],
+      "rerankRanking": [
+        "RB16-C5V1",
+        "RB16-A7K2",
+        "RB16-T8X3",
+        "RB16-M4Q9",
+        "RB16-P2N6"
+      ],
+      "baseline": {
+        "recall@1": 0.0,
+        "recall@3": 0.5,
+        "recall@5": 1.0,
+        "mrr": 0.333333,
+        "ndcg@3": 0.065523,
+        "ndcg@5": 0.460591
+      },
+      "rerank": {
+        "recall@1": 0.5,
+        "recall@3": 1.0,
+        "recall@5": 1.0,
+        "mrr": 1.0,
+        "ndcg@3": 0.982842,
+        "ndcg@5": 0.982842
+      },
+      "delta": {
+        "recall@1": 0.5,
+        "recall@3": 0.5,
+        "recall@5": 0.0,
+        "mrr": 0.666667,
+        "ndcg@3": 0.917319,
+        "ndcg@5": 0.522251
+      },
+      "degradedMetrics": []
+    },
+    {
+      "caseId": "t004c_blind_17",
+      "baselineRanking": [
+        "RB17-A7K2",
+        "RB17-M4Q9",
+        "RB17-T8X3",
+        "RB17-C5V1",
+        "RB17-P2N6"
+      ],
+      "rerankRanking": [
+        "RB17-P2N6",
+        "RB17-T8X3",
+        "RB17-A7K2",
+        "RB17-M4Q9",
+        "RB17-C5V1"
+      ],
+      "baseline": {
+        "recall@1": 0.0,
+        "recall@3": 0.5,
+        "recall@5": 1.0,
+        "mrr": 0.333333,
+        "ndcg@3": 0.168676,
+        "ndcg@5": 0.473189
+      },
+      "rerank": {
+        "recall@1": 0.5,
+        "recall@3": 1.0,
+        "recall@5": 1.0,
+        "mrr": 1.0,
+        "ndcg@3": 1.0,
+        "ndcg@5": 1.0
+      },
+      "delta": {
+        "recall@1": 0.5,
+        "recall@3": 0.5,
+        "recall@5": 0.0,
+        "mrr": 0.666667,
+        "ndcg@3": 0.831324,
+        "ndcg@5": 0.526811
+      },
+      "degradedMetrics": []
+    },
+    {
+      "caseId": "t004c_blind_18",
+      "baselineRanking": [
+        "RB18-A7K2",
+        "RB18-M4Q9",
+        "RB18-T8X3",
+        "RB18-C5V1",
+        "RB18-P2N6"
+      ],
+      "rerankRanking": [
+        "RB18-C5V1",
+        "RB18-A7K2",
+        "RB18-M4Q9",
+        "RB18-T8X3",
+        "RB18-P2N6"
+      ],
+      "baseline": {
+        "recall@1": 0.5,
+        "recall@3": 0.5,
+        "recall@5": 1.0,
+        "mrr": 1.0,
+        "ndcg@3": 0.131046,
+        "ndcg@5": 0.526114
+      },
+      "rerank": {
+        "recall@1": 0.5,
+        "recall@3": 1.0,
+        "recall@5": 1.0,
+        "mrr": 1.0,
+        "ndcg@3": 1.0,
+        "ndcg@5": 1.0
+      },
+      "delta": {
+        "recall@1": 0.0,
+        "recall@3": 0.5,
+        "recall@5": 0.0,
+        "mrr": 0.0,
+        "ndcg@3": 0.868954,
+        "ndcg@5": 0.473886
+      },
+      "degradedMetrics": []
+    },
+    {
+      "caseId": "t004c_blind_19",
+      "baselineRanking": [
+        "RB19-A7K2",
+        "RB19-M4Q9",
+        "RB19-T8X3",
+        "RB19-C5V1",
+        "RB19-P2N6"
+      ],
+      "rerankRanking": [
+        "RB19-P2N6",
+        "RB19-A7K2",
+        "RB19-M4Q9",
+        "RB19-T8X3",
+        "RB19-C5V1"
+      ],
+      "baseline": {
+        "recall@1": 0.0,
+        "recall@3": 0.0,
+        "recall@5": 1.0,
+        "mrr": 0.2,
+        "ndcg@3": 0.0,
+        "ndcg@5": 0.386853
+      },
+      "rerank": {
+        "recall@1": 1.0,
+        "recall@3": 1.0,
+        "recall@5": 1.0,
+        "mrr": 1.0,
+        "ndcg@3": 1.0,
+        "ndcg@5": 1.0
+      },
+      "delta": {
+        "recall@1": 1.0,
+        "recall@3": 1.0,
+        "recall@5": 0.0,
+        "mrr": 0.8,
+        "ndcg@3": 1.0,
+        "ndcg@5": 0.613147
+      },
+      "degradedMetrics": []
+    },
+    {
+      "caseId": "t004c_blind_20",
+      "baselineRanking": [
+        "RB20-A7K2",
+        "RB20-M4Q9",
+        "RB20-T8X3",
+        "RB20-C5V1",
+        "RB20-P2N6"
+      ],
+      "rerankRanking": [
+        "RB20-T8X3",
+        "RB20-C5V1",
+        "RB20-M4Q9",
+        "RB20-A7K2",
+        "RB20-P2N6"
+      ],
+      "baseline": {
+        "recall@1": 0.5,
+        "recall@3": 1.0,
+        "recall@5": 1.0,
+        "mrr": 1.0,
+        "ndcg@3": 0.589705,
+        "ndcg@5": 0.589705
+      },
+      "rerank": {
+        "recall@1": 0.5,
+        "recall@3": 0.5,
+        "recall@5": 1.0,
+        "mrr": 1.0,
+        "ndcg@3": 0.917319,
+        "ndcg@5": 0.973758
+      },
+      "delta": {
+        "recall@1": 0.0,
+        "recall@3": -0.5,
+        "recall@5": 0.0,
+        "mrr": 0.0,
+        "ndcg@3": 0.327614,
+        "ndcg@5": 0.384053
+      },
+      "degradedMetrics": [
+        "recall@3"
+      ]
+    }
+  ],
+  "gateEvidence": {
+    "independentValidation": false,
+    "mrrDelta": 0.435833,
+    "ndcgAt3Delta": 0.703316,
+    "ndcgAt5Delta": 0.468369,
+    "degradedCaseCount": 2
+  },
+  "finalDecision": "BLOCK",
+  "blockReasons": [
+    "rerank.relevance_labels_pending_independent_human_review",
+    "rerank.human_preference_pending_independent_human_review",
+    "rerank.degraded_cases_present"
+  ],
+  "limitations": [
+    "Frozen relevance labels remain pending independent human review; automatic metrics are provisional.",
+    "Human Preference is not inferred from ranking metrics and remains pending.",
+    "Offline single-machine latency is not production performance."
+  ]
+}

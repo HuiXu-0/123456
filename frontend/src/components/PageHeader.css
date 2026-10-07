@@ -1,0 +1,194 @@
+/* ============================================
+   PageHeader · 三大主页面共用标题区
+   ============================================ */
+.page-header {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: var(--space-lg);
+  margin-bottom: var(--space-xl);
+  flex-wrap: wrap;
+}
+
+.page-header__lead {
+  min-width: 0;
+}
+
+/* 标题：锚条 + 文字 */
+.page-header__title {
+  display: flex;
+  align-items: stretch;
+  gap: 14px;
+  font-family: var(--font-display);
+  font-size: clamp(24px, 3vw, 30px);
+  font-weight: 800;
+  line-height: 1.15;
+  letter-spacing: -0.01em;
+  color: var(--ink);
+}
+
+/* primary 强调竖条（讲义小节竖条放大到页面标题级）*/
+.page-header__bar {
+  flex-shrink: 0;
+  width: 5px;
+  align-self: stretch;
+  min-height: 1.1em;
+  border-radius: 3px;
+  background: linear-gradient(var(--primary), var(--primary-d));
+  box-shadow: 0 0 10px rgba(var(--primary-rgb), 0.35);
+}
+
+.page-header__text {
+  min-width: 0;
+}
+
+/* 关键词高亮 */
+.page-header__hl {
+  color: var(--primary);
+}
+
+/* 标题后小标签（Beta 等）*/
+.page-header__tag {
+  align-self: center;
+  display: inline-flex;
+  align-items: center;
+  padding: 2px 9px;
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 0.04em;
+  border-radius: var(--radius-full);
+  color: var(--primary-600);
+  background: rgba(var(--primary-rgb), 0.12);
+  border: 1px solid rgba(var(--primary-rgb), 0.25);
+}
+
+/* 副标题：加深的小字，左缘对齐到标题文字（让开竖条+gap = 19px）*/
+.page-header__subtitle {
+  margin: 8px 0 0 19px;
+  font-size: 14px;
+  line-height: 1.5;
+  color: var(--ink-soft);
+}
+
+/* ===== 右侧区：徽章组 + 操作区 ===== */
+.page-header__aside {
+  display: flex;
+  align-items: center;
+  gap: var(--space-lg);
+  flex-wrap: wrap;
+}
+
+.page-header__badges {
+  display: flex;
+  align-items: stretch;
+  gap: var(--space-md);
+  flex-wrap: wrap;
+}
+
+.page-header__badge {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 8px;
+  padding: 10px 16px;
+  min-width: 64px;
+  border-radius: var(--radius-md);
+  background: var(--bg-card);
+  border: 1px solid var(--line);
+  box-shadow: var(--shadow-soft);
+}
+
+.page-header__badge-dot {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  flex-shrink: 0;
+}
+
+.page-header__badge-main {
+  display: flex;
+  flex-direction: column;
+  gap: 3px;
+}
+
+/* 操作区（按钮等）*/
+.page-header__actions {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.page-header__badge-value {
+  font-family: var(--font-mono);
+  font-variant-numeric: tabular-nums;
+  font-size: 18px;
+  font-weight: 800;
+  line-height: 1.1;
+  color: var(--ink);
+}
+
+.page-header__badge-label {
+  font-size: 11px;
+  font-weight: 600;
+  color: var(--ink-soft);
+  white-space: nowrap;
+}
+
+/* 难度药丸：accent 暖色 */
+.page-header__badge--accent .page-header__badge-value {
+  color: color-mix(in srgb, var(--accent) 62%, var(--ink));
+}
+
+/* 已校验：success 绿 */
+.page-header__badge--safe .page-header__badge-value {
+  color: var(--success-600);
+}
+
+@media (max-width: 720px) {
+  .page-header__aside {
+    width: 100%;
+  }
+}
+
+/* ===== 全局返回中枢（← 学情管家 / 当前功能）：层级指示条，置于标题上方整行 ===== */
+.page-header__crumbs {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin-bottom: 2px;
+  font-size: 12.5px;
+}
+
+.page-header__back {
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+  padding: 4px 10px;
+  font-size: 12.5px;
+  font-weight: 700;
+  color: var(--primary-d);
+  background: color-mix(in srgb, var(--primary) 8%, transparent);
+  border: 1px solid rgba(var(--primary-rgb), 0.28);
+  border-radius: var(--radius-full);
+  cursor: pointer;
+  transition: all var(--transition-fast);
+}
+.page-header__back:hover {
+  background: color-mix(in srgb, var(--primary) 15%, transparent);
+  transform: translateX(-2px);
+}
+.page-header__back:focus-visible {
+  outline: 2px solid var(--primary);
+  outline-offset: 2px;
+}
+
+.page-header__crumb-sep {
+  color: var(--ink-soft);
+  opacity: 0.6;
+}
+
+.page-header__crumb {
+  font-weight: 600;
+  color: var(--ink-soft);
+}

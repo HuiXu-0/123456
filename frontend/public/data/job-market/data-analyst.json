@@ -1,0 +1,27 @@
+{
+  "id": "data-analyst",
+  "name": "数据分析师",
+  "salaryRange": "15K–30K · 13薪",
+  "salaryMedian": "22K",
+  "heat": "中",
+  "heatPct": 64,
+  "openings": 3120,
+  "source": "聚合自 BOSS直聘 / 拉勾 / 智联 公开 JD 样本（离线管线 + LLM 抽取）",
+  "fetchedAt": "2026-06-06T05:20:00+08:00",
+  "skills": [
+    { "name": "SQL", "freqPct": 94 },
+    { "name": "Excel / BI", "freqPct": 78 },
+    { "name": "Python", "freqPct": 66 },
+    { "name": "统计分析", "freqPct": 60 },
+    { "name": "数据可视化", "freqPct": 55 },
+    { "name": "机器学习基础", "freqPct": 38 }
+  ],
+  "radar": {
+    "机器学习基础": 58,
+    "神经网络": 35,
+    "深度学习": 30,
+    "注意力机制": 18,
+    "Transformer": 15,
+    "大模型微调": 10
+  }
+}

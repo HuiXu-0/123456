@@ -1,0 +1,128 @@
+/* 即时辅导·实时反馈附件（选中即问气泡 + 主动关怀小卡）。全用语义令牌，双主题自动联动。 */
+
+/* ---------- B-2：选中讲义就近浮出「就这段问 AI」 ---------- */
+.sel-ask-bubble {
+  position: fixed;
+  z-index: 240; /* 抽屉(260) 之下、资源详情(200) 之上 */
+  transform: translate(-50%, -120%);
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+  padding: 7px 12px;
+  border: none;
+  border-radius: 999px;
+  background: linear-gradient(150deg, var(--accent), color-mix(in srgb, var(--accent) 76%, var(--ink)));
+  color: #fff;
+  font-size: 0.8rem;
+  font-weight: 700;
+  white-space: nowrap;
+  cursor: pointer;
+  box-shadow: 0 8px 22px rgba(var(--accent-rgb), 0.34);
+  animation: sel-ask-pop 0.16s ease-out;
+}
+.sel-ask-bubble::after {
+  /* 朝向选区的小尖角 */
+  content: '';
+  position: absolute;
+  left: 50%;
+  bottom: -5px;
+  width: 10px;
+  height: 10px;
+  transform: translateX(-50%) rotate(45deg);
+  background: color-mix(in srgb, var(--accent) 76%, var(--ink));
+}
+.sel-ask-bubble:hover {
+  filter: brightness(1.06);
+}
+@keyframes sel-ask-pop {
+  from { opacity: 0; transform: translate(-50%, -110%) scale(0.9); }
+  to { opacity: 1; transform: translate(-50%, -120%) scale(1); }
+}
+
+/* ---------- B-3：主动察觉卡顿 · 右下角轻量关怀小卡 ---------- */
+.stuck-nudge {
+  position: fixed;
+  right: 24px;
+  bottom: 24px;
+  z-index: 190; /* 常驻 dock(150) 之上、抽屉遮罩(260) 之下，不抢「去通关」主 CTA */
+  display: flex;
+  gap: 12px;
+  width: min(330px, calc(100vw - 48px));
+  padding: 16px 16px 14px;
+  border: 1px solid var(--line);
+  border-radius: 16px;
+  background: var(--surface);
+  box-shadow:
+    0 16px 40px rgba(var(--ink-rgb), 0.18),
+    0 2px 8px rgba(var(--ink-rgb), 0.08);
+}
+.stuck-nudge__icon {
+  flex: none;
+  width: 40px;
+  height: 40px;
+  display: grid;
+  place-items: center;
+  border-radius: 12px;
+  font-size: 1.4rem;
+  background: color-mix(in srgb, var(--accent) 16%, var(--surface));
+}
+.stuck-nudge__body { flex: 1; min-width: 0; }
+.stuck-nudge__title {
+  margin: 2px 0 4px;
+  font-size: 0.94rem;
+  font-weight: 800;
+  color: var(--ink);
+}
+.stuck-nudge__text {
+  margin: 0 0 12px;
+  font-size: 0.82rem;
+  line-height: 1.55;
+  color: var(--ink-soft);
+}
+.stuck-nudge__actions { display: flex; gap: 8px; }
+.stuck-nudge__primary {
+  padding: 8px 16px;
+  border: none;
+  border-radius: 10px;
+  background: var(--accent);
+  color: #fff;
+  font-size: 0.82rem;
+  font-weight: 700;
+  cursor: pointer;
+  box-shadow: 0 4px 12px rgba(var(--accent-rgb), 0.28);
+  transition: filter 0.15s, transform 0.1s;
+}
+.stuck-nudge__primary:hover { filter: brightness(1.05); }
+.stuck-nudge__primary:active { transform: translateY(1px); }
+.stuck-nudge__ghost {
+  padding: 8px 14px;
+  border: 1px solid var(--line);
+  border-radius: 10px;
+  background: var(--surface);
+  color: var(--ink-soft);
+  font-size: 0.82rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: border-color 0.15s, color 0.15s;
+}
+.stuck-nudge__ghost:hover { border-color: var(--accent); color: var(--accent); }
+.stuck-nudge__close {
+  position: absolute;
+  top: 8px;
+  right: 10px;
+  width: 24px;
+  height: 24px;
+  border: none;
+  border-radius: 7px;
+  background: transparent;
+  color: var(--ink-soft);
+  font-size: 1.2rem;
+  line-height: 1;
+  cursor: pointer;
+  transition: background 0.15s, color 0.15s;
+}
+.stuck-nudge__close:hover { background: var(--surface-2); color: var(--ink); }
+
+@media (max-width: 640px) {
+  .stuck-nudge { right: 12px; bottom: 12px; }
+}

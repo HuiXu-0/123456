@@ -1,0 +1,33 @@
+/* 元素级降级提示条：语义令牌（--ink / --line / --warning-600）联动深浅主题 */
+.inline-fallback {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin: 10px 0;
+  padding: 10px 14px;
+  border: 1px dashed var(--line);
+  border-radius: 10px;
+  background: color-mix(in srgb, var(--warning-600) 6%, transparent);
+  color: var(--ink-soft, var(--ink));
+  font-size: 0.85rem;
+  line-height: 1.5;
+}
+.inline-fallback__icon {
+  color: var(--warning-600);
+  flex-shrink: 0;
+}
+.inline-fallback__retry {
+  margin-left: auto;
+  flex-shrink: 0;
+  padding: 3px 12px;
+  border: 1px solid var(--line);
+  border-radius: 999px;
+  background: transparent;
+  color: var(--ink);
+  font-size: 0.8rem;
+  cursor: pointer;
+  transition: background 0.15s;
+}
+.inline-fallback__retry:hover {
+  background: color-mix(in srgb, var(--ink) 8%, transparent);
+}

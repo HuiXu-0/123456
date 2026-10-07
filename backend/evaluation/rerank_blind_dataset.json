@@ -1,0 +1,1372 @@
+{
+  "datasetVersion": "rerank-blind-independent-v1",
+  "datasetType": "independent_rerank_blind_dataset",
+  "independentFromTask003": true,
+  "task003CandidateSnapshotReused": false,
+  "candidateIdsAnonymized": true,
+  "candidateSnapshotFrozen": true,
+  "humanReviewStatus": "pending_independent_human_review",
+  "caseCount": 20,
+  "cases": [
+    {
+      "caseId": "t004c_blind_01",
+      "query": "批量很小时，为什么层归一化往往比批归一化稳定？",
+      "candidates": [
+        {
+          "anonymousId": "RB01-A7K2",
+          "content": "梯度下降沿负梯度方向更新参数。Adam 结合动量与自适应学习率；梯度裁剪可防止梯度爆炸。",
+          "baselineRank": 1
+        },
+        {
+          "anonymousId": "RB01-M4Q9",
+          "content": "BatchNorm 依赖小批量均值和方差，推理时使用累计统计；LayerNorm 对单个样本的特征维度归一化，不依赖批大小。",
+          "baselineRank": 2
+        },
+        {
+          "anonymousId": "RB01-T8X3",
+          "content": "标准化把特征减去均值再除以标准差，归一化缩放到固定区间。高基数类别可使用目标编码或嵌入向量表示。",
+          "baselineRank": 3
+        },
+        {
+          "anonymousId": "RB01-C5V1",
+          "content": "Dropout 训练时随机把部分神经元输出置零，推理时保留全部神经元并保持输出期望一致，以减少神经元共适应。",
+          "baselineRank": 4
+        },
+        {
+          "anonymousId": "RB01-P2N6",
+          "content": "多头注意力把 Q、K、V 投影到多个低维子空间并行计算，再拼接各头输出。单头维度通常为总维度除以头数。",
+          "baselineRank": 5
+        }
+      ],
+      "evaluationLabels": [
+        {
+          "anonymousId": "RB01-A7K2",
+          "relevanceGrade": 0,
+          "sourceDocumentRef": "backend/seed_docs/14",
+          "reviewStatus": "pending_independent_human_review"
+        },
+        {
+          "anonymousId": "RB01-M4Q9",
+          "relevanceGrade": 3,
+          "sourceDocumentRef": "backend/seed_docs/15",
+          "reviewStatus": "pending_independent_human_review"
+        },
+        {
+          "anonymousId": "RB01-T8X3",
+          "relevanceGrade": 0,
+          "sourceDocumentRef": "backend/seed_docs/09",
+          "reviewStatus": "pending_independent_human_review"
+        },
+        {
+          "anonymousId": "RB01-C5V1",
+          "relevanceGrade": 0,
+          "sourceDocumentRef": "backend/seed_docs/16",
+          "reviewStatus": "pending_independent_human_review"
+        },
+        {
+          "anonymousId": "RB01-P2N6",
+          "relevanceGrade": 0,
+          "sourceDocumentRef": "backend/seed_docs/23",
+          "reviewStatus": "pending_independent_human_review"
+        }
+      ],
+      "humanPreference": {
+        "reviewStatus": "pending_independent_human_review",
+        "preferredSystem": null,
+        "reviewerId": null
+      }
+    },
+    {
+      "caseId": "t004c_blind_02",
+      "query": "回归数据含很多极端离群点时，MSE、MAE和Huber应怎样权衡？",
+      "candidates": [
+        {
+          "anonymousId": "RB02-A7K2",
+          "content": "监督学习使用带标注样本学习映射。分类预测离散类别，回归预测连续数值，并通过训练集、验证集和测试集评估泛化。",
+          "baselineRank": 1
+        },
+        {
+          "anonymousId": "RB02-M4Q9",
+          "content": "梯度下降沿负梯度方向更新参数。Adam 结合动量与自适应学习率；梯度裁剪可防止梯度爆炸。",
+          "baselineRank": 2
+        },
+        {
+          "anonymousId": "RB02-T8X3",
+          "content": "MSE 对大误差惩罚更重但对离群点敏感，MAE 对离群点更鲁棒，Huber 损失在小误差和大误差区间结合两者特性。",
+          "baselineRank": 3
+        },
+        {
+          "anonymousId": "RB02-C5V1",
+          "content": "标准化把特征减去均值再除以标准差，归一化缩放到固定区间。高基数类别可使用目标编码或嵌入向量表示。",
+          "baselineRank": 4
+        },
+        {
+          "anonymousId": "RB02-P2N6",
+          "content": "过拟合表现为训练集很好但测试集变差。L1、L2、早停、数据增强与 Dropout 都可用于控制模型复杂度和改善泛化。",
+          "baselineRank": 5
+        }
+      ],
+      "evaluationLabels": [
+        {
+          "anonymousId": "RB02-A7K2",
+          "relevanceGrade": 1,
+          "sourceDocumentRef": "backend/seed_docs/05",
+          "reviewStatus": "pending_independent_human_review"
+        },
+        {
+          "anonymousId": "RB02-M4Q9",
+          "relevanceGrade": 0,
+          "sourceDocumentRef": "backend/seed_docs/14",
+          "reviewStatus": "pending_independent_human_review"
+        },
+        {
+          "anonymousId": "RB02-T8X3",
+          "relevanceGrade": 3,
+          "sourceDocumentRef": "backend/seed_docs/07",
+          "reviewStatus": "pending_independent_human_review"
+        },
+        {
+          "anonymousId": "RB02-C5V1",
+          "relevanceGrade": 0,
+          "sourceDocumentRef": "backend/seed_docs/09",
+          "reviewStatus": "pending_independent_human_review"
+        },
+        {
+          "anonymousId": "RB02-P2N6",
+          "relevanceGrade": 0,
+          "sourceDocumentRef": "backend/seed_docs/08",
+          "reviewStatus": "pending_independent_human_review"
+        }
+      ],
+      "humanPreference": {
+        "reviewStatus": "pending_independent_human_review",
+        "preferredSystem": null,
+        "reviewerId": null
+      }
+    },
+    {
+      "caseId": "t004c_blind_03",
+      "query": "验证损失开始上升而训练损失继续下降说明什么，如何处理？",
+      "candidates": [
+        {
+          "anonymousId": "RB03-A7K2",
+          "content": "学习率预热从小值逐渐升高以避免初始大梯度破坏参数，随后可结合余弦、指数或步进衰减促进收敛。",
+          "baselineRank": 1
+        },
+        {
+          "anonymousId": "RB03-M4Q9",
+          "content": "Dropout 训练时随机把部分神经元输出置零，推理时保留全部神经元并保持输出期望一致，以减少神经元共适应。",
+          "baselineRank": 2
+        },
+        {
+          "anonymousId": "RB03-T8X3",
+          "content": "监督学习使用带标注样本学习映射。分类预测离散类别，回归预测连续数值，并通过训练集、验证集和测试集评估泛化。",
+          "baselineRank": 3
+        },
+        {
+          "anonymousId": "RB03-C5V1",
+          "content": "过拟合表现为训练集很好但测试集变差。L1、L2、早停、数据增强与 Dropout 都可用于控制模型复杂度和改善泛化。",
+          "baselineRank": 4
+        },
+        {
+          "anonymousId": "RB03-P2N6",
+          "content": "梯度下降沿负梯度方向更新参数。Adam 结合动量与自适应学习率；梯度裁剪可防止梯度爆炸。",
+          "baselineRank": 5
+        }
+      ],
+      "evaluationLabels": [
+        {
+          "anonymousId": "RB03-A7K2",
+          "relevanceGrade": 1,
+          "sourceDocumentRef": "backend/seed_docs/17",
+          "reviewStatus": "pending_independent_human_review"
+        },
+        {
+          "anonymousId": "RB03-M4Q9",
+          "relevanceGrade": 2,
+          "sourceDocumentRef": "backend/seed_docs/16",
+          "reviewStatus": "pending_independent_human_review"
+        },
+        {
+          "anonymousId": "RB03-T8X3",
+          "relevanceGrade": 0,
+          "sourceDocumentRef": "backend/seed_docs/05",
+          "reviewStatus": "pending_independent_human_review"
+        },
+        {
+          "anonymousId": "RB03-C5V1",
+          "relevanceGrade": 3,
+          "sourceDocumentRef": "backend/seed_docs/08",
+          "reviewStatus": "pending_independent_human_review"
+        },
+        {
+          "anonymousId": "RB03-P2N6",
+          "relevanceGrade": 0,
+          "sourceDocumentRef": "backend/seed_docs/14",
+          "reviewStatus": "pending_independent_human_review"
+        }
+      ],
+      "humanPreference": {
+        "reviewStatus": "pending_independent_human_review",
+        "preferredSystem": null,
+        "reviewerId": null
+      }
+    },
+    {
+      "caseId": "t004c_blind_04",
+      "query": "没有标签但想把用户自动分群，应选择哪类学习方法？",
+      "candidates": [
+        {
+          "anonymousId": "RB04-A7K2",
+          "content": "监督学习使用带标注样本学习映射。分类预测离散类别，回归预测连续数值，并通过训练集、验证集和测试集评估泛化。",
+          "baselineRank": 1
+        },
+        {
+          "anonymousId": "RB04-M4Q9",
+          "content": "机器学习主要分为监督学习、无监督学习与强化学习。大模型可通过全参数微调或参数高效方法适配下游任务。",
+          "baselineRank": 2
+        },
+        {
+          "anonymousId": "RB04-T8X3",
+          "content": "标准化把特征减去均值再除以标准差，归一化缩放到固定区间。高基数类别可使用目标编码或嵌入向量表示。",
+          "baselineRank": 3
+        },
+        {
+          "anonymousId": "RB04-C5V1",
+          "content": "无监督学习处理没有标签的数据。K-means 反复执行样本分配与簇中心更新；PCA 等降维方法用于压缩特征维度。",
+          "baselineRank": 4
+        },
+        {
+          "anonymousId": "RB04-P2N6",
+          "content": "MSE 对大误差惩罚更重但对离群点敏感，MAE 对离群点更鲁棒，Huber 损失在小误差和大误差区间结合两者特性。",
+          "baselineRank": 5
+        }
+      ],
+      "evaluationLabels": [
+        {
+          "anonymousId": "RB04-A7K2",
+          "relevanceGrade": 0,
+          "sourceDocumentRef": "backend/seed_docs/05",
+          "reviewStatus": "pending_independent_human_review"
+        },
+        {
+          "anonymousId": "RB04-M4Q9",
+          "relevanceGrade": 1,
+          "sourceDocumentRef": "backend/seed_docs/03",
+          "reviewStatus": "pending_independent_human_review"
+        },
+        {
+          "anonymousId": "RB04-T8X3",
+          "relevanceGrade": 0,
+          "sourceDocumentRef": "backend/seed_docs/09",
+          "reviewStatus": "pending_independent_human_review"
+        },
+        {
+          "anonymousId": "RB04-C5V1",
+          "relevanceGrade": 3,
+          "sourceDocumentRef": "backend/seed_docs/06",
+          "reviewStatus": "pending_independent_human_review"
+        },
+        {
+          "anonymousId": "RB04-P2N6",
+          "relevanceGrade": 0,
+          "sourceDocumentRef": "backend/seed_docs/07",
+          "reviewStatus": "pending_independent_human_review"
+        }
+      ],
+      "humanPreference": {
+        "reviewStatus": "pending_independent_human_review",
+        "preferredSystem": null,
+        "reviewerId": null
+      }
+    },
+    {
+      "caseId": "t004c_blind_05",
+      "query": "类别取值成千上万时，为什么不一定适合直接独热编码？",
+      "candidates": [
+        {
+          "anonymousId": "RB05-A7K2",
+          "content": "无监督学习处理没有标签的数据。K-means 反复执行样本分配与簇中心更新；PCA 等降维方法用于压缩特征维度。",
+          "baselineRank": 1
+        },
+        {
+          "anonymousId": "RB05-M4Q9",
+          "content": "监督学习使用带标注样本学习映射。分类预测离散类别，回归预测连续数值，并通过训练集、验证集和测试集评估泛化。",
+          "baselineRank": 2
+        },
+        {
+          "anonymousId": "RB05-T8X3",
+          "content": "标准化把特征减去均值再除以标准差，归一化缩放到固定区间。高基数类别可使用目标编码或嵌入向量表示。",
+          "baselineRank": 3
+        },
+        {
+          "anonymousId": "RB05-C5V1",
+          "content": "全参微调更新全部权重且资源成本高；PEFT 冻结大部分原始权重，只训练少量 Adapter、LoRA 或提示参数。",
+          "baselineRank": 4
+        },
+        {
+          "anonymousId": "RB05-P2N6",
+          "content": "多层感知机由输入层、隐藏层和输出层组成。每层执行 Z=W·A_prev+b，再用非线性激活得到下一层输入。",
+          "baselineRank": 5
+        }
+      ],
+      "evaluationLabels": [
+        {
+          "anonymousId": "RB05-A7K2",
+          "relevanceGrade": 0,
+          "sourceDocumentRef": "backend/seed_docs/06",
+          "reviewStatus": "pending_independent_human_review"
+        },
+        {
+          "anonymousId": "RB05-M4Q9",
+          "relevanceGrade": 0,
+          "sourceDocumentRef": "backend/seed_docs/05",
+          "reviewStatus": "pending_independent_human_review"
+        },
+        {
+          "anonymousId": "RB05-T8X3",
+          "relevanceGrade": 3,
+          "sourceDocumentRef": "backend/seed_docs/09",
+          "reviewStatus": "pending_independent_human_review"
+        },
+        {
+          "anonymousId": "RB05-C5V1",
+          "relevanceGrade": 0,
+          "sourceDocumentRef": "backend/seed_docs/27",
+          "reviewStatus": "pending_independent_human_review"
+        },
+        {
+          "anonymousId": "RB05-P2N6",
+          "relevanceGrade": 0,
+          "sourceDocumentRef": "backend/seed_docs/11",
+          "reviewStatus": "pending_independent_human_review"
+        }
+      ],
+      "humanPreference": {
+        "reviewStatus": "pending_independent_human_review",
+        "preferredSystem": null,
+        "reviewerId": null
+      }
+    },
+    {
+      "caseId": "t004c_blind_06",
+      "query": "28×28输入经过3×3卷积、padding 1、stride 1后尺寸为何不变？",
+      "candidates": [
+        {
+          "anonymousId": "RB06-A7K2",
+          "content": "池化对特征图下采样。最大池化保留局部最强响应，全局平均池化把每张特征图压缩成一个数并减少全连接参数。",
+          "baselineRank": 1
+        },
+        {
+          "anonymousId": "RB06-M4Q9",
+          "content": "感受野是特征图单元所看到的输入范围。空洞卷积在核元素间插入间隔，可不增加参数地扩大感受野。",
+          "baselineRank": 2
+        },
+        {
+          "anonymousId": "RB06-T8X3",
+          "content": "卷积神经网络以局部连接、权重共享和池化下采样减少参数。卷积输出尺寸由输入、卷积核、填充与步长共同决定。",
+          "baselineRank": 3
+        },
+        {
+          "anonymousId": "RB06-C5V1",
+          "content": "卷积核在输入上滑动并逐元素相乘求和。步长控制滑动距离，填充控制边缘覆盖与输出尺寸。",
+          "baselineRank": 4
+        },
+        {
+          "anonymousId": "RB06-P2N6",
+          "content": "多层感知机由输入层、隐藏层和输出层组成。每层执行 Z=W·A_prev+b，再用非线性激活得到下一层输入。",
+          "baselineRank": 5
+        }
+      ],
+      "evaluationLabels": [
+        {
+          "anonymousId": "RB06-A7K2",
+          "relevanceGrade": 0,
+          "sourceDocumentRef": "backend/seed_docs/19",
+          "reviewStatus": "pending_independent_human_review"
+        },
+        {
+          "anonymousId": "RB06-M4Q9",
+          "relevanceGrade": 0,
+          "sourceDocumentRef": "backend/seed_docs/20",
+          "reviewStatus": "pending_independent_human_review"
+        },
+        {
+          "anonymousId": "RB06-T8X3",
+          "relevanceGrade": 2,
+          "sourceDocumentRef": "backend/seed_docs/04",
+          "reviewStatus": "pending_independent_human_review"
+        },
+        {
+          "anonymousId": "RB06-C5V1",
+          "relevanceGrade": 3,
+          "sourceDocumentRef": "backend/seed_docs/18",
+          "reviewStatus": "pending_independent_human_review"
+        },
+        {
+          "anonymousId": "RB06-P2N6",
+          "relevanceGrade": 0,
+          "sourceDocumentRef": "backend/seed_docs/11",
+          "reviewStatus": "pending_independent_human_review"
+        }
+      ],
+      "humanPreference": {
+        "reviewStatus": "pending_independent_human_review",
+        "preferredSystem": null,
+        "reviewerId": null
+      }
+    },
+    {
+      "caseId": "t004c_blind_07",
+      "query": "为什么训练时启用Dropout而推理时要关闭随机丢弃？",
+      "candidates": [
+        {
+          "anonymousId": "RB07-A7K2",
+          "content": "ReLU 定义为 max(0,x)，正区间梯度为 1，能缓解梯度消失；负区间梯度为 0 可能造成神经元死亡。",
+          "baselineRank": 1
+        },
+        {
+          "anonymousId": "RB07-M4Q9",
+          "content": "过拟合表现为训练集很好但测试集变差。L1、L2、早停、数据增强与 Dropout 都可用于控制模型复杂度和改善泛化。",
+          "baselineRank": 2
+        },
+        {
+          "anonymousId": "RB07-T8X3",
+          "content": "BatchNorm 依赖小批量均值和方差，推理时使用累计统计；LayerNorm 对单个样本的特征维度归一化，不依赖批大小。",
+          "baselineRank": 3
+        },
+        {
+          "anonymousId": "RB07-C5V1",
+          "content": "Dropout 训练时随机把部分神经元输出置零，推理时保留全部神经元并保持输出期望一致，以减少神经元共适应。",
+          "baselineRank": 4
+        },
+        {
+          "anonymousId": "RB07-P2N6",
+          "content": "学习率预热从小值逐渐升高以避免初始大梯度破坏参数，随后可结合余弦、指数或步进衰减促进收敛。",
+          "baselineRank": 5
+        }
+      ],
+      "evaluationLabels": [
+        {
+          "anonymousId": "RB07-A7K2",
+          "relevanceGrade": 0,
+          "sourceDocumentRef": "backend/seed_docs/12",
+          "reviewStatus": "pending_independent_human_review"
+        },
+        {
+          "anonymousId": "RB07-M4Q9",
+          "relevanceGrade": 1,
+          "sourceDocumentRef": "backend/seed_docs/08",
+          "reviewStatus": "pending_independent_human_review"
+        },
+        {
+          "anonymousId": "RB07-T8X3",
+          "relevanceGrade": 0,
+          "sourceDocumentRef": "backend/seed_docs/15",
+          "reviewStatus": "pending_independent_human_review"
+        },
+        {
+          "anonymousId": "RB07-C5V1",
+          "relevanceGrade": 3,
+          "sourceDocumentRef": "backend/seed_docs/16",
+          "reviewStatus": "pending_independent_human_review"
+        },
+        {
+          "anonymousId": "RB07-P2N6",
+          "relevanceGrade": 0,
+          "sourceDocumentRef": "backend/seed_docs/17",
+          "reviewStatus": "pending_independent_human_review"
+        }
+      ],
+      "humanPreference": {
+        "reviewStatus": "pending_independent_human_review",
+        "preferredSystem": null,
+        "reviewerId": null
+      }
+    },
+    {
+      "caseId": "t004c_blind_08",
+      "query": "Transformer训练初期为什么常先做学习率预热再衰减？",
+      "candidates": [
+        {
+          "anonymousId": "RB08-A7K2",
+          "content": "梯度下降沿负梯度方向更新参数。Adam 结合动量与自适应学习率；梯度裁剪可防止梯度爆炸。",
+          "baselineRank": 1
+        },
+        {
+          "anonymousId": "RB08-M4Q9",
+          "content": "位置编码为无序的自注意力注入顺序。相对位置方法直接建模词间距离，在长文本和长度外推中通常更有优势。",
+          "baselineRank": 2
+        },
+        {
+          "anonymousId": "RB08-T8X3",
+          "content": "学习率预热从小值逐渐升高以避免初始大梯度破坏参数，随后可结合余弦、指数或步进衰减促进收敛。",
+          "baselineRank": 3
+        },
+        {
+          "anonymousId": "RB08-C5V1",
+          "content": "缩放点积注意力计算 softmax(QKᵀ/√d)V。除以 √d 可避免点积过大使 Softmax 饱和和梯度消失。",
+          "baselineRank": 4
+        },
+        {
+          "anonymousId": "RB08-P2N6",
+          "content": "BatchNorm 依赖小批量均值和方差，推理时使用累计统计；LayerNorm 对单个样本的特征维度归一化，不依赖批大小。",
+          "baselineRank": 5
+        }
+      ],
+      "evaluationLabels": [
+        {
+          "anonymousId": "RB08-A7K2",
+          "relevanceGrade": 1,
+          "sourceDocumentRef": "backend/seed_docs/14",
+          "reviewStatus": "pending_independent_human_review"
+        },
+        {
+          "anonymousId": "RB08-M4Q9",
+          "relevanceGrade": 0,
+          "sourceDocumentRef": "backend/seed_docs/24",
+          "reviewStatus": "pending_independent_human_review"
+        },
+        {
+          "anonymousId": "RB08-T8X3",
+          "relevanceGrade": 3,
+          "sourceDocumentRef": "backend/seed_docs/17",
+          "reviewStatus": "pending_independent_human_review"
+        },
+        {
+          "anonymousId": "RB08-C5V1",
+          "relevanceGrade": 0,
+          "sourceDocumentRef": "backend/seed_docs/22",
+          "reviewStatus": "pending_independent_human_review"
+        },
+        {
+          "anonymousId": "RB08-P2N6",
+          "relevanceGrade": 0,
+          "sourceDocumentRef": "backend/seed_docs/15",
+          "reviewStatus": "pending_independent_human_review"
+        }
+      ],
+      "humanPreference": {
+        "reviewStatus": "pending_independent_human_review",
+        "preferredSystem": null,
+        "reviewerId": null
+      }
+    },
+    {
+      "caseId": "t004c_blind_09",
+      "query": "全局平均池化如何减少分类网络末端的参数？",
+      "candidates": [
+        {
+          "anonymousId": "RB09-A7K2",
+          "content": "卷积核在输入上滑动并逐元素相乘求和。步长控制滑动距离，填充控制边缘覆盖与输出尺寸。",
+          "baselineRank": 1
+        },
+        {
+          "anonymousId": "RB09-M4Q9",
+          "content": "ResNet 用残差连接学习 F(x)=H(x)-x，使梯度能直接回传，缓解深层网络训练误差反而上升的退化问题。",
+          "baselineRank": 2
+        },
+        {
+          "anonymousId": "RB09-T8X3",
+          "content": "感受野是特征图单元所看到的输入范围。空洞卷积在核元素间插入间隔，可不增加参数地扩大感受野。",
+          "baselineRank": 3
+        },
+        {
+          "anonymousId": "RB09-C5V1",
+          "content": "池化对特征图下采样。最大池化保留局部最强响应，全局平均池化把每张特征图压缩成一个数并减少全连接参数。",
+          "baselineRank": 4
+        },
+        {
+          "anonymousId": "RB09-P2N6",
+          "content": "多层感知机由输入层、隐藏层和输出层组成。每层执行 Z=W·A_prev+b，再用非线性激活得到下一层输入。",
+          "baselineRank": 5
+        }
+      ],
+      "evaluationLabels": [
+        {
+          "anonymousId": "RB09-A7K2",
+          "relevanceGrade": 0,
+          "sourceDocumentRef": "backend/seed_docs/18",
+          "reviewStatus": "pending_independent_human_review"
+        },
+        {
+          "anonymousId": "RB09-M4Q9",
+          "relevanceGrade": 1,
+          "sourceDocumentRef": "backend/seed_docs/21",
+          "reviewStatus": "pending_independent_human_review"
+        },
+        {
+          "anonymousId": "RB09-T8X3",
+          "relevanceGrade": 0,
+          "sourceDocumentRef": "backend/seed_docs/20",
+          "reviewStatus": "pending_independent_human_review"
+        },
+        {
+          "anonymousId": "RB09-C5V1",
+          "relevanceGrade": 3,
+          "sourceDocumentRef": "backend/seed_docs/19",
+          "reviewStatus": "pending_independent_human_review"
+        },
+        {
+          "anonymousId": "RB09-P2N6",
+          "relevanceGrade": 0,
+          "sourceDocumentRef": "backend/seed_docs/11",
+          "reviewStatus": "pending_independent_human_review"
+        }
+      ],
+      "humanPreference": {
+        "reviewStatus": "pending_independent_human_review",
+        "preferredSystem": null,
+        "reviewerId": null
+      }
+    },
+    {
+      "caseId": "t004c_blind_10",
+      "query": "空洞卷积为什么能在参数量不变时扩大感受野？",
+      "candidates": [
+        {
+          "anonymousId": "RB10-A7K2",
+          "content": "卷积神经网络以局部连接、权重共享和池化下采样减少参数。卷积输出尺寸由输入、卷积核、填充与步长共同决定。",
+          "baselineRank": 1
+        },
+        {
+          "anonymousId": "RB10-M4Q9",
+          "content": "池化对特征图下采样。最大池化保留局部最强响应，全局平均池化把每张特征图压缩成一个数并减少全连接参数。",
+          "baselineRank": 2
+        },
+        {
+          "anonymousId": "RB10-T8X3",
+          "content": "卷积核在输入上滑动并逐元素相乘求和。步长控制滑动距离，填充控制边缘覆盖与输出尺寸。",
+          "baselineRank": 3
+        },
+        {
+          "anonymousId": "RB10-C5V1",
+          "content": "ResNet 用残差连接学习 F(x)=H(x)-x，使梯度能直接回传，缓解深层网络训练误差反而上升的退化问题。",
+          "baselineRank": 4
+        },
+        {
+          "anonymousId": "RB10-P2N6",
+          "content": "感受野是特征图单元所看到的输入范围。空洞卷积在核元素间插入间隔，可不增加参数地扩大感受野。",
+          "baselineRank": 5
+        }
+      ],
+      "evaluationLabels": [
+        {
+          "anonymousId": "RB10-A7K2",
+          "relevanceGrade": 0,
+          "sourceDocumentRef": "backend/seed_docs/04",
+          "reviewStatus": "pending_independent_human_review"
+        },
+        {
+          "anonymousId": "RB10-M4Q9",
+          "relevanceGrade": 0,
+          "sourceDocumentRef": "backend/seed_docs/19",
+          "reviewStatus": "pending_independent_human_review"
+        },
+        {
+          "anonymousId": "RB10-T8X3",
+          "relevanceGrade": 1,
+          "sourceDocumentRef": "backend/seed_docs/18",
+          "reviewStatus": "pending_independent_human_review"
+        },
+        {
+          "anonymousId": "RB10-C5V1",
+          "relevanceGrade": 0,
+          "sourceDocumentRef": "backend/seed_docs/21",
+          "reviewStatus": "pending_independent_human_review"
+        },
+        {
+          "anonymousId": "RB10-P2N6",
+          "relevanceGrade": 3,
+          "sourceDocumentRef": "backend/seed_docs/20",
+          "reviewStatus": "pending_independent_human_review"
+        }
+      ],
+      "humanPreference": {
+        "reviewStatus": "pending_independent_human_review",
+        "preferredSystem": null,
+        "reviewerId": null
+      }
+    },
+    {
+      "caseId": "t004c_blind_11",
+      "query": "残差连接为什么有助于训练非常深的卷积网络？",
+      "candidates": [
+        {
+          "anonymousId": "RB11-A7K2",
+          "content": "反向传播从损失出发，沿计算图反方向应用链式法则，把上游梯度与本地导数相乘，得到参数梯度。",
+          "baselineRank": 1
+        },
+        {
+          "anonymousId": "RB11-M4Q9",
+          "content": "感受野是特征图单元所看到的输入范围。空洞卷积在核元素间插入间隔，可不增加参数地扩大感受野。",
+          "baselineRank": 2
+        },
+        {
+          "anonymousId": "RB11-T8X3",
+          "content": "ResNet 用残差连接学习 F(x)=H(x)-x，使梯度能直接回传，缓解深层网络训练误差反而上升的退化问题。",
+          "baselineRank": 3
+        },
+        {
+          "anonymousId": "RB11-C5V1",
+          "content": "梯度下降沿负梯度方向更新参数。Adam 结合动量与自适应学习率；梯度裁剪可防止梯度爆炸。",
+          "baselineRank": 4
+        },
+        {
+          "anonymousId": "RB11-P2N6",
+          "content": "卷积神经网络以局部连接、权重共享和池化下采样减少参数。卷积输出尺寸由输入、卷积核、填充与步长共同决定。",
+          "baselineRank": 5
+        }
+      ],
+      "evaluationLabels": [
+        {
+          "anonymousId": "RB11-A7K2",
+          "relevanceGrade": 1,
+          "sourceDocumentRef": "backend/seed_docs/13",
+          "reviewStatus": "pending_independent_human_review"
+        },
+        {
+          "anonymousId": "RB11-M4Q9",
+          "relevanceGrade": 0,
+          "sourceDocumentRef": "backend/seed_docs/20",
+          "reviewStatus": "pending_independent_human_review"
+        },
+        {
+          "anonymousId": "RB11-T8X3",
+          "relevanceGrade": 3,
+          "sourceDocumentRef": "backend/seed_docs/21",
+          "reviewStatus": "pending_independent_human_review"
+        },
+        {
+          "anonymousId": "RB11-C5V1",
+          "relevanceGrade": 0,
+          "sourceDocumentRef": "backend/seed_docs/14",
+          "reviewStatus": "pending_independent_human_review"
+        },
+        {
+          "anonymousId": "RB11-P2N6",
+          "relevanceGrade": 0,
+          "sourceDocumentRef": "backend/seed_docs/04",
+          "reviewStatus": "pending_independent_human_review"
+        }
+      ],
+      "humanPreference": {
+        "reviewStatus": "pending_independent_human_review",
+        "preferredSystem": null,
+        "reviewerId": null
+      }
+    },
+    {
+      "caseId": "t004c_blind_12",
+      "query": "缩放点积注意力不除以根号维度会有什么训练风险？",
+      "candidates": [
+        {
+          "anonymousId": "RB12-A7K2",
+          "content": "多头注意力把 Q、K、V 投影到多个低维子空间并行计算，再拼接各头输出。单头维度通常为总维度除以头数。",
+          "baselineRank": 1
+        },
+        {
+          "anonymousId": "RB12-M4Q9",
+          "content": "ReLU 定义为 max(0,x)，正区间梯度为 1，能缓解梯度消失；负区间梯度为 0 可能造成神经元死亡。",
+          "baselineRank": 2
+        },
+        {
+          "anonymousId": "RB12-T8X3",
+          "content": "Transformer 完全基于注意力机制。每个位置生成 Query、Key 与 Value，缩放点积经 Softmax 得到权重，并对 Value 加权求和。",
+          "baselineRank": 3
+        },
+        {
+          "anonymousId": "RB12-C5V1",
+          "content": "缩放点积注意力计算 softmax(QKᵀ/√d)V。除以 √d 可避免点积过大使 Softmax 饱和和梯度消失。",
+          "baselineRank": 4
+        },
+        {
+          "anonymousId": "RB12-P2N6",
+          "content": "学习率预热从小值逐渐升高以避免初始大梯度破坏参数，随后可结合余弦、指数或步进衰减促进收敛。",
+          "baselineRank": 5
+        }
+      ],
+      "evaluationLabels": [
+        {
+          "anonymousId": "RB12-A7K2",
+          "relevanceGrade": 0,
+          "sourceDocumentRef": "backend/seed_docs/23",
+          "reviewStatus": "pending_independent_human_review"
+        },
+        {
+          "anonymousId": "RB12-M4Q9",
+          "relevanceGrade": 0,
+          "sourceDocumentRef": "backend/seed_docs/12",
+          "reviewStatus": "pending_independent_human_review"
+        },
+        {
+          "anonymousId": "RB12-T8X3",
+          "relevanceGrade": 2,
+          "sourceDocumentRef": "backend/seed_docs/02",
+          "reviewStatus": "pending_independent_human_review"
+        },
+        {
+          "anonymousId": "RB12-C5V1",
+          "relevanceGrade": 3,
+          "sourceDocumentRef": "backend/seed_docs/22",
+          "reviewStatus": "pending_independent_human_review"
+        },
+        {
+          "anonymousId": "RB12-P2N6",
+          "relevanceGrade": 0,
+          "sourceDocumentRef": "backend/seed_docs/17",
+          "reviewStatus": "pending_independent_human_review"
+        }
+      ],
+      "humanPreference": {
+        "reviewStatus": "pending_independent_human_review",
+        "preferredSystem": null,
+        "reviewerId": null
+      }
+    },
+    {
+      "caseId": "t004c_blind_13",
+      "query": "多头注意力怎样在总计算量可控时观察不同关系？",
+      "candidates": [
+        {
+          "anonymousId": "RB13-A7K2",
+          "content": "位置编码为无序的自注意力注入顺序。相对位置方法直接建模词间距离，在长文本和长度外推中通常更有优势。",
+          "baselineRank": 1
+        },
+        {
+          "anonymousId": "RB13-M4Q9",
+          "content": "缩放点积注意力计算 softmax(QKᵀ/√d)V。除以 √d 可避免点积过大使 Softmax 饱和和梯度消失。",
+          "baselineRank": 2
+        },
+        {
+          "anonymousId": "RB13-T8X3",
+          "content": "BERT 只使用编码器，GPT 只使用带掩码自注意力的解码器；编码器—解码器模型还通过交叉注意力连接输入与输出。",
+          "baselineRank": 3
+        },
+        {
+          "anonymousId": "RB13-C5V1",
+          "content": "Transformer 完全基于注意力机制。每个位置生成 Query、Key 与 Value，缩放点积经 Softmax 得到权重，并对 Value 加权求和。",
+          "baselineRank": 4
+        },
+        {
+          "anonymousId": "RB13-P2N6",
+          "content": "多头注意力把 Q、K、V 投影到多个低维子空间并行计算，再拼接各头输出。单头维度通常为总维度除以头数。",
+          "baselineRank": 5
+        }
+      ],
+      "evaluationLabels": [
+        {
+          "anonymousId": "RB13-A7K2",
+          "relevanceGrade": 0,
+          "sourceDocumentRef": "backend/seed_docs/24",
+          "reviewStatus": "pending_independent_human_review"
+        },
+        {
+          "anonymousId": "RB13-M4Q9",
+          "relevanceGrade": 1,
+          "sourceDocumentRef": "backend/seed_docs/22",
+          "reviewStatus": "pending_independent_human_review"
+        },
+        {
+          "anonymousId": "RB13-T8X3",
+          "relevanceGrade": 0,
+          "sourceDocumentRef": "backend/seed_docs/25",
+          "reviewStatus": "pending_independent_human_review"
+        },
+        {
+          "anonymousId": "RB13-C5V1",
+          "relevanceGrade": 0,
+          "sourceDocumentRef": "backend/seed_docs/02",
+          "reviewStatus": "pending_independent_human_review"
+        },
+        {
+          "anonymousId": "RB13-P2N6",
+          "relevanceGrade": 3,
+          "sourceDocumentRef": "backend/seed_docs/23",
+          "reviewStatus": "pending_independent_human_review"
+        }
+      ],
+      "humanPreference": {
+        "reviewStatus": "pending_independent_human_review",
+        "preferredSystem": null,
+        "reviewerId": null
+      }
+    },
+    {
+      "caseId": "t004c_blind_14",
+      "query": "长文本外推时，相对位置编码相比固定绝对位置有何意义？",
+      "candidates": [
+        {
+          "anonymousId": "RB14-A7K2",
+          "content": "BERT 只使用编码器，GPT 只使用带掩码自注意力的解码器；编码器—解码器模型还通过交叉注意力连接输入与输出。",
+          "baselineRank": 1
+        },
+        {
+          "anonymousId": "RB14-M4Q9",
+          "content": "多头注意力把 Q、K、V 投影到多个低维子空间并行计算，再拼接各头输出。单头维度通常为总维度除以头数。",
+          "baselineRank": 2
+        },
+        {
+          "anonymousId": "RB14-T8X3",
+          "content": "学习率预热从小值逐渐升高以避免初始大梯度破坏参数，随后可结合余弦、指数或步进衰减促进收敛。",
+          "baselineRank": 3
+        },
+        {
+          "anonymousId": "RB14-C5V1",
+          "content": "位置编码为无序的自注意力注入顺序。相对位置方法直接建模词间距离，在长文本和长度外推中通常更有优势。",
+          "baselineRank": 4
+        },
+        {
+          "anonymousId": "RB14-P2N6",
+          "content": "缩放点积注意力计算 softmax(QKᵀ/√d)V。除以 √d 可避免点积过大使 Softmax 饱和和梯度消失。",
+          "baselineRank": 5
+        }
+      ],
+      "evaluationLabels": [
+        {
+          "anonymousId": "RB14-A7K2",
+          "relevanceGrade": 0,
+          "sourceDocumentRef": "backend/seed_docs/25",
+          "reviewStatus": "pending_independent_human_review"
+        },
+        {
+          "anonymousId": "RB14-M4Q9",
+          "relevanceGrade": 0,
+          "sourceDocumentRef": "backend/seed_docs/23",
+          "reviewStatus": "pending_independent_human_review"
+        },
+        {
+          "anonymousId": "RB14-T8X3",
+          "relevanceGrade": 0,
+          "sourceDocumentRef": "backend/seed_docs/17",
+          "reviewStatus": "pending_independent_human_review"
+        },
+        {
+          "anonymousId": "RB14-C5V1",
+          "relevanceGrade": 3,
+          "sourceDocumentRef": "backend/seed_docs/24",
+          "reviewStatus": "pending_independent_human_review"
+        },
+        {
+          "anonymousId": "RB14-P2N6",
+          "relevanceGrade": 0,
+          "sourceDocumentRef": "backend/seed_docs/22",
+          "reviewStatus": "pending_independent_human_review"
+        }
+      ],
+      "humanPreference": {
+        "reviewStatus": "pending_independent_human_review",
+        "preferredSystem": null,
+        "reviewerId": null
+      }
+    },
+    {
+      "caseId": "t004c_blind_15",
+      "query": "BERT与GPT在Transformer组件选择上有什么结构差异？",
+      "candidates": [
+        {
+          "anonymousId": "RB15-A7K2",
+          "content": "SFT 用指令—响应样本训练模型，通常只在响应部分计算自回归损失，使基座模型学习遵循用户指令。",
+          "baselineRank": 1
+        },
+        {
+          "anonymousId": "RB15-M4Q9",
+          "content": "迁移学习先在大规模语料预训练通用基座，再用较少目标任务数据微调，能够降低标注需求并加快收敛。",
+          "baselineRank": 2
+        },
+        {
+          "anonymousId": "RB15-T8X3",
+          "content": "BERT 只使用编码器，GPT 只使用带掩码自注意力的解码器；编码器—解码器模型还通过交叉注意力连接输入与输出。",
+          "baselineRank": 3
+        },
+        {
+          "anonymousId": "RB15-C5V1",
+          "content": "Transformer 完全基于注意力机制。每个位置生成 Query、Key 与 Value，缩放点积经 Softmax 得到权重，并对 Value 加权求和。",
+          "baselineRank": 4
+        },
+        {
+          "anonymousId": "RB15-P2N6",
+          "content": "多头注意力把 Q、K、V 投影到多个低维子空间并行计算，再拼接各头输出。单头维度通常为总维度除以头数。",
+          "baselineRank": 5
+        }
+      ],
+      "evaluationLabels": [
+        {
+          "anonymousId": "RB15-A7K2",
+          "relevanceGrade": 0,
+          "sourceDocumentRef": "backend/seed_docs/29",
+          "reviewStatus": "pending_independent_human_review"
+        },
+        {
+          "anonymousId": "RB15-M4Q9",
+          "relevanceGrade": 0,
+          "sourceDocumentRef": "backend/seed_docs/26",
+          "reviewStatus": "pending_independent_human_review"
+        },
+        {
+          "anonymousId": "RB15-T8X3",
+          "relevanceGrade": 3,
+          "sourceDocumentRef": "backend/seed_docs/25",
+          "reviewStatus": "pending_independent_human_review"
+        },
+        {
+          "anonymousId": "RB15-C5V1",
+          "relevanceGrade": 1,
+          "sourceDocumentRef": "backend/seed_docs/02",
+          "reviewStatus": "pending_independent_human_review"
+        },
+        {
+          "anonymousId": "RB15-P2N6",
+          "relevanceGrade": 0,
+          "sourceDocumentRef": "backend/seed_docs/23",
+          "reviewStatus": "pending_independent_human_review"
+        }
+      ],
+      "humanPreference": {
+        "reviewStatus": "pending_independent_human_review",
+        "preferredSystem": null,
+        "reviewerId": null
+      }
+    },
+    {
+      "caseId": "t004c_blind_16",
+      "query": "目标领域标注很少时，预训练迁移为什么比从零训练合适？",
+      "candidates": [
+        {
+          "anonymousId": "RB16-A7K2",
+          "content": "监督学习使用带标注样本学习映射。分类预测离散类别，回归预测连续数值，并通过训练集、验证集和测试集评估泛化。",
+          "baselineRank": 1
+        },
+        {
+          "anonymousId": "RB16-M4Q9",
+          "content": "全参微调更新全部权重且资源成本高；PEFT 冻结大部分原始权重，只训练少量 Adapter、LoRA 或提示参数。",
+          "baselineRank": 2
+        },
+        {
+          "anonymousId": "RB16-T8X3",
+          "content": "机器学习主要分为监督学习、无监督学习与强化学习。大模型可通过全参数微调或参数高效方法适配下游任务。",
+          "baselineRank": 3
+        },
+        {
+          "anonymousId": "RB16-C5V1",
+          "content": "迁移学习先在大规模语料预训练通用基座，再用较少目标任务数据微调，能够降低标注需求并加快收敛。",
+          "baselineRank": 4
+        },
+        {
+          "anonymousId": "RB16-P2N6",
+          "content": "SFT 用指令—响应样本训练模型，通常只在响应部分计算自回归损失，使基座模型学习遵循用户指令。",
+          "baselineRank": 5
+        }
+      ],
+      "evaluationLabels": [
+        {
+          "anonymousId": "RB16-A7K2",
+          "relevanceGrade": 0,
+          "sourceDocumentRef": "backend/seed_docs/05",
+          "reviewStatus": "pending_independent_human_review"
+        },
+        {
+          "anonymousId": "RB16-M4Q9",
+          "relevanceGrade": 0,
+          "sourceDocumentRef": "backend/seed_docs/27",
+          "reviewStatus": "pending_independent_human_review"
+        },
+        {
+          "anonymousId": "RB16-T8X3",
+          "relevanceGrade": 1,
+          "sourceDocumentRef": "backend/seed_docs/03",
+          "reviewStatus": "pending_independent_human_review"
+        },
+        {
+          "anonymousId": "RB16-C5V1",
+          "relevanceGrade": 3,
+          "sourceDocumentRef": "backend/seed_docs/26",
+          "reviewStatus": "pending_independent_human_review"
+        },
+        {
+          "anonymousId": "RB16-P2N6",
+          "relevanceGrade": 0,
+          "sourceDocumentRef": "backend/seed_docs/29",
+          "reviewStatus": "pending_independent_human_review"
+        }
+      ],
+      "humanPreference": {
+        "reviewStatus": "pending_independent_human_review",
+        "preferredSystem": null,
+        "reviewerId": null
+      }
+    },
+    {
+      "caseId": "t004c_blind_17",
+      "query": "同一基础模型服务多个任务时，PEFT和LoRA如何降低部署存储？",
+      "candidates": [
+        {
+          "anonymousId": "RB17-A7K2",
+          "content": "迁移学习先在大规模语料预训练通用基座，再用较少目标任务数据微调，能够降低标注需求并加快收敛。",
+          "baselineRank": 1
+        },
+        {
+          "anonymousId": "RB17-M4Q9",
+          "content": "RLHF 先收集回答偏好、训练奖励模型，再优化策略；DPO 不显式训练奖励模型，直接用偏好对构造损失。",
+          "baselineRank": 2
+        },
+        {
+          "anonymousId": "RB17-T8X3",
+          "content": "全参微调更新全部权重且资源成本高；PEFT 冻结大部分原始权重，只训练少量 Adapter、LoRA 或提示参数。",
+          "baselineRank": 3
+        },
+        {
+          "anonymousId": "RB17-C5V1",
+          "content": "SFT 用指令—响应样本训练模型，通常只在响应部分计算自回归损失，使基座模型学习遵循用户指令。",
+          "baselineRank": 4
+        },
+        {
+          "anonymousId": "RB17-P2N6",
+          "content": "LoRA 冻结原权重，用两个低秩矩阵的乘积表示增量。不同任务只保存小型适配器，可共享同一个基础模型。",
+          "baselineRank": 5
+        }
+      ],
+      "evaluationLabels": [
+        {
+          "anonymousId": "RB17-A7K2",
+          "relevanceGrade": 0,
+          "sourceDocumentRef": "backend/seed_docs/26",
+          "reviewStatus": "pending_independent_human_review"
+        },
+        {
+          "anonymousId": "RB17-M4Q9",
+          "relevanceGrade": 0,
+          "sourceDocumentRef": "backend/seed_docs/30",
+          "reviewStatus": "pending_independent_human_review"
+        },
+        {
+          "anonymousId": "RB17-T8X3",
+          "relevanceGrade": 2,
+          "sourceDocumentRef": "backend/seed_docs/27",
+          "reviewStatus": "pending_independent_human_review"
+        },
+        {
+          "anonymousId": "RB17-C5V1",
+          "relevanceGrade": 0,
+          "sourceDocumentRef": "backend/seed_docs/29",
+          "reviewStatus": "pending_independent_human_review"
+        },
+        {
+          "anonymousId": "RB17-P2N6",
+          "relevanceGrade": 3,
+          "sourceDocumentRef": "backend/seed_docs/28",
+          "reviewStatus": "pending_independent_human_review"
+        }
+      ],
+      "humanPreference": {
+        "reviewStatus": "pending_independent_human_review",
+        "preferredSystem": null,
+        "reviewerId": null
+      }
+    },
+    {
+      "caseId": "t004c_blind_18",
+      "query": "为什么LoRA只训练低秩增量仍可能完成任务适配？",
+      "candidates": [
+        {
+          "anonymousId": "RB18-A7K2",
+          "content": "全参微调更新全部权重且资源成本高；PEFT 冻结大部分原始权重，只训练少量 Adapter、LoRA 或提示参数。",
+          "baselineRank": 1
+        },
+        {
+          "anonymousId": "RB18-M4Q9",
+          "content": "迁移学习先在大规模语料预训练通用基座，再用较少目标任务数据微调，能够降低标注需求并加快收敛。",
+          "baselineRank": 2
+        },
+        {
+          "anonymousId": "RB18-T8X3",
+          "content": "梯度下降沿负梯度方向更新参数。Adam 结合动量与自适应学习率；梯度裁剪可防止梯度爆炸。",
+          "baselineRank": 3
+        },
+        {
+          "anonymousId": "RB18-C5V1",
+          "content": "LoRA 冻结原权重，用两个低秩矩阵的乘积表示增量。不同任务只保存小型适配器，可共享同一个基础模型。",
+          "baselineRank": 4
+        },
+        {
+          "anonymousId": "RB18-P2N6",
+          "content": "多层感知机由输入层、隐藏层和输出层组成。每层执行 Z=W·A_prev+b，再用非线性激活得到下一层输入。",
+          "baselineRank": 5
+        }
+      ],
+      "evaluationLabels": [
+        {
+          "anonymousId": "RB18-A7K2",
+          "relevanceGrade": 1,
+          "sourceDocumentRef": "backend/seed_docs/27",
+          "reviewStatus": "pending_independent_human_review"
+        },
+        {
+          "anonymousId": "RB18-M4Q9",
+          "relevanceGrade": 0,
+          "sourceDocumentRef": "backend/seed_docs/26",
+          "reviewStatus": "pending_independent_human_review"
+        },
+        {
+          "anonymousId": "RB18-T8X3",
+          "relevanceGrade": 0,
+          "sourceDocumentRef": "backend/seed_docs/14",
+          "reviewStatus": "pending_independent_human_review"
+        },
+        {
+          "anonymousId": "RB18-C5V1",
+          "relevanceGrade": 3,
+          "sourceDocumentRef": "backend/seed_docs/28",
+          "reviewStatus": "pending_independent_human_review"
+        },
+        {
+          "anonymousId": "RB18-P2N6",
+          "relevanceGrade": 0,
+          "sourceDocumentRef": "backend/seed_docs/11",
+          "reviewStatus": "pending_independent_human_review"
+        }
+      ],
+      "humanPreference": {
+        "reviewStatus": "pending_independent_human_review",
+        "preferredSystem": null,
+        "reviewerId": null
+      }
+    },
+    {
+      "caseId": "t004c_blind_19",
+      "query": "SFT为何通常只在回答部分计算训练损失？",
+      "candidates": [
+        {
+          "anonymousId": "RB19-A7K2",
+          "content": "RLHF 先收集回答偏好、训练奖励模型，再优化策略；DPO 不显式训练奖励模型，直接用偏好对构造损失。",
+          "baselineRank": 1
+        },
+        {
+          "anonymousId": "RB19-M4Q9",
+          "content": "迁移学习先在大规模语料预训练通用基座，再用较少目标任务数据微调，能够降低标注需求并加快收敛。",
+          "baselineRank": 2
+        },
+        {
+          "anonymousId": "RB19-T8X3",
+          "content": "机器学习主要分为监督学习、无监督学习与强化学习。大模型可通过全参数微调或参数高效方法适配下游任务。",
+          "baselineRank": 3
+        },
+        {
+          "anonymousId": "RB19-C5V1",
+          "content": "全参微调更新全部权重且资源成本高；PEFT 冻结大部分原始权重，只训练少量 Adapter、LoRA 或提示参数。",
+          "baselineRank": 4
+        },
+        {
+          "anonymousId": "RB19-P2N6",
+          "content": "SFT 用指令—响应样本训练模型，通常只在响应部分计算自回归损失，使基座模型学习遵循用户指令。",
+          "baselineRank": 5
+        }
+      ],
+      "evaluationLabels": [
+        {
+          "anonymousId": "RB19-A7K2",
+          "relevanceGrade": 0,
+          "sourceDocumentRef": "backend/seed_docs/30",
+          "reviewStatus": "pending_independent_human_review"
+        },
+        {
+          "anonymousId": "RB19-M4Q9",
+          "relevanceGrade": 0,
+          "sourceDocumentRef": "backend/seed_docs/26",
+          "reviewStatus": "pending_independent_human_review"
+        },
+        {
+          "anonymousId": "RB19-T8X3",
+          "relevanceGrade": 0,
+          "sourceDocumentRef": "backend/seed_docs/03",
+          "reviewStatus": "pending_independent_human_review"
+        },
+        {
+          "anonymousId": "RB19-C5V1",
+          "relevanceGrade": 0,
+          "sourceDocumentRef": "backend/seed_docs/27",
+          "reviewStatus": "pending_independent_human_review"
+        },
+        {
+          "anonymousId": "RB19-P2N6",
+          "relevanceGrade": 3,
+          "sourceDocumentRef": "backend/seed_docs/29",
+          "reviewStatus": "pending_independent_human_review"
+        }
+      ],
+      "humanPreference": {
+        "reviewStatus": "pending_independent_human_review",
+        "preferredSystem": null,
+        "reviewerId": null
+      }
+    },
+    {
+      "caseId": "t004c_blind_20",
+      "query": "DPO与经典RLHF在是否显式训练奖励模型上有何区别？",
+      "candidates": [
+        {
+          "anonymousId": "RB20-A7K2",
+          "content": "SFT 用指令—响应样本训练模型，通常只在响应部分计算自回归损失，使基座模型学习遵循用户指令。",
+          "baselineRank": 1
+        },
+        {
+          "anonymousId": "RB20-M4Q9",
+          "content": "全参微调更新全部权重且资源成本高；PEFT 冻结大部分原始权重，只训练少量 Adapter、LoRA 或提示参数。",
+          "baselineRank": 2
+        },
+        {
+          "anonymousId": "RB20-T8X3",
+          "content": "RLHF 先收集回答偏好、训练奖励模型，再优化策略；DPO 不显式训练奖励模型，直接用偏好对构造损失。",
+          "baselineRank": 3
+        },
+        {
+          "anonymousId": "RB20-C5V1",
+          "content": "迁移学习先在大规模语料预训练通用基座，再用较少目标任务数据微调，能够降低标注需求并加快收敛。",
+          "baselineRank": 4
+        },
+        {
+          "anonymousId": "RB20-P2N6",
+          "content": "MSE 对大误差惩罚更重但对离群点敏感，MAE 对离群点更鲁棒，Huber 损失在小误差和大误差区间结合两者特性。",
+          "baselineRank": 5
+        }
+      ],
+      "evaluationLabels": [
+        {
+          "anonymousId": "RB20-A7K2",
+          "relevanceGrade": 1,
+          "sourceDocumentRef": "backend/seed_docs/29",
+          "reviewStatus": "pending_independent_human_review"
+        },
+        {
+          "anonymousId": "RB20-M4Q9",
+          "relevanceGrade": 0,
+          "sourceDocumentRef": "backend/seed_docs/27",
+          "reviewStatus": "pending_independent_human_review"
+        },
+        {
+          "anonymousId": "RB20-T8X3",
+          "relevanceGrade": 3,
+          "sourceDocumentRef": "backend/seed_docs/30",
+          "reviewStatus": "pending_independent_human_review"
+        },
+        {
+          "anonymousId": "RB20-C5V1",
+          "relevanceGrade": 0,
+          "sourceDocumentRef": "backend/seed_docs/26",
+          "reviewStatus": "pending_independent_human_review"
+        },
+        {
+          "anonymousId": "RB20-P2N6",
+          "relevanceGrade": 0,
+          "sourceDocumentRef": "backend/seed_docs/07",
+          "reviewStatus": "pending_independent_human_review"
+        }
+      ],
+      "humanPreference": {
+        "reviewStatus": "pending_independent_human_review",
+        "preferredSystem": null,
+        "reviewerId": null
+      }
+    }
+  ]
+}

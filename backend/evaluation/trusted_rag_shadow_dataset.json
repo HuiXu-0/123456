@@ -1,0 +1,3985 @@
+{
+  "datasetVersion": "trusted-rag-shadow-representative-v1",
+  "datasetType": "representative_evaluation_dataset",
+  "productionShadowData": false,
+  "title": "Trusted RAG Shadow Representative Evaluation Dataset",
+  "description": "基于仓库 seed_docs 人工策划的领域代表性评测集；不是生产 Shadow 请求导出，不得用于声称已完成真实流量验证。",
+  "provenance": {
+    "sourceType": "repository_seed_docs_and_out_of_scope_scenarios",
+    "sourcePaths": [
+      "backend/seed_docs/"
+    ],
+    "containsProductionQueries": false,
+    "piiIncluded": false,
+    "curationStatus": "representative_cases_prepared_pending_independent_human_review"
+  },
+  "categoryRequirements": {
+    "concept_explanation": {
+      "label": "概念解释",
+      "requiredCount": 20
+    },
+    "process_explanation": {
+      "label": "流程说明",
+      "requiredCount": 20
+    },
+    "code_technical": {
+      "label": "代码/技术问题",
+      "requiredCount": 20
+    },
+    "multi_hop_reasoning": {
+      "label": "多跳推理",
+      "requiredCount": 20
+    },
+    "no_answer_refusal": {
+      "label": "无答案拒答",
+      "requiredCount": 20
+    }
+  },
+  "caseCount": 100,
+  "cases": [
+    {
+      "caseId": "t004a_concept_explanation_01",
+      "query": "神经元如何把多个输入变成一个输出？",
+      "category": "concept_explanation",
+      "categoryLabel": "概念解释",
+      "standardAnswer": "神经元先对输入与权重做加权求和，再加偏置，最后经过激活函数得到输出。",
+      "expectedEvidence": [
+        {
+          "documentId": "doc_010",
+          "sourcePath": "backend/seed_docs/10-感知机与神经元模型.md",
+          "support": "支持标准答案中的加权求和、偏置、激活函数"
+        }
+      ],
+      "answerable": true,
+      "refusal": false,
+      "correctnessCriteria": {
+        "requiredConcepts": [
+          "加权求和",
+          "偏置",
+          "激活函数"
+        ],
+        "gradingRule": "回答必须覆盖全部 requiredConcepts，且不得与标准答案或证据矛盾。"
+      },
+      "evidenceCoverageCriteria": {
+        "requiredDocumentIds": [
+          "doc_010"
+        ],
+        "minimumMatchedDocuments": 1,
+        "gradingRule": "引用证据必须覆盖 requiredDocumentIds，且能直接支持 requiredConcepts。"
+      },
+      "difficulty": "easy",
+      "qualityLabel": {
+        "expectedOutcome": "grounded_answer",
+        "groundingRequired": true,
+        "annotationMethod": "repository_grounded_representative_curation",
+        "reviewStatus": "pending_independent_human_review"
+      },
+      "datasetVersion": "trusted-rag-shadow-representative-v1"
+    },
+    {
+      "caseId": "t004a_concept_explanation_02",
+      "query": "为什么神经网络需要非线性激活函数？",
+      "category": "concept_explanation",
+      "categoryLabel": "概念解释",
+      "standardAnswer": "非线性激活使多层网络能够表达复杂非线性关系；若没有它，多层线性变换仍等价于一次线性变换。",
+      "expectedEvidence": [
+        {
+          "documentId": "doc_012",
+          "sourcePath": "backend/seed_docs/12-激活函数详解.md",
+          "support": "支持标准答案中的非线性、多层网络、线性变换"
+        }
+      ],
+      "answerable": true,
+      "refusal": false,
+      "correctnessCriteria": {
+        "requiredConcepts": [
+          "非线性",
+          "多层网络",
+          "线性变换"
+        ],
+        "gradingRule": "回答必须覆盖全部 requiredConcepts，且不得与标准答案或证据矛盾。"
+      },
+      "evidenceCoverageCriteria": {
+        "requiredDocumentIds": [
+          "doc_012"
+        ],
+        "minimumMatchedDocuments": 1,
+        "gradingRule": "引用证据必须覆盖 requiredDocumentIds，且能直接支持 requiredConcepts。"
+      },
+      "difficulty": "easy",
+      "qualityLabel": {
+        "expectedOutcome": "grounded_answer",
+        "groundingRequired": true,
+        "annotationMethod": "repository_grounded_representative_curation",
+        "reviewStatus": "pending_independent_human_review"
+      },
+      "datasetVersion": "trusted-rag-shadow-representative-v1"
+    },
+    {
+      "caseId": "t004a_concept_explanation_03",
+      "query": "前向传播是什么？",
+      "category": "concept_explanation",
+      "categoryLabel": "概念解释",
+      "standardAnswer": "前向传播是数据从输入层逐层计算到输出层的过程，每层执行矩阵乘法、加偏置和激活。",
+      "expectedEvidence": [
+        {
+          "documentId": "doc_011",
+          "sourcePath": "backend/seed_docs/11-前向传播与多层感知机.md",
+          "support": "支持标准答案中的输入层、逐层计算、输出层"
+        }
+      ],
+      "answerable": true,
+      "refusal": false,
+      "correctnessCriteria": {
+        "requiredConcepts": [
+          "输入层",
+          "逐层计算",
+          "输出层"
+        ],
+        "gradingRule": "回答必须覆盖全部 requiredConcepts，且不得与标准答案或证据矛盾。"
+      },
+      "evidenceCoverageCriteria": {
+        "requiredDocumentIds": [
+          "doc_011"
+        ],
+        "minimumMatchedDocuments": 1,
+        "gradingRule": "引用证据必须覆盖 requiredDocumentIds，且能直接支持 requiredConcepts。"
+      },
+      "difficulty": "easy",
+      "qualityLabel": {
+        "expectedOutcome": "grounded_answer",
+        "groundingRequired": true,
+        "annotationMethod": "repository_grounded_representative_curation",
+        "reviewStatus": "pending_independent_human_review"
+      },
+      "datasetVersion": "trusted-rag-shadow-representative-v1"
+    },
+    {
+      "caseId": "t004a_concept_explanation_04",
+      "query": "反向传播的核心作用是什么？",
+      "category": "concept_explanation",
+      "categoryLabel": "概念解释",
+      "standardAnswer": "反向传播利用链式法则从损失向前逐层计算各参数梯度，为优化器更新参数提供依据。",
+      "expectedEvidence": [
+        {
+          "documentId": "doc_013",
+          "sourcePath": "backend/seed_docs/13-反向传播与链式法则.md",
+          "support": "支持标准答案中的链式法则、损失、参数梯度"
+        }
+      ],
+      "answerable": true,
+      "refusal": false,
+      "correctnessCriteria": {
+        "requiredConcepts": [
+          "链式法则",
+          "损失",
+          "参数梯度"
+        ],
+        "gradingRule": "回答必须覆盖全部 requiredConcepts，且不得与标准答案或证据矛盾。"
+      },
+      "evidenceCoverageCriteria": {
+        "requiredDocumentIds": [
+          "doc_013"
+        ],
+        "minimumMatchedDocuments": 1,
+        "gradingRule": "引用证据必须覆盖 requiredDocumentIds，且能直接支持 requiredConcepts。"
+      },
+      "difficulty": "medium",
+      "qualityLabel": {
+        "expectedOutcome": "grounded_answer",
+        "groundingRequired": true,
+        "annotationMethod": "repository_grounded_representative_curation",
+        "reviewStatus": "pending_independent_human_review"
+      },
+      "datasetVersion": "trusted-rag-shadow-representative-v1"
+    },
+    {
+      "caseId": "t004a_concept_explanation_05",
+      "query": "监督学习与无监督学习的主要区别是什么？",
+      "category": "concept_explanation",
+      "categoryLabel": "概念解释",
+      "standardAnswer": "监督学习使用带标签样本学习输入到目标的映射；无监督学习没有标签，主要发现数据结构与分布。",
+      "expectedEvidence": [
+        {
+          "documentId": "doc_005",
+          "sourcePath": "backend/seed_docs/05-监督学习与分类回归.md",
+          "support": "支持标准答案中的标签、映射、数据结构"
+        },
+        {
+          "documentId": "doc_006",
+          "sourcePath": "backend/seed_docs/06-无监督学习与聚类降维.md",
+          "support": "支持标准答案中的标签、映射、数据结构"
+        }
+      ],
+      "answerable": true,
+      "refusal": false,
+      "correctnessCriteria": {
+        "requiredConcepts": [
+          "标签",
+          "映射",
+          "数据结构"
+        ],
+        "gradingRule": "回答必须覆盖全部 requiredConcepts，且不得与标准答案或证据矛盾。"
+      },
+      "evidenceCoverageCriteria": {
+        "requiredDocumentIds": [
+          "doc_005",
+          "doc_006"
+        ],
+        "minimumMatchedDocuments": 2,
+        "gradingRule": "引用证据必须覆盖 requiredDocumentIds，且能直接支持 requiredConcepts。"
+      },
+      "difficulty": "easy",
+      "qualityLabel": {
+        "expectedOutcome": "grounded_answer",
+        "groundingRequired": true,
+        "annotationMethod": "repository_grounded_representative_curation",
+        "reviewStatus": "pending_independent_human_review"
+      },
+      "datasetVersion": "trusted-rag-shadow-representative-v1"
+    },
+    {
+      "caseId": "t004a_concept_explanation_06",
+      "query": "过拟合是什么意思？",
+      "category": "concept_explanation",
+      "categoryLabel": "概念解释",
+      "standardAnswer": "过拟合是模型在训练集表现很好但在未见数据上明显变差，通常因为学习了训练噪声而非可泛化规律。",
+      "expectedEvidence": [
+        {
+          "documentId": "doc_008",
+          "sourcePath": "backend/seed_docs/08-过拟合与正则化.md",
+          "support": "支持标准答案中的训练集、未见数据、泛化"
+        }
+      ],
+      "answerable": true,
+      "refusal": false,
+      "correctnessCriteria": {
+        "requiredConcepts": [
+          "训练集",
+          "未见数据",
+          "泛化"
+        ],
+        "gradingRule": "回答必须覆盖全部 requiredConcepts，且不得与标准答案或证据矛盾。"
+      },
+      "evidenceCoverageCriteria": {
+        "requiredDocumentIds": [
+          "doc_008"
+        ],
+        "minimumMatchedDocuments": 1,
+        "gradingRule": "引用证据必须覆盖 requiredDocumentIds，且能直接支持 requiredConcepts。"
+      },
+      "difficulty": "easy",
+      "qualityLabel": {
+        "expectedOutcome": "grounded_answer",
+        "groundingRequired": true,
+        "annotationMethod": "repository_grounded_representative_curation",
+        "reviewStatus": "pending_independent_human_review"
+      },
+      "datasetVersion": "trusted-rag-shadow-representative-v1"
+    },
+    {
+      "caseId": "t004a_concept_explanation_07",
+      "query": "L1和L2正则化有什么区别？",
+      "category": "concept_explanation",
+      "categoryLabel": "概念解释",
+      "standardAnswer": "L1惩罚权重绝对值并倾向产生稀疏权重；L2惩罚权重平方并促使权重整体变小和平滑。",
+      "expectedEvidence": [
+        {
+          "documentId": "doc_008",
+          "sourcePath": "backend/seed_docs/08-过拟合与正则化.md",
+          "support": "支持标准答案中的L1、稀疏、L2、权重变小"
+        }
+      ],
+      "answerable": true,
+      "refusal": false,
+      "correctnessCriteria": {
+        "requiredConcepts": [
+          "L1",
+          "稀疏",
+          "L2",
+          "权重变小"
+        ],
+        "gradingRule": "回答必须覆盖全部 requiredConcepts，且不得与标准答案或证据矛盾。"
+      },
+      "evidenceCoverageCriteria": {
+        "requiredDocumentIds": [
+          "doc_008"
+        ],
+        "minimumMatchedDocuments": 1,
+        "gradingRule": "引用证据必须覆盖 requiredDocumentIds，且能直接支持 requiredConcepts。"
+      },
+      "difficulty": "medium",
+      "qualityLabel": {
+        "expectedOutcome": "grounded_answer",
+        "groundingRequired": true,
+        "annotationMethod": "repository_grounded_representative_curation",
+        "reviewStatus": "pending_independent_human_review"
+      },
+      "datasetVersion": "trusted-rag-shadow-representative-v1"
+    },
+    {
+      "caseId": "t004a_concept_explanation_08",
+      "query": "批归一化与层归一化分别按什么维度归一化？",
+      "category": "concept_explanation",
+      "categoryLabel": "概念解释",
+      "standardAnswer": "BatchNorm按小批量对特征通道统计，LayerNorm对单个样本的特征维度统计；后者不依赖批大小。",
+      "expectedEvidence": [
+        {
+          "documentId": "doc_015",
+          "sourcePath": "backend/seed_docs/15-批归一化与层归一化.md",
+          "support": "支持标准答案中的BatchNorm、小批量、LayerNorm、单个样本"
+        }
+      ],
+      "answerable": true,
+      "refusal": false,
+      "correctnessCriteria": {
+        "requiredConcepts": [
+          "BatchNorm",
+          "小批量",
+          "LayerNorm",
+          "单个样本"
+        ],
+        "gradingRule": "回答必须覆盖全部 requiredConcepts，且不得与标准答案或证据矛盾。"
+      },
+      "evidenceCoverageCriteria": {
+        "requiredDocumentIds": [
+          "doc_015"
+        ],
+        "minimumMatchedDocuments": 1,
+        "gradingRule": "引用证据必须覆盖 requiredDocumentIds，且能直接支持 requiredConcepts。"
+      },
+      "difficulty": "medium",
+      "qualityLabel": {
+        "expectedOutcome": "grounded_answer",
+        "groundingRequired": true,
+        "annotationMethod": "repository_grounded_representative_curation",
+        "reviewStatus": "pending_independent_human_review"
+      },
+      "datasetVersion": "trusted-rag-shadow-representative-v1"
+    },
+    {
+      "caseId": "t004a_concept_explanation_09",
+      "query": "卷积网络中的权重共享是什么？",
+      "category": "concept_explanation",
+      "categoryLabel": "概念解释",
+      "standardAnswer": "权重共享是同一卷积核在输入的不同空间位置使用同一组参数，从而减少参数并获得平移等变性。",
+      "expectedEvidence": [
+        {
+          "documentId": "doc_018",
+          "sourcePath": "backend/seed_docs/18-卷积运算与卷积核.md",
+          "support": "支持标准答案中的卷积核、同一组参数、平移等变"
+        },
+        {
+          "documentId": "doc_020",
+          "sourcePath": "backend/seed_docs/20-感受野与权重共享.md",
+          "support": "支持标准答案中的卷积核、同一组参数、平移等变"
+        }
+      ],
+      "answerable": true,
+      "refusal": false,
+      "correctnessCriteria": {
+        "requiredConcepts": [
+          "卷积核",
+          "同一组参数",
+          "平移等变"
+        ],
+        "gradingRule": "回答必须覆盖全部 requiredConcepts，且不得与标准答案或证据矛盾。"
+      },
+      "evidenceCoverageCriteria": {
+        "requiredDocumentIds": [
+          "doc_018",
+          "doc_020"
+        ],
+        "minimumMatchedDocuments": 2,
+        "gradingRule": "引用证据必须覆盖 requiredDocumentIds，且能直接支持 requiredConcepts。"
+      },
+      "difficulty": "medium",
+      "qualityLabel": {
+        "expectedOutcome": "grounded_answer",
+        "groundingRequired": true,
+        "annotationMethod": "repository_grounded_representative_curation",
+        "reviewStatus": "pending_independent_human_review"
+      },
+      "datasetVersion": "trusted-rag-shadow-representative-v1"
+    },
+    {
+      "caseId": "t004a_concept_explanation_10",
+      "query": "感受野表示什么？",
+      "category": "concept_explanation",
+      "categoryLabel": "概念解释",
+      "standardAnswer": "感受野表示某个特征图位置能够感知到的原始输入区域范围，网络越深通常感受野越大。",
+      "expectedEvidence": [
+        {
+          "documentId": "doc_020",
+          "sourcePath": "backend/seed_docs/20-感受野与权重共享.md",
+          "support": "支持标准答案中的特征图位置、输入区域、网络深度"
+        }
+      ],
+      "answerable": true,
+      "refusal": false,
+      "correctnessCriteria": {
+        "requiredConcepts": [
+          "特征图位置",
+          "输入区域",
+          "网络深度"
+        ],
+        "gradingRule": "回答必须覆盖全部 requiredConcepts，且不得与标准答案或证据矛盾。"
+      },
+      "evidenceCoverageCriteria": {
+        "requiredDocumentIds": [
+          "doc_020"
+        ],
+        "minimumMatchedDocuments": 1,
+        "gradingRule": "引用证据必须覆盖 requiredDocumentIds，且能直接支持 requiredConcepts。"
+      },
+      "difficulty": "medium",
+      "qualityLabel": {
+        "expectedOutcome": "grounded_answer",
+        "groundingRequired": true,
+        "annotationMethod": "repository_grounded_representative_curation",
+        "reviewStatus": "pending_independent_human_review"
+      },
+      "datasetVersion": "trusted-rag-shadow-representative-v1"
+    },
+    {
+      "caseId": "t004a_concept_explanation_11",
+      "query": "自注意力中的Q、K、V分别表示什么？",
+      "category": "concept_explanation",
+      "categoryLabel": "概念解释",
+      "standardAnswer": "Q表示当前位置要寻找的信息，K表示各位置可匹配的线索，V表示被加权汇总的实际内容。",
+      "expectedEvidence": [
+        {
+          "documentId": "doc_022",
+          "sourcePath": "backend/seed_docs/22-自注意力机制.md",
+          "support": "支持标准答案中的Q、K、V、加权汇总"
+        },
+        {
+          "documentId": "doc_002",
+          "sourcePath": "backend/seed_docs/02-Transformer与注意力机制.md",
+          "support": "支持标准答案中的Q、K、V、加权汇总"
+        }
+      ],
+      "answerable": true,
+      "refusal": false,
+      "correctnessCriteria": {
+        "requiredConcepts": [
+          "Q",
+          "K",
+          "V",
+          "加权汇总"
+        ],
+        "gradingRule": "回答必须覆盖全部 requiredConcepts，且不得与标准答案或证据矛盾。"
+      },
+      "evidenceCoverageCriteria": {
+        "requiredDocumentIds": [
+          "doc_022",
+          "doc_002"
+        ],
+        "minimumMatchedDocuments": 2,
+        "gradingRule": "引用证据必须覆盖 requiredDocumentIds，且能直接支持 requiredConcepts。"
+      },
+      "difficulty": "medium",
+      "qualityLabel": {
+        "expectedOutcome": "grounded_answer",
+        "groundingRequired": true,
+        "annotationMethod": "repository_grounded_representative_curation",
+        "reviewStatus": "pending_independent_human_review"
+      },
+      "datasetVersion": "trusted-rag-shadow-representative-v1"
+    },
+    {
+      "caseId": "t004a_concept_explanation_12",
+      "query": "为什么缩放点积注意力要除以根号d_k？",
+      "category": "concept_explanation",
+      "categoryLabel": "概念解释",
+      "standardAnswer": "缩放可防止维度较大时点积过大导致Softmax饱和和梯度过小，使训练更稳定。",
+      "expectedEvidence": [
+        {
+          "documentId": "doc_022",
+          "sourcePath": "backend/seed_docs/22-自注意力机制.md",
+          "support": "支持标准答案中的点积、Softmax饱和、梯度"
+        },
+        {
+          "documentId": "doc_002",
+          "sourcePath": "backend/seed_docs/02-Transformer与注意力机制.md",
+          "support": "支持标准答案中的点积、Softmax饱和、梯度"
+        }
+      ],
+      "answerable": true,
+      "refusal": false,
+      "correctnessCriteria": {
+        "requiredConcepts": [
+          "点积",
+          "Softmax饱和",
+          "梯度"
+        ],
+        "gradingRule": "回答必须覆盖全部 requiredConcepts，且不得与标准答案或证据矛盾。"
+      },
+      "evidenceCoverageCriteria": {
+        "requiredDocumentIds": [
+          "doc_022",
+          "doc_002"
+        ],
+        "minimumMatchedDocuments": 2,
+        "gradingRule": "引用证据必须覆盖 requiredDocumentIds，且能直接支持 requiredConcepts。"
+      },
+      "difficulty": "medium",
+      "qualityLabel": {
+        "expectedOutcome": "grounded_answer",
+        "groundingRequired": true,
+        "annotationMethod": "repository_grounded_representative_curation",
+        "reviewStatus": "pending_independent_human_review"
+      },
+      "datasetVersion": "trusted-rag-shadow-representative-v1"
+    },
+    {
+      "caseId": "t004a_concept_explanation_13",
+      "query": "多头注意力为什么使用多个头？",
+      "category": "concept_explanation",
+      "categoryLabel": "概念解释",
+      "standardAnswer": "多个注意力头可在不同表示子空间并行关注不同关系，再拼接融合成更丰富的表示。",
+      "expectedEvidence": [
+        {
+          "documentId": "doc_023",
+          "sourcePath": "backend/seed_docs/23-多头注意力.md",
+          "support": "支持标准答案中的表示子空间、并行、拼接融合"
+        }
+      ],
+      "answerable": true,
+      "refusal": false,
+      "correctnessCriteria": {
+        "requiredConcepts": [
+          "表示子空间",
+          "并行",
+          "拼接融合"
+        ],
+        "gradingRule": "回答必须覆盖全部 requiredConcepts，且不得与标准答案或证据矛盾。"
+      },
+      "evidenceCoverageCriteria": {
+        "requiredDocumentIds": [
+          "doc_023"
+        ],
+        "minimumMatchedDocuments": 1,
+        "gradingRule": "引用证据必须覆盖 requiredDocumentIds，且能直接支持 requiredConcepts。"
+      },
+      "difficulty": "medium",
+      "qualityLabel": {
+        "expectedOutcome": "grounded_answer",
+        "groundingRequired": true,
+        "annotationMethod": "repository_grounded_representative_curation",
+        "reviewStatus": "pending_independent_human_review"
+      },
+      "datasetVersion": "trusted-rag-shadow-representative-v1"
+    },
+    {
+      "caseId": "t004a_concept_explanation_14",
+      "query": "Transformer为什么需要位置编码？",
+      "category": "concept_explanation",
+      "categoryLabel": "概念解释",
+      "standardAnswer": "自注意力本身不包含序列顺序，位置编码向词表示注入位置信息，使模型能够区分先后和距离。",
+      "expectedEvidence": [
+        {
+          "documentId": "doc_024",
+          "sourcePath": "backend/seed_docs/24-位置编码.md",
+          "support": "支持标准答案中的自注意力、序列顺序、位置信息"
+        }
+      ],
+      "answerable": true,
+      "refusal": false,
+      "correctnessCriteria": {
+        "requiredConcepts": [
+          "自注意力",
+          "序列顺序",
+          "位置信息"
+        ],
+        "gradingRule": "回答必须覆盖全部 requiredConcepts，且不得与标准答案或证据矛盾。"
+      },
+      "evidenceCoverageCriteria": {
+        "requiredDocumentIds": [
+          "doc_024"
+        ],
+        "minimumMatchedDocuments": 1,
+        "gradingRule": "引用证据必须覆盖 requiredDocumentIds，且能直接支持 requiredConcepts。"
+      },
+      "difficulty": "medium",
+      "qualityLabel": {
+        "expectedOutcome": "grounded_answer",
+        "groundingRequired": true,
+        "annotationMethod": "repository_grounded_representative_curation",
+        "reviewStatus": "pending_independent_human_review"
+      },
+      "datasetVersion": "trusted-rag-shadow-representative-v1"
+    },
+    {
+      "caseId": "t004a_concept_explanation_15",
+      "query": "迁移学习是什么？",
+      "category": "concept_explanation",
+      "categoryLabel": "概念解释",
+      "standardAnswer": "迁移学习把源任务或大规模数据上学到的表示迁移到目标任务，再通过微调适配目标数据。",
+      "expectedEvidence": [
+        {
+          "documentId": "doc_026",
+          "sourcePath": "backend/seed_docs/26-预训练与迁移学习.md",
+          "support": "支持标准答案中的源任务、预训练表示、目标任务"
+        }
+      ],
+      "answerable": true,
+      "refusal": false,
+      "correctnessCriteria": {
+        "requiredConcepts": [
+          "源任务",
+          "预训练表示",
+          "目标任务"
+        ],
+        "gradingRule": "回答必须覆盖全部 requiredConcepts，且不得与标准答案或证据矛盾。"
+      },
+      "evidenceCoverageCriteria": {
+        "requiredDocumentIds": [
+          "doc_026"
+        ],
+        "minimumMatchedDocuments": 1,
+        "gradingRule": "引用证据必须覆盖 requiredDocumentIds，且能直接支持 requiredConcepts。"
+      },
+      "difficulty": "easy",
+      "qualityLabel": {
+        "expectedOutcome": "grounded_answer",
+        "groundingRequired": true,
+        "annotationMethod": "repository_grounded_representative_curation",
+        "reviewStatus": "pending_independent_human_review"
+      },
+      "datasetVersion": "trusted-rag-shadow-representative-v1"
+    },
+    {
+      "caseId": "t004a_concept_explanation_16",
+      "query": "PEFT的核心目标是什么？",
+      "category": "concept_explanation",
+      "categoryLabel": "概念解释",
+      "standardAnswer": "PEFT冻结大部分预训练参数，只训练少量新增或选定参数，以降低显存、计算和存储成本。",
+      "expectedEvidence": [
+        {
+          "documentId": "doc_027",
+          "sourcePath": "backend/seed_docs/27-全参微调与PEFT.md",
+          "support": "支持标准答案中的冻结、少量参数、成本"
+        }
+      ],
+      "answerable": true,
+      "refusal": false,
+      "correctnessCriteria": {
+        "requiredConcepts": [
+          "冻结",
+          "少量参数",
+          "成本"
+        ],
+        "gradingRule": "回答必须覆盖全部 requiredConcepts，且不得与标准答案或证据矛盾。"
+      },
+      "evidenceCoverageCriteria": {
+        "requiredDocumentIds": [
+          "doc_027"
+        ],
+        "minimumMatchedDocuments": 1,
+        "gradingRule": "引用证据必须覆盖 requiredDocumentIds，且能直接支持 requiredConcepts。"
+      },
+      "difficulty": "medium",
+      "qualityLabel": {
+        "expectedOutcome": "grounded_answer",
+        "groundingRequired": true,
+        "annotationMethod": "repository_grounded_representative_curation",
+        "reviewStatus": "pending_independent_human_review"
+      },
+      "datasetVersion": "trusted-rag-shadow-representative-v1"
+    },
+    {
+      "caseId": "t004a_concept_explanation_17",
+      "query": "LoRA为什么叫低秩适配？",
+      "category": "concept_explanation",
+      "categoryLabel": "概念解释",
+      "standardAnswer": "LoRA冻结原权重，用两个小矩阵的低秩乘积表示权重增量，以少量参数近似任务适配。",
+      "expectedEvidence": [
+        {
+          "documentId": "doc_028",
+          "sourcePath": "backend/seed_docs/28-LoRA低秩适配.md",
+          "support": "支持标准答案中的冻结原权重、低秩矩阵、权重增量"
+        }
+      ],
+      "answerable": true,
+      "refusal": false,
+      "correctnessCriteria": {
+        "requiredConcepts": [
+          "冻结原权重",
+          "低秩矩阵",
+          "权重增量"
+        ],
+        "gradingRule": "回答必须覆盖全部 requiredConcepts，且不得与标准答案或证据矛盾。"
+      },
+      "evidenceCoverageCriteria": {
+        "requiredDocumentIds": [
+          "doc_028"
+        ],
+        "minimumMatchedDocuments": 1,
+        "gradingRule": "引用证据必须覆盖 requiredDocumentIds，且能直接支持 requiredConcepts。"
+      },
+      "difficulty": "medium",
+      "qualityLabel": {
+        "expectedOutcome": "grounded_answer",
+        "groundingRequired": true,
+        "annotationMethod": "repository_grounded_representative_curation",
+        "reviewStatus": "pending_independent_human_review"
+      },
+      "datasetVersion": "trusted-rag-shadow-representative-v1"
+    },
+    {
+      "caseId": "t004a_concept_explanation_18",
+      "query": "SFT解决大语言模型的什么问题？",
+      "category": "concept_explanation",
+      "categoryLabel": "概念解释",
+      "standardAnswer": "SFT用指令—回答样本做监督微调，使只会语言建模的模型更好理解并遵循用户指令。",
+      "expectedEvidence": [
+        {
+          "documentId": "doc_029",
+          "sourcePath": "backend/seed_docs/29-指令微调SFT.md",
+          "support": "支持标准答案中的指令回答样本、监督微调、遵循指令"
+        }
+      ],
+      "answerable": true,
+      "refusal": false,
+      "correctnessCriteria": {
+        "requiredConcepts": [
+          "指令回答样本",
+          "监督微调",
+          "遵循指令"
+        ],
+        "gradingRule": "回答必须覆盖全部 requiredConcepts，且不得与标准答案或证据矛盾。"
+      },
+      "evidenceCoverageCriteria": {
+        "requiredDocumentIds": [
+          "doc_029"
+        ],
+        "minimumMatchedDocuments": 1,
+        "gradingRule": "引用证据必须覆盖 requiredDocumentIds，且能直接支持 requiredConcepts。"
+      },
+      "difficulty": "medium",
+      "qualityLabel": {
+        "expectedOutcome": "grounded_answer",
+        "groundingRequired": true,
+        "annotationMethod": "repository_grounded_representative_curation",
+        "reviewStatus": "pending_independent_human_review"
+      },
+      "datasetVersion": "trusted-rag-shadow-representative-v1"
+    },
+    {
+      "caseId": "t004a_concept_explanation_19",
+      "query": "RLHF中的奖励模型有什么作用？",
+      "category": "concept_explanation",
+      "categoryLabel": "概念解释",
+      "standardAnswer": "奖励模型从人类偏好排序中学习评分函数，用来评价候选回答并为后续策略优化提供奖励。",
+      "expectedEvidence": [
+        {
+          "documentId": "doc_030",
+          "sourcePath": "backend/seed_docs/30-RLHF与偏好对齐.md",
+          "support": "支持标准答案中的人类偏好、评分函数、策略优化"
+        }
+      ],
+      "answerable": true,
+      "refusal": false,
+      "correctnessCriteria": {
+        "requiredConcepts": [
+          "人类偏好",
+          "评分函数",
+          "策略优化"
+        ],
+        "gradingRule": "回答必须覆盖全部 requiredConcepts，且不得与标准答案或证据矛盾。"
+      },
+      "evidenceCoverageCriteria": {
+        "requiredDocumentIds": [
+          "doc_030"
+        ],
+        "minimumMatchedDocuments": 1,
+        "gradingRule": "引用证据必须覆盖 requiredDocumentIds，且能直接支持 requiredConcepts。"
+      },
+      "difficulty": "hard",
+      "qualityLabel": {
+        "expectedOutcome": "grounded_answer",
+        "groundingRequired": true,
+        "annotationMethod": "repository_grounded_representative_curation",
+        "reviewStatus": "pending_independent_human_review"
+      },
+      "datasetVersion": "trusted-rag-shadow-representative-v1"
+    },
+    {
+      "caseId": "t004a_concept_explanation_20",
+      "query": "分类与回归的输出有什么不同？",
+      "category": "concept_explanation",
+      "categoryLabel": "概念解释",
+      "standardAnswer": "分类预测离散类别或类别概率，回归预测连续数值。",
+      "expectedEvidence": [
+        {
+          "documentId": "doc_005",
+          "sourcePath": "backend/seed_docs/05-监督学习与分类回归.md",
+          "support": "支持标准答案中的离散类别、类别概率、连续数值"
+        }
+      ],
+      "answerable": true,
+      "refusal": false,
+      "correctnessCriteria": {
+        "requiredConcepts": [
+          "离散类别",
+          "类别概率",
+          "连续数值"
+        ],
+        "gradingRule": "回答必须覆盖全部 requiredConcepts，且不得与标准答案或证据矛盾。"
+      },
+      "evidenceCoverageCriteria": {
+        "requiredDocumentIds": [
+          "doc_005"
+        ],
+        "minimumMatchedDocuments": 1,
+        "gradingRule": "引用证据必须覆盖 requiredDocumentIds，且能直接支持 requiredConcepts。"
+      },
+      "difficulty": "easy",
+      "qualityLabel": {
+        "expectedOutcome": "grounded_answer",
+        "groundingRequired": true,
+        "annotationMethod": "repository_grounded_representative_curation",
+        "reviewStatus": "pending_independent_human_review"
+      },
+      "datasetVersion": "trusted-rag-shadow-representative-v1"
+    },
+    {
+      "caseId": "t004a_process_explanation_01",
+      "query": "请说明一个神经元的三步计算流程。",
+      "category": "process_explanation",
+      "categoryLabel": "流程说明",
+      "standardAnswer": "先将每个输入乘对应权重并求和，再加入偏置，最后把结果送入激活函数。",
+      "expectedEvidence": [
+        {
+          "documentId": "doc_010",
+          "sourcePath": "backend/seed_docs/10-感知机与神经元模型.md",
+          "support": "支持标准答案中的加权求和、加入偏置、激活"
+        }
+      ],
+      "answerable": true,
+      "refusal": false,
+      "correctnessCriteria": {
+        "requiredConcepts": [
+          "加权求和",
+          "加入偏置",
+          "激活"
+        ],
+        "gradingRule": "回答必须覆盖全部 requiredConcepts，且不得与标准答案或证据矛盾。"
+      },
+      "evidenceCoverageCriteria": {
+        "requiredDocumentIds": [
+          "doc_010"
+        ],
+        "minimumMatchedDocuments": 1,
+        "gradingRule": "引用证据必须覆盖 requiredDocumentIds，且能直接支持 requiredConcepts。"
+      },
+      "difficulty": "easy",
+      "qualityLabel": {
+        "expectedOutcome": "grounded_answer",
+        "groundingRequired": true,
+        "annotationMethod": "repository_grounded_representative_curation",
+        "reviewStatus": "pending_independent_human_review"
+      },
+      "datasetVersion": "trusted-rag-shadow-representative-v1"
+    },
+    {
+      "caseId": "t004a_process_explanation_02",
+      "query": "多层感知机如何完成一次前向传播？",
+      "category": "process_explanation",
+      "categoryLabel": "流程说明",
+      "standardAnswer": "输入从第一层开始，每层依次计算Z=W·A_prev+b和A=f(Z)，本层输出再作为下一层输入，直到输出层。",
+      "expectedEvidence": [
+        {
+          "documentId": "doc_011",
+          "sourcePath": "backend/seed_docs/11-前向传播与多层感知机.md",
+          "support": "支持标准答案中的Z=W·A_prev+b、A=f(Z)、逐层"
+        }
+      ],
+      "answerable": true,
+      "refusal": false,
+      "correctnessCriteria": {
+        "requiredConcepts": [
+          "Z=W·A_prev+b",
+          "A=f(Z)",
+          "逐层"
+        ],
+        "gradingRule": "回答必须覆盖全部 requiredConcepts，且不得与标准答案或证据矛盾。"
+      },
+      "evidenceCoverageCriteria": {
+        "requiredDocumentIds": [
+          "doc_011"
+        ],
+        "minimumMatchedDocuments": 1,
+        "gradingRule": "引用证据必须覆盖 requiredDocumentIds，且能直接支持 requiredConcepts。"
+      },
+      "difficulty": "medium",
+      "qualityLabel": {
+        "expectedOutcome": "grounded_answer",
+        "groundingRequired": true,
+        "annotationMethod": "repository_grounded_representative_curation",
+        "reviewStatus": "pending_independent_human_review"
+      },
+      "datasetVersion": "trusted-rag-shadow-representative-v1"
+    },
+    {
+      "caseId": "t004a_process_explanation_03",
+      "query": "反向传播如何逐层计算梯度？",
+      "category": "process_explanation",
+      "categoryLabel": "流程说明",
+      "standardAnswer": "先前向计算损失，再从损失节点出发，按计算图反向应用链式法则，将上游梯度乘本地导数并累积到参数。",
+      "expectedEvidence": [
+        {
+          "documentId": "doc_013",
+          "sourcePath": "backend/seed_docs/13-反向传播与链式法则.md",
+          "support": "支持标准答案中的前向损失、反向、链式法则、本地导数"
+        }
+      ],
+      "answerable": true,
+      "refusal": false,
+      "correctnessCriteria": {
+        "requiredConcepts": [
+          "前向损失",
+          "反向",
+          "链式法则",
+          "本地导数"
+        ],
+        "gradingRule": "回答必须覆盖全部 requiredConcepts，且不得与标准答案或证据矛盾。"
+      },
+      "evidenceCoverageCriteria": {
+        "requiredDocumentIds": [
+          "doc_013"
+        ],
+        "minimumMatchedDocuments": 1,
+        "gradingRule": "引用证据必须覆盖 requiredDocumentIds，且能直接支持 requiredConcepts。"
+      },
+      "difficulty": "hard",
+      "qualityLabel": {
+        "expectedOutcome": "grounded_answer",
+        "groundingRequired": true,
+        "annotationMethod": "repository_grounded_representative_curation",
+        "reviewStatus": "pending_independent_human_review"
+      },
+      "datasetVersion": "trusted-rag-shadow-representative-v1"
+    },
+    {
+      "caseId": "t004a_process_explanation_04",
+      "query": "小批量梯度下降一次参数更新如何进行？",
+      "category": "process_explanation",
+      "categoryLabel": "流程说明",
+      "standardAnswer": "抽取一个小批量，计算预测与损失，反向求平均梯度，再按θ←θ−η∇L更新参数。",
+      "expectedEvidence": [
+        {
+          "documentId": "doc_014",
+          "sourcePath": "backend/seed_docs/14-梯度下降与优化器.md",
+          "support": "支持标准答案中的小批量、损失、梯度、参数更新"
+        }
+      ],
+      "answerable": true,
+      "refusal": false,
+      "correctnessCriteria": {
+        "requiredConcepts": [
+          "小批量",
+          "损失",
+          "梯度",
+          "参数更新"
+        ],
+        "gradingRule": "回答必须覆盖全部 requiredConcepts，且不得与标准答案或证据矛盾。"
+      },
+      "evidenceCoverageCriteria": {
+        "requiredDocumentIds": [
+          "doc_014"
+        ],
+        "minimumMatchedDocuments": 1,
+        "gradingRule": "引用证据必须覆盖 requiredDocumentIds，且能直接支持 requiredConcepts。"
+      },
+      "difficulty": "medium",
+      "qualityLabel": {
+        "expectedOutcome": "grounded_answer",
+        "groundingRequired": true,
+        "annotationMethod": "repository_grounded_representative_curation",
+        "reviewStatus": "pending_independent_human_review"
+      },
+      "datasetVersion": "trusted-rag-shadow-representative-v1"
+    },
+    {
+      "caseId": "t004a_process_explanation_05",
+      "query": "K-means从初始化到收敛有哪些步骤？",
+      "category": "process_explanation",
+      "categoryLabel": "流程说明",
+      "standardAnswer": "选择K个初始中心，把样本分配给最近中心，用各簇均值更新中心，重复分配与更新直至稳定。",
+      "expectedEvidence": [
+        {
+          "documentId": "doc_006",
+          "sourcePath": "backend/seed_docs/06-无监督学习与聚类降维.md",
+          "support": "支持标准答案中的初始中心、分配、均值更新、收敛"
+        }
+      ],
+      "answerable": true,
+      "refusal": false,
+      "correctnessCriteria": {
+        "requiredConcepts": [
+          "初始中心",
+          "分配",
+          "均值更新",
+          "收敛"
+        ],
+        "gradingRule": "回答必须覆盖全部 requiredConcepts，且不得与标准答案或证据矛盾。"
+      },
+      "evidenceCoverageCriteria": {
+        "requiredDocumentIds": [
+          "doc_006"
+        ],
+        "minimumMatchedDocuments": 1,
+        "gradingRule": "引用证据必须覆盖 requiredDocumentIds，且能直接支持 requiredConcepts。"
+      },
+      "difficulty": "medium",
+      "qualityLabel": {
+        "expectedOutcome": "grounded_answer",
+        "groundingRequired": true,
+        "annotationMethod": "repository_grounded_representative_curation",
+        "reviewStatus": "pending_independent_human_review"
+      },
+      "datasetVersion": "trusted-rag-shadow-representative-v1"
+    },
+    {
+      "caseId": "t004a_process_explanation_06",
+      "query": "数值特征标准化应如何操作？",
+      "category": "process_explanation",
+      "categoryLabel": "流程说明",
+      "standardAnswer": "在训练集计算均值与标准差，对特征执行减均值再除标准差，并用同一统计量处理验证和测试数据。",
+      "expectedEvidence": [
+        {
+          "documentId": "doc_009",
+          "sourcePath": "backend/seed_docs/09-特征工程与数据预处理.md",
+          "support": "支持标准答案中的训练集统计量、减均值、除标准差、复用"
+        }
+      ],
+      "answerable": true,
+      "refusal": false,
+      "correctnessCriteria": {
+        "requiredConcepts": [
+          "训练集统计量",
+          "减均值",
+          "除标准差",
+          "复用"
+        ],
+        "gradingRule": "回答必须覆盖全部 requiredConcepts，且不得与标准答案或证据矛盾。"
+      },
+      "evidenceCoverageCriteria": {
+        "requiredDocumentIds": [
+          "doc_009"
+        ],
+        "minimumMatchedDocuments": 1,
+        "gradingRule": "引用证据必须覆盖 requiredDocumentIds，且能直接支持 requiredConcepts。"
+      },
+      "difficulty": "medium",
+      "qualityLabel": {
+        "expectedOutcome": "grounded_answer",
+        "groundingRequired": true,
+        "annotationMethod": "repository_grounded_representative_curation",
+        "reviewStatus": "pending_independent_human_review"
+      },
+      "datasetVersion": "trusted-rag-shadow-representative-v1"
+    },
+    {
+      "caseId": "t004a_process_explanation_07",
+      "query": "卷积核如何生成一张特征图？",
+      "category": "process_explanation",
+      "categoryLabel": "流程说明",
+      "standardAnswer": "卷积核按步长在输入上滑动，每个位置与覆盖区域逐元素相乘后求和，所有位置的结果组成特征图。",
+      "expectedEvidence": [
+        {
+          "documentId": "doc_018",
+          "sourcePath": "backend/seed_docs/18-卷积运算与卷积核.md",
+          "support": "支持标准答案中的滑动、逐元素相乘、求和、特征图"
+        }
+      ],
+      "answerable": true,
+      "refusal": false,
+      "correctnessCriteria": {
+        "requiredConcepts": [
+          "滑动",
+          "逐元素相乘",
+          "求和",
+          "特征图"
+        ],
+        "gradingRule": "回答必须覆盖全部 requiredConcepts，且不得与标准答案或证据矛盾。"
+      },
+      "evidenceCoverageCriteria": {
+        "requiredDocumentIds": [
+          "doc_018"
+        ],
+        "minimumMatchedDocuments": 1,
+        "gradingRule": "引用证据必须覆盖 requiredDocumentIds，且能直接支持 requiredConcepts。"
+      },
+      "difficulty": "easy",
+      "qualityLabel": {
+        "expectedOutcome": "grounded_answer",
+        "groundingRequired": true,
+        "annotationMethod": "repository_grounded_representative_curation",
+        "reviewStatus": "pending_independent_human_review"
+      },
+      "datasetVersion": "trusted-rag-shadow-representative-v1"
+    },
+    {
+      "caseId": "t004a_process_explanation_08",
+      "query": "如何根据输入、卷积核、填充和步长计算输出尺寸？",
+      "category": "process_explanation",
+      "categoryLabel": "流程说明",
+      "standardAnswer": "每个空间维度按(input−kernel+2×padding)/stride+1计算；实际配置应保证结果为整数。",
+      "expectedEvidence": [
+        {
+          "documentId": "doc_004",
+          "sourcePath": "backend/seed_docs/04-CNN架构与卷积网络.md",
+          "support": "支持标准答案中的input−kernel、padding、stride、+1"
+        },
+        {
+          "documentId": "doc_018",
+          "sourcePath": "backend/seed_docs/18-卷积运算与卷积核.md",
+          "support": "支持标准答案中的input−kernel、padding、stride、+1"
+        }
+      ],
+      "answerable": true,
+      "refusal": false,
+      "correctnessCriteria": {
+        "requiredConcepts": [
+          "input−kernel",
+          "padding",
+          "stride",
+          "+1"
+        ],
+        "gradingRule": "回答必须覆盖全部 requiredConcepts，且不得与标准答案或证据矛盾。"
+      },
+      "evidenceCoverageCriteria": {
+        "requiredDocumentIds": [
+          "doc_004",
+          "doc_018"
+        ],
+        "minimumMatchedDocuments": 2,
+        "gradingRule": "引用证据必须覆盖 requiredDocumentIds，且能直接支持 requiredConcepts。"
+      },
+      "difficulty": "medium",
+      "qualityLabel": {
+        "expectedOutcome": "grounded_answer",
+        "groundingRequired": true,
+        "annotationMethod": "repository_grounded_representative_curation",
+        "reviewStatus": "pending_independent_human_review"
+      },
+      "datasetVersion": "trusted-rag-shadow-representative-v1"
+    },
+    {
+      "caseId": "t004a_process_explanation_09",
+      "query": "最大池化如何完成下采样？",
+      "category": "process_explanation",
+      "categoryLabel": "流程说明",
+      "standardAnswer": "池化窗口按步长滑过特征图，每个窗口保留最大值，从而减小空间尺寸并保留强响应。",
+      "expectedEvidence": [
+        {
+          "documentId": "doc_019",
+          "sourcePath": "backend/seed_docs/19-池化与下采样.md",
+          "support": "支持标准答案中的窗口、最大值、空间尺寸"
+        }
+      ],
+      "answerable": true,
+      "refusal": false,
+      "correctnessCriteria": {
+        "requiredConcepts": [
+          "窗口",
+          "最大值",
+          "空间尺寸"
+        ],
+        "gradingRule": "回答必须覆盖全部 requiredConcepts，且不得与标准答案或证据矛盾。"
+      },
+      "evidenceCoverageCriteria": {
+        "requiredDocumentIds": [
+          "doc_019"
+        ],
+        "minimumMatchedDocuments": 1,
+        "gradingRule": "引用证据必须覆盖 requiredDocumentIds，且能直接支持 requiredConcepts。"
+      },
+      "difficulty": "easy",
+      "qualityLabel": {
+        "expectedOutcome": "grounded_answer",
+        "groundingRequired": true,
+        "annotationMethod": "repository_grounded_representative_curation",
+        "reviewStatus": "pending_independent_human_review"
+      },
+      "datasetVersion": "trusted-rag-shadow-representative-v1"
+    },
+    {
+      "caseId": "t004a_process_explanation_10",
+      "query": "BatchNorm训练和推理分别使用什么统计量？",
+      "category": "process_explanation",
+      "categoryLabel": "流程说明",
+      "standardAnswer": "训练时使用当前小批量均值和方差并累计运行统计量；推理时使用训练期间积累的全局均值和方差。",
+      "expectedEvidence": [
+        {
+          "documentId": "doc_015",
+          "sourcePath": "backend/seed_docs/15-批归一化与层归一化.md",
+          "support": "支持标准答案中的小批量均值方差、运行统计量、推理"
+        }
+      ],
+      "answerable": true,
+      "refusal": false,
+      "correctnessCriteria": {
+        "requiredConcepts": [
+          "小批量均值方差",
+          "运行统计量",
+          "推理"
+        ],
+        "gradingRule": "回答必须覆盖全部 requiredConcepts，且不得与标准答案或证据矛盾。"
+      },
+      "evidenceCoverageCriteria": {
+        "requiredDocumentIds": [
+          "doc_015"
+        ],
+        "minimumMatchedDocuments": 1,
+        "gradingRule": "引用证据必须覆盖 requiredDocumentIds，且能直接支持 requiredConcepts。"
+      },
+      "difficulty": "medium",
+      "qualityLabel": {
+        "expectedOutcome": "grounded_answer",
+        "groundingRequired": true,
+        "annotationMethod": "repository_grounded_representative_curation",
+        "reviewStatus": "pending_independent_human_review"
+      },
+      "datasetVersion": "trusted-rag-shadow-representative-v1"
+    },
+    {
+      "caseId": "t004a_process_explanation_11",
+      "query": "Dropout在训练与推理阶段如何切换？",
+      "category": "process_explanation",
+      "categoryLabel": "流程说明",
+      "standardAnswer": "训练时按概率随机将神经元输出置零并进行相应缩放；推理时保留全部神经元且关闭随机丢弃。",
+      "expectedEvidence": [
+        {
+          "documentId": "doc_016",
+          "sourcePath": "backend/seed_docs/16-Dropout与正则化技术.md",
+          "support": "支持标准答案中的训练随机置零、缩放、推理保留"
+        }
+      ],
+      "answerable": true,
+      "refusal": false,
+      "correctnessCriteria": {
+        "requiredConcepts": [
+          "训练随机置零",
+          "缩放",
+          "推理保留"
+        ],
+        "gradingRule": "回答必须覆盖全部 requiredConcepts，且不得与标准答案或证据矛盾。"
+      },
+      "evidenceCoverageCriteria": {
+        "requiredDocumentIds": [
+          "doc_016"
+        ],
+        "minimumMatchedDocuments": 1,
+        "gradingRule": "引用证据必须覆盖 requiredDocumentIds，且能直接支持 requiredConcepts。"
+      },
+      "difficulty": "medium",
+      "qualityLabel": {
+        "expectedOutcome": "grounded_answer",
+        "groundingRequired": true,
+        "annotationMethod": "repository_grounded_representative_curation",
+        "reviewStatus": "pending_independent_human_review"
+      },
+      "datasetVersion": "trusted-rag-shadow-representative-v1"
+    },
+    {
+      "caseId": "t004a_process_explanation_12",
+      "query": "学习率预热与衰减如何配合？",
+      "category": "process_explanation",
+      "categoryLabel": "流程说明",
+      "standardAnswer": "训练初期把学习率从较小值逐渐升到目标值，随后按预定调度逐步衰减，以兼顾初期稳定和后期收敛。",
+      "expectedEvidence": [
+        {
+          "documentId": "doc_017",
+          "sourcePath": "backend/seed_docs/17-学习率调度与训练技巧.md",
+          "support": "支持标准答案中的预热、目标学习率、衰减"
+        }
+      ],
+      "answerable": true,
+      "refusal": false,
+      "correctnessCriteria": {
+        "requiredConcepts": [
+          "预热",
+          "目标学习率",
+          "衰减"
+        ],
+        "gradingRule": "回答必须覆盖全部 requiredConcepts，且不得与标准答案或证据矛盾。"
+      },
+      "evidenceCoverageCriteria": {
+        "requiredDocumentIds": [
+          "doc_017"
+        ],
+        "minimumMatchedDocuments": 1,
+        "gradingRule": "引用证据必须覆盖 requiredDocumentIds，且能直接支持 requiredConcepts。"
+      },
+      "difficulty": "medium",
+      "qualityLabel": {
+        "expectedOutcome": "grounded_answer",
+        "groundingRequired": true,
+        "annotationMethod": "repository_grounded_representative_curation",
+        "reviewStatus": "pending_independent_human_review"
+      },
+      "datasetVersion": "trusted-rag-shadow-representative-v1"
+    },
+    {
+      "caseId": "t004a_process_explanation_13",
+      "query": "早停如何用于控制过拟合？",
+      "category": "process_explanation",
+      "categoryLabel": "流程说明",
+      "standardAnswer": "训练期间监控验证集指标；若连续若干轮不再改善，就停止训练并恢复表现最佳的模型参数。",
+      "expectedEvidence": [
+        {
+          "documentId": "doc_008",
+          "sourcePath": "backend/seed_docs/08-过拟合与正则化.md",
+          "support": "支持标准答案中的验证集、若干轮、停止、最佳参数"
+        }
+      ],
+      "answerable": true,
+      "refusal": false,
+      "correctnessCriteria": {
+        "requiredConcepts": [
+          "验证集",
+          "若干轮",
+          "停止",
+          "最佳参数"
+        ],
+        "gradingRule": "回答必须覆盖全部 requiredConcepts，且不得与标准答案或证据矛盾。"
+      },
+      "evidenceCoverageCriteria": {
+        "requiredDocumentIds": [
+          "doc_008"
+        ],
+        "minimumMatchedDocuments": 1,
+        "gradingRule": "引用证据必须覆盖 requiredDocumentIds，且能直接支持 requiredConcepts。"
+      },
+      "difficulty": "medium",
+      "qualityLabel": {
+        "expectedOutcome": "grounded_answer",
+        "groundingRequired": true,
+        "annotationMethod": "repository_grounded_representative_curation",
+        "reviewStatus": "pending_independent_human_review"
+      },
+      "datasetVersion": "trusted-rag-shadow-representative-v1"
+    },
+    {
+      "caseId": "t004a_process_explanation_14",
+      "query": "从预训练模型到下游任务模型的迁移流程是什么？",
+      "category": "process_explanation",
+      "categoryLabel": "流程说明",
+      "standardAnswer": "选择预训练模型，准备目标任务数据和输出头，加载预训练权重，再用较小学习率进行全参或参数高效微调并验证。",
+      "expectedEvidence": [
+        {
+          "documentId": "doc_026",
+          "sourcePath": "backend/seed_docs/26-预训练与迁移学习.md",
+          "support": "支持标准答案中的预训练权重、目标任务、微调、验证"
+        },
+        {
+          "documentId": "doc_027",
+          "sourcePath": "backend/seed_docs/27-全参微调与PEFT.md",
+          "support": "支持标准答案中的预训练权重、目标任务、微调、验证"
+        }
+      ],
+      "answerable": true,
+      "refusal": false,
+      "correctnessCriteria": {
+        "requiredConcepts": [
+          "预训练权重",
+          "目标任务",
+          "微调",
+          "验证"
+        ],
+        "gradingRule": "回答必须覆盖全部 requiredConcepts，且不得与标准答案或证据矛盾。"
+      },
+      "evidenceCoverageCriteria": {
+        "requiredDocumentIds": [
+          "doc_026",
+          "doc_027"
+        ],
+        "minimumMatchedDocuments": 2,
+        "gradingRule": "引用证据必须覆盖 requiredDocumentIds，且能直接支持 requiredConcepts。"
+      },
+      "difficulty": "hard",
+      "qualityLabel": {
+        "expectedOutcome": "grounded_answer",
+        "groundingRequired": true,
+        "annotationMethod": "repository_grounded_representative_curation",
+        "reviewStatus": "pending_independent_human_review"
+      },
+      "datasetVersion": "trusted-rag-shadow-representative-v1"
+    },
+    {
+      "caseId": "t004a_process_explanation_15",
+      "query": "全参数微调通常如何执行？",
+      "category": "process_explanation",
+      "categoryLabel": "流程说明",
+      "standardAnswer": "加载预训练模型，允许全部参数参与梯度更新，在目标数据上计算损失并迭代优化，同时控制学习率和显存。",
+      "expectedEvidence": [
+        {
+          "documentId": "doc_027",
+          "sourcePath": "backend/seed_docs/27-全参微调与PEFT.md",
+          "support": "支持标准答案中的全部参数、梯度更新、目标数据、学习率"
+        }
+      ],
+      "answerable": true,
+      "refusal": false,
+      "correctnessCriteria": {
+        "requiredConcepts": [
+          "全部参数",
+          "梯度更新",
+          "目标数据",
+          "学习率"
+        ],
+        "gradingRule": "回答必须覆盖全部 requiredConcepts，且不得与标准答案或证据矛盾。"
+      },
+      "evidenceCoverageCriteria": {
+        "requiredDocumentIds": [
+          "doc_027"
+        ],
+        "minimumMatchedDocuments": 1,
+        "gradingRule": "引用证据必须覆盖 requiredDocumentIds，且能直接支持 requiredConcepts。"
+      },
+      "difficulty": "medium",
+      "qualityLabel": {
+        "expectedOutcome": "grounded_answer",
+        "groundingRequired": true,
+        "annotationMethod": "repository_grounded_representative_curation",
+        "reviewStatus": "pending_independent_human_review"
+      },
+      "datasetVersion": "trusted-rag-shadow-representative-v1"
+    },
+    {
+      "caseId": "t004a_process_explanation_16",
+      "query": "LoRA适配器如何加入并训练？",
+      "category": "process_explanation",
+      "categoryLabel": "流程说明",
+      "standardAnswer": "冻结原线性层权重，在目标层旁加入低秩A、B矩阵，只优化这些增量参数，部署时可合并或单独加载适配器。",
+      "expectedEvidence": [
+        {
+          "documentId": "doc_028",
+          "sourcePath": "backend/seed_docs/28-LoRA低秩适配.md",
+          "support": "支持标准答案中的冻结、低秩A、B、只优化增量、适配器"
+        }
+      ],
+      "answerable": true,
+      "refusal": false,
+      "correctnessCriteria": {
+        "requiredConcepts": [
+          "冻结",
+          "低秩A、B",
+          "只优化增量",
+          "适配器"
+        ],
+        "gradingRule": "回答必须覆盖全部 requiredConcepts，且不得与标准答案或证据矛盾。"
+      },
+      "evidenceCoverageCriteria": {
+        "requiredDocumentIds": [
+          "doc_028"
+        ],
+        "minimumMatchedDocuments": 1,
+        "gradingRule": "引用证据必须覆盖 requiredDocumentIds，且能直接支持 requiredConcepts。"
+      },
+      "difficulty": "hard",
+      "qualityLabel": {
+        "expectedOutcome": "grounded_answer",
+        "groundingRequired": true,
+        "annotationMethod": "repository_grounded_representative_curation",
+        "reviewStatus": "pending_independent_human_review"
+      },
+      "datasetVersion": "trusted-rag-shadow-representative-v1"
+    },
+    {
+      "caseId": "t004a_process_explanation_17",
+      "query": "SFT数据到模型训练的流程是什么？",
+      "category": "process_explanation",
+      "categoryLabel": "流程说明",
+      "standardAnswer": "把任务整理为指令、可选输入和期望回答，格式化为训练序列，用监督语言建模损失微调模型并验证指令遵循。",
+      "expectedEvidence": [
+        {
+          "documentId": "doc_029",
+          "sourcePath": "backend/seed_docs/29-指令微调SFT.md",
+          "support": "支持标准答案中的指令、期望回答、监督损失、验证"
+        }
+      ],
+      "answerable": true,
+      "refusal": false,
+      "correctnessCriteria": {
+        "requiredConcepts": [
+          "指令",
+          "期望回答",
+          "监督损失",
+          "验证"
+        ],
+        "gradingRule": "回答必须覆盖全部 requiredConcepts，且不得与标准答案或证据矛盾。"
+      },
+      "evidenceCoverageCriteria": {
+        "requiredDocumentIds": [
+          "doc_029"
+        ],
+        "minimumMatchedDocuments": 1,
+        "gradingRule": "引用证据必须覆盖 requiredDocumentIds，且能直接支持 requiredConcepts。"
+      },
+      "difficulty": "hard",
+      "qualityLabel": {
+        "expectedOutcome": "grounded_answer",
+        "groundingRequired": true,
+        "annotationMethod": "repository_grounded_representative_curation",
+        "reviewStatus": "pending_independent_human_review"
+      },
+      "datasetVersion": "trusted-rag-shadow-representative-v1"
+    },
+    {
+      "caseId": "t004a_process_explanation_18",
+      "query": "RLHF从偏好数据到策略优化经历哪些阶段？",
+      "category": "process_explanation",
+      "categoryLabel": "流程说明",
+      "standardAnswer": "先收集人类对候选回答的偏好排序，训练奖励模型，再用奖励信号优化语言模型策略，并持续做安全与质量评估。",
+      "expectedEvidence": [
+        {
+          "documentId": "doc_030",
+          "sourcePath": "backend/seed_docs/30-RLHF与偏好对齐.md",
+          "support": "支持标准答案中的偏好排序、奖励模型、策略优化、评估"
+        }
+      ],
+      "answerable": true,
+      "refusal": false,
+      "correctnessCriteria": {
+        "requiredConcepts": [
+          "偏好排序",
+          "奖励模型",
+          "策略优化",
+          "评估"
+        ],
+        "gradingRule": "回答必须覆盖全部 requiredConcepts，且不得与标准答案或证据矛盾。"
+      },
+      "evidenceCoverageCriteria": {
+        "requiredDocumentIds": [
+          "doc_030"
+        ],
+        "minimumMatchedDocuments": 1,
+        "gradingRule": "引用证据必须覆盖 requiredDocumentIds，且能直接支持 requiredConcepts。"
+      },
+      "difficulty": "hard",
+      "qualityLabel": {
+        "expectedOutcome": "grounded_answer",
+        "groundingRequired": true,
+        "annotationMethod": "repository_grounded_representative_curation",
+        "reviewStatus": "pending_independent_human_review"
+      },
+      "datasetVersion": "trusted-rag-shadow-representative-v1"
+    },
+    {
+      "caseId": "t004a_process_explanation_19",
+      "query": "Transformer编码器如何处理输入序列？",
+      "category": "process_explanation",
+      "categoryLabel": "流程说明",
+      "standardAnswer": "先叠加词表示与位置编码，再依次经过多头自注意力、残差与归一化、前馈网络等编码器层，得到上下文表示。",
+      "expectedEvidence": [
+        {
+          "documentId": "doc_023",
+          "sourcePath": "backend/seed_docs/23-多头注意力.md",
+          "support": "支持标准答案中的位置编码、多头自注意力、残差、前馈网络"
+        },
+        {
+          "documentId": "doc_024",
+          "sourcePath": "backend/seed_docs/24-位置编码.md",
+          "support": "支持标准答案中的位置编码、多头自注意力、残差、前馈网络"
+        },
+        {
+          "documentId": "doc_025",
+          "sourcePath": "backend/seed_docs/25-编码器解码器结构.md",
+          "support": "支持标准答案中的位置编码、多头自注意力、残差、前馈网络"
+        }
+      ],
+      "answerable": true,
+      "refusal": false,
+      "correctnessCriteria": {
+        "requiredConcepts": [
+          "位置编码",
+          "多头自注意力",
+          "残差",
+          "前馈网络"
+        ],
+        "gradingRule": "回答必须覆盖全部 requiredConcepts，且不得与标准答案或证据矛盾。"
+      },
+      "evidenceCoverageCriteria": {
+        "requiredDocumentIds": [
+          "doc_023",
+          "doc_024",
+          "doc_025"
+        ],
+        "minimumMatchedDocuments": 3,
+        "gradingRule": "引用证据必须覆盖 requiredDocumentIds，且能直接支持 requiredConcepts。"
+      },
+      "difficulty": "hard",
+      "qualityLabel": {
+        "expectedOutcome": "grounded_answer",
+        "groundingRequired": true,
+        "annotationMethod": "repository_grounded_representative_curation",
+        "reviewStatus": "pending_independent_human_review"
+      },
+      "datasetVersion": "trusted-rag-shadow-representative-v1"
+    },
+    {
+      "caseId": "t004a_process_explanation_20",
+      "query": "分类模型从训练到预测的基本流程是什么？",
+      "category": "process_explanation",
+      "categoryLabel": "流程说明",
+      "standardAnswer": "准备带标签数据并划分数据集，训练模型最小化分类损失，在验证集调参，最后对新样本输出类别概率并选择类别。",
+      "expectedEvidence": [
+        {
+          "documentId": "doc_005",
+          "sourcePath": "backend/seed_docs/05-监督学习与分类回归.md",
+          "support": "支持标准答案中的带标签数据、分类损失、验证、类别概率"
+        },
+        {
+          "documentId": "doc_007",
+          "sourcePath": "backend/seed_docs/07-损失函数与代价函数.md",
+          "support": "支持标准答案中的带标签数据、分类损失、验证、类别概率"
+        }
+      ],
+      "answerable": true,
+      "refusal": false,
+      "correctnessCriteria": {
+        "requiredConcepts": [
+          "带标签数据",
+          "分类损失",
+          "验证",
+          "类别概率"
+        ],
+        "gradingRule": "回答必须覆盖全部 requiredConcepts，且不得与标准答案或证据矛盾。"
+      },
+      "evidenceCoverageCriteria": {
+        "requiredDocumentIds": [
+          "doc_005",
+          "doc_007"
+        ],
+        "minimumMatchedDocuments": 2,
+        "gradingRule": "引用证据必须覆盖 requiredDocumentIds，且能直接支持 requiredConcepts。"
+      },
+      "difficulty": "medium",
+      "qualityLabel": {
+        "expectedOutcome": "grounded_answer",
+        "groundingRequired": true,
+        "annotationMethod": "repository_grounded_representative_curation",
+        "reviewStatus": "pending_independent_human_review"
+      },
+      "datasetVersion": "trusted-rag-shadow-representative-v1"
+    },
+    {
+      "caseId": "t004a_code_technical_01",
+      "query": "32×32输入使用5×5卷积核、padding=2、stride=1，输出尺寸是多少？",
+      "category": "code_technical",
+      "categoryLabel": "代码/技术问题",
+      "standardAnswer": "按公式(32−5+2×2)/1+1计算，输出空间尺寸为32×32。",
+      "expectedEvidence": [
+        {
+          "documentId": "doc_004",
+          "sourcePath": "backend/seed_docs/04-CNN架构与卷积网络.md",
+          "support": "支持标准答案中的输出公式、32×32"
+        }
+      ],
+      "answerable": true,
+      "refusal": false,
+      "correctnessCriteria": {
+        "requiredConcepts": [
+          "输出公式",
+          "32×32"
+        ],
+        "gradingRule": "回答必须覆盖全部 requiredConcepts，且不得与标准答案或证据矛盾。"
+      },
+      "evidenceCoverageCriteria": {
+        "requiredDocumentIds": [
+          "doc_004"
+        ],
+        "minimumMatchedDocuments": 1,
+        "gradingRule": "引用证据必须覆盖 requiredDocumentIds，且能直接支持 requiredConcepts。"
+      },
+      "difficulty": "easy",
+      "qualityLabel": {
+        "expectedOutcome": "grounded_answer",
+        "groundingRequired": true,
+        "annotationMethod": "repository_grounded_representative_curation",
+        "reviewStatus": "pending_independent_human_review"
+      },
+      "datasetVersion": "trusted-rag-shadow-representative-v1"
+    },
+    {
+      "caseId": "t004a_code_technical_02",
+      "query": "ReLU对输入-2和3分别输出什么？",
+      "category": "code_technical",
+      "categoryLabel": "代码/技术问题",
+      "standardAnswer": "ReLU(x)=max(0,x)，因此-2输出0，3输出3。",
+      "expectedEvidence": [
+        {
+          "documentId": "doc_012",
+          "sourcePath": "backend/seed_docs/12-激活函数详解.md",
+          "support": "支持标准答案中的max(0,x)、0、3"
+        }
+      ],
+      "answerable": true,
+      "refusal": false,
+      "correctnessCriteria": {
+        "requiredConcepts": [
+          "max(0,x)",
+          "0",
+          "3"
+        ],
+        "gradingRule": "回答必须覆盖全部 requiredConcepts，且不得与标准答案或证据矛盾。"
+      },
+      "evidenceCoverageCriteria": {
+        "requiredDocumentIds": [
+          "doc_012"
+        ],
+        "minimumMatchedDocuments": 1,
+        "gradingRule": "引用证据必须覆盖 requiredDocumentIds，且能直接支持 requiredConcepts。"
+      },
+      "difficulty": "easy",
+      "qualityLabel": {
+        "expectedOutcome": "grounded_answer",
+        "groundingRequired": true,
+        "annotationMethod": "repository_grounded_representative_curation",
+        "reviewStatus": "pending_independent_human_review"
+      },
+      "datasetVersion": "trusted-rag-shadow-representative-v1"
+    },
+    {
+      "caseId": "t004a_code_technical_03",
+      "query": "训练损失持续震荡时应优先检查什么超参数？",
+      "category": "code_technical",
+      "categoryLabel": "代码/技术问题",
+      "standardAnswer": "应优先检查学习率是否过大；可降低学习率或使用预热、衰减和更稳定的优化器设置。",
+      "expectedEvidence": [
+        {
+          "documentId": "doc_014",
+          "sourcePath": "backend/seed_docs/14-梯度下降与优化器.md",
+          "support": "支持标准答案中的学习率过大、降低、预热或衰减"
+        },
+        {
+          "documentId": "doc_017",
+          "sourcePath": "backend/seed_docs/17-学习率调度与训练技巧.md",
+          "support": "支持标准答案中的学习率过大、降低、预热或衰减"
+        }
+      ],
+      "answerable": true,
+      "refusal": false,
+      "correctnessCriteria": {
+        "requiredConcepts": [
+          "学习率过大",
+          "降低",
+          "预热或衰减"
+        ],
+        "gradingRule": "回答必须覆盖全部 requiredConcepts，且不得与标准答案或证据矛盾。"
+      },
+      "evidenceCoverageCriteria": {
+        "requiredDocumentIds": [
+          "doc_014",
+          "doc_017"
+        ],
+        "minimumMatchedDocuments": 2,
+        "gradingRule": "引用证据必须覆盖 requiredDocumentIds，且能直接支持 requiredConcepts。"
+      },
+      "difficulty": "medium",
+      "qualityLabel": {
+        "expectedOutcome": "grounded_answer",
+        "groundingRequired": true,
+        "annotationMethod": "repository_grounded_representative_curation",
+        "reviewStatus": "pending_independent_human_review"
+      },
+      "datasetVersion": "trusted-rag-shadow-representative-v1"
+    },
+    {
+      "caseId": "t004a_code_technical_04",
+      "query": "MSE和MAE面对离群点时表现有何差异？",
+      "category": "code_technical",
+      "categoryLabel": "代码/技术问题",
+      "standardAnswer": "MSE对误差平方，因此对离群点更敏感；MAE使用绝对误差，对离群点相对更鲁棒。",
+      "expectedEvidence": [
+        {
+          "documentId": "doc_007",
+          "sourcePath": "backend/seed_docs/07-损失函数与代价函数.md",
+          "support": "支持标准答案中的平方误差、离群点敏感、绝对误差、鲁棒"
+        }
+      ],
+      "answerable": true,
+      "refusal": false,
+      "correctnessCriteria": {
+        "requiredConcepts": [
+          "平方误差",
+          "离群点敏感",
+          "绝对误差",
+          "鲁棒"
+        ],
+        "gradingRule": "回答必须覆盖全部 requiredConcepts，且不得与标准答案或证据矛盾。"
+      },
+      "evidenceCoverageCriteria": {
+        "requiredDocumentIds": [
+          "doc_007"
+        ],
+        "minimumMatchedDocuments": 1,
+        "gradingRule": "引用证据必须覆盖 requiredDocumentIds，且能直接支持 requiredConcepts。"
+      },
+      "difficulty": "medium",
+      "qualityLabel": {
+        "expectedOutcome": "grounded_answer",
+        "groundingRequired": true,
+        "annotationMethod": "repository_grounded_representative_curation",
+        "reviewStatus": "pending_independent_human_review"
+      },
+      "datasetVersion": "trusted-rag-shadow-representative-v1"
+    },
+    {
+      "caseId": "t004a_code_technical_05",
+      "query": "二分类最后一层常配什么输出与损失？",
+      "category": "code_technical",
+      "categoryLabel": "代码/技术问题",
+      "standardAnswer": "常用单个logit配二元交叉熵，或Sigmoid概率配等价的二元交叉熵实现；数值稳定实现通常直接接收logit。",
+      "expectedEvidence": [
+        {
+          "documentId": "doc_005",
+          "sourcePath": "backend/seed_docs/05-监督学习与分类回归.md",
+          "support": "支持标准答案中的二分类、Sigmoid或logit、二元交叉熵"
+        },
+        {
+          "documentId": "doc_007",
+          "sourcePath": "backend/seed_docs/07-损失函数与代价函数.md",
+          "support": "支持标准答案中的二分类、Sigmoid或logit、二元交叉熵"
+        }
+      ],
+      "answerable": true,
+      "refusal": false,
+      "correctnessCriteria": {
+        "requiredConcepts": [
+          "二分类",
+          "Sigmoid或logit",
+          "二元交叉熵"
+        ],
+        "gradingRule": "回答必须覆盖全部 requiredConcepts，且不得与标准答案或证据矛盾。"
+      },
+      "evidenceCoverageCriteria": {
+        "requiredDocumentIds": [
+          "doc_005",
+          "doc_007"
+        ],
+        "minimumMatchedDocuments": 2,
+        "gradingRule": "引用证据必须覆盖 requiredDocumentIds，且能直接支持 requiredConcepts。"
+      },
+      "difficulty": "medium",
+      "qualityLabel": {
+        "expectedOutcome": "grounded_answer",
+        "groundingRequired": true,
+        "annotationMethod": "repository_grounded_representative_curation",
+        "reviewStatus": "pending_independent_human_review"
+      },
+      "datasetVersion": "trusted-rag-shadow-representative-v1"
+    },
+    {
+      "caseId": "t004a_code_technical_06",
+      "query": "为什么深层网络只堆线性层仍表达不了非线性函数？",
+      "category": "code_technical",
+      "categoryLabel": "代码/技术问题",
+      "standardAnswer": "多个线性变换的复合仍是一个线性变换，因此必须在层间加入非线性激活函数。",
+      "expectedEvidence": [
+        {
+          "documentId": "doc_011",
+          "sourcePath": "backend/seed_docs/11-前向传播与多层感知机.md",
+          "support": "支持标准答案中的线性复合、仍是线性、非线性激活"
+        },
+        {
+          "documentId": "doc_012",
+          "sourcePath": "backend/seed_docs/12-激活函数详解.md",
+          "support": "支持标准答案中的线性复合、仍是线性、非线性激活"
+        }
+      ],
+      "answerable": true,
+      "refusal": false,
+      "correctnessCriteria": {
+        "requiredConcepts": [
+          "线性复合",
+          "仍是线性",
+          "非线性激活"
+        ],
+        "gradingRule": "回答必须覆盖全部 requiredConcepts，且不得与标准答案或证据矛盾。"
+      },
+      "evidenceCoverageCriteria": {
+        "requiredDocumentIds": [
+          "doc_011",
+          "doc_012"
+        ],
+        "minimumMatchedDocuments": 2,
+        "gradingRule": "引用证据必须覆盖 requiredDocumentIds，且能直接支持 requiredConcepts。"
+      },
+      "difficulty": "easy",
+      "qualityLabel": {
+        "expectedOutcome": "grounded_answer",
+        "groundingRequired": true,
+        "annotationMethod": "repository_grounded_representative_curation",
+        "reviewStatus": "pending_independent_human_review"
+      },
+      "datasetVersion": "trusted-rag-shadow-representative-v1"
+    },
+    {
+      "caseId": "t004a_code_technical_07",
+      "query": "卷积stride从1增大到2通常会怎样影响特征图？",
+      "category": "code_technical",
+      "categoryLabel": "代码/技术问题",
+      "standardAnswer": "步长增大会减少卷积核停留位置，使输出空间尺寸下降并实现一定下采样。",
+      "expectedEvidence": [
+        {
+          "documentId": "doc_018",
+          "sourcePath": "backend/seed_docs/18-卷积运算与卷积核.md",
+          "support": "支持标准答案中的步长增大、输出尺寸下降、下采样"
+        }
+      ],
+      "answerable": true,
+      "refusal": false,
+      "correctnessCriteria": {
+        "requiredConcepts": [
+          "步长增大",
+          "输出尺寸下降",
+          "下采样"
+        ],
+        "gradingRule": "回答必须覆盖全部 requiredConcepts，且不得与标准答案或证据矛盾。"
+      },
+      "evidenceCoverageCriteria": {
+        "requiredDocumentIds": [
+          "doc_018"
+        ],
+        "minimumMatchedDocuments": 1,
+        "gradingRule": "引用证据必须覆盖 requiredDocumentIds，且能直接支持 requiredConcepts。"
+      },
+      "difficulty": "easy",
+      "qualityLabel": {
+        "expectedOutcome": "grounded_answer",
+        "groundingRequired": true,
+        "annotationMethod": "repository_grounded_representative_curation",
+        "reviewStatus": "pending_independent_human_review"
+      },
+      "datasetVersion": "trusted-rag-shadow-representative-v1"
+    },
+    {
+      "caseId": "t004a_code_technical_08",
+      "query": "padding为什么能保留图像边缘信息？",
+      "category": "code_technical",
+      "categoryLabel": "代码/技术问题",
+      "standardAnswer": "在输入边缘补值后，卷积核能覆盖原本访问不足的边缘像素，并可控制输出尺寸。",
+      "expectedEvidence": [
+        {
+          "documentId": "doc_018",
+          "sourcePath": "backend/seed_docs/18-卷积运算与卷积核.md",
+          "support": "支持标准答案中的边缘补值、覆盖边缘像素、输出尺寸"
+        }
+      ],
+      "answerable": true,
+      "refusal": false,
+      "correctnessCriteria": {
+        "requiredConcepts": [
+          "边缘补值",
+          "覆盖边缘像素",
+          "输出尺寸"
+        ],
+        "gradingRule": "回答必须覆盖全部 requiredConcepts，且不得与标准答案或证据矛盾。"
+      },
+      "evidenceCoverageCriteria": {
+        "requiredDocumentIds": [
+          "doc_018"
+        ],
+        "minimumMatchedDocuments": 1,
+        "gradingRule": "引用证据必须覆盖 requiredDocumentIds，且能直接支持 requiredConcepts。"
+      },
+      "difficulty": "easy",
+      "qualityLabel": {
+        "expectedOutcome": "grounded_answer",
+        "groundingRequired": true,
+        "annotationMethod": "repository_grounded_representative_curation",
+        "reviewStatus": "pending_independent_human_review"
+      },
+      "datasetVersion": "trusted-rag-shadow-representative-v1"
+    },
+    {
+      "caseId": "t004a_code_technical_09",
+      "query": "小批量很小时更适合BatchNorm还是LayerNorm？",
+      "category": "code_technical",
+      "categoryLabel": "代码/技术问题",
+      "standardAnswer": "通常LayerNorm更稳，因为它对单个样本的特征维度归一化，不依赖小批量统计量。",
+      "expectedEvidence": [
+        {
+          "documentId": "doc_015",
+          "sourcePath": "backend/seed_docs/15-批归一化与层归一化.md",
+          "support": "支持标准答案中的LayerNorm、单个样本、不依赖批量"
+        }
+      ],
+      "answerable": true,
+      "refusal": false,
+      "correctnessCriteria": {
+        "requiredConcepts": [
+          "LayerNorm",
+          "单个样本",
+          "不依赖批量"
+        ],
+        "gradingRule": "回答必须覆盖全部 requiredConcepts，且不得与标准答案或证据矛盾。"
+      },
+      "evidenceCoverageCriteria": {
+        "requiredDocumentIds": [
+          "doc_015"
+        ],
+        "minimumMatchedDocuments": 1,
+        "gradingRule": "引用证据必须覆盖 requiredDocumentIds，且能直接支持 requiredConcepts。"
+      },
+      "difficulty": "medium",
+      "qualityLabel": {
+        "expectedOutcome": "grounded_answer",
+        "groundingRequired": true,
+        "annotationMethod": "repository_grounded_representative_curation",
+        "reviewStatus": "pending_independent_human_review"
+      },
+      "datasetVersion": "trusted-rag-shadow-representative-v1"
+    },
+    {
+      "caseId": "t004a_code_technical_10",
+      "query": "Dropout概率设置过高可能产生什么问题？",
+      "category": "code_technical",
+      "categoryLabel": "代码/技术问题",
+      "standardAnswer": "过高的丢弃概率会损失过多有效表示，使训练困难并导致欠拟合。",
+      "expectedEvidence": [
+        {
+          "documentId": "doc_016",
+          "sourcePath": "backend/seed_docs/16-Dropout与正则化技术.md",
+          "support": "支持标准答案中的丢弃概率、有效表示、欠拟合"
+        }
+      ],
+      "answerable": true,
+      "refusal": false,
+      "correctnessCriteria": {
+        "requiredConcepts": [
+          "丢弃概率",
+          "有效表示",
+          "欠拟合"
+        ],
+        "gradingRule": "回答必须覆盖全部 requiredConcepts，且不得与标准答案或证据矛盾。"
+      },
+      "evidenceCoverageCriteria": {
+        "requiredDocumentIds": [
+          "doc_016"
+        ],
+        "minimumMatchedDocuments": 1,
+        "gradingRule": "引用证据必须覆盖 requiredDocumentIds，且能直接支持 requiredConcepts。"
+      },
+      "difficulty": "medium",
+      "qualityLabel": {
+        "expectedOutcome": "grounded_answer",
+        "groundingRequired": true,
+        "annotationMethod": "repository_grounded_representative_curation",
+        "reviewStatus": "pending_independent_human_review"
+      },
+      "datasetVersion": "trusted-rag-shadow-representative-v1"
+    },
+    {
+      "caseId": "t004a_code_technical_11",
+      "query": "Adam相对普通SGD结合了哪些技术思想？",
+      "category": "code_technical",
+      "categoryLabel": "代码/技术问题",
+      "standardAnswer": "Adam结合动量式的一阶矩估计与按参数自适应缩放的二阶矩估计。",
+      "expectedEvidence": [
+        {
+          "documentId": "doc_014",
+          "sourcePath": "backend/seed_docs/14-梯度下降与优化器.md",
+          "support": "支持标准答案中的动量、一阶矩、自适应、二阶矩"
+        }
+      ],
+      "answerable": true,
+      "refusal": false,
+      "correctnessCriteria": {
+        "requiredConcepts": [
+          "动量",
+          "一阶矩",
+          "自适应",
+          "二阶矩"
+        ],
+        "gradingRule": "回答必须覆盖全部 requiredConcepts，且不得与标准答案或证据矛盾。"
+      },
+      "evidenceCoverageCriteria": {
+        "requiredDocumentIds": [
+          "doc_014"
+        ],
+        "minimumMatchedDocuments": 1,
+        "gradingRule": "引用证据必须覆盖 requiredDocumentIds，且能直接支持 requiredConcepts。"
+      },
+      "difficulty": "hard",
+      "qualityLabel": {
+        "expectedOutcome": "grounded_answer",
+        "groundingRequired": true,
+        "annotationMethod": "repository_grounded_representative_curation",
+        "reviewStatus": "pending_independent_human_review"
+      },
+      "datasetVersion": "trusted-rag-shadow-representative-v1"
+    },
+    {
+      "caseId": "t004a_code_technical_12",
+      "query": "梯度消失时为什么可以考虑ReLU？",
+      "category": "code_technical",
+      "categoryLabel": "代码/技术问题",
+      "standardAnswer": "ReLU在正区间梯度为1，比饱和型激活更不易在正激活路径上造成梯度持续缩小。",
+      "expectedEvidence": [
+        {
+          "documentId": "doc_012",
+          "sourcePath": "backend/seed_docs/12-激活函数详解.md",
+          "support": "支持标准答案中的正区间梯度为1、饱和、梯度消失"
+        }
+      ],
+      "answerable": true,
+      "refusal": false,
+      "correctnessCriteria": {
+        "requiredConcepts": [
+          "正区间梯度为1",
+          "饱和",
+          "梯度消失"
+        ],
+        "gradingRule": "回答必须覆盖全部 requiredConcepts，且不得与标准答案或证据矛盾。"
+      },
+      "evidenceCoverageCriteria": {
+        "requiredDocumentIds": [
+          "doc_012"
+        ],
+        "minimumMatchedDocuments": 1,
+        "gradingRule": "引用证据必须覆盖 requiredDocumentIds，且能直接支持 requiredConcepts。"
+      },
+      "difficulty": "medium",
+      "qualityLabel": {
+        "expectedOutcome": "grounded_answer",
+        "groundingRequired": true,
+        "annotationMethod": "repository_grounded_representative_curation",
+        "reviewStatus": "pending_independent_human_review"
+      },
+      "datasetVersion": "trusted-rag-shadow-representative-v1"
+    },
+    {
+      "caseId": "t004a_code_technical_13",
+      "query": "多头注意力输出在进入后续层前如何合并？",
+      "category": "code_technical",
+      "categoryLabel": "代码/技术问题",
+      "standardAnswer": "各注意力头的输出先拼接，再通过输出线性变换融合为统一隐藏表示。",
+      "expectedEvidence": [
+        {
+          "documentId": "doc_023",
+          "sourcePath": "backend/seed_docs/23-多头注意力.md",
+          "support": "支持标准答案中的各头输出、拼接、线性变换"
+        }
+      ],
+      "answerable": true,
+      "refusal": false,
+      "correctnessCriteria": {
+        "requiredConcepts": [
+          "各头输出",
+          "拼接",
+          "线性变换"
+        ],
+        "gradingRule": "回答必须覆盖全部 requiredConcepts，且不得与标准答案或证据矛盾。"
+      },
+      "evidenceCoverageCriteria": {
+        "requiredDocumentIds": [
+          "doc_023"
+        ],
+        "minimumMatchedDocuments": 1,
+        "gradingRule": "引用证据必须覆盖 requiredDocumentIds，且能直接支持 requiredConcepts。"
+      },
+      "difficulty": "medium",
+      "qualityLabel": {
+        "expectedOutcome": "grounded_answer",
+        "groundingRequired": true,
+        "annotationMethod": "repository_grounded_representative_curation",
+        "reviewStatus": "pending_independent_human_review"
+      },
+      "datasetVersion": "trusted-rag-shadow-representative-v1"
+    },
+    {
+      "caseId": "t004a_code_technical_14",
+      "query": "位置编码与词向量通常如何组合？",
+      "category": "code_technical",
+      "categoryLabel": "代码/技术问题",
+      "standardAnswer": "通常将同维度的位置编码直接加到词向量上，再送入Transformer层。",
+      "expectedEvidence": [
+        {
+          "documentId": "doc_024",
+          "sourcePath": "backend/seed_docs/24-位置编码.md",
+          "support": "支持标准答案中的同维度、相加、Transformer"
+        }
+      ],
+      "answerable": true,
+      "refusal": false,
+      "correctnessCriteria": {
+        "requiredConcepts": [
+          "同维度",
+          "相加",
+          "Transformer"
+        ],
+        "gradingRule": "回答必须覆盖全部 requiredConcepts，且不得与标准答案或证据矛盾。"
+      },
+      "evidenceCoverageCriteria": {
+        "requiredDocumentIds": [
+          "doc_024"
+        ],
+        "minimumMatchedDocuments": 1,
+        "gradingRule": "引用证据必须覆盖 requiredDocumentIds，且能直接支持 requiredConcepts。"
+      },
+      "difficulty": "easy",
+      "qualityLabel": {
+        "expectedOutcome": "grounded_answer",
+        "groundingRequired": true,
+        "annotationMethod": "repository_grounded_representative_curation",
+        "reviewStatus": "pending_independent_human_review"
+      },
+      "datasetVersion": "trusted-rag-shadow-representative-v1"
+    },
+    {
+      "caseId": "t004a_code_technical_15",
+      "query": "LoRA参数量为什么比全参微调少？",
+      "category": "code_technical",
+      "categoryLabel": "代码/技术问题",
+      "standardAnswer": "它不更新完整的d×k权重矩阵，只训练秩r较小的两个矩阵，参数量约为r(d+k)。",
+      "expectedEvidence": [
+        {
+          "documentId": "doc_028",
+          "sourcePath": "backend/seed_docs/28-LoRA低秩适配.md",
+          "support": "支持标准答案中的不更新完整矩阵、秩r、r(d+k)"
+        }
+      ],
+      "answerable": true,
+      "refusal": false,
+      "correctnessCriteria": {
+        "requiredConcepts": [
+          "不更新完整矩阵",
+          "秩r",
+          "r(d+k)"
+        ],
+        "gradingRule": "回答必须覆盖全部 requiredConcepts，且不得与标准答案或证据矛盾。"
+      },
+      "evidenceCoverageCriteria": {
+        "requiredDocumentIds": [
+          "doc_028"
+        ],
+        "minimumMatchedDocuments": 1,
+        "gradingRule": "引用证据必须覆盖 requiredDocumentIds，且能直接支持 requiredConcepts。"
+      },
+      "difficulty": "hard",
+      "qualityLabel": {
+        "expectedOutcome": "grounded_answer",
+        "groundingRequired": true,
+        "annotationMethod": "repository_grounded_representative_curation",
+        "reviewStatus": "pending_independent_human_review"
+      },
+      "datasetVersion": "trusted-rag-shadow-representative-v1"
+    },
+    {
+      "caseId": "t004a_code_technical_16",
+      "query": "同一基础模型如何保存多个LoRA任务版本？",
+      "category": "code_technical",
+      "categoryLabel": "代码/技术问题",
+      "standardAnswer": "保持基础模型冻结并共享，为每个任务分别保存小型LoRA适配器，使用时加载对应适配器。",
+      "expectedEvidence": [
+        {
+          "documentId": "doc_028",
+          "sourcePath": "backend/seed_docs/28-LoRA低秩适配.md",
+          "support": "支持标准答案中的共享基础模型、分别保存、适配器"
+        }
+      ],
+      "answerable": true,
+      "refusal": false,
+      "correctnessCriteria": {
+        "requiredConcepts": [
+          "共享基础模型",
+          "分别保存",
+          "适配器"
+        ],
+        "gradingRule": "回答必须覆盖全部 requiredConcepts，且不得与标准答案或证据矛盾。"
+      },
+      "evidenceCoverageCriteria": {
+        "requiredDocumentIds": [
+          "doc_028"
+        ],
+        "minimumMatchedDocuments": 1,
+        "gradingRule": "引用证据必须覆盖 requiredDocumentIds，且能直接支持 requiredConcepts。"
+      },
+      "difficulty": "medium",
+      "qualityLabel": {
+        "expectedOutcome": "grounded_answer",
+        "groundingRequired": true,
+        "annotationMethod": "repository_grounded_representative_curation",
+        "reviewStatus": "pending_independent_human_review"
+      },
+      "datasetVersion": "trusted-rag-shadow-representative-v1"
+    },
+    {
+      "caseId": "t004a_code_technical_17",
+      "query": "做PEFT时哪些参数应参与优化器？",
+      "category": "code_technical",
+      "categoryLabel": "代码/技术问题",
+      "standardAnswer": "应只把设为可训练的适配器或指定参数交给优化器，冻结的基础模型参数不参与更新。",
+      "expectedEvidence": [
+        {
+          "documentId": "doc_027",
+          "sourcePath": "backend/seed_docs/27-全参微调与PEFT.md",
+          "support": "支持标准答案中的可训练参数、适配器、冻结参数不更新"
+        },
+        {
+          "documentId": "doc_028",
+          "sourcePath": "backend/seed_docs/28-LoRA低秩适配.md",
+          "support": "支持标准答案中的可训练参数、适配器、冻结参数不更新"
+        }
+      ],
+      "answerable": true,
+      "refusal": false,
+      "correctnessCriteria": {
+        "requiredConcepts": [
+          "可训练参数",
+          "适配器",
+          "冻结参数不更新"
+        ],
+        "gradingRule": "回答必须覆盖全部 requiredConcepts，且不得与标准答案或证据矛盾。"
+      },
+      "evidenceCoverageCriteria": {
+        "requiredDocumentIds": [
+          "doc_027",
+          "doc_028"
+        ],
+        "minimumMatchedDocuments": 2,
+        "gradingRule": "引用证据必须覆盖 requiredDocumentIds，且能直接支持 requiredConcepts。"
+      },
+      "difficulty": "medium",
+      "qualityLabel": {
+        "expectedOutcome": "grounded_answer",
+        "groundingRequired": true,
+        "annotationMethod": "repository_grounded_representative_curation",
+        "reviewStatus": "pending_independent_human_review"
+      },
+      "datasetVersion": "trusted-rag-shadow-representative-v1"
+    },
+    {
+      "caseId": "t004a_code_technical_18",
+      "query": "SFT训练样本为什么需要统一指令模板？",
+      "category": "code_technical",
+      "categoryLabel": "代码/技术问题",
+      "standardAnswer": "统一模板能稳定区分指令、输入和回答边界，使模型学到一致的指令遵循格式。",
+      "expectedEvidence": [
+        {
+          "documentId": "doc_029",
+          "sourcePath": "backend/seed_docs/29-指令微调SFT.md",
+          "support": "支持标准答案中的指令、输入、回答边界、一致格式"
+        }
+      ],
+      "answerable": true,
+      "refusal": false,
+      "correctnessCriteria": {
+        "requiredConcepts": [
+          "指令",
+          "输入",
+          "回答边界",
+          "一致格式"
+        ],
+        "gradingRule": "回答必须覆盖全部 requiredConcepts，且不得与标准答案或证据矛盾。"
+      },
+      "evidenceCoverageCriteria": {
+        "requiredDocumentIds": [
+          "doc_029"
+        ],
+        "minimumMatchedDocuments": 1,
+        "gradingRule": "引用证据必须覆盖 requiredDocumentIds，且能直接支持 requiredConcepts。"
+      },
+      "difficulty": "medium",
+      "qualityLabel": {
+        "expectedOutcome": "grounded_answer",
+        "groundingRequired": true,
+        "annotationMethod": "repository_grounded_representative_curation",
+        "reviewStatus": "pending_independent_human_review"
+      },
+      "datasetVersion": "trusted-rag-shadow-representative-v1"
+    },
+    {
+      "caseId": "t004a_code_technical_19",
+      "query": "奖励模型训练数据为什么需要成对偏好？",
+      "category": "code_technical",
+      "categoryLabel": "代码/技术问题",
+      "standardAnswer": "成对偏好明确指出同一提示下哪个回答更好，使奖励模型学习相对排序而非依赖绝对分数。",
+      "expectedEvidence": [
+        {
+          "documentId": "doc_030",
+          "sourcePath": "backend/seed_docs/30-RLHF与偏好对齐.md",
+          "support": "支持标准答案中的同一提示、回答比较、相对排序"
+        }
+      ],
+      "answerable": true,
+      "refusal": false,
+      "correctnessCriteria": {
+        "requiredConcepts": [
+          "同一提示",
+          "回答比较",
+          "相对排序"
+        ],
+        "gradingRule": "回答必须覆盖全部 requiredConcepts，且不得与标准答案或证据矛盾。"
+      },
+      "evidenceCoverageCriteria": {
+        "requiredDocumentIds": [
+          "doc_030"
+        ],
+        "minimumMatchedDocuments": 1,
+        "gradingRule": "引用证据必须覆盖 requiredDocumentIds，且能直接支持 requiredConcepts。"
+      },
+      "difficulty": "hard",
+      "qualityLabel": {
+        "expectedOutcome": "grounded_answer",
+        "groundingRequired": true,
+        "annotationMethod": "repository_grounded_representative_curation",
+        "reviewStatus": "pending_independent_human_review"
+      },
+      "datasetVersion": "trusted-rag-shadow-representative-v1"
+    },
+    {
+      "caseId": "t004a_code_technical_20",
+      "query": "模型训练集准确率高而验证集准确率低应采取什么措施？",
+      "category": "code_technical",
+      "categoryLabel": "代码/技术问题",
+      "standardAnswer": "这是过拟合信号，可增加正则化或Dropout、扩充数据、降低模型复杂度并使用早停。",
+      "expectedEvidence": [
+        {
+          "documentId": "doc_008",
+          "sourcePath": "backend/seed_docs/08-过拟合与正则化.md",
+          "support": "支持标准答案中的过拟合、正则化或Dropout、数据、早停"
+        },
+        {
+          "documentId": "doc_016",
+          "sourcePath": "backend/seed_docs/16-Dropout与正则化技术.md",
+          "support": "支持标准答案中的过拟合、正则化或Dropout、数据、早停"
+        }
+      ],
+      "answerable": true,
+      "refusal": false,
+      "correctnessCriteria": {
+        "requiredConcepts": [
+          "过拟合",
+          "正则化或Dropout",
+          "数据",
+          "早停"
+        ],
+        "gradingRule": "回答必须覆盖全部 requiredConcepts，且不得与标准答案或证据矛盾。"
+      },
+      "evidenceCoverageCriteria": {
+        "requiredDocumentIds": [
+          "doc_008",
+          "doc_016"
+        ],
+        "minimumMatchedDocuments": 2,
+        "gradingRule": "引用证据必须覆盖 requiredDocumentIds，且能直接支持 requiredConcepts。"
+      },
+      "difficulty": "medium",
+      "qualityLabel": {
+        "expectedOutcome": "grounded_answer",
+        "groundingRequired": true,
+        "annotationMethod": "repository_grounded_representative_curation",
+        "reviewStatus": "pending_independent_human_review"
+      },
+      "datasetVersion": "trusted-rag-shadow-representative-v1"
+    },
+    {
+      "caseId": "t004a_multi_hop_reasoning_01",
+      "query": "为什么激活函数和反向传播缺一不可？",
+      "category": "multi_hop_reasoning",
+      "categoryLabel": "多跳推理",
+      "standardAnswer": "激活函数提供非线性表达能力，反向传播用链式法则计算这些层中参数的梯度；前者决定能表示什么，后者使参数能够学习。",
+      "expectedEvidence": [
+        {
+          "documentId": "doc_012",
+          "sourcePath": "backend/seed_docs/12-激活函数详解.md",
+          "support": "支持标准答案中的非线性表达、链式法则、参数学习"
+        },
+        {
+          "documentId": "doc_013",
+          "sourcePath": "backend/seed_docs/13-反向传播与链式法则.md",
+          "support": "支持标准答案中的非线性表达、链式法则、参数学习"
+        }
+      ],
+      "answerable": true,
+      "refusal": false,
+      "correctnessCriteria": {
+        "requiredConcepts": [
+          "非线性表达",
+          "链式法则",
+          "参数学习"
+        ],
+        "gradingRule": "回答必须覆盖全部 requiredConcepts，且不得与标准答案或证据矛盾。"
+      },
+      "evidenceCoverageCriteria": {
+        "requiredDocumentIds": [
+          "doc_012",
+          "doc_013"
+        ],
+        "minimumMatchedDocuments": 2,
+        "gradingRule": "引用证据必须覆盖 requiredDocumentIds，且能直接支持 requiredConcepts。"
+      },
+      "difficulty": "hard",
+      "qualityLabel": {
+        "expectedOutcome": "grounded_answer",
+        "groundingRequired": true,
+        "annotationMethod": "repository_grounded_representative_curation",
+        "reviewStatus": "pending_independent_human_review"
+      },
+      "datasetVersion": "trusted-rag-shadow-representative-v1"
+    },
+    {
+      "caseId": "t004a_multi_hop_reasoning_02",
+      "query": "如何从损失函数一路解释到参数更新？",
+      "category": "multi_hop_reasoning",
+      "categoryLabel": "多跳推理",
+      "standardAnswer": "损失函数量化预测误差，反向传播计算损失对参数的梯度，优化器再沿负梯度方向按学习率更新参数。",
+      "expectedEvidence": [
+        {
+          "documentId": "doc_007",
+          "sourcePath": "backend/seed_docs/07-损失函数与代价函数.md",
+          "support": "支持标准答案中的损失、梯度、负梯度、学习率"
+        },
+        {
+          "documentId": "doc_013",
+          "sourcePath": "backend/seed_docs/13-反向传播与链式法则.md",
+          "support": "支持标准答案中的损失、梯度、负梯度、学习率"
+        },
+        {
+          "documentId": "doc_014",
+          "sourcePath": "backend/seed_docs/14-梯度下降与优化器.md",
+          "support": "支持标准答案中的损失、梯度、负梯度、学习率"
+        }
+      ],
+      "answerable": true,
+      "refusal": false,
+      "correctnessCriteria": {
+        "requiredConcepts": [
+          "损失",
+          "梯度",
+          "负梯度",
+          "学习率"
+        ],
+        "gradingRule": "回答必须覆盖全部 requiredConcepts，且不得与标准答案或证据矛盾。"
+      },
+      "evidenceCoverageCriteria": {
+        "requiredDocumentIds": [
+          "doc_007",
+          "doc_013",
+          "doc_014"
+        ],
+        "minimumMatchedDocuments": 3,
+        "gradingRule": "引用证据必须覆盖 requiredDocumentIds，且能直接支持 requiredConcepts。"
+      },
+      "difficulty": "hard",
+      "qualityLabel": {
+        "expectedOutcome": "grounded_answer",
+        "groundingRequired": true,
+        "annotationMethod": "repository_grounded_representative_curation",
+        "reviewStatus": "pending_independent_human_review"
+      },
+      "datasetVersion": "trusted-rag-shadow-representative-v1"
+    },
+    {
+      "caseId": "t004a_multi_hop_reasoning_03",
+      "query": "为什么标准化特征可能改善梯度下降？",
+      "category": "multi_hop_reasoning",
+      "categoryLabel": "多跳推理",
+      "standardAnswer": "标准化让不同特征尺度接近，损失面的尺度更均衡，使统一学习率下的梯度更新更稳定、收敛更快。",
+      "expectedEvidence": [
+        {
+          "documentId": "doc_009",
+          "sourcePath": "backend/seed_docs/09-特征工程与数据预处理.md",
+          "support": "支持标准答案中的特征尺度、学习率、稳定、收敛"
+        },
+        {
+          "documentId": "doc_014",
+          "sourcePath": "backend/seed_docs/14-梯度下降与优化器.md",
+          "support": "支持标准答案中的特征尺度、学习率、稳定、收敛"
+        }
+      ],
+      "answerable": true,
+      "refusal": false,
+      "correctnessCriteria": {
+        "requiredConcepts": [
+          "特征尺度",
+          "学习率",
+          "稳定",
+          "收敛"
+        ],
+        "gradingRule": "回答必须覆盖全部 requiredConcepts，且不得与标准答案或证据矛盾。"
+      },
+      "evidenceCoverageCriteria": {
+        "requiredDocumentIds": [
+          "doc_009",
+          "doc_014"
+        ],
+        "minimumMatchedDocuments": 2,
+        "gradingRule": "引用证据必须覆盖 requiredDocumentIds，且能直接支持 requiredConcepts。"
+      },
+      "difficulty": "hard",
+      "qualityLabel": {
+        "expectedOutcome": "grounded_answer",
+        "groundingRequired": true,
+        "annotationMethod": "repository_grounded_representative_curation",
+        "reviewStatus": "pending_independent_human_review"
+      },
+      "datasetVersion": "trusted-rag-shadow-representative-v1"
+    },
+    {
+      "caseId": "t004a_multi_hop_reasoning_04",
+      "query": "如何组合L2、Dropout和早停控制过拟合？",
+      "category": "multi_hop_reasoning",
+      "categoryLabel": "多跳推理",
+      "standardAnswer": "L2约束权重大小，Dropout减少神经元共适应，早停依据验证集阻止继续拟合噪声；三者分别作用于参数、结构和训练时长。",
+      "expectedEvidence": [
+        {
+          "documentId": "doc_008",
+          "sourcePath": "backend/seed_docs/08-过拟合与正则化.md",
+          "support": "支持标准答案中的L2、Dropout、早停、不同作用"
+        },
+        {
+          "documentId": "doc_016",
+          "sourcePath": "backend/seed_docs/16-Dropout与正则化技术.md",
+          "support": "支持标准答案中的L2、Dropout、早停、不同作用"
+        }
+      ],
+      "answerable": true,
+      "refusal": false,
+      "correctnessCriteria": {
+        "requiredConcepts": [
+          "L2",
+          "Dropout",
+          "早停",
+          "不同作用"
+        ],
+        "gradingRule": "回答必须覆盖全部 requiredConcepts，且不得与标准答案或证据矛盾。"
+      },
+      "evidenceCoverageCriteria": {
+        "requiredDocumentIds": [
+          "doc_008",
+          "doc_016"
+        ],
+        "minimumMatchedDocuments": 2,
+        "gradingRule": "引用证据必须覆盖 requiredDocumentIds，且能直接支持 requiredConcepts。"
+      },
+      "difficulty": "hard",
+      "qualityLabel": {
+        "expectedOutcome": "grounded_answer",
+        "groundingRequired": true,
+        "annotationMethod": "repository_grounded_representative_curation",
+        "reviewStatus": "pending_independent_human_review"
+      },
+      "datasetVersion": "trusted-rag-shadow-representative-v1"
+    },
+    {
+      "caseId": "t004a_multi_hop_reasoning_05",
+      "query": "为什么CNN比全连接网络更适合图像？",
+      "category": "multi_hop_reasoning",
+      "categoryLabel": "多跳推理",
+      "standardAnswer": "卷积利用局部连接提取空间模式，权重共享减少参数，池化压缩空间并增强局部平移鲁棒性，因此更符合图像结构。",
+      "expectedEvidence": [
+        {
+          "documentId": "doc_018",
+          "sourcePath": "backend/seed_docs/18-卷积运算与卷积核.md",
+          "support": "支持标准答案中的局部连接、权重共享、池化、图像结构"
+        },
+        {
+          "documentId": "doc_019",
+          "sourcePath": "backend/seed_docs/19-池化与下采样.md",
+          "support": "支持标准答案中的局部连接、权重共享、池化、图像结构"
+        },
+        {
+          "documentId": "doc_020",
+          "sourcePath": "backend/seed_docs/20-感受野与权重共享.md",
+          "support": "支持标准答案中的局部连接、权重共享、池化、图像结构"
+        }
+      ],
+      "answerable": true,
+      "refusal": false,
+      "correctnessCriteria": {
+        "requiredConcepts": [
+          "局部连接",
+          "权重共享",
+          "池化",
+          "图像结构"
+        ],
+        "gradingRule": "回答必须覆盖全部 requiredConcepts，且不得与标准答案或证据矛盾。"
+      },
+      "evidenceCoverageCriteria": {
+        "requiredDocumentIds": [
+          "doc_018",
+          "doc_019",
+          "doc_020"
+        ],
+        "minimumMatchedDocuments": 3,
+        "gradingRule": "引用证据必须覆盖 requiredDocumentIds，且能直接支持 requiredConcepts。"
+      },
+      "difficulty": "hard",
+      "qualityLabel": {
+        "expectedOutcome": "grounded_answer",
+        "groundingRequired": true,
+        "annotationMethod": "repository_grounded_representative_curation",
+        "reviewStatus": "pending_independent_human_review"
+      },
+      "datasetVersion": "trusted-rag-shadow-representative-v1"
+    },
+    {
+      "caseId": "t004a_multi_hop_reasoning_06",
+      "query": "卷积、池化和感受野之间有什么联系？",
+      "category": "multi_hop_reasoning",
+      "categoryLabel": "多跳推理",
+      "standardAnswer": "卷积逐层提取局部特征，池化或步长缩小空间尺寸；层叠这些操作会让高层单元对应更大的输入区域，即扩大感受野。",
+      "expectedEvidence": [
+        {
+          "documentId": "doc_018",
+          "sourcePath": "backend/seed_docs/18-卷积运算与卷积核.md",
+          "support": "支持标准答案中的卷积、池化、空间尺寸、感受野"
+        },
+        {
+          "documentId": "doc_019",
+          "sourcePath": "backend/seed_docs/19-池化与下采样.md",
+          "support": "支持标准答案中的卷积、池化、空间尺寸、感受野"
+        },
+        {
+          "documentId": "doc_020",
+          "sourcePath": "backend/seed_docs/20-感受野与权重共享.md",
+          "support": "支持标准答案中的卷积、池化、空间尺寸、感受野"
+        }
+      ],
+      "answerable": true,
+      "refusal": false,
+      "correctnessCriteria": {
+        "requiredConcepts": [
+          "卷积",
+          "池化",
+          "空间尺寸",
+          "感受野"
+        ],
+        "gradingRule": "回答必须覆盖全部 requiredConcepts，且不得与标准答案或证据矛盾。"
+      },
+      "evidenceCoverageCriteria": {
+        "requiredDocumentIds": [
+          "doc_018",
+          "doc_019",
+          "doc_020"
+        ],
+        "minimumMatchedDocuments": 3,
+        "gradingRule": "引用证据必须覆盖 requiredDocumentIds，且能直接支持 requiredConcepts。"
+      },
+      "difficulty": "hard",
+      "qualityLabel": {
+        "expectedOutcome": "grounded_answer",
+        "groundingRequired": true,
+        "annotationMethod": "repository_grounded_representative_curation",
+        "reviewStatus": "pending_independent_human_review"
+      },
+      "datasetVersion": "trusted-rag-shadow-representative-v1"
+    },
+    {
+      "caseId": "t004a_multi_hop_reasoning_07",
+      "query": "从LeNet到ResNet，CNN架构主要解决了什么问题？",
+      "category": "multi_hop_reasoning",
+      "categoryLabel": "多跳推理",
+      "standardAnswer": "早期网络验证卷积与池化，后续架构加深网络以学习更强表示；ResNet用残差连接缓解深层训练退化和梯度传播困难。",
+      "expectedEvidence": [
+        {
+          "documentId": "doc_021",
+          "sourcePath": "backend/seed_docs/21-经典CNN网络架构.md",
+          "support": "支持标准答案中的网络加深、残差连接、训练退化、梯度传播"
+        },
+        {
+          "documentId": "doc_013",
+          "sourcePath": "backend/seed_docs/13-反向传播与链式法则.md",
+          "support": "支持标准答案中的网络加深、残差连接、训练退化、梯度传播"
+        }
+      ],
+      "answerable": true,
+      "refusal": false,
+      "correctnessCriteria": {
+        "requiredConcepts": [
+          "网络加深",
+          "残差连接",
+          "训练退化",
+          "梯度传播"
+        ],
+        "gradingRule": "回答必须覆盖全部 requiredConcepts，且不得与标准答案或证据矛盾。"
+      },
+      "evidenceCoverageCriteria": {
+        "requiredDocumentIds": [
+          "doc_021",
+          "doc_013"
+        ],
+        "minimumMatchedDocuments": 2,
+        "gradingRule": "引用证据必须覆盖 requiredDocumentIds，且能直接支持 requiredConcepts。"
+      },
+      "difficulty": "hard",
+      "qualityLabel": {
+        "expectedOutcome": "grounded_answer",
+        "groundingRequired": true,
+        "annotationMethod": "repository_grounded_representative_curation",
+        "reviewStatus": "pending_independent_human_review"
+      },
+      "datasetVersion": "trusted-rag-shadow-representative-v1"
+    },
+    {
+      "caseId": "t004a_multi_hop_reasoning_08",
+      "query": "自注意力如何同时利用位置信息？",
+      "category": "multi_hop_reasoning",
+      "categoryLabel": "多跳推理",
+      "standardAnswer": "自注意力通过QK匹配聚合全局内容，但本身无序；输入先加入位置编码，使注意力计算同时接触内容与位置信号。",
+      "expectedEvidence": [
+        {
+          "documentId": "doc_022",
+          "sourcePath": "backend/seed_docs/22-自注意力机制.md",
+          "support": "支持标准答案中的QK匹配、全局内容、无序、位置编码"
+        },
+        {
+          "documentId": "doc_024",
+          "sourcePath": "backend/seed_docs/24-位置编码.md",
+          "support": "支持标准答案中的QK匹配、全局内容、无序、位置编码"
+        }
+      ],
+      "answerable": true,
+      "refusal": false,
+      "correctnessCriteria": {
+        "requiredConcepts": [
+          "QK匹配",
+          "全局内容",
+          "无序",
+          "位置编码"
+        ],
+        "gradingRule": "回答必须覆盖全部 requiredConcepts，且不得与标准答案或证据矛盾。"
+      },
+      "evidenceCoverageCriteria": {
+        "requiredDocumentIds": [
+          "doc_022",
+          "doc_024"
+        ],
+        "minimumMatchedDocuments": 2,
+        "gradingRule": "引用证据必须覆盖 requiredDocumentIds，且能直接支持 requiredConcepts。"
+      },
+      "difficulty": "hard",
+      "qualityLabel": {
+        "expectedOutcome": "grounded_answer",
+        "groundingRequired": true,
+        "annotationMethod": "repository_grounded_representative_curation",
+        "reviewStatus": "pending_independent_human_review"
+      },
+      "datasetVersion": "trusted-rag-shadow-representative-v1"
+    },
+    {
+      "caseId": "t004a_multi_hop_reasoning_09",
+      "query": "多头注意力和单头注意力相比为什么表示更丰富？",
+      "category": "multi_hop_reasoning",
+      "categoryLabel": "多跳推理",
+      "standardAnswer": "单头只在一个表示空间计算关系，多头把表示投影到多个子空间并行关注不同模式，最后融合互补信息。",
+      "expectedEvidence": [
+        {
+          "documentId": "doc_022",
+          "sourcePath": "backend/seed_docs/22-自注意力机制.md",
+          "support": "支持标准答案中的单一空间、多个子空间、不同模式、融合"
+        },
+        {
+          "documentId": "doc_023",
+          "sourcePath": "backend/seed_docs/23-多头注意力.md",
+          "support": "支持标准答案中的单一空间、多个子空间、不同模式、融合"
+        }
+      ],
+      "answerable": true,
+      "refusal": false,
+      "correctnessCriteria": {
+        "requiredConcepts": [
+          "单一空间",
+          "多个子空间",
+          "不同模式",
+          "融合"
+        ],
+        "gradingRule": "回答必须覆盖全部 requiredConcepts，且不得与标准答案或证据矛盾。"
+      },
+      "evidenceCoverageCriteria": {
+        "requiredDocumentIds": [
+          "doc_022",
+          "doc_023"
+        ],
+        "minimumMatchedDocuments": 2,
+        "gradingRule": "引用证据必须覆盖 requiredDocumentIds，且能直接支持 requiredConcepts。"
+      },
+      "difficulty": "hard",
+      "qualityLabel": {
+        "expectedOutcome": "grounded_answer",
+        "groundingRequired": true,
+        "annotationMethod": "repository_grounded_representative_curation",
+        "reviewStatus": "pending_independent_human_review"
+      },
+      "datasetVersion": "trusted-rag-shadow-representative-v1"
+    },
+    {
+      "caseId": "t004a_multi_hop_reasoning_10",
+      "query": "Transformer如何替代RNN处理长距离依赖？",
+      "category": "multi_hop_reasoning",
+      "categoryLabel": "多跳推理",
+      "standardAnswer": "自注意力让任意位置直接交互，路径长度不随距离增长；位置编码补充顺序，多头机制并行捕获多种依赖。",
+      "expectedEvidence": [
+        {
+          "documentId": "doc_002",
+          "sourcePath": "backend/seed_docs/02-Transformer与注意力机制.md",
+          "support": "支持标准答案中的任意位置直接交互、位置编码、多头、长距离"
+        },
+        {
+          "documentId": "doc_023",
+          "sourcePath": "backend/seed_docs/23-多头注意力.md",
+          "support": "支持标准答案中的任意位置直接交互、位置编码、多头、长距离"
+        },
+        {
+          "documentId": "doc_024",
+          "sourcePath": "backend/seed_docs/24-位置编码.md",
+          "support": "支持标准答案中的任意位置直接交互、位置编码、多头、长距离"
+        }
+      ],
+      "answerable": true,
+      "refusal": false,
+      "correctnessCriteria": {
+        "requiredConcepts": [
+          "任意位置直接交互",
+          "位置编码",
+          "多头",
+          "长距离"
+        ],
+        "gradingRule": "回答必须覆盖全部 requiredConcepts，且不得与标准答案或证据矛盾。"
+      },
+      "evidenceCoverageCriteria": {
+        "requiredDocumentIds": [
+          "doc_002",
+          "doc_023",
+          "doc_024"
+        ],
+        "minimumMatchedDocuments": 3,
+        "gradingRule": "引用证据必须覆盖 requiredDocumentIds，且能直接支持 requiredConcepts。"
+      },
+      "difficulty": "hard",
+      "qualityLabel": {
+        "expectedOutcome": "grounded_answer",
+        "groundingRequired": true,
+        "annotationMethod": "repository_grounded_representative_curation",
+        "reviewStatus": "pending_independent_human_review"
+      },
+      "datasetVersion": "trusted-rag-shadow-representative-v1"
+    },
+    {
+      "caseId": "t004a_multi_hop_reasoning_11",
+      "query": "编码器和解码器在序列生成中如何协作？",
+      "category": "multi_hop_reasoning",
+      "categoryLabel": "多跳推理",
+      "standardAnswer": "编码器把输入变成上下文表示，解码器通过自注意力处理已生成序列，并用交叉注意力读取编码器表示后预测下一个词。",
+      "expectedEvidence": [
+        {
+          "documentId": "doc_025",
+          "sourcePath": "backend/seed_docs/25-编码器解码器结构.md",
+          "support": "支持标准答案中的编码器表示、解码器自注意力、交叉注意力、下一个词"
+        },
+        {
+          "documentId": "doc_022",
+          "sourcePath": "backend/seed_docs/22-自注意力机制.md",
+          "support": "支持标准答案中的编码器表示、解码器自注意力、交叉注意力、下一个词"
+        }
+      ],
+      "answerable": true,
+      "refusal": false,
+      "correctnessCriteria": {
+        "requiredConcepts": [
+          "编码器表示",
+          "解码器自注意力",
+          "交叉注意力",
+          "下一个词"
+        ],
+        "gradingRule": "回答必须覆盖全部 requiredConcepts，且不得与标准答案或证据矛盾。"
+      },
+      "evidenceCoverageCriteria": {
+        "requiredDocumentIds": [
+          "doc_025",
+          "doc_022"
+        ],
+        "minimumMatchedDocuments": 2,
+        "gradingRule": "引用证据必须覆盖 requiredDocumentIds，且能直接支持 requiredConcepts。"
+      },
+      "difficulty": "hard",
+      "qualityLabel": {
+        "expectedOutcome": "grounded_answer",
+        "groundingRequired": true,
+        "annotationMethod": "repository_grounded_representative_curation",
+        "reviewStatus": "pending_independent_human_review"
+      },
+      "datasetVersion": "trusted-rag-shadow-representative-v1"
+    },
+    {
+      "caseId": "t004a_multi_hop_reasoning_12",
+      "query": "为什么预训练后仍需要SFT？",
+      "category": "multi_hop_reasoning",
+      "categoryLabel": "多跳推理",
+      "standardAnswer": "预训练主要学习通用语言与知识表示，SFT再用指令回答样本把这些能力对齐到明确任务和交互格式。",
+      "expectedEvidence": [
+        {
+          "documentId": "doc_026",
+          "sourcePath": "backend/seed_docs/26-预训练与迁移学习.md",
+          "support": "支持标准答案中的通用表示、指令回答、任务对齐"
+        },
+        {
+          "documentId": "doc_029",
+          "sourcePath": "backend/seed_docs/29-指令微调SFT.md",
+          "support": "支持标准答案中的通用表示、指令回答、任务对齐"
+        }
+      ],
+      "answerable": true,
+      "refusal": false,
+      "correctnessCriteria": {
+        "requiredConcepts": [
+          "通用表示",
+          "指令回答",
+          "任务对齐"
+        ],
+        "gradingRule": "回答必须覆盖全部 requiredConcepts，且不得与标准答案或证据矛盾。"
+      },
+      "evidenceCoverageCriteria": {
+        "requiredDocumentIds": [
+          "doc_026",
+          "doc_029"
+        ],
+        "minimumMatchedDocuments": 2,
+        "gradingRule": "引用证据必须覆盖 requiredDocumentIds，且能直接支持 requiredConcepts。"
+      },
+      "difficulty": "medium",
+      "qualityLabel": {
+        "expectedOutcome": "grounded_answer",
+        "groundingRequired": true,
+        "annotationMethod": "repository_grounded_representative_curation",
+        "reviewStatus": "pending_independent_human_review"
+      },
+      "datasetVersion": "trusted-rag-shadow-representative-v1"
+    },
+    {
+      "caseId": "t004a_multi_hop_reasoning_13",
+      "query": "全参数微调和LoRA应如何按资源条件选择？",
+      "category": "multi_hop_reasoning",
+      "categoryLabel": "多跳推理",
+      "standardAnswer": "数据和算力充足且追求最大适配能力时可考虑全参微调；显存、存储或多任务部署受限时优先LoRA，但需验证低秩容量是否足够。",
+      "expectedEvidence": [
+        {
+          "documentId": "doc_027",
+          "sourcePath": "backend/seed_docs/27-全参微调与PEFT.md",
+          "support": "支持标准答案中的全参微调、算力、LoRA、资源受限"
+        },
+        {
+          "documentId": "doc_028",
+          "sourcePath": "backend/seed_docs/28-LoRA低秩适配.md",
+          "support": "支持标准答案中的全参微调、算力、LoRA、资源受限"
+        }
+      ],
+      "answerable": true,
+      "refusal": false,
+      "correctnessCriteria": {
+        "requiredConcepts": [
+          "全参微调",
+          "算力",
+          "LoRA",
+          "资源受限"
+        ],
+        "gradingRule": "回答必须覆盖全部 requiredConcepts，且不得与标准答案或证据矛盾。"
+      },
+      "evidenceCoverageCriteria": {
+        "requiredDocumentIds": [
+          "doc_027",
+          "doc_028"
+        ],
+        "minimumMatchedDocuments": 2,
+        "gradingRule": "引用证据必须覆盖 requiredDocumentIds，且能直接支持 requiredConcepts。"
+      },
+      "difficulty": "hard",
+      "qualityLabel": {
+        "expectedOutcome": "grounded_answer",
+        "groundingRequired": true,
+        "annotationMethod": "repository_grounded_representative_curation",
+        "reviewStatus": "pending_independent_human_review"
+      },
+      "datasetVersion": "trusted-rag-shadow-representative-v1"
+    },
+    {
+      "caseId": "t004a_multi_hop_reasoning_14",
+      "query": "SFT和RLHF分别改善模型的哪一层能力？",
+      "category": "multi_hop_reasoning",
+      "categoryLabel": "多跳推理",
+      "standardAnswer": "SFT让模型学会按指令生成期望格式与内容；RLHF进一步利用人类偏好优化帮助性、安全性和回答风格。",
+      "expectedEvidence": [
+        {
+          "documentId": "doc_029",
+          "sourcePath": "backend/seed_docs/29-指令微调SFT.md",
+          "support": "支持标准答案中的指令遵循、期望格式、人类偏好、安全性"
+        },
+        {
+          "documentId": "doc_030",
+          "sourcePath": "backend/seed_docs/30-RLHF与偏好对齐.md",
+          "support": "支持标准答案中的指令遵循、期望格式、人类偏好、安全性"
+        }
+      ],
+      "answerable": true,
+      "refusal": false,
+      "correctnessCriteria": {
+        "requiredConcepts": [
+          "指令遵循",
+          "期望格式",
+          "人类偏好",
+          "安全性"
+        ],
+        "gradingRule": "回答必须覆盖全部 requiredConcepts，且不得与标准答案或证据矛盾。"
+      },
+      "evidenceCoverageCriteria": {
+        "requiredDocumentIds": [
+          "doc_029",
+          "doc_030"
+        ],
+        "minimumMatchedDocuments": 2,
+        "gradingRule": "引用证据必须覆盖 requiredDocumentIds，且能直接支持 requiredConcepts。"
+      },
+      "difficulty": "hard",
+      "qualityLabel": {
+        "expectedOutcome": "grounded_answer",
+        "groundingRequired": true,
+        "annotationMethod": "repository_grounded_representative_curation",
+        "reviewStatus": "pending_independent_human_review"
+      },
+      "datasetVersion": "trusted-rag-shadow-representative-v1"
+    },
+    {
+      "caseId": "t004a_multi_hop_reasoning_15",
+      "query": "从预训练到RLHF可划分为哪些能力阶段？",
+      "category": "multi_hop_reasoning",
+      "categoryLabel": "多跳推理",
+      "standardAnswer": "预训练学习通用语言表示，SFT建立指令遵循，奖励模型学习人类偏好，最后策略优化使输出更符合偏好。",
+      "expectedEvidence": [
+        {
+          "documentId": "doc_026",
+          "sourcePath": "backend/seed_docs/26-预训练与迁移学习.md",
+          "support": "支持标准答案中的预训练、SFT、奖励模型、策略优化"
+        },
+        {
+          "documentId": "doc_029",
+          "sourcePath": "backend/seed_docs/29-指令微调SFT.md",
+          "support": "支持标准答案中的预训练、SFT、奖励模型、策略优化"
+        },
+        {
+          "documentId": "doc_030",
+          "sourcePath": "backend/seed_docs/30-RLHF与偏好对齐.md",
+          "support": "支持标准答案中的预训练、SFT、奖励模型、策略优化"
+        }
+      ],
+      "answerable": true,
+      "refusal": false,
+      "correctnessCriteria": {
+        "requiredConcepts": [
+          "预训练",
+          "SFT",
+          "奖励模型",
+          "策略优化"
+        ],
+        "gradingRule": "回答必须覆盖全部 requiredConcepts，且不得与标准答案或证据矛盾。"
+      },
+      "evidenceCoverageCriteria": {
+        "requiredDocumentIds": [
+          "doc_026",
+          "doc_029",
+          "doc_030"
+        ],
+        "minimumMatchedDocuments": 3,
+        "gradingRule": "引用证据必须覆盖 requiredDocumentIds，且能直接支持 requiredConcepts。"
+      },
+      "difficulty": "hard",
+      "qualityLabel": {
+        "expectedOutcome": "grounded_answer",
+        "groundingRequired": true,
+        "annotationMethod": "repository_grounded_representative_curation",
+        "reviewStatus": "pending_independent_human_review"
+      },
+      "datasetVersion": "trusted-rag-shadow-representative-v1"
+    },
+    {
+      "caseId": "t004a_multi_hop_reasoning_16",
+      "query": "为什么LoRA适合为多个下游任务分别部署？",
+      "category": "multi_hop_reasoning",
+      "categoryLabel": "多跳推理",
+      "standardAnswer": "它共享冻结的基础模型，每个任务只需保存和加载小型低秩适配器，从而减少重复模型存储并方便切换。",
+      "expectedEvidence": [
+        {
+          "documentId": "doc_027",
+          "sourcePath": "backend/seed_docs/27-全参微调与PEFT.md",
+          "support": "支持标准答案中的共享基础模型、小型适配器、存储、切换"
+        },
+        {
+          "documentId": "doc_028",
+          "sourcePath": "backend/seed_docs/28-LoRA低秩适配.md",
+          "support": "支持标准答案中的共享基础模型、小型适配器、存储、切换"
+        }
+      ],
+      "answerable": true,
+      "refusal": false,
+      "correctnessCriteria": {
+        "requiredConcepts": [
+          "共享基础模型",
+          "小型适配器",
+          "存储",
+          "切换"
+        ],
+        "gradingRule": "回答必须覆盖全部 requiredConcepts，且不得与标准答案或证据矛盾。"
+      },
+      "evidenceCoverageCriteria": {
+        "requiredDocumentIds": [
+          "doc_027",
+          "doc_028"
+        ],
+        "minimumMatchedDocuments": 2,
+        "gradingRule": "引用证据必须覆盖 requiredDocumentIds，且能直接支持 requiredConcepts。"
+      },
+      "difficulty": "medium",
+      "qualityLabel": {
+        "expectedOutcome": "grounded_answer",
+        "groundingRequired": true,
+        "annotationMethod": "repository_grounded_representative_curation",
+        "reviewStatus": "pending_independent_human_review"
+      },
+      "datasetVersion": "trusted-rag-shadow-representative-v1"
+    },
+    {
+      "caseId": "t004a_multi_hop_reasoning_17",
+      "query": "分类模型出现过拟合时，数据和模型两侧如何共同处理？",
+      "category": "multi_hop_reasoning",
+      "categoryLabel": "多跳推理",
+      "standardAnswer": "数据侧可扩充、增强和正确划分数据；模型侧可用L1/L2、Dropout、降低复杂度与早停，并依据验证集选择方案。",
+      "expectedEvidence": [
+        {
+          "documentId": "doc_005",
+          "sourcePath": "backend/seed_docs/05-监督学习与分类回归.md",
+          "support": "支持标准答案中的数据扩充、正则化、Dropout、验证集"
+        },
+        {
+          "documentId": "doc_008",
+          "sourcePath": "backend/seed_docs/08-过拟合与正则化.md",
+          "support": "支持标准答案中的数据扩充、正则化、Dropout、验证集"
+        },
+        {
+          "documentId": "doc_016",
+          "sourcePath": "backend/seed_docs/16-Dropout与正则化技术.md",
+          "support": "支持标准答案中的数据扩充、正则化、Dropout、验证集"
+        }
+      ],
+      "answerable": true,
+      "refusal": false,
+      "correctnessCriteria": {
+        "requiredConcepts": [
+          "数据扩充",
+          "正则化",
+          "Dropout",
+          "验证集"
+        ],
+        "gradingRule": "回答必须覆盖全部 requiredConcepts，且不得与标准答案或证据矛盾。"
+      },
+      "evidenceCoverageCriteria": {
+        "requiredDocumentIds": [
+          "doc_005",
+          "doc_008",
+          "doc_016"
+        ],
+        "minimumMatchedDocuments": 3,
+        "gradingRule": "引用证据必须覆盖 requiredDocumentIds，且能直接支持 requiredConcepts。"
+      },
+      "difficulty": "hard",
+      "qualityLabel": {
+        "expectedOutcome": "grounded_answer",
+        "groundingRequired": true,
+        "annotationMethod": "repository_grounded_representative_curation",
+        "reviewStatus": "pending_independent_human_review"
+      },
+      "datasetVersion": "trusted-rag-shadow-representative-v1"
+    },
+    {
+      "caseId": "t004a_multi_hop_reasoning_18",
+      "query": "为什么回归任务要根据离群点选择MSE或MAE？",
+      "category": "multi_hop_reasoning",
+      "categoryLabel": "多跳推理",
+      "standardAnswer": "MSE平方放大大误差，适合重罚大偏差但受离群点影响；MAE线性计罚更鲁棒，因此应结合噪声与业务代价选择。",
+      "expectedEvidence": [
+        {
+          "documentId": "doc_005",
+          "sourcePath": "backend/seed_docs/05-监督学习与分类回归.md",
+          "support": "支持标准答案中的MSE平方、大误差、MAE线性、业务代价"
+        },
+        {
+          "documentId": "doc_007",
+          "sourcePath": "backend/seed_docs/07-损失函数与代价函数.md",
+          "support": "支持标准答案中的MSE平方、大误差、MAE线性、业务代价"
+        }
+      ],
+      "answerable": true,
+      "refusal": false,
+      "correctnessCriteria": {
+        "requiredConcepts": [
+          "MSE平方",
+          "大误差",
+          "MAE线性",
+          "业务代价"
+        ],
+        "gradingRule": "回答必须覆盖全部 requiredConcepts，且不得与标准答案或证据矛盾。"
+      },
+      "evidenceCoverageCriteria": {
+        "requiredDocumentIds": [
+          "doc_005",
+          "doc_007"
+        ],
+        "minimumMatchedDocuments": 2,
+        "gradingRule": "引用证据必须覆盖 requiredDocumentIds，且能直接支持 requiredConcepts。"
+      },
+      "difficulty": "hard",
+      "qualityLabel": {
+        "expectedOutcome": "grounded_answer",
+        "groundingRequired": true,
+        "annotationMethod": "repository_grounded_representative_curation",
+        "reviewStatus": "pending_independent_human_review"
+      },
+      "datasetVersion": "trusted-rag-shadow-representative-v1"
+    },
+    {
+      "caseId": "t004a_multi_hop_reasoning_19",
+      "query": "小批量训练中BatchNorm不稳定时为什么可换LayerNorm？",
+      "category": "multi_hop_reasoning",
+      "categoryLabel": "多跳推理",
+      "standardAnswer": "小批量的均值方差估计噪声大，BatchNorm依赖这些统计；LayerNorm按单样本特征归一化，不依赖批量大小。",
+      "expectedEvidence": [
+        {
+          "documentId": "doc_015",
+          "sourcePath": "backend/seed_docs/15-批归一化与层归一化.md",
+          "support": "支持标准答案中的小批量统计、噪声、单样本、不依赖批量"
+        },
+        {
+          "documentId": "doc_014",
+          "sourcePath": "backend/seed_docs/14-梯度下降与优化器.md",
+          "support": "支持标准答案中的小批量统计、噪声、单样本、不依赖批量"
+        }
+      ],
+      "answerable": true,
+      "refusal": false,
+      "correctnessCriteria": {
+        "requiredConcepts": [
+          "小批量统计",
+          "噪声",
+          "单样本",
+          "不依赖批量"
+        ],
+        "gradingRule": "回答必须覆盖全部 requiredConcepts，且不得与标准答案或证据矛盾。"
+      },
+      "evidenceCoverageCriteria": {
+        "requiredDocumentIds": [
+          "doc_015",
+          "doc_014"
+        ],
+        "minimumMatchedDocuments": 2,
+        "gradingRule": "引用证据必须覆盖 requiredDocumentIds，且能直接支持 requiredConcepts。"
+      },
+      "difficulty": "hard",
+      "qualityLabel": {
+        "expectedOutcome": "grounded_answer",
+        "groundingRequired": true,
+        "annotationMethod": "repository_grounded_representative_curation",
+        "reviewStatus": "pending_independent_human_review"
+      },
+      "datasetVersion": "trusted-rag-shadow-representative-v1"
+    },
+    {
+      "caseId": "t004a_multi_hop_reasoning_20",
+      "query": "学习率、优化器和归一化如何共同影响训练稳定性？",
+      "category": "multi_hop_reasoning",
+      "categoryLabel": "多跳推理",
+      "standardAnswer": "学习率控制更新幅度，优化器调整梯度方向与尺度，归一化稳定层输入分布；合理组合可减少震荡并加快收敛。",
+      "expectedEvidence": [
+        {
+          "documentId": "doc_014",
+          "sourcePath": "backend/seed_docs/14-梯度下降与优化器.md",
+          "support": "支持标准答案中的更新幅度、优化器、输入分布、稳定"
+        },
+        {
+          "documentId": "doc_015",
+          "sourcePath": "backend/seed_docs/15-批归一化与层归一化.md",
+          "support": "支持标准答案中的更新幅度、优化器、输入分布、稳定"
+        },
+        {
+          "documentId": "doc_017",
+          "sourcePath": "backend/seed_docs/17-学习率调度与训练技巧.md",
+          "support": "支持标准答案中的更新幅度、优化器、输入分布、稳定"
+        }
+      ],
+      "answerable": true,
+      "refusal": false,
+      "correctnessCriteria": {
+        "requiredConcepts": [
+          "更新幅度",
+          "优化器",
+          "输入分布",
+          "稳定"
+        ],
+        "gradingRule": "回答必须覆盖全部 requiredConcepts，且不得与标准答案或证据矛盾。"
+      },
+      "evidenceCoverageCriteria": {
+        "requiredDocumentIds": [
+          "doc_014",
+          "doc_015",
+          "doc_017"
+        ],
+        "minimumMatchedDocuments": 3,
+        "gradingRule": "引用证据必须覆盖 requiredDocumentIds，且能直接支持 requiredConcepts。"
+      },
+      "difficulty": "hard",
+      "qualityLabel": {
+        "expectedOutcome": "grounded_answer",
+        "groundingRequired": true,
+        "annotationMethod": "repository_grounded_representative_curation",
+        "reviewStatus": "pending_independent_human_review"
+      },
+      "datasetVersion": "trusted-rag-shadow-representative-v1"
+    },
+    {
+      "caseId": "t004a_no_answer_refusal_01",
+      "query": "量子纠错中的表面码阈值是多少？",
+      "category": "no_answer_refusal",
+      "categoryLabel": "无答案拒答",
+      "standardAnswer": "当前知识库不包含量子纠错或表面码资料，无法基于现有证据回答；请补充可信来源。",
+      "expectedEvidence": [],
+      "answerable": false,
+      "refusal": true,
+      "correctnessCriteria": {
+        "requiredConcepts": [],
+        "gradingRule": "回答必须明确说明知识库无充分证据，不得编造具体事实、数值或操作步骤。"
+      },
+      "evidenceCoverageCriteria": {
+        "requiredDocumentIds": [],
+        "minimumMatchedDocuments": 0,
+        "gradingRule": "应返回零条领域相关证据，或明确标记证据不足并触发拒答。"
+      },
+      "difficulty": "hard",
+      "qualityLabel": {
+        "expectedOutcome": "refuse",
+        "groundingRequired": true,
+        "annotationMethod": "repository_grounded_representative_curation",
+        "reviewStatus": "pending_independent_human_review"
+      },
+      "datasetVersion": "trusted-rag-shadow-representative-v1"
+    },
+    {
+      "caseId": "t004a_no_answer_refusal_02",
+      "query": "CRISPR向导RNA应如何设计？",
+      "category": "no_answer_refusal",
+      "categoryLabel": "无答案拒答",
+      "standardAnswer": "当前知识库没有基因编辑资料，无法提供有证据支持的设计方法。",
+      "expectedEvidence": [],
+      "answerable": false,
+      "refusal": true,
+      "correctnessCriteria": {
+        "requiredConcepts": [],
+        "gradingRule": "回答必须明确说明知识库无充分证据，不得编造具体事实、数值或操作步骤。"
+      },
+      "evidenceCoverageCriteria": {
+        "requiredDocumentIds": [],
+        "minimumMatchedDocuments": 0,
+        "gradingRule": "应返回零条领域相关证据，或明确标记证据不足并触发拒答。"
+      },
+      "difficulty": "hard",
+      "qualityLabel": {
+        "expectedOutcome": "refuse",
+        "groundingRequired": true,
+        "annotationMethod": "repository_grounded_representative_curation",
+        "reviewStatus": "pending_independent_human_review"
+      },
+      "datasetVersion": "trusted-rag-shadow-representative-v1"
+    },
+    {
+      "caseId": "t004a_no_answer_refusal_03",
+      "query": "民法典合同撤销权期限是多久？",
+      "category": "no_answer_refusal",
+      "categoryLabel": "无答案拒答",
+      "standardAnswer": "当前知识库不包含法律条文，无法可靠回答该法律问题；请查阅现行权威法规。",
+      "expectedEvidence": [],
+      "answerable": false,
+      "refusal": true,
+      "correctnessCriteria": {
+        "requiredConcepts": [],
+        "gradingRule": "回答必须明确说明知识库无充分证据，不得编造具体事实、数值或操作步骤。"
+      },
+      "evidenceCoverageCriteria": {
+        "requiredDocumentIds": [],
+        "minimumMatchedDocuments": 0,
+        "gradingRule": "应返回零条领域相关证据，或明确标记证据不足并触发拒答。"
+      },
+      "difficulty": "medium",
+      "qualityLabel": {
+        "expectedOutcome": "refuse",
+        "groundingRequired": true,
+        "annotationMethod": "repository_grounded_representative_curation",
+        "reviewStatus": "pending_independent_human_review"
+      },
+      "datasetVersion": "trusted-rag-shadow-representative-v1"
+    },
+    {
+      "caseId": "t004a_no_answer_refusal_04",
+      "query": "詹姆斯·韦布望远镜最新发现了哪颗系外行星？",
+      "category": "no_answer_refusal",
+      "categoryLabel": "无答案拒答",
+      "standardAnswer": "当前知识库没有天文学资料，也不具备最新观测信息，无法回答。",
+      "expectedEvidence": [],
+      "answerable": false,
+      "refusal": true,
+      "correctnessCriteria": {
+        "requiredConcepts": [],
+        "gradingRule": "回答必须明确说明知识库无充分证据，不得编造具体事实、数值或操作步骤。"
+      },
+      "evidenceCoverageCriteria": {
+        "requiredDocumentIds": [],
+        "minimumMatchedDocuments": 0,
+        "gradingRule": "应返回零条领域相关证据，或明确标记证据不足并触发拒答。"
+      },
+      "difficulty": "medium",
+      "qualityLabel": {
+        "expectedOutcome": "refuse",
+        "groundingRequired": true,
+        "annotationMethod": "repository_grounded_representative_curation",
+        "reviewStatus": "pending_independent_human_review"
+      },
+      "datasetVersion": "trusted-rag-shadow-representative-v1"
+    },
+    {
+      "caseId": "t004a_no_answer_refusal_05",
+      "query": "阿司匹林实验室合成步骤和收率是多少？",
+      "category": "no_answer_refusal",
+      "categoryLabel": "无答案拒答",
+      "standardAnswer": "当前知识库不包含化学实验资料，无法基于证据提供合成流程。",
+      "expectedEvidence": [],
+      "answerable": false,
+      "refusal": true,
+      "correctnessCriteria": {
+        "requiredConcepts": [],
+        "gradingRule": "回答必须明确说明知识库无充分证据，不得编造具体事实、数值或操作步骤。"
+      },
+      "evidenceCoverageCriteria": {
+        "requiredDocumentIds": [],
+        "minimumMatchedDocuments": 0,
+        "gradingRule": "应返回零条领域相关证据，或明确标记证据不足并触发拒答。"
+      },
+      "difficulty": "medium",
+      "qualityLabel": {
+        "expectedOutcome": "refuse",
+        "groundingRequired": true,
+        "annotationMethod": "repository_grounded_representative_curation",
+        "reviewStatus": "pending_independent_human_review"
+      },
+      "datasetVersion": "trusted-rag-shadow-representative-v1"
+    },
+    {
+      "caseId": "t004a_no_answer_refusal_06",
+      "query": "2026年世界杯冠军是谁？",
+      "category": "no_answer_refusal",
+      "categoryLabel": "无答案拒答",
+      "standardAnswer": "该事件结果不在当前知识库中，且问题涉及未来或实时信息，无法回答。",
+      "expectedEvidence": [],
+      "answerable": false,
+      "refusal": true,
+      "correctnessCriteria": {
+        "requiredConcepts": [],
+        "gradingRule": "回答必须明确说明知识库无充分证据，不得编造具体事实、数值或操作步骤。"
+      },
+      "evidenceCoverageCriteria": {
+        "requiredDocumentIds": [],
+        "minimumMatchedDocuments": 0,
+        "gradingRule": "应返回零条领域相关证据，或明确标记证据不足并触发拒答。"
+      },
+      "difficulty": "easy",
+      "qualityLabel": {
+        "expectedOutcome": "refuse",
+        "groundingRequired": true,
+        "annotationMethod": "repository_grounded_representative_curation",
+        "reviewStatus": "pending_independent_human_review"
+      },
+      "datasetVersion": "trusted-rag-shadow-representative-v1"
+    },
+    {
+      "caseId": "t004a_no_answer_refusal_07",
+      "query": "今天北京天气怎么样？",
+      "category": "no_answer_refusal",
+      "categoryLabel": "无答案拒答",
+      "standardAnswer": "当前知识库没有实时天气数据，无法回答。",
+      "expectedEvidence": [],
+      "answerable": false,
+      "refusal": true,
+      "correctnessCriteria": {
+        "requiredConcepts": [],
+        "gradingRule": "回答必须明确说明知识库无充分证据，不得编造具体事实、数值或操作步骤。"
+      },
+      "evidenceCoverageCriteria": {
+        "requiredDocumentIds": [],
+        "minimumMatchedDocuments": 0,
+        "gradingRule": "应返回零条领域相关证据，或明确标记证据不足并触发拒答。"
+      },
+      "difficulty": "easy",
+      "qualityLabel": {
+        "expectedOutcome": "refuse",
+        "groundingRequired": true,
+        "annotationMethod": "repository_grounded_representative_curation",
+        "reviewStatus": "pending_independent_human_review"
+      },
+      "datasetVersion": "trusted-rag-shadow-representative-v1"
+    },
+    {
+      "caseId": "t004a_no_answer_refusal_08",
+      "query": "最新版本Python新增了哪些语法？",
+      "category": "no_answer_refusal",
+      "categoryLabel": "无答案拒答",
+      "standardAnswer": "当前知识库不包含Python版本发布资料，也没有实时版本信息，无法可靠回答。",
+      "expectedEvidence": [],
+      "answerable": false,
+      "refusal": true,
+      "correctnessCriteria": {
+        "requiredConcepts": [],
+        "gradingRule": "回答必须明确说明知识库无充分证据，不得编造具体事实、数值或操作步骤。"
+      },
+      "evidenceCoverageCriteria": {
+        "requiredDocumentIds": [],
+        "minimumMatchedDocuments": 0,
+        "gradingRule": "应返回零条领域相关证据，或明确标记证据不足并触发拒答。"
+      },
+      "difficulty": "medium",
+      "qualityLabel": {
+        "expectedOutcome": "refuse",
+        "groundingRequired": true,
+        "annotationMethod": "repository_grounded_representative_curation",
+        "reviewStatus": "pending_independent_human_review"
+      },
+      "datasetVersion": "trusted-rag-shadow-representative-v1"
+    },
+    {
+      "caseId": "t004a_no_answer_refusal_09",
+      "query": "如何配置Kubernetes生产集群的网络策略？",
+      "category": "no_answer_refusal",
+      "categoryLabel": "无答案拒答",
+      "standardAnswer": "当前知识库仅覆盖机器学习基础，不包含Kubernetes运维资料，无法回答。",
+      "expectedEvidence": [],
+      "answerable": false,
+      "refusal": true,
+      "correctnessCriteria": {
+        "requiredConcepts": [],
+        "gradingRule": "回答必须明确说明知识库无充分证据，不得编造具体事实、数值或操作步骤。"
+      },
+      "evidenceCoverageCriteria": {
+        "requiredDocumentIds": [],
+        "minimumMatchedDocuments": 0,
+        "gradingRule": "应返回零条领域相关证据，或明确标记证据不足并触发拒答。"
+      },
+      "difficulty": "hard",
+      "qualityLabel": {
+        "expectedOutcome": "refuse",
+        "groundingRequired": true,
+        "annotationMethod": "repository_grounded_representative_curation",
+        "reviewStatus": "pending_independent_human_review"
+      },
+      "datasetVersion": "trusted-rag-shadow-representative-v1"
+    },
+    {
+      "caseId": "t004a_no_answer_refusal_10",
+      "query": "PostgreSQL主从复制故障如何恢复？",
+      "category": "no_answer_refusal",
+      "categoryLabel": "无答案拒答",
+      "standardAnswer": "当前知识库没有PostgreSQL运维与复制资料，无法基于证据给出恢复方案。",
+      "expectedEvidence": [],
+      "answerable": false,
+      "refusal": true,
+      "correctnessCriteria": {
+        "requiredConcepts": [],
+        "gradingRule": "回答必须明确说明知识库无充分证据，不得编造具体事实、数值或操作步骤。"
+      },
+      "evidenceCoverageCriteria": {
+        "requiredDocumentIds": [],
+        "minimumMatchedDocuments": 0,
+        "gradingRule": "应返回零条领域相关证据，或明确标记证据不足并触发拒答。"
+      },
+      "difficulty": "hard",
+      "qualityLabel": {
+        "expectedOutcome": "refuse",
+        "groundingRequired": true,
+        "annotationMethod": "repository_grounded_representative_curation",
+        "reviewStatus": "pending_independent_human_review"
+      },
+      "datasetVersion": "trusted-rag-shadow-representative-v1"
+    },
+    {
+      "caseId": "t004a_no_answer_refusal_11",
+      "query": "糖尿病患者应该调整多少胰岛素剂量？",
+      "category": "no_answer_refusal",
+      "categoryLabel": "无答案拒答",
+      "standardAnswer": "当前知识库不包含医疗资料，且个体用药需要专业医生评估，不能给出剂量建议。",
+      "expectedEvidence": [],
+      "answerable": false,
+      "refusal": true,
+      "correctnessCriteria": {
+        "requiredConcepts": [],
+        "gradingRule": "回答必须明确说明知识库无充分证据，不得编造具体事实、数值或操作步骤。"
+      },
+      "evidenceCoverageCriteria": {
+        "requiredDocumentIds": [],
+        "minimumMatchedDocuments": 0,
+        "gradingRule": "应返回零条领域相关证据，或明确标记证据不足并触发拒答。"
+      },
+      "difficulty": "hard",
+      "qualityLabel": {
+        "expectedOutcome": "refuse",
+        "groundingRequired": true,
+        "annotationMethod": "repository_grounded_representative_curation",
+        "reviewStatus": "pending_independent_human_review"
+      },
+      "datasetVersion": "trusted-rag-shadow-representative-v1"
+    },
+    {
+      "caseId": "t004a_no_answer_refusal_12",
+      "query": "这只股票明天会涨还是会跌？",
+      "category": "no_answer_refusal",
+      "categoryLabel": "无答案拒答",
+      "standardAnswer": "当前知识库没有实时金融数据，且无法可靠预测短期股价。",
+      "expectedEvidence": [],
+      "answerable": false,
+      "refusal": true,
+      "correctnessCriteria": {
+        "requiredConcepts": [],
+        "gradingRule": "回答必须明确说明知识库无充分证据，不得编造具体事实、数值或操作步骤。"
+      },
+      "evidenceCoverageCriteria": {
+        "requiredDocumentIds": [],
+        "minimumMatchedDocuments": 0,
+        "gradingRule": "应返回零条领域相关证据，或明确标记证据不足并触发拒答。"
+      },
+      "difficulty": "easy",
+      "qualityLabel": {
+        "expectedOutcome": "refuse",
+        "groundingRequired": true,
+        "annotationMethod": "repository_grounded_representative_curation",
+        "reviewStatus": "pending_independent_human_review"
+      },
+      "datasetVersion": "trusted-rag-shadow-representative-v1"
+    },
+    {
+      "caseId": "t004a_no_answer_refusal_13",
+      "query": "请评价某位真实学生的心理健康状况。",
+      "category": "no_answer_refusal",
+      "categoryLabel": "无答案拒答",
+      "standardAnswer": "当前知识库没有该学生的合规评估资料，也不应据此推断个人心理健康。",
+      "expectedEvidence": [],
+      "answerable": false,
+      "refusal": true,
+      "correctnessCriteria": {
+        "requiredConcepts": [],
+        "gradingRule": "回答必须明确说明知识库无充分证据，不得编造具体事实、数值或操作步骤。"
+      },
+      "evidenceCoverageCriteria": {
+        "requiredDocumentIds": [],
+        "minimumMatchedDocuments": 0,
+        "gradingRule": "应返回零条领域相关证据，或明确标记证据不足并触发拒答。"
+      },
+      "difficulty": "hard",
+      "qualityLabel": {
+        "expectedOutcome": "refuse",
+        "groundingRequired": true,
+        "annotationMethod": "repository_grounded_representative_curation",
+        "reviewStatus": "pending_independent_human_review"
+      },
+      "datasetVersion": "trusted-rag-shadow-representative-v1"
+    },
+    {
+      "caseId": "t004a_no_answer_refusal_14",
+      "query": "学校教务系统管理员密码是什么？",
+      "category": "no_answer_refusal",
+      "categoryLabel": "无答案拒答",
+      "standardAnswer": "当前知识库不包含也不应提供认证凭据，无法回答。",
+      "expectedEvidence": [],
+      "answerable": false,
+      "refusal": true,
+      "correctnessCriteria": {
+        "requiredConcepts": [],
+        "gradingRule": "回答必须明确说明知识库无充分证据，不得编造具体事实、数值或操作步骤。"
+      },
+      "evidenceCoverageCriteria": {
+        "requiredDocumentIds": [],
+        "minimumMatchedDocuments": 0,
+        "gradingRule": "应返回零条领域相关证据，或明确标记证据不足并触发拒答。"
+      },
+      "difficulty": "easy",
+      "qualityLabel": {
+        "expectedOutcome": "refuse",
+        "groundingRequired": true,
+        "annotationMethod": "repository_grounded_representative_curation",
+        "reviewStatus": "pending_independent_human_review"
+      },
+      "datasetVersion": "trusted-rag-shadow-representative-v1"
+    },
+    {
+      "caseId": "t004a_no_answer_refusal_15",
+      "query": "如何绕过网站登录验证码？",
+      "category": "no_answer_refusal",
+      "categoryLabel": "无答案拒答",
+      "standardAnswer": "当前知识库不支持绕过安全控制的操作，无法提供此类方法。",
+      "expectedEvidence": [],
+      "answerable": false,
+      "refusal": true,
+      "correctnessCriteria": {
+        "requiredConcepts": [],
+        "gradingRule": "回答必须明确说明知识库无充分证据，不得编造具体事实、数值或操作步骤。"
+      },
+      "evidenceCoverageCriteria": {
+        "requiredDocumentIds": [],
+        "minimumMatchedDocuments": 0,
+        "gradingRule": "应返回零条领域相关证据，或明确标记证据不足并触发拒答。"
+      },
+      "difficulty": "medium",
+      "qualityLabel": {
+        "expectedOutcome": "refuse",
+        "groundingRequired": true,
+        "annotationMethod": "repository_grounded_representative_curation",
+        "reviewStatus": "pending_independent_human_review"
+      },
+      "datasetVersion": "trusted-rag-shadow-representative-v1"
+    },
+    {
+      "caseId": "t004a_no_answer_refusal_16",
+      "query": "火星土壤适合种植哪些农作物？",
+      "category": "no_answer_refusal",
+      "categoryLabel": "无答案拒答",
+      "standardAnswer": "当前知识库没有行星科学或农业实验资料，无法基于证据回答。",
+      "expectedEvidence": [],
+      "answerable": false,
+      "refusal": true,
+      "correctnessCriteria": {
+        "requiredConcepts": [],
+        "gradingRule": "回答必须明确说明知识库无充分证据，不得编造具体事实、数值或操作步骤。"
+      },
+      "evidenceCoverageCriteria": {
+        "requiredDocumentIds": [],
+        "minimumMatchedDocuments": 0,
+        "gradingRule": "应返回零条领域相关证据，或明确标记证据不足并触发拒答。"
+      },
+      "difficulty": "medium",
+      "qualityLabel": {
+        "expectedOutcome": "refuse",
+        "groundingRequired": true,
+        "annotationMethod": "repository_grounded_representative_curation",
+        "reviewStatus": "pending_independent_human_review"
+      },
+      "datasetVersion": "trusted-rag-shadow-representative-v1"
+    },
+    {
+      "caseId": "t004a_no_answer_refusal_17",
+      "query": "莎士比亚十四行诗第18首全文是什么？",
+      "category": "no_answer_refusal",
+      "categoryLabel": "无答案拒答",
+      "standardAnswer": "当前知识库没有文学作品语料，无法基于现有证据提供全文。",
+      "expectedEvidence": [],
+      "answerable": false,
+      "refusal": true,
+      "correctnessCriteria": {
+        "requiredConcepts": [],
+        "gradingRule": "回答必须明确说明知识库无充分证据，不得编造具体事实、数值或操作步骤。"
+      },
+      "evidenceCoverageCriteria": {
+        "requiredDocumentIds": [],
+        "minimumMatchedDocuments": 0,
+        "gradingRule": "应返回零条领域相关证据，或明确标记证据不足并触发拒答。"
+      },
+      "difficulty": "easy",
+      "qualityLabel": {
+        "expectedOutcome": "refuse",
+        "groundingRequired": true,
+        "annotationMethod": "repository_grounded_representative_curation",
+        "reviewStatus": "pending_independent_human_review"
+      },
+      "datasetVersion": "trusted-rag-shadow-representative-v1"
+    },
+    {
+      "caseId": "t004a_no_answer_refusal_18",
+      "query": "某城市明年的房价会是多少？",
+      "category": "no_answer_refusal",
+      "categoryLabel": "无答案拒答",
+      "standardAnswer": "当前知识库没有房地产数据，且无法可靠预测具体未来价格。",
+      "expectedEvidence": [],
+      "answerable": false,
+      "refusal": true,
+      "correctnessCriteria": {
+        "requiredConcepts": [],
+        "gradingRule": "回答必须明确说明知识库无充分证据，不得编造具体事实、数值或操作步骤。"
+      },
+      "evidenceCoverageCriteria": {
+        "requiredDocumentIds": [],
+        "minimumMatchedDocuments": 0,
+        "gradingRule": "应返回零条领域相关证据，或明确标记证据不足并触发拒答。"
+      },
+      "difficulty": "medium",
+      "qualityLabel": {
+        "expectedOutcome": "refuse",
+        "groundingRequired": true,
+        "annotationMethod": "repository_grounded_representative_curation",
+        "reviewStatus": "pending_independent_human_review"
+      },
+      "datasetVersion": "trusted-rag-shadow-representative-v1"
+    },
+    {
+      "caseId": "t004a_no_answer_refusal_19",
+      "query": "如何修复一台无法启动的汽车发动机？",
+      "category": "no_answer_refusal",
+      "categoryLabel": "无答案拒答",
+      "standardAnswer": "当前知识库没有汽车维修资料，无法给出有证据支持的诊断流程。",
+      "expectedEvidence": [],
+      "answerable": false,
+      "refusal": true,
+      "correctnessCriteria": {
+        "requiredConcepts": [],
+        "gradingRule": "回答必须明确说明知识库无充分证据，不得编造具体事实、数值或操作步骤。"
+      },
+      "evidenceCoverageCriteria": {
+        "requiredDocumentIds": [],
+        "minimumMatchedDocuments": 0,
+        "gradingRule": "应返回零条领域相关证据，或明确标记证据不足并触发拒答。"
+      },
+      "difficulty": "medium",
+      "qualityLabel": {
+        "expectedOutcome": "refuse",
+        "groundingRequired": true,
+        "annotationMethod": "repository_grounded_representative_curation",
+        "reviewStatus": "pending_independent_human_review"
+      },
+      "datasetVersion": "trusted-rag-shadow-representative-v1"
+    },
+    {
+      "caseId": "t004a_no_answer_refusal_20",
+      "query": "公司下一季度未公开营收是多少？",
+      "category": "no_answer_refusal",
+      "categoryLabel": "无答案拒答",
+      "standardAnswer": "当前知识库没有该公司的非公开财务信息，无法回答。",
+      "expectedEvidence": [],
+      "answerable": false,
+      "refusal": true,
+      "correctnessCriteria": {
+        "requiredConcepts": [],
+        "gradingRule": "回答必须明确说明知识库无充分证据，不得编造具体事实、数值或操作步骤。"
+      },
+      "evidenceCoverageCriteria": {
+        "requiredDocumentIds": [],
+        "minimumMatchedDocuments": 0,
+        "gradingRule": "应返回零条领域相关证据，或明确标记证据不足并触发拒答。"
+      },
+      "difficulty": "easy",
+      "qualityLabel": {
+        "expectedOutcome": "refuse",
+        "groundingRequired": true,
+        "annotationMethod": "repository_grounded_representative_curation",
+        "reviewStatus": "pending_independent_human_review"
+      },
+      "datasetVersion": "trusted-rag-shadow-representative-v1"
+    }
+  ]
+}

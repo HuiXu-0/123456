@@ -1,0 +1,214 @@
+/* ============================================
+   IsometricCube - 3D Floating Cube
+   Pure CSS 3D transform, no JS dependencies
+   ============================================ */
+
+.iso-cube-container {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  min-height: 280px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  perspective: 800px;
+  overflow: hidden;
+}
+
+/* ========== 3D Cube Scene ========== */
+.iso-cube-scene {
+  width: 140px;
+  height: 140px;
+  perspective: 600px;
+  animation: cube-float 6s ease-in-out infinite;
+  position: relative;
+  z-index: 2;
+}
+
+.iso-cube {
+  width: 100%;
+  height: 100%;
+  position: relative;
+  transform-style: preserve-3d;
+  animation: cube-rotate 30s linear infinite;
+  transform: rotateX(-20deg) rotateY(30deg);
+}
+
+/* ========== Cube Faces ========== */
+.iso-cube__face {
+  position: absolute;
+  width: 140px;
+  height: 140px;
+  border: 1.5px solid rgba(255, 255, 255, 0.35);
+  backface-visibility: visible;
+}
+
+/* Front - Blue */
+.iso-cube__face--front {
+  background: linear-gradient(135deg, rgba(59, 130, 246, 0.65), rgba(96, 165, 250, 0.45));
+  transform: translateZ(70px);
+  box-shadow: inset 0 0 40px rgba(59, 130, 246, 0.15);
+}
+
+/* Back - Deep Blue */
+.iso-cube__face--back {
+  background: linear-gradient(135deg, rgba(30, 64, 175, 0.55), rgba(37, 99, 235, 0.35));
+  transform: rotateY(180deg) translateZ(70px);
+}
+
+/* Right - Purple */
+.iso-cube__face--right {
+  background: linear-gradient(135deg, rgba(37, 99, 235, 0.55), rgba(167, 139, 250, 0.4));
+  transform: rotateY(90deg) translateZ(70px);
+  box-shadow: inset 0 0 40px rgba(37, 99, 235, 0.1);
+}
+
+/* Left - Light Blue */
+.iso-cube__face--left {
+  background: linear-gradient(135deg, rgba(96, 165, 250, 0.45), rgba(147, 197, 253, 0.3));
+  transform: rotateY(-90deg) translateZ(70px);
+}
+
+/* Top - Light gradient */
+.iso-cube__face--top {
+  background: linear-gradient(135deg, rgba(147, 197, 253, 0.5), rgba(196, 181, 253, 0.35));
+  transform: rotateX(90deg) translateZ(70px);
+  box-shadow: inset 0 0 30px rgba(255, 255, 255, 0.2);
+}
+
+/* Bottom - Dark base */
+.iso-cube__face--bottom {
+  background: linear-gradient(135deg, rgba(30, 58, 95, 0.5), rgba(37, 99, 235, 0.3));
+  transform: rotateX(-90deg) translateZ(70px);
+}
+
+/* ========== Animations ========== */
+@keyframes cube-rotate {
+  0% {
+    transform: rotateX(-20deg) rotateY(30deg);
+  }
+  100% {
+    transform: rotateX(-20deg) rotateY(390deg);
+  }
+}
+
+@keyframes cube-float {
+  0%, 100% {
+    transform: translateY(0px);
+  }
+  50% {
+    transform: translateY(-12px);
+  }
+}
+
+/* ========== Glow Ring ========== */
+.iso-cube-glow {
+  position: absolute;
+  bottom: 18%;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 120px;
+  height: 24px;
+  background: radial-gradient(ellipse, rgba(59, 130, 246, 0.25) 0%, transparent 70%);
+  border-radius: 50%;
+  filter: blur(8px);
+  animation: glow-pulse 3s ease-in-out infinite;
+  z-index: 1;
+}
+
+@keyframes glow-pulse {
+  0%, 100% {
+    opacity: 0.6;
+    transform: translateX(-50%) scaleX(1);
+  }
+  50% {
+    opacity: 1;
+    transform: translateX(-50%) scaleX(1.15);
+  }
+}
+
+/* ========== Floating Particles ========== */
+.iso-cube-particles {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  z-index: 3;
+}
+
+.iso-particle {
+  position: absolute;
+  border-radius: 50%;
+  background: rgba(59, 130, 246, 0.5);
+}
+
+.iso-particle--1 {
+  width: 6px;
+  height: 6px;
+  top: 20%;
+  left: 18%;
+  animation: particle-drift-1 8s ease-in-out infinite;
+  background: rgba(59, 130, 246, 0.45);
+  box-shadow: 0 0 8px rgba(59, 130, 246, 0.3);
+}
+
+.iso-particle--2 {
+  width: 4px;
+  height: 4px;
+  top: 35%;
+  right: 20%;
+  animation: particle-drift-2 10s ease-in-out infinite;
+  animation-delay: -2s;
+  background: rgba(37, 99, 235, 0.45);
+  box-shadow: 0 0 6px rgba(37, 99, 235, 0.3);
+}
+
+.iso-particle--3 {
+  width: 5px;
+  height: 5px;
+  bottom: 30%;
+  left: 25%;
+  animation: particle-drift-3 7s ease-in-out infinite;
+  animation-delay: -4s;
+  background: rgba(96, 165, 250, 0.4);
+  box-shadow: 0 0 6px rgba(96, 165, 250, 0.25);
+}
+
+.iso-particle--4 {
+  width: 3px;
+  height: 3px;
+  top: 55%;
+  right: 15%;
+  animation: particle-drift-1 9s ease-in-out infinite;
+  animation-delay: -1s;
+  background: rgba(147, 197, 253, 0.5);
+  box-shadow: 0 0 4px rgba(147, 197, 253, 0.3);
+}
+
+.iso-particle--5 {
+  width: 4px;
+  height: 4px;
+  bottom: 22%;
+  right: 30%;
+  animation: particle-drift-2 11s ease-in-out infinite;
+  animation-delay: -5s;
+  background: rgba(59, 130, 246, 0.35);
+  box-shadow: 0 0 6px rgba(59, 130, 246, 0.2);
+}
+
+@keyframes particle-drift-1 {
+  0%, 100% { transform: translate(0, 0); opacity: 0.4; }
+  25% { transform: translate(8px, -12px); opacity: 0.8; }
+  50% { transform: translate(-4px, -6px); opacity: 0.5; }
+  75% { transform: translate(6px, 4px); opacity: 0.7; }
+}
+
+@keyframes particle-drift-2 {
+  0%, 100% { transform: translate(0, 0); opacity: 0.3; }
+  33% { transform: translate(-10px, 8px); opacity: 0.7; }
+  66% { transform: translate(6px, -4px); opacity: 0.5; }
+}
+
+@keyframes particle-drift-3 {
+  0%, 100% { transform: translate(0, 0); opacity: 0.5; }
+  50% { transform: translate(10px, -8px); opacity: 0.8; }
+}

@@ -1,0 +1,630 @@
+{
+  "measuredAt": "2026-06-13T10:15:08.652132+00:00",
+  "provider": "deepseek",
+  "threshold": 0.6,
+  "difficulties": [
+    "入门",
+    "初级",
+    "高级"
+  ],
+  "kps": [
+    "ml",
+    "nn",
+    "dl",
+    "cnn",
+    "transformer",
+    "finetune"
+  ],
+  "summary": {
+    "full": {
+      "meanHallucinationRate": 0.0589,
+      "sampleSize": 18,
+      "degradedCount": 1,
+      "retriedCount": 2
+    },
+    "-RAG": {
+      "meanHallucinationRate": 0.1549,
+      "sampleSize": 18,
+      "degradedCount": 0,
+      "retriedCount": 0
+    },
+    "-critic": {
+      "meanHallucinationRate": 0.049,
+      "sampleSize": 18,
+      "degradedCount": 0,
+      "retriedCount": 0
+    },
+    "-retry": {
+      "meanHallucinationRate": 0.0682,
+      "sampleSize": 18,
+      "degradedCount": 2,
+      "retriedCount": 0
+    }
+  },
+  "perConfig": {
+    "full": [
+      {
+        "kpId": "ml",
+        "difficulty": "入门",
+        "hallucinationRate": 0.037,
+        "totalSentences": 27,
+        "degraded": false,
+        "retryCount": 0
+      },
+      {
+        "kpId": "ml",
+        "difficulty": "初级",
+        "hallucinationRate": 0.0698,
+        "totalSentences": 43,
+        "degraded": false,
+        "retryCount": 0
+      },
+      {
+        "kpId": "ml",
+        "difficulty": "高级",
+        "hallucinationRate": 0.0667,
+        "totalSentences": 45,
+        "degraded": false,
+        "retryCount": 0
+      },
+      {
+        "kpId": "nn",
+        "difficulty": "入门",
+        "hallucinationRate": 0.0,
+        "totalSentences": 42,
+        "degraded": false,
+        "retryCount": 0
+      },
+      {
+        "kpId": "nn",
+        "difficulty": "初级",
+        "hallucinationRate": 0.0,
+        "totalSentences": 41,
+        "degraded": false,
+        "retryCount": 0
+      },
+      {
+        "kpId": "nn",
+        "difficulty": "高级",
+        "hallucinationRate": 0.0,
+        "totalSentences": 20,
+        "degraded": false,
+        "retryCount": 0
+      },
+      {
+        "kpId": "dl",
+        "difficulty": "入门",
+        "hallucinationRate": 0.0244,
+        "totalSentences": 41,
+        "degraded": false,
+        "retryCount": 0
+      },
+      {
+        "kpId": "dl",
+        "difficulty": "初级",
+        "hallucinationRate": 0.0238,
+        "totalSentences": 42,
+        "degraded": false,
+        "retryCount": 0
+      },
+      {
+        "kpId": "dl",
+        "difficulty": "高级",
+        "hallucinationRate": 0.025,
+        "totalSentences": 40,
+        "degraded": false,
+        "retryCount": 0
+      },
+      {
+        "kpId": "cnn",
+        "difficulty": "入门",
+        "hallucinationRate": 0.119,
+        "totalSentences": 42,
+        "degraded": false,
+        "retryCount": 0
+      },
+      {
+        "kpId": "cnn",
+        "difficulty": "初级",
+        "hallucinationRate": 0.0816,
+        "totalSentences": 49,
+        "degraded": false,
+        "retryCount": 0
+      },
+      {
+        "kpId": "cnn",
+        "difficulty": "高级",
+        "hallucinationRate": 0.0698,
+        "totalSentences": 43,
+        "degraded": false,
+        "retryCount": 0
+      },
+      {
+        "kpId": "transformer",
+        "difficulty": "入门",
+        "hallucinationRate": 0.0789,
+        "totalSentences": 38,
+        "degraded": false,
+        "retryCount": 0
+      },
+      {
+        "kpId": "transformer",
+        "difficulty": "初级",
+        "hallucinationRate": 0.2745,
+        "totalSentences": 51,
+        "degraded": true,
+        "retryCount": 2
+      },
+      {
+        "kpId": "transformer",
+        "difficulty": "高级",
+        "hallucinationRate": 0.0571,
+        "totalSentences": 35,
+        "degraded": false,
+        "retryCount": 1
+      },
+      {
+        "kpId": "finetune",
+        "difficulty": "入门",
+        "hallucinationRate": 0.0278,
+        "totalSentences": 36,
+        "degraded": false,
+        "retryCount": 0
+      },
+      {
+        "kpId": "finetune",
+        "difficulty": "初级",
+        "hallucinationRate": 0.0,
+        "totalSentences": 30,
+        "degraded": false,
+        "retryCount": 0
+      },
+      {
+        "kpId": "finetune",
+        "difficulty": "高级",
+        "hallucinationRate": 0.1053,
+        "totalSentences": 38,
+        "degraded": false,
+        "retryCount": 0
+      }
+    ],
+    "-RAG": [
+      {
+        "kpId": "ml",
+        "difficulty": "入门",
+        "hallucinationRate": 0.25,
+        "totalSentences": 44,
+        "degraded": false,
+        "retryCount": 0
+      },
+      {
+        "kpId": "ml",
+        "difficulty": "初级",
+        "hallucinationRate": 0.04,
+        "totalSentences": 25,
+        "degraded": false,
+        "retryCount": 0
+      },
+      {
+        "kpId": "ml",
+        "difficulty": "高级",
+        "hallucinationRate": 0.1,
+        "totalSentences": 30,
+        "degraded": false,
+        "retryCount": 0
+      },
+      {
+        "kpId": "nn",
+        "difficulty": "入门",
+        "hallucinationRate": 0.0323,
+        "totalSentences": 31,
+        "degraded": false,
+        "retryCount": 0
+      },
+      {
+        "kpId": "nn",
+        "difficulty": "初级",
+        "hallucinationRate": 0.075,
+        "totalSentences": 40,
+        "degraded": false,
+        "retryCount": 0
+      },
+      {
+        "kpId": "nn",
+        "difficulty": "高级",
+        "hallucinationRate": 0.2083,
+        "totalSentences": 24,
+        "degraded": false,
+        "retryCount": 0
+      },
+      {
+        "kpId": "dl",
+        "difficulty": "入门",
+        "hallucinationRate": 0.0909,
+        "totalSentences": 33,
+        "degraded": false,
+        "retryCount": 0
+      },
+      {
+        "kpId": "dl",
+        "difficulty": "初级",
+        "hallucinationRate": 0.0455,
+        "totalSentences": 22,
+        "degraded": false,
+        "retryCount": 0
+      },
+      {
+        "kpId": "dl",
+        "difficulty": "高级",
+        "hallucinationRate": 0.2,
+        "totalSentences": 20,
+        "degraded": false,
+        "retryCount": 0
+      },
+      {
+        "kpId": "cnn",
+        "difficulty": "入门",
+        "hallucinationRate": 0.2571,
+        "totalSentences": 35,
+        "degraded": false,
+        "retryCount": 0
+      },
+      {
+        "kpId": "cnn",
+        "difficulty": "初级",
+        "hallucinationRate": 0.0,
+        "totalSentences": 18,
+        "degraded": false,
+        "retryCount": 0
+      },
+      {
+        "kpId": "cnn",
+        "difficulty": "高级",
+        "hallucinationRate": 0.0645,
+        "totalSentences": 31,
+        "degraded": false,
+        "retryCount": 0
+      },
+      {
+        "kpId": "transformer",
+        "difficulty": "入门",
+        "hallucinationRate": 0.4,
+        "totalSentences": 30,
+        "degraded": false,
+        "retryCount": 0
+      },
+      {
+        "kpId": "transformer",
+        "difficulty": "初级",
+        "hallucinationRate": 0.48,
+        "totalSentences": 25,
+        "degraded": false,
+        "retryCount": 0
+      },
+      {
+        "kpId": "transformer",
+        "difficulty": "高级",
+        "hallucinationRate": 0.1111,
+        "totalSentences": 9,
+        "degraded": false,
+        "retryCount": 0
+      },
+      {
+        "kpId": "finetune",
+        "difficulty": "入门",
+        "hallucinationRate": 0.1154,
+        "totalSentences": 26,
+        "degraded": false,
+        "retryCount": 0
+      },
+      {
+        "kpId": "finetune",
+        "difficulty": "初级",
+        "hallucinationRate": 0.0556,
+        "totalSentences": 18,
+        "degraded": false,
+        "retryCount": 0
+      },
+      {
+        "kpId": "finetune",
+        "difficulty": "高级",
+        "hallucinationRate": 0.2632,
+        "totalSentences": 19,
+        "degraded": false,
+        "retryCount": 0
+      }
+    ],
+    "-critic": [
+      {
+        "kpId": "ml",
+        "difficulty": "入门",
+        "hallucinationRate": 0.0625,
+        "totalSentences": 32,
+        "degraded": false,
+        "retryCount": 0
+      },
+      {
+        "kpId": "ml",
+        "difficulty": "初级",
+        "hallucinationRate": 0.1081,
+        "totalSentences": 37,
+        "degraded": false,
+        "retryCount": 0
+      },
+      {
+        "kpId": "ml",
+        "difficulty": "高级",
+        "hallucinationRate": 0.0465,
+        "totalSentences": 43,
+        "degraded": false,
+        "retryCount": 0
+      },
+      {
+        "kpId": "nn",
+        "difficulty": "入门",
+        "hallucinationRate": 0.0,
+        "totalSentences": 38,
+        "degraded": false,
+        "retryCount": 0
+      },
+      {
+        "kpId": "nn",
+        "difficulty": "初级",
+        "hallucinationRate": 0.0,
+        "totalSentences": 39,
+        "degraded": false,
+        "retryCount": 0
+      },
+      {
+        "kpId": "nn",
+        "difficulty": "高级",
+        "hallucinationRate": 0.0,
+        "totalSentences": 31,
+        "degraded": false,
+        "retryCount": 0
+      },
+      {
+        "kpId": "dl",
+        "difficulty": "入门",
+        "hallucinationRate": 0.0222,
+        "totalSentences": 45,
+        "degraded": false,
+        "retryCount": 0
+      },
+      {
+        "kpId": "dl",
+        "difficulty": "初级",
+        "hallucinationRate": 0.0,
+        "totalSentences": 40,
+        "degraded": false,
+        "retryCount": 0
+      },
+      {
+        "kpId": "dl",
+        "difficulty": "高级",
+        "hallucinationRate": 0.0,
+        "totalSentences": 28,
+        "degraded": false,
+        "retryCount": 0
+      },
+      {
+        "kpId": "cnn",
+        "difficulty": "入门",
+        "hallucinationRate": 0.0294,
+        "totalSentences": 34,
+        "degraded": false,
+        "retryCount": 0
+      },
+      {
+        "kpId": "cnn",
+        "difficulty": "初级",
+        "hallucinationRate": 0.0909,
+        "totalSentences": 44,
+        "degraded": false,
+        "retryCount": 0
+      },
+      {
+        "kpId": "cnn",
+        "difficulty": "高级",
+        "hallucinationRate": 0.12,
+        "totalSentences": 25,
+        "degraded": false,
+        "retryCount": 0
+      },
+      {
+        "kpId": "transformer",
+        "difficulty": "入门",
+        "hallucinationRate": 0.1538,
+        "totalSentences": 39,
+        "degraded": false,
+        "retryCount": 0
+      },
+      {
+        "kpId": "transformer",
+        "difficulty": "初级",
+        "hallucinationRate": 0.1429,
+        "totalSentences": 42,
+        "degraded": false,
+        "retryCount": 0
+      },
+      {
+        "kpId": "transformer",
+        "difficulty": "高级",
+        "hallucinationRate": 0.1053,
+        "totalSentences": 38,
+        "degraded": false,
+        "retryCount": 0
+      },
+      {
+        "kpId": "finetune",
+        "difficulty": "入门",
+        "hallucinationRate": 0.0,
+        "totalSentences": 33,
+        "degraded": false,
+        "retryCount": 0
+      },
+      {
+        "kpId": "finetune",
+        "difficulty": "初级",
+        "hallucinationRate": 0.0,
+        "totalSentences": 30,
+        "degraded": false,
+        "retryCount": 0
+      },
+      {
+        "kpId": "finetune",
+        "difficulty": "高级",
+        "hallucinationRate": 0.0,
+        "totalSentences": 29,
+        "degraded": false,
+        "retryCount": 0
+      }
+    ],
+    "-retry": [
+      {
+        "kpId": "ml",
+        "difficulty": "入门",
+        "hallucinationRate": 0.0294,
+        "totalSentences": 34,
+        "degraded": false,
+        "retryCount": 0
+      },
+      {
+        "kpId": "ml",
+        "difficulty": "初级",
+        "hallucinationRate": 0.025,
+        "totalSentences": 40,
+        "degraded": false,
+        "retryCount": 0
+      },
+      {
+        "kpId": "ml",
+        "difficulty": "高级",
+        "hallucinationRate": 0.1053,
+        "totalSentences": 38,
+        "degraded": false,
+        "retryCount": 0
+      },
+      {
+        "kpId": "nn",
+        "difficulty": "入门",
+        "hallucinationRate": 0.0,
+        "totalSentences": 42,
+        "degraded": false,
+        "retryCount": 0
+      },
+      {
+        "kpId": "nn",
+        "difficulty": "初级",
+        "hallucinationRate": 0.0,
+        "totalSentences": 43,
+        "degraded": false,
+        "retryCount": 0
+      },
+      {
+        "kpId": "nn",
+        "difficulty": "高级",
+        "hallucinationRate": 0.0,
+        "totalSentences": 26,
+        "degraded": false,
+        "retryCount": 0
+      },
+      {
+        "kpId": "dl",
+        "difficulty": "入门",
+        "hallucinationRate": 0.0,
+        "totalSentences": 34,
+        "degraded": false,
+        "retryCount": 0
+      },
+      {
+        "kpId": "dl",
+        "difficulty": "初级",
+        "hallucinationRate": 0.0278,
+        "totalSentences": 36,
+        "degraded": false,
+        "retryCount": 0
+      },
+      {
+        "kpId": "dl",
+        "difficulty": "高级",
+        "hallucinationRate": 0.0263,
+        "totalSentences": 38,
+        "degraded": false,
+        "retryCount": 0
+      },
+      {
+        "kpId": "cnn",
+        "difficulty": "入门",
+        "hallucinationRate": 0.0857,
+        "totalSentences": 35,
+        "degraded": false,
+        "retryCount": 0
+      },
+      {
+        "kpId": "cnn",
+        "difficulty": "初级",
+        "hallucinationRate": 0.0645,
+        "totalSentences": 31,
+        "degraded": false,
+        "retryCount": 0
+      },
+      {
+        "kpId": "cnn",
+        "difficulty": "高级",
+        "hallucinationRate": 0.175,
+        "totalSentences": 40,
+        "degraded": false,
+        "retryCount": 0
+      },
+      {
+        "kpId": "transformer",
+        "difficulty": "入门",
+        "hallucinationRate": 0.0833,
+        "totalSentences": 36,
+        "degraded": false,
+        "retryCount": 0
+      },
+      {
+        "kpId": "transformer",
+        "difficulty": "初级",
+        "hallucinationRate": 0.25,
+        "totalSentences": 44,
+        "degraded": true,
+        "retryCount": 0
+      },
+      {
+        "kpId": "transformer",
+        "difficulty": "高级",
+        "hallucinationRate": 0.2857,
+        "totalSentences": 49,
+        "degraded": true,
+        "retryCount": 0
+      },
+      {
+        "kpId": "finetune",
+        "difficulty": "入门",
+        "hallucinationRate": 0.0,
+        "totalSentences": 31,
+        "degraded": false,
+        "retryCount": 0
+      },
+      {
+        "kpId": "finetune",
+        "difficulty": "初级",
+        "hallucinationRate": 0.0,
+        "totalSentences": 30,
+        "degraded": false,
+        "retryCount": 0
+      },
+      {
+        "kpId": "finetune",
+        "difficulty": "高级",
+        "hallucinationRate": 0.0698,
+        "totalSentences": 43,
+        "degraded": false,
+        "retryCount": 0
+      }
+    ]
+  }
+}

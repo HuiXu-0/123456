@@ -1,0 +1,203 @@
+{
+  "schema_version": "trusted-rag-final-validation-v2",
+  "generated_at": "2026-07-23T06:16:23.609107+00:00",
+  "production_mutation": false,
+  "canary_enabled": false,
+  "dataset": {
+    "dataset_id": "trusted-rag-e4a-held-out-v1",
+    "sample_count": 125,
+    "query_type_counts": {
+      "comprehensive_question": 25,
+      "concept_explanation": 25,
+      "method_comparison": 25,
+      "operation_steps": 25,
+      "programming_practice": 25
+    },
+    "independence_check": {
+      "e3_query_count": 100,
+      "validation_query_count": 125,
+      "overlap_count": 0,
+      "fingerprint": "sha256(normalized_query)"
+    }
+  },
+  "embedding_profile": {
+    "collection": "kb_chunks_trusted_validation_hash_d512_v1",
+    "profile_id": "hash:deterministic_hash_v1:d512",
+    "dimension": 512,
+    "stored_dimension": 512,
+    "embedding_mode": "hash_fallback",
+    "classification": "Hash",
+    "collection_declared_profile_id": "hash:deterministic_hash_v1:d512",
+    "collection_profile_metadata_complete": true
+  },
+  "quality": {
+    "relevance": 0.697143,
+    "support_rate": 0.856,
+    "completeness": 0.314286,
+    "source_coverage": 1.0,
+    "evidence_overlap": 0.30301,
+    "by_query_type": {
+      "comprehensive_question": {
+        "relevance": 0.873333,
+        "support": 0.96,
+        "completeness": 0.64,
+        "source_coverage": 1.0,
+        "evidence_overlap": 0.324667
+      },
+      "concept_explanation": {
+        "relevance": 0.78,
+        "support": 0.88,
+        "completeness": 0.88,
+        "source_coverage": 1.0,
+        "evidence_overlap": 0.243714
+      },
+      "method_comparison": {
+        "relevance": 0.886667,
+        "support": 0.96,
+        "completeness": 0.62,
+        "source_coverage": 1.0,
+        "evidence_overlap": 0.314667
+      },
+      "operation_steps": {
+        "relevance": 0.453333,
+        "support": 0.64,
+        "completeness": 0.64,
+        "source_coverage": 1.0,
+        "evidence_overlap": 0.318
+      },
+      "programming_practice": {
+        "relevance": 0.713333,
+        "support": 0.84,
+        "completeness": 0.84,
+        "source_coverage": 1.0,
+        "evidence_overlap": 0.314
+      }
+    }
+  },
+  "latency": {
+    "environment": "competition-target-windows-cpu",
+    "environment_fingerprint": {
+      "system": "Windows",
+      "release": "11",
+      "machine": "",
+      "python": "3.12.13",
+      "device": "cpu",
+      "execution": "local_target_validation_host"
+    },
+    "performance_verified": true,
+    "sample_count": 125,
+    "p50_ms": 22.2397,
+    "p95_ms": 24.1453,
+    "timeout_count": 0,
+    "timeout_rate": 0.0,
+    "error_count": 0,
+    "error_rate": 0.0,
+    "fallback_trigger_count": 118,
+    "fallback_overhead_mean_ms": 0.160402,
+    "fallback_overhead_p95_ms": 0.2357
+  },
+  "reliability": {
+    "error_rate": 0.0,
+    "legacy_preserved": true,
+    "timeouts_isolated": true,
+    "fault_scenarios": 11,
+    "fault_pass_count": 11,
+    "fault_block_count": 0
+  },
+  "rerank": {
+    "policy_version": "rerank-policy-v1",
+    "model": "BAAI/bge-reranker-base",
+    "enabled_count": 0,
+    "disabled_count": 125,
+    "fallback": "hybrid",
+    "policies": [
+      {
+        "query_type": "comprehensive_question",
+        "enabled": false,
+        "fallback": "hybrid",
+        "reason": "independent_validation_regression_policy_disabled"
+      },
+      {
+        "query_type": "concept_explanation",
+        "enabled": false,
+        "fallback": "hybrid",
+        "reason": "independent_validation_regression_policy_disabled"
+      },
+      {
+        "query_type": "method_comparison",
+        "enabled": false,
+        "fallback": "hybrid",
+        "reason": "independent_validation_regression_policy_disabled"
+      },
+      {
+        "query_type": "operation_steps",
+        "enabled": false,
+        "fallback": "hybrid",
+        "reason": "independent_validation_regression_policy_disabled"
+      },
+      {
+        "query_type": "programming_practice",
+        "enabled": false,
+        "fallback": "hybrid",
+        "reason": "independent_validation_regression_policy_disabled"
+      }
+    ],
+    "baseline": {
+      "mrr": 0.798667,
+      "ndcg@3": 0.716414,
+      "ndcg@5": 0.716414
+    },
+    "effective_metrics": {
+      "mrr": 0.798667,
+      "ndcg@3": 0.716414,
+      "ndcg@5": 0.716414
+    },
+    "delta": {
+      "mrr": 0.0,
+      "ndcg@3": 0.0,
+      "ndcg@5": 0.0
+    },
+    "degraded_case_count": 0
+  },
+  "gate": {
+    "schemaVersion": "trusted-rag-canary-gate-v4",
+    "qualityGateVersion": "quality-gate-v2",
+    "evaluationType": "offline_final_admission_validation",
+    "generatedAt": "2026-07-23T06:16:23.481180+00:00",
+    "productionMutation": false,
+    "canaryEnabled": false,
+    "quality_pass": true,
+    "latency_pass": true,
+    "reliability_pass": true,
+    "rerank_pass": true,
+    "final_decision": "PASS",
+    "block_reasons": [],
+    "remediation": [],
+    "rollback_recommended": false,
+    "recommended_action": "eligible_for_manual_canary_review",
+    "snapshot": {
+      "quality_gate_version": "quality-gate-v2",
+      "sample_count": 125,
+      "p95_latency_ms": 24.1453,
+      "timeout_rate": 0.0,
+      "error_rate": 0.0,
+      "fault_scenario_count": 11,
+      "fault_failure_rate": 0.0,
+      "query_type_counts": {
+        "comprehensive_question": 25,
+        "concept_explanation": 25,
+        "method_comparison": 25,
+        "operation_steps": 25,
+        "programming_practice": 25
+      },
+      "shadow_input_type": "dataset",
+      "quality_evaluation_request_count": 125,
+      "human_relevance": 0.697143,
+      "support_rate": 0.856,
+      "completeness": 0.314286,
+      "source_coverage": 1.0,
+      "evidence_overlap_diagnostic": 0.30301,
+      "confidence_diagnostic": 0.999904
+    }
+  }
+}

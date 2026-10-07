@@ -1,0 +1,13 @@
+/* V3.0: Radar Chart - Fiber Optic Glow */
+
+.radar-chart {
+  width: 100%;
+  height: 320px;
+  /* V3.0: 柔和发光效果 */
+  filter: drop-shadow(0 0 16px rgba(99, 102, 241, 0.1));
+  transition: filter var(--transition-normal);
+}
+
+.radar-chart:hover {
+  filter: drop-shadow(0 0 24px rgba(99, 102, 241, 0.15));
+}

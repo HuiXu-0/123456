@@ -1,0 +1,27 @@
+{
+  "id": "llm-app",
+  "name": "大模型应用工程师",
+  "salaryRange": "30K–55K · 15薪",
+  "salaryMedian": "40K",
+  "heat": "极高",
+  "heatPct": 95,
+  "openings": 1840,
+  "source": "聚合自 BOSS直聘 / 拉勾 / 智联 公开 JD 样本（离线管线 + LLM 抽取）",
+  "fetchedAt": "2026-06-06T06:10:00+08:00",
+  "skills": [
+    { "name": "Prompt 工程", "freqPct": 88 },
+    { "name": "RAG / 向量检索", "freqPct": 82 },
+    { "name": "Python", "freqPct": 80 },
+    { "name": "LangChain / LangGraph", "freqPct": 71 },
+    { "name": "大模型微调(LoRA)", "freqPct": 58 },
+    { "name": "Agent 编排", "freqPct": 49 }
+  ],
+  "radar": {
+    "机器学习基础": 70,
+    "神经网络": 72,
+    "深度学习": 78,
+    "注意力机制": 85,
+    "Transformer": 92,
+    "大模型微调": 88
+  }
+}

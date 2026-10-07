@@ -1,0 +1,76 @@
+/* 风格切换浮动按钮（固定定位，不参与任何页面布局）*/
+.theme-toggle {
+  position: fixed;
+  right: 22px;
+  bottom: 22px;
+  z-index: 1000;
+  display: flex;
+  align-items: center;
+  gap: 9px;
+  padding: 8px 12px 8px 14px;
+  border: 1px solid rgba(255, 255, 255, 0.55);
+  border-radius: 999px;
+  background: rgba(255, 255, 255, 0.78);
+  backdrop-filter: blur(18px) saturate(1.3);
+  -webkit-backdrop-filter: blur(18px) saturate(1.3);
+  box-shadow: 0 8px 28px rgba(15, 23, 42, 0.14);
+  cursor: pointer;
+  font-family: inherit;
+  transition: transform 0.25s var(--ease-emphasized, ease), box-shadow 0.25s ease;
+}
+.theme-toggle:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 12px 34px rgba(15, 23, 42, 0.18);
+}
+
+/* 主色圆点（跟随当前主题 primary→accent）*/
+.theme-toggle__dot {
+  width: 13px;
+  height: 13px;
+  border-radius: 50%;
+  background: linear-gradient(135deg, var(--primary), var(--accent));
+  box-shadow: 0 0 8px rgba(var(--primary-rgb), 0.5);
+  flex-shrink: 0;
+}
+
+.theme-toggle__label {
+  font-size: 0.78rem;
+  font-weight: 600;
+  color: var(--gray-700);
+  letter-spacing: 0.02em;
+  white-space: nowrap;
+}
+
+/* 开关轨道 */
+.theme-toggle__switch {
+  width: 34px;
+  height: 18px;
+  border-radius: 999px;
+  background: var(--gray-300);
+  position: relative;
+  transition: background 0.25s ease;
+  flex-shrink: 0;
+}
+.theme-toggle--ink .theme-toggle__switch {
+  background: linear-gradient(135deg, var(--primary), var(--accent));
+}
+
+.theme-toggle__knob {
+  position: absolute;
+  top: 2px;
+  left: 2px;
+  width: 14px;
+  height: 14px;
+  border-radius: 50%;
+  background: #fff;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.25);
+  transition: transform 0.25s var(--ease-emphasized, ease);
+}
+.theme-toggle--ink .theme-toggle__knob {
+  transform: translateX(16px);
+}
+
+@media (max-width: 640px) {
+  .theme-toggle__label { display: none; }
+  .theme-toggle { padding: 8px; }
+}

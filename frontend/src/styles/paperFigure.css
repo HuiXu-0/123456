@@ -1,0 +1,64 @@
+/* ============================================
+   论文级图解 / 思维导图 · 共用样式
+   拉丁&数字 = Times New Roman，中文 = 衬线体（宋体系兜底）
+   学术冷灰蓝配色 · 简洁规整节点 · 学术图注（图下方居中小字）
+   —— 纯样式，不改结构/数据；套用现有设计令牌，深浅（sage/ink）主题共用
+   ============================================ */
+
+/* ---- 图解 & 导图内所有文字统一走论文字体栈（覆盖 mermaid / markmap 自带字体）---- */
+.mermaid-diagram svg,
+.mermaid-diagram svg text,
+.mermaid-diagram svg tspan,
+.mermaid-diagram foreignObject,
+.mermaid-diagram foreignObject div,
+.mermaid-diagram foreignObject span,
+.mindmap-svg,
+.mindmap-svg text,
+.mindmap-svg .markmap-foreign,
+.mindmap-svg .markmap-foreign > div {
+  font-family: var(--font-paper) !important;
+  font-variant-ligatures: none;
+}
+
+/* ---- Mermaid：论文级节点 / 连线微调（配色主要来自组件 themeVariables）---- */
+.mermaid-diagram svg .node rect,
+.mermaid-diagram svg .node polygon,
+.mermaid-diagram svg .node circle,
+.mermaid-diagram svg .node path,
+.mermaid-diagram svg .cluster rect {
+  stroke-width: 1.4px;
+  rx: 4px;            /* 规整小圆角，接近教科书示意图 */
+  ry: 4px;
+}
+.mermaid-diagram svg .edgePath .path,
+.mermaid-diagram svg .flowchart-link {
+  stroke-width: 1.3px;
+}
+.mermaid-diagram svg .edgeLabel,
+.mermaid-diagram svg .edgeLabel span {
+  font-size: 0.86em;
+  color: var(--paper-ink);
+}
+
+/* ---- markmap：连线细化，观感更清爽 ---- */
+.mindmap-svg path.markmap-link {
+  stroke-width: 1.3px;
+}
+
+/* ---- 图（figure）容器：去除默认外边距，图注紧随图下 ---- */
+.paper-figure {
+  margin: 0;
+}
+
+/* ---- 学术图注：图下方、居中、小字、细分隔线（对齐论文图注规范）---- */
+.paper-figure__caption {
+  margin-top: 12px;
+  padding-top: 10px;
+  border-top: 1px solid color-mix(in srgb, var(--paper-line) 28%, transparent);
+  font-family: var(--font-paper);
+  font-size: 0.86rem;
+  line-height: 1.55;
+  letter-spacing: 0.01em;
+  color: var(--paper-caption);
+  text-align: center;
+}
